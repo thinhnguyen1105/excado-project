@@ -1,0 +1,14 @@
+{
+  "resolve-report-success": "Handling successful!",
+  "skip": "Skip",
+  "delete": "Delete news",
+  "news-title": "Title",
+  "report-reasons": "Reasons",
+  "report-state": "State",
+  "pending-report": "Waiting for processing",
+  "resolved-report": "Processed",
+  "resolved-result": "Result",
+  "resolved-at": "Processing time",
+  "search-reports": "Find violation report",
+  "reports": "Report violations"
+}

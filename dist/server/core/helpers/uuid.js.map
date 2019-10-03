@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/server/core/helpers/uuid.ts"],"names":["uuid"],"mappings":";;;;;;;AAAA;;;;AACO,IAAMA,IAAI,GAAG,SAAPA,IAAO,GAAc;AAC9B,SAAO,iBAAP;AACH,CAFM","sourcesContent":["import uuidV1 from 'uuid/v1';\nexport const uuid = (): string => {\n    return uuidV1();\n};\n"],"file":"uuid.js"}

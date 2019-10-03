@@ -1,0 +1,12 @@
+{
+  "update-success": "Cập nhật thành công",
+  "create-success": "Tạo thành công",
+  "rental-period": "Thời gian thuê",
+  "pleaseInputMinRentalPeriod": "Vui lòng điền thời gian thuê nhỏ nhất",
+  "min-min-rental-period": "Thời gian thuê nhỏ nhất",
+  "edit-rental-period": "Chỉnh sửa thời gian thuê",
+  "create-rental-period": "Thêm thời gian thuê",
+  "min-rental-period": "Thời gian",
+  "max-rental-period": "Thời gian",
+  "": ""
+}

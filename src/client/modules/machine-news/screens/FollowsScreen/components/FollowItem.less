@@ -1,0 +1,41 @@
+.follow-item {
+  .ant-card-body {
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+
+    .image-container {
+      display: inline-block;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      overflow: hidden;
+      border-radius: 50%;
+
+      img{
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    .info-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 120px);
+
+      .info {
+        padding-left: 10px;
+
+        h4 {
+          font-size: 16px;
+          margin-bottom: 0px
+        }
+
+        h4:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

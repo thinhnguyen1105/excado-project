@@ -1,0 +1,137 @@
+.create-post-step-2 {
+  .ant-form-item-control {
+    line-height: 1.5;
+  }
+}
+.white-box {
+  background: white;
+  width: 100%;
+  box-shadow: -2px 3px 2px 1px #eee;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.selected-box {
+  background: #FFC500;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.slight-margin-top {
+  margin-top: 10px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.justify-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-red {
+  color: red;
+}
+
+.big-margin-top {
+  margin-top: 25px;
+  .ant-form-item {
+    min-height: 60px;
+  }
+}
+
+.create-post {
+  &__container {
+    margin: 15px 0px;
+  }
+  &__select-box {
+    width: 100%;
+  }
+  &__back-button {
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &__next-button {
+    height: 50px;
+    background: #ffb546;
+    width: 100%;
+    box-shadow: -2px 3px 2px 1px #eee;
+    border-bottom: 1px solid #eee;
+  }
+  & &__price-checkbox {
+    height: 40px;
+    margin-right: 5px;
+  }
+  & &__no-border-textarea-box {
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    &:focus,
+    &:hover {
+      box-shadow: none;
+      border: 0px;
+      outline: none !important;
+    }
+  }
+
+  &__session-headline {
+    margin-bottom: 0px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #f7a52b;
+  }
+}
+
+.hidden-input {
+  border: 0px !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  pointer-events: none;
+  &:hover,
+  &:focus {
+    border: 0px !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
+
+.bold-input {
+  font-weight: 700;
+  font-size: 16px !important;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.note {
+  font-size: 12px;
+  color: #f81d22;
+}
+
+@media (max-width: 768px) {}

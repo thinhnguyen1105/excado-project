@@ -1,0 +1,57 @@
+.headerDropdown > * {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+  :global(.ant-dropdown-menu-item) {
+    min-width: 160px;
+  }
+}
+
+.action {
+  cursor: pointer;
+  padding: 0 12px;
+  display: inline-block;
+  transition: all 0.3s;
+  height: 100%;
+  > i {
+    vertical-align: middle;
+    color: fade(#000, 65%);
+  }
+  &:hover {
+    background: rgba(0, 0, 0, 0.024);
+  }
+  &:global(.opened) {
+    background: rgba(0, 0, 0, 0.024);
+  }
+}
+
+.account {
+  .avatar {
+    margin: ~'calc((64px - 24px) / 2)' 0;
+    margin-right: 8px;
+    color: #1890ff;
+    background: rgba(255, 255, 255, 0.85);
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .headerDropdown {
+    width: 100% !important;
+  }
+  .headerDropdown > * {
+    border-radius: 0 !important;
+  }
+}

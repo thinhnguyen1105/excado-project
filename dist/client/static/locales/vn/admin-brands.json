@@ -1,0 +1,14 @@
+{
+  "create-success": "Tạo hãng thành công",
+  "edit": "Chỉnh sửa",
+  "brand-name": "Tên hãng",
+  "created-at": "Thời điểm tạo",
+  "logo-image": "Logo",
+  "update-success": "Cập nhật thành công",
+  "pleaseInputBrandName": "Vui lòng nhập tên hãng",
+  "pleaseUploadBrandLogo": "Vui lòng upload Logo hãng",
+  "edit-brand": "Chỉnh sửa thông tin hãng",
+  "create-brand": "Thêm hãng mới",
+  "brand-logo": "Logo",
+  "search-brands": "Tìm kiếm tên hãng"
+}

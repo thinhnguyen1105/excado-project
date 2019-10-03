@@ -1,0 +1,22364 @@
+module.exports =
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = require('../../../ssr-module-cache.js');
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		var threw = true;
+/******/ 		try {
+/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 			threw = false;
+/******/ 		} finally {
+/******/ 			if(threw) delete installedModules[moduleId];
+/******/ 		}
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 204);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/col");
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/message");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "firebase/app"
+var app_ = __webpack_require__(6);
+var app_default = /*#__PURE__*/__webpack_require__.n(app_);
+
+// EXTERNAL MODULE: external "firebase/auth"
+var auth_ = __webpack_require__(21);
+
+// EXTERNAL MODULE: ./config/index.ts + 2 modules
+var config = __webpack_require__(8);
+
+// CONCATENATED MODULE: ./core/firebase.ts
+
+
+
+var firebase_initializeFirebaseApp = function initializeFirebaseApp() {
+  if (!app_default.a.apps.length) {
+    app_default.a.initializeApp(config["a" /* config */].firebase);
+  }
+
+  app_default.a.auth().setPersistence(app_default.a.auth.Auth.Persistence.LOCAL) // tslint:disable-next-line:no-console
+  .catch(function (error) {
+    return console.log(error);
+  });
+};
+// EXTERNAL MODULE: external "@babel/runtime/regenerator"
+var regenerator_ = __webpack_require__(1);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator_);
+
+// CONCATENATED MODULE: ./core/setCookie.ts
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var setCookie =
+/*#__PURE__*/
+function () {
+  var _ref = _asyncToGenerator(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee(req, res) {
+    var token;
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            token = req.body.token;
+            res.cookie('token', "Bearer ".concat(token), {
+              domain: config["a" /* config */].cookies.domain
+            }).redirect('/');
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function setCookie(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+// CONCATENATED MODULE: ./core/formatter.ts
+var formatter = new Intl.NumberFormat('de-DE', {
+  style: 'currency',
+  currency: 'VND',
+  currencyDisplay: 'code',
+  minimumFractionDigits: 0
+});
+var formatMoney = formatter.format;
+
+// CONCATENATED MODULE: ./core/submitLoginForm.ts
+var submitLoginForm = function submitLoginForm(idToken) {
+  var form = document.getElementById('form');
+  var input = document.createElement('input');
+  input.type = 'text';
+  input.name = 'token';
+  input.value = idToken;
+  form.appendChild(input);
+  form.submit();
+};
+// CONCATENATED MODULE: ./core/validateField.ts
+var validateField = function validateField(params) {
+  try {
+    params.validateSchema.validateSyncAt(params.fieldName, params.context.values);
+    params.context.setFieldError(params.fieldName, '');
+  } catch (error) {
+    params.context.setFieldError(params.fieldName, error.message);
+  }
+};
+// CONCATENATED MODULE: ./core/clearCookie.ts
+
+
+function clearCookie_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function clearCookie_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { clearCookie_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { clearCookie_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+var clearCookie =
+/*#__PURE__*/
+function () {
+  var _ref = clearCookie_asyncToGenerator(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee(_req, res) {
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            res.clearCookie('token', {
+              domain: config["a" /* config */].cookies.domain
+            }).redirect('/');
+
+          case 1:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function clearCookie(_x, _x2) {
+    return _ref.apply(this, arguments);
+  };
+}();
+// CONCATENATED MODULE: ./core/metadata.ts
+var metadata = {};
+// CONCATENATED MODULE: ./core/getBase64Image.ts
+var getBase64Image = function getBase64Image(img, callback) {
+  var reader = new FileReader();
+  reader.addEventListener('load', function () {
+    return callback(reader.result);
+  });
+  reader.readAsDataURL(img);
+};
+// CONCATENATED MODULE: ./core/getImageUrl.ts
+var getImageUrl = function getImageUrl(imageUrl, imageType) {
+  return imageUrl ? imageUrl.indexOf('.jpg') === -1 && imageUrl.indexOf('.png') === -1 ? "".concat(imageUrl, "-").concat(imageType, ".jpg") : imageUrl : '';
+};
+// CONCATENATED MODULE: ./core/constants.ts
+// PENDING / PUBLIC / STOPPED / REJECTED / DELETED
+var newsStatus = {
+  PENDING: 'PENDING',
+  PUBLIC: 'PUBLIC',
+  STOPPED: 'STOPPED',
+  REJECTED: 'REJECTED',
+  DELETED: 'DELETED'
+};
+var newsTypeConst = {
+  SELL: 'SELL',
+  LEASE: 'LEASE',
+  BUY: 'BUY',
+  RENT: 'RENT'
+};
+var notificationState = {
+  READ: 'READ',
+  UNREAD: 'UNREAD'
+};
+var reportResults = {
+  SKIP: 'SKIP',
+  DELETE: 'DELETE'
+};
+var priceRanges = [{
+  min: 100000000,
+  max: 500000000
+}, {
+  min: 500000000,
+  max: 1000000000
+}, {
+  min: 1000000000,
+  max: 5000000000
+}, {
+  min: 5000000000,
+  max: 10000000000
+}, {
+  min: 10000000000,
+  max: 50000000000
+}];
+var newsStates = [{
+  value: 'NEW',
+  label: 'Mới'
+}, {
+  value: 'USED',
+  label: 'Nhập bãi'
+}, {
+  value: 'LIQUIDATE',
+  label: 'Thanh lý'
+}];
+var newsTypes = [{
+  value: 'SELL',
+  label: 'Cần bán'
+}, {
+  value: 'LEASE',
+  label: 'Cần cho thuê'
+}, {
+  value: 'BUY',
+  label: 'Cần mua'
+}, {
+  value: 'RENT',
+  label: 'Cần thuê'
+}];
+var storePackages = [{
+  label: '1 tháng',
+  value: 86400 * 30 * 1000,
+  price: 100000,
+  imageUrl: ''
+}, {
+  label: '3 tháng',
+  value: 3 * 86400 * 30 * 1000,
+  price: 300000,
+  imageUrl: '/static/images/tag30k.png'
+}, {
+  label: '6 tháng',
+  value: 6 * 86400 * 30 * 1000,
+  price: 600000,
+  imageUrl: '/static/images/tag50k.png'
+}, {
+  label: '12 tháng',
+  value: 12 * 86400 * 30 * 1000,
+  price: 1200000,
+  imageUrl: '/static/images/tag990k.png'
+}];
+var paymentMethods = [{
+  label: 'Thẻ ngân hàng nội địa',
+  value: 'domesticCard',
+  imageUrl: ['/static/images/credit-card.png']
+}, {
+  label: 'Thẻ quốc tế',
+  value: 'globalCard',
+  imageUrl: ['/static/images/Visa.png', '/static/images/Mastercard.png']
+}, {
+  label: 'Ví momo',
+  value: 'momoWallet',
+  imageUrl: ['/static/images/momo.png']
+}];
+var reportReasons = [{
+  label: 'Báo tin đã bán',
+  value: 'SOLD'
+}, {
+  label: 'Báo tin vi phạm',
+  value: 'VIOLATE'
+}, {
+  label: 'Báo tin đăng sai',
+  value: 'WRONG_INFO'
+}];
+// EXTERNAL MODULE: ./services/index.ts + 1 modules
+var services = __webpack_require__(5);
+
+// CONCATENATED MODULE: ./core/checkSubdomain.ts
+
+
+function checkSubdomain_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function checkSubdomain_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { checkSubdomain_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { checkSubdomain_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+var checkSubdomain =
+/*#__PURE__*/
+function () {
+  var _ref = checkSubdomain_asyncToGenerator(
+  /*#__PURE__*/
+  regenerator_default.a.mark(function _callee(req, res, next) {
+    var shopDomain, authUserId, serviceProxies, shopResult, allowPaths;
+    return regenerator_default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            if (!(req.subdomains && req.subdomains.length > 0)) {
+              _context.next = 15;
+              break;
+            }
+
+            shopDomain = '';
+
+            if (config["a" /* config */].url.main === "https://timmay.vn" && req.subdomains[0] !== "www") {
+              shopDomain = req.subdomains[0];
+            } else if (config["a" /* config */].url.main === "https://test.timmay.vn" && req.subdomains[1] !== "www") {
+              shopDomain = req.subdomains[1];
+            } else if (config["a" /* config */].url.main.indexOf("techkids.io") > -1 && req.subdomains[1] !== "www") {
+              shopDomain = req.subdomains[1];
+            } else if (req.subdomains[0] !== "www") {
+              shopDomain = req.subdomains[0];
+            }
+
+            if (!shopDomain) {
+              _context.next = 12;
+              break;
+            }
+
+            authUserId = req.authUser ? req.authUser.id : '';
+            serviceProxies = Object(services["a" /* getServiceProxy */])();
+            _context.next = 8;
+            return serviceProxies.findShopByDomain(shopDomain, authUserId);
+
+          case 8:
+            shopResult = _context.sent;
+
+            if (shopResult) {
+              req.shopInfo = shopResult;
+              allowPaths = ['/thong-tin-cua-hang', '/bai-dang-cua-hang'];
+
+              if (allowPaths.indexOf(req.url) > -1 || req.url.indexOf('/bai-dang-cua-hang') > -1) {
+                next();
+              } else {
+                res.redirect('/thong-tin-cua-hang');
+              }
+            } else {
+              // custom 404 page
+              res.redirect("".concat(config["a" /* config */].url.main, "/not-found"));
+            }
+
+            _context.next = 13;
+            break;
+
+          case 12:
+            next();
+
+          case 13:
+            _context.next = 16;
+            break;
+
+          case 15:
+            next();
+
+          case 16:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function checkSubdomain(_x, _x2, _x3) {
+    return _ref.apply(this, arguments);
+  };
+}();
+// CONCATENATED MODULE: ./core/checkFollowStatus.ts
+var checkFollowStatus = function checkFollowStatus(profileState, item) {
+  return profileState && profileState.authUser && item && item.followBy.indexOf(profileState.authUser.id) !== -1 ? true : false;
+};
+// CONCATENATED MODULE: ./core/getShopUrl.ts
+
+var getShopUrl_getShopUrl = function getShopUrl(shopDomain) {
+  return config["a" /* config */].url.shop.replace('shopDomain', shopDomain);
+};
+// CONCATENATED MODULE: ./core/generateSearchUrl.ts
+var generateSearchUrl = function generateSearchUrl(filters) {
+  var filterValues = {};
+
+  if (filters.keyword) {
+    filterValues.keyword = filters.keyword;
+  }
+
+  if (Number(filters.minPrice)) {
+    filterValues.minPrice = Number(filters.minPrice);
+  }
+
+  if (Number(filters.maxPrice)) {
+    filterValues.maxPrice = Number(filters.maxPrice);
+  }
+
+  if (Number(filters.minWeight)) {
+    filterValues.minWeight = Number(filters.minWeight);
+  }
+
+  if (Number(filters.maxWeight)) {
+    filterValues.maxWeight = Number(filters.maxWeight);
+  }
+
+  if (filters.state) {
+    filterValues.state = filters.state;
+  }
+
+  if (filters.newsType) {
+    filterValues.newsType = filters.newsType;
+  }
+
+  if (filters.category) {
+    filterValues.category = filters.category;
+  }
+
+  if (filters.brand) {
+    filterValues.brand = filters.brand;
+  }
+
+  if (filters.model) {
+    filterValues.model = filters.model;
+  }
+
+  if (filters.location) {
+    filterValues.location = filters.location;
+  }
+
+  return Object.keys(filterValues).sort().map(function (item) {
+    return "".concat(item, "=").concat(filterValues[item]);
+  }).join('&');
+};
+// CONCATENATED MODULE: ./core/generateFilters.ts
+var generateFilters = function generateFilters(query, metadataState) {
+  var availableFilters = {};
+
+  if (query.keyword) {
+    availableFilters.keyword = query.keyword;
+  }
+
+  if (query.minPrice) {
+    availableFilters.minPrice = query.minPrice;
+  }
+
+  if (query.maxPrice) {
+    availableFilters.maxPrice = query.maxPrice;
+  }
+
+  if (query.minWeight) {
+    availableFilters.weightRange = metadataState.weightRanges.filter(function (item) {
+      return item.min === Number(query.minWeight);
+    })[0]._id;
+  }
+
+  if (query.state) {
+    availableFilters.state = query.state;
+  }
+
+  if (query.newsType) {
+    availableFilters.newsType = query.newsType;
+  }
+
+  if (query.category) {
+    availableFilters.category = metadataState.categories.filter(function (item) {
+      return item.slug === query.category;
+    })[0]._id;
+  }
+
+  if (query.brand) {
+    availableFilters.brand = metadataState.brands.filter(function (item) {
+      return item.slug === query.brand;
+    })[0]._id;
+  }
+
+  if (query.location) {
+    availableFilters.location = metadataState.provinces.filter(function (item) {
+      return item.slug === query.location;
+    })[0]._id;
+  }
+
+  return availableFilters;
+};
+// EXTERNAL MODULE: external "uuid"
+var external_uuid_ = __webpack_require__(65);
+
+// CONCATENATED MODULE: ./core/generateRecentViewedKey.ts
+
+
+var recentViewedCookie = 'recent_viewed';
+var generateRecentViewedKey_generateRecentViewedKey = function generateRecentViewedKey(req, res, next) {
+  if (!req.cookies[recentViewedCookie]) {
+    var recentViewedKey = Object(external_uuid_["v4"])();
+    res.cookie(recentViewedCookie, recentViewedKey, {
+      domain: config["a" /* config */].cookies.domain
+    });
+  }
+
+  next();
+};
+// EXTERNAL MODULE: ./core/checkIsMobile.ts
+var checkIsMobile = __webpack_require__(67);
+
+// CONCATENATED MODULE: ./core/convertVietnamese.ts
+var convertVietnamese = function convertVietnamese(str) {
+  var result = str.toLowerCase();
+  result = result.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/gi, 'a');
+  result = result.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/gi, 'e');
+  result = result.replace(/ì|í|ị|ỉ|ĩ/gi, 'i');
+  result = result.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/gi, 'o');
+  result = result.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/gi, 'u');
+  result = result.replace(/ỳ|ý|ỵ|ỷ|ỹ/gi, 'y');
+  result = result.replace(/đ/gi, 'd');
+  result = result.replace(/!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/gi, ' ');
+  result = result.replace(/ + /gi, ' ');
+  result = result.trim();
+  return result;
+};
+// CONCATENATED MODULE: ./modules/admin/menuConfigs.ts
+var appMenuConfigs = {
+  name: 'appManagement',
+  icon: 'qrcode',
+  items: [{
+    name: 'reportsManagement',
+    path: '/quan-ly/bao-cao-vi-pham',
+    permission: '',
+    children: []
+  }, {
+    name: 'brandsManagement',
+    path: '/quan-ly/danh-sach-hang',
+    permission: '',
+    children: []
+  }, {
+    name: 'categoriesManagement',
+    path: '/quan-ly/chung-loai-may',
+    permission: '',
+    children: []
+  }, {
+    name: 'modelsManagement',
+    path: '/quan-ly/danh-sach-models',
+    permission: '',
+    children: []
+  }, {
+    name: 'weightRangesManagement',
+    path: '/quan-ly/khoang-trong-luong',
+    permission: '',
+    children: []
+  }, {
+    name: 'rentalPeriodsManagement',
+    path: '/quan-ly/thoi-gian-thue',
+    permission: '',
+    children: []
+  }, {
+    name: 'featureBrandsManagement',
+    path: '/quan-ly/hang-hop-tac',
+    permission: '',
+    children: []
+  }, {
+    name: 'adsenseManagement',
+    path: '/quan-ly/quang-cao',
+    permission: '',
+    children: []
+  }, {
+    name: 'uploadExcelFile',
+    path: '/quan-ly/dang-tin',
+    permission: '',
+    children: []
+  }]
+};
+var authMenuConfigs = {
+  name: 'authManagement',
+  icon: 'user',
+  items: [{
+    name: 'usersManagement',
+    path: '/quan-ly/nguoi-dung',
+    permission: '',
+    children: []
+  }]
+};
+var statisticsMenuConfigs = {
+  name: 'statisticsManagement',
+  icon: 'rise',
+  items: [{
+    name: 'newsStatistics',
+    path: '/quan-ly/thong-ke-tin-bai',
+    permission: '',
+    children: []
+  }]
+};
+// CONCATENATED MODULE: ./core/getMenuConfigs.ts
+
+var getMenuConfigs_getMenuConfigs = function getMenuConfigs() {
+  return [authMenuConfigs, appMenuConfigs, statisticsMenuConfigs];
+};
+// CONCATENATED MODULE: ./core/checkPermission.ts
+var checkPermission = function checkPermission(authUser, requiredPermission) {
+  if (!requiredPermission) {
+    return true;
+  }
+
+  return requiredPermission && authUser && authUser.permissions && authUser.permissions.indexOf(requiredPermission) > -1;
+};
+// CONCATENATED MODULE: ./core/index.ts
+/* concated harmony reexport initializeFirebaseApp */__webpack_require__.d(__webpack_exports__, "j", function() { return firebase_initializeFirebaseApp; });
+/* unused concated harmony import setCookie */
+/* concated harmony reexport formatMoney */__webpack_require__.d(__webpack_exports__, "c", function() { return formatMoney; });
+/* concated harmony reexport submitLoginForm */__webpack_require__.d(__webpack_exports__, "t", function() { return submitLoginForm; });
+/* concated harmony reexport validateField */__webpack_require__.d(__webpack_exports__, "u", function() { return validateField; });
+/* unused concated harmony import clearCookie */
+/* unused concated harmony import metadata */
+/* concated harmony reexport getBase64Image */__webpack_require__.d(__webpack_exports__, "f", function() { return getBase64Image; });
+/* concated harmony reexport getImageUrl */__webpack_require__.d(__webpack_exports__, "g", function() { return getImageUrl; });
+/* unused concated harmony import newsStatus */
+/* concated harmony reexport newsTypeConst */__webpack_require__.d(__webpack_exports__, "l", function() { return newsTypeConst; });
+/* concated harmony reexport notificationState */__webpack_require__.d(__webpack_exports__, "n", function() { return notificationState; });
+/* concated harmony reexport reportResults */__webpack_require__.d(__webpack_exports__, "r", function() { return reportResults; });
+/* concated harmony reexport priceRanges */__webpack_require__.d(__webpack_exports__, "p", function() { return priceRanges; });
+/* concated harmony reexport newsStates */__webpack_require__.d(__webpack_exports__, "k", function() { return newsStates; });
+/* concated harmony reexport newsTypes */__webpack_require__.d(__webpack_exports__, "m", function() { return newsTypes; });
+/* concated harmony reexport storePackages */__webpack_require__.d(__webpack_exports__, "s", function() { return storePackages; });
+/* concated harmony reexport paymentMethods */__webpack_require__.d(__webpack_exports__, "o", function() { return paymentMethods; });
+/* concated harmony reexport reportReasons */__webpack_require__.d(__webpack_exports__, "q", function() { return reportReasons; });
+/* unused concated harmony import checkSubdomain */
+/* unused concated harmony import checkFollowStatus */
+/* concated harmony reexport getShopUrl */__webpack_require__.d(__webpack_exports__, "i", function() { return getShopUrl_getShopUrl; });
+/* concated harmony reexport generateSearchUrl */__webpack_require__.d(__webpack_exports__, "e", function() { return generateSearchUrl; });
+/* concated harmony reexport generateFilters */__webpack_require__.d(__webpack_exports__, "d", function() { return generateFilters; });
+/* unused concated harmony import generateRecentViewedKey */
+/* unused concated harmony import isMobile */
+/* concated harmony reexport convertVietnamese */__webpack_require__.d(__webpack_exports__, "b", function() { return convertVietnamese; });
+/* concated harmony reexport getMenuConfigs */__webpack_require__.d(__webpack_exports__, "h", function() { return getMenuConfigs_getMenuConfigs; });
+/* concated harmony reexport checkPermission */__webpack_require__.d(__webpack_exports__, "a", function() { return checkPermission; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "firebase/auth"
+var auth_ = __webpack_require__(21);
+
+// CONCATENATED MODULE: ./services/service-proxies.ts
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _wrapNativeSuper(Class) { var _cache = typeof Map === "function" ? new Map() : undefined; _wrapNativeSuper = function _wrapNativeSuper(Class) { if (Class === null || !_isNativeFunction(Class)) return Class; if (typeof Class !== "function") { throw new TypeError("Super expression must either be null or a function"); } if (typeof _cache !== "undefined") { if (_cache.has(Class)) return _cache.get(Class); _cache.set(Class, Wrapper); } function Wrapper() { return _construct(Class, arguments, _getPrototypeOf(this).constructor); } Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } }); return _setPrototypeOf(Wrapper, Class); }; return _wrapNativeSuper(Class); }
+
+function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+
+function _isNativeFunction(fn) { return Function.toString.call(fn).indexOf("[native code]") !== -1; }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+/* tslint:disable */
+//----------------------
+// <auto-generated>
+//     Generated using the NSwag toolchain v12.0.5.0 (NJsonSchema v9.13.2.0 (Newtonsoft.Json v11.0.0.0)) (http://NSwag.org)
+// </auto-generated>
+//----------------------
+// ReSharper disable InconsistentNaming
+var ServiceProxy =
+/*#__PURE__*/
+function () {
+  function ServiceProxy(baseUrl, http) {
+    _classCallCheck(this, ServiceProxy);
+
+    _defineProperty(this, "http", void 0);
+
+    _defineProperty(this, "baseUrl", void 0);
+
+    _defineProperty(this, "jsonParseReviver", undefined);
+
+    this.http = http ? http : window;
+    this.baseUrl = baseUrl ? baseUrl : "http://localhost:3000/api";
+  }
+  /**
+   * Register user
+   * @param body (optional) 
+   * @return successful operation
+   */
+
+
+  _createClass(ServiceProxy, [{
+    key: "registerUser",
+    value: function registerUser(body) {
+      var _this = this;
+
+      var url_ = this.baseUrl + "/auth";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this.processRegisterUser(_response);
+      });
+    }
+  }, {
+    key: "processRegisterUser",
+    value: function processRegisterUser(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find permissions list of all modules
+     * @return successful operation
+     */
+
+  }, {
+    key: "findPermissions",
+    value: function findPermissions() {
+      var _this2 = this;
+
+      var url_ = this.baseUrl + "/permissions";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this2.processFindPermissions(_response);
+      });
+    }
+  }, {
+    key: "processFindPermissions",
+    value: function processFindPermissions(response) {
+      var _this3 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this3.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Check role name exist
+     * @param roleName roleName
+     * @return successful operation
+     */
+
+  }, {
+    key: "checkRoleNameExist",
+    value: function checkRoleNameExist(roleName) {
+      var _this4 = this;
+
+      var url_ = this.baseUrl + "/roles/customs/check-name-exist/{roleName}";
+      if (roleName === undefined || roleName === null) throw new Error("The parameter 'roleName' must be defined.");
+      url_ = url_.replace("{roleName}", encodeURIComponent("" + roleName));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this4.processCheckRoleNameExist(_response);
+      });
+    }
+  }, {
+    key: "processCheckRoleNameExist",
+    value: function processCheckRoleNameExist(response) {
+      var _this5 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this5.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find all roles
+     * @return successful operation
+     */
+
+  }, {
+    key: "getAllRoles",
+    value: function getAllRoles() {
+      var _this6 = this;
+
+      var url_ = this.baseUrl + "/roles/customs/get-all";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this6.processGetAllRoles(_response);
+      });
+    }
+  }, {
+    key: "processGetAllRoles",
+    value: function processGetAllRoles(response) {
+      var _this7 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this7.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find role by id
+     * @param roleId roleId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findRoleById",
+    value: function findRoleById(roleId) {
+      var _this8 = this;
+
+      var url_ = this.baseUrl + "/roles/{roleId}";
+      if (roleId === undefined || roleId === null) throw new Error("The parameter 'roleId' must be defined.");
+      url_ = url_.replace("{roleId}", encodeURIComponent("" + roleId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this8.processFindRoleById(_response);
+      });
+    }
+  }, {
+    key: "processFindRoleById",
+    value: function processFindRoleById(response) {
+      var _this9 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this9.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update role
+     * @param roleId roleId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateRole",
+    value: function updateRole(roleId, body) {
+      var _this10 = this;
+
+      var url_ = this.baseUrl + "/roles/{roleId}";
+      if (roleId === undefined || roleId === null) throw new Error("The parameter 'roleId' must be defined.");
+      url_ = url_.replace("{roleId}", encodeURIComponent("" + roleId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this10.processUpdateRole(_response);
+      });
+    }
+  }, {
+    key: "processUpdateRole",
+    value: function processUpdateRole(response) {
+      var _this11 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this11.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find roles
+     * @param search (optional) search
+     * @param permissions (optional) filter by permissions
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findRoles",
+    value: function findRoles(search, permissions, first, sortBy, before, after) {
+      var _this12 = this;
+
+      var url_ = this.baseUrl + "/roles?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (permissions === null) throw new Error("The parameter 'permissions' cannot be null.");else if (permissions !== undefined) permissions && permissions.forEach(function (item) {
+        url_ += "permissions=" + encodeURIComponent("" + item) + "&";
+      });
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this12.processFindRoles(_response);
+      });
+    }
+  }, {
+    key: "processFindRoles",
+    value: function processFindRoles(response) {
+      var _this13 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this13.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create role
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createRole",
+    value: function createRole(body) {
+      var _this14 = this;
+
+      var url_ = this.baseUrl + "/roles";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this14.processCreateRole(_response);
+      });
+    }
+  }, {
+    key: "processCreateRole",
+    value: function processCreateRole(response) {
+      var _this15 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this15.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find profile
+     * @return successful operation
+     */
+
+  }, {
+    key: "findProfile",
+    value: function findProfile() {
+      var _this16 = this;
+
+      var url_ = this.baseUrl + "/profiles";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this16.processFindProfile(_response);
+      });
+    }
+  }, {
+    key: "processFindProfile",
+    value: function processFindProfile(response) {
+      var _this17 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this17.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find use profile for guess view
+     * @param userId userId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findPublicProfile",
+    value: function findPublicProfile(userId) {
+      var _this18 = this;
+
+      var url_ = this.baseUrl + "/profiles/{userId}";
+      if (userId === undefined || userId === null) throw new Error("The parameter 'userId' must be defined.");
+      url_ = url_.replace("{userId}", encodeURIComponent("" + userId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this18.processFindPublicProfile(_response);
+      });
+    }
+  }, {
+    key: "processFindPublicProfile",
+    value: function processFindPublicProfile(response) {
+      var _this19 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this19.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update profile
+     * @param userId userId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateProfile",
+    value: function updateProfile(userId, body) {
+      var _this20 = this;
+
+      var url_ = this.baseUrl + "/profiles/{userId}";
+      if (userId === undefined || userId === null) throw new Error("The parameter 'userId' must be defined.");
+      url_ = url_.replace("{userId}", encodeURIComponent("" + userId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this20.processUpdateProfile(_response);
+      });
+    }
+  }, {
+    key: "processUpdateProfile",
+    value: function processUpdateProfile(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find users
+     * @param search (optional) search
+     * @param roles (optional) filter by roles
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findUsers",
+    value: function findUsers(search, roles, first, sortBy, before, after) {
+      var _this21 = this;
+
+      var url_ = this.baseUrl + "/users?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (roles === null) throw new Error("The parameter 'roles' cannot be null.");else if (roles !== undefined) roles && roles.forEach(function (item) {
+        url_ += "roles=" + encodeURIComponent("" + item) + "&";
+      });
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this21.processFindUsers(_response);
+      });
+    }
+  }, {
+    key: "processFindUsers",
+    value: function processFindUsers(response) {
+      var _this22 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this22.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create user
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createUser",
+    value: function createUser(body) {
+      var _this23 = this;
+
+      var url_ = this.baseUrl + "/users";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this23.processCreateUser(_response);
+      });
+    }
+  }, {
+    key: "processCreateUser",
+    value: function processCreateUser(response) {
+      var _this24 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this24.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this24.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Check phone number exist
+     * @param phoneNo phoneNo
+     * @return successful operation
+     */
+
+  }, {
+    key: "checkPhoneNoExist",
+    value: function checkPhoneNoExist(phoneNo) {
+      var _this25 = this;
+
+      var url_ = this.baseUrl + "/users/customs/check-phone-number-exist/{phoneNo}";
+      if (phoneNo === undefined || phoneNo === null) throw new Error("The parameter 'phoneNo' must be defined.");
+      url_ = url_.replace("{phoneNo}", encodeURIComponent("" + phoneNo));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this25.processCheckPhoneNoExist(_response);
+      });
+    }
+  }, {
+    key: "processCheckPhoneNoExist",
+    value: function processCheckPhoneNoExist(response) {
+      var _this26 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this26.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Check email exist
+     * @param email email
+     * @return successful operation
+     */
+
+  }, {
+    key: "checkEmailExist",
+    value: function checkEmailExist(email) {
+      var _this27 = this;
+
+      var url_ = this.baseUrl + "/users/customs/check-email-exist/{email}";
+      if (email === undefined || email === null) throw new Error("The parameter 'email' must be defined.");
+      url_ = url_.replace("{email}", encodeURIComponent("" + email));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this27.processCheckEmailExist(_response);
+      });
+    }
+  }, {
+    key: "processCheckEmailExist",
+    value: function processCheckEmailExist(response) {
+      var _this28 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this28.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find user by id
+     * @param userId userId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findUserById",
+    value: function findUserById(userId) {
+      var _this29 = this;
+
+      var url_ = this.baseUrl + "/users/{userId}";
+      if (userId === undefined || userId === null) throw new Error("The parameter 'userId' must be defined.");
+      url_ = url_.replace("{userId}", encodeURIComponent("" + userId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this29.processFindUserById(_response);
+      });
+    }
+  }, {
+    key: "processFindUserById",
+    value: function processFindUserById(response) {
+      var _this30 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this30.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update user
+     * @param userId userId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateUser",
+    value: function updateUser(userId, body) {
+      var _this31 = this;
+
+      var url_ = this.baseUrl + "/users/{userId}";
+      if (userId === undefined || userId === null) throw new Error("The parameter 'userId' must be defined.");
+      url_ = url_.replace("{userId}", encodeURIComponent("" + userId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this31.processUpdateUser(_response);
+      });
+    }
+  }, {
+    key: "processUpdateUser",
+    value: function processUpdateUser(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * update adsense
+     * @param adsenseId adsenseId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateAdsense",
+    value: function updateAdsense(adsenseId, body) {
+      var _this32 = this;
+
+      var url_ = this.baseUrl + "/adsense/{adsenseId}";
+      if (adsenseId === undefined || adsenseId === null) throw new Error("The parameter 'adsenseId' must be defined.");
+      url_ = url_.replace("{adsenseId}", encodeURIComponent("" + adsenseId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this32.processUpdateAdsense(_response);
+      });
+    }
+  }, {
+    key: "processUpdateAdsense",
+    value: function processUpdateAdsense(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create adsense
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createAdsense",
+    value: function createAdsense(body) {
+      var _this33 = this;
+
+      var url_ = this.baseUrl + "/adsense";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this33.processCreateAdsense(_response);
+      });
+    }
+  }, {
+    key: "processCreateAdsense",
+    value: function processCreateAdsense(response) {
+      var _this34 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this34.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this34.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get adsense
+     * @param first limit size
+     * @param sortBy order by
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "getAdsense",
+    value: function getAdsense(first, sortBy, before, after) {
+      var _this35 = this;
+
+      var url_ = this.baseUrl + "/adsense?";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this35.processGetAdsense(_response);
+      });
+    }
+  }, {
+    key: "processGetAdsense",
+    value: function processGetAdsense(response) {
+      var _this36 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this36.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * update feature brand
+     * @param featureBrandId featureBrandId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateFeatureBrand",
+    value: function updateFeatureBrand(featureBrandId, body) {
+      var _this37 = this;
+
+      var url_ = this.baseUrl + "/feature-brands/{featureBrandId}";
+      if (featureBrandId === undefined || featureBrandId === null) throw new Error("The parameter 'featureBrandId' must be defined.");
+      url_ = url_.replace("{featureBrandId}", encodeURIComponent("" + featureBrandId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this37.processUpdateFeatureBrand(_response);
+      });
+    }
+  }, {
+    key: "processUpdateFeatureBrand",
+    value: function processUpdateFeatureBrand(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get feature brands
+     * @param first limit size
+     * @param sortBy order by
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "getFeatureBrands",
+    value: function getFeatureBrands(first, sortBy, before, after) {
+      var _this38 = this;
+
+      var url_ = this.baseUrl + "/feature-brands?";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this38.processGetFeatureBrands(_response);
+      });
+    }
+  }, {
+    key: "processGetFeatureBrands",
+    value: function processGetFeatureBrands(response) {
+      var _this39 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this39.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create feature brand for ads
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createFeatureBrand",
+    value: function createFeatureBrand(body) {
+      var _this40 = this;
+
+      var url_ = this.baseUrl + "/feature-brands";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this40.processCreateFeatureBrand(_response);
+      });
+    }
+  }, {
+    key: "processCreateFeatureBrand",
+    value: function processCreateFeatureBrand(response) {
+      var _this41 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this41.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this41.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update rental period
+     * @param rentalPeriodId rental period id
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateRentalPeriod",
+    value: function updateRentalPeriod(rentalPeriodId, body) {
+      var _this42 = this;
+
+      var url_ = this.baseUrl + "/rental-periods/{rentalPeriodId}";
+      if (rentalPeriodId === undefined || rentalPeriodId === null) throw new Error("The parameter 'rentalPeriodId' must be defined.");
+      url_ = url_.replace("{rentalPeriodId}", encodeURIComponent("" + rentalPeriodId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this42.processUpdateRentalPeriod(_response);
+      });
+    }
+  }, {
+    key: "processUpdateRentalPeriod",
+    value: function processUpdateRentalPeriod(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create rental period item
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createRentalPeriod",
+    value: function createRentalPeriod(body) {
+      var _this43 = this;
+
+      var url_ = this.baseUrl + "/rental-periods";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this43.processCreateRentalPeriod(_response);
+      });
+    }
+  }, {
+    key: "processCreateRentalPeriod",
+    value: function processCreateRentalPeriod(response) {
+      var _this44 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this44.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this44.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get rental periods
+     * @return successful operation
+     */
+
+  }, {
+    key: "getAllRentalPeriods",
+    value: function getAllRentalPeriods() {
+      var _this45 = this;
+
+      var url_ = this.baseUrl + "/rental-periods/customs/get-all";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this45.processGetAllRentalPeriods(_response);
+      });
+    }
+  }, {
+    key: "processGetAllRentalPeriods",
+    value: function processGetAllRentalPeriods(response) {
+      var _this46 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this46.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update weight range
+     * @param weightRangeId weight range Id
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateWeightRange",
+    value: function updateWeightRange(weightRangeId, body) {
+      var _this47 = this;
+
+      var url_ = this.baseUrl + "/weight-ranges/{weightRangeId}";
+      if (weightRangeId === undefined || weightRangeId === null) throw new Error("The parameter 'weightRangeId' must be defined.");
+      url_ = url_.replace("{weightRangeId}", encodeURIComponent("" + weightRangeId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this47.processUpdateWeightRange(_response);
+      });
+    }
+  }, {
+    key: "processUpdateWeightRange",
+    value: function processUpdateWeightRange(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create weight range item
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createWeightRange",
+    value: function createWeightRange(body) {
+      var _this48 = this;
+
+      var url_ = this.baseUrl + "/weight-ranges";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this48.processCreateWeightRange(_response);
+      });
+    }
+  }, {
+    key: "processCreateWeightRange",
+    value: function processCreateWeightRange(response) {
+      var _this49 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this49.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this49.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get weight ranges
+     * @return successful operation
+     */
+
+  }, {
+    key: "getAllWeightRanges",
+    value: function getAllWeightRanges() {
+      var _this50 = this;
+
+      var url_ = this.baseUrl + "/weight-ranges/customs/get-all";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this50.processGetAllWeightRanges(_response);
+      });
+    }
+  }, {
+    key: "processGetAllWeightRanges",
+    value: function processGetAllWeightRanges(response) {
+      var _this51 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this51.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get common search keywords
+     * @param first limit size
+     * @param sortBy order by
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "getCommonKeywords",
+    value: function getCommonKeywords(first, sortBy, before, after) {
+      var _this52 = this;
+
+      var url_ = this.baseUrl + "/common-keywords?";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this52.processGetCommonKeywords(_response);
+      });
+    }
+  }, {
+    key: "processGetCommonKeywords",
+    value: function processGetCommonKeywords(response) {
+      var _this53 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this53.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create recent viewed item
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createRecentViewed",
+    value: function createRecentViewed(body) {
+      var _this54 = this;
+
+      var url_ = this.baseUrl + "/recent-viewed";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this54.processCreateRecentViewed(_response);
+      });
+    }
+  }, {
+    key: "processCreateRecentViewed",
+    value: function processCreateRecentViewed(response) {
+      var _this55 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this55.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this55.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Get recent viewed items by users or uuid key
+     * @param first limit size
+     * @param sortBy order by
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "getRecentViewed",
+    value: function getRecentViewed(first, sortBy, before, after) {
+      var _this56 = this;
+
+      var url_ = this.baseUrl + "/recent-viewed?";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this56.processGetRecentViewed(_response);
+      });
+    }
+  }, {
+    key: "processGetRecentViewed",
+    value: function processGetRecentViewed(response) {
+      var _this57 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this57.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Search news most follow
+     * @param shopId (optional) shop Id
+     * @param first limit size
+     * @param sortBy order by
+     * @param otherSortBy other order by
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "searchNewsMostFollow",
+    value: function searchNewsMostFollow(shopId, first, sortBy, otherSortBy, before, after) {
+      var _this58 = this;
+
+      var url_ = this.baseUrl + "/search-news-most-follow?";
+      if (shopId === null) throw new Error("The parameter 'shopId' cannot be null.");else if (shopId !== undefined) url_ += "shopId=" + encodeURIComponent("" + shopId) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (otherSortBy === undefined || otherSortBy === null) throw new Error("The parameter 'otherSortBy' must be defined and cannot be null.");else url_ += "otherSortBy=" + encodeURIComponent("" + otherSortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this58.processSearchNewsMostFollow(_response);
+      });
+    }
+  }, {
+    key: "processSearchNewsMostFollow",
+    value: function processSearchNewsMostFollow(response) {
+      var _this59 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this59.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Count unread notification
+     * @param ownerId owner id
+     * @return successful operation
+     */
+
+  }, {
+    key: "countUnreadNotifications",
+    value: function countUnreadNotifications(ownerId) {
+      var _this60 = this;
+
+      var url_ = this.baseUrl + "/notifications/{ownerId}";
+      if (ownerId === undefined || ownerId === null) throw new Error("The parameter 'ownerId' must be defined.");
+      url_ = url_.replace("{ownerId}", encodeURIComponent("" + ownerId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this60.processCountUnreadNotifications(_response);
+      });
+    }
+  }, {
+    key: "processCountUnreadNotifications",
+    value: function processCountUnreadNotifications(response) {
+      var _this61 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this61.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Read notifications
+     * @param ownerId owner id
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "readNotifications",
+    value: function readNotifications(ownerId, body) {
+      var _this62 = this;
+
+      var url_ = this.baseUrl + "/notifications/{ownerId}";
+      if (ownerId === undefined || ownerId === null) throw new Error("The parameter 'ownerId' must be defined.");
+      url_ = url_.replace("{ownerId}", encodeURIComponent("" + ownerId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this62.processReadNotifications(_response);
+      });
+    }
+  }, {
+    key: "processReadNotifications",
+    value: function processReadNotifications(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find notifications
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findNotifications",
+    value: function findNotifications(first, sortBy, before, after) {
+      var _this63 = this;
+
+      var url_ = this.baseUrl + "/notifications?";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this63.processFindNotifications(_response);
+      });
+    }
+  }, {
+    key: "processFindNotifications",
+    value: function processFindNotifications(response) {
+      var _this64 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this64.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update report
+     * @param reportId report id
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateReport",
+    value: function updateReport(reportId, body) {
+      var _this65 = this;
+
+      var url_ = this.baseUrl + "/reports/{reportId}";
+      if (reportId === undefined || reportId === null) throw new Error("The parameter 'reportId' must be defined.");
+      url_ = url_.replace("{reportId}", encodeURIComponent("" + reportId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this65.processUpdateReport(_response);
+      });
+    }
+  }, {
+    key: "processUpdateReport",
+    value: function processUpdateReport(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find report by id
+     * @param reportId report id
+     * @return successful operation
+     */
+
+  }, {
+    key: "findReportById",
+    value: function findReportById(reportId) {
+      var _this66 = this;
+
+      var url_ = this.baseUrl + "/reports/{reportId}";
+      if (reportId === undefined || reportId === null) throw new Error("The parameter 'reportId' must be defined.");
+      url_ = url_.replace("{reportId}", encodeURIComponent("" + reportId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this66.processFindReportById(_response);
+      });
+    }
+  }, {
+    key: "processFindReportById",
+    value: function processFindReportById(response) {
+      var _this67 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this67.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create report
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createReport",
+    value: function createReport(body) {
+      var _this68 = this;
+
+      var url_ = this.baseUrl + "/reports";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this68.processCreateReport(_response);
+      });
+    }
+  }, {
+    key: "processCreateReport",
+    value: function processCreateReport(response) {
+      var _this69 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this69.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this69.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find reports
+     * @param search (optional) state filter
+     * @param state (optional) state filter
+     * @param reason (optional) reason filter
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findReports",
+    value: function findReports(search, state, reason, first, sortBy, before, after) {
+      var _this70 = this;
+
+      var url_ = this.baseUrl + "/reports?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (state === null) throw new Error("The parameter 'state' cannot be null.");else if (state !== undefined) url_ += "state=" + encodeURIComponent("" + state) + "&";
+      if (reason === null) throw new Error("The parameter 'reason' cannot be null.");else if (reason !== undefined) url_ += "reason=" + encodeURIComponent("" + reason) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this70.processFindReports(_response);
+      });
+    }
+  }, {
+    key: "processFindReports",
+    value: function processFindReports(response) {
+      var _this71 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this71.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find shop by owner id
+     * @param ownerId shop owner id
+     * @return successful operation
+     */
+
+  }, {
+    key: "findShopByOwner",
+    value: function findShopByOwner(ownerId) {
+      var _this72 = this;
+
+      var url_ = this.baseUrl + "/shop/get-by-owner/{ownerId}";
+      if (ownerId === undefined || ownerId === null) throw new Error("The parameter 'ownerId' must be defined.");
+      url_ = url_.replace("{ownerId}", encodeURIComponent("" + ownerId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this72.processFindShopByOwner(_response);
+      });
+    }
+  }, {
+    key: "processFindShopByOwner",
+    value: function processFindShopByOwner(response) {
+      var _this73 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this73.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find shop by id
+     * @param shopDomain shop domain
+     * @param authId (optional) authUserId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findShopByDomain",
+    value: function findShopByDomain(shopDomain, authId) {
+      var _this74 = this;
+
+      var url_ = this.baseUrl + "/shop/get-by-domain/{shopDomain}?";
+      if (shopDomain === undefined || shopDomain === null) throw new Error("The parameter 'shopDomain' must be defined.");
+      url_ = url_.replace("{shopDomain}", encodeURIComponent("" + shopDomain));
+      if (authId === null) throw new Error("The parameter 'authId' cannot be null.");else if (authId !== undefined) url_ += "authId=" + encodeURIComponent("" + authId) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this74.processFindShopByDomain(_response);
+      });
+    }
+  }, {
+    key: "processFindShopByDomain",
+    value: function processFindShopByDomain(response) {
+      var _this75 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this75.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find news by id
+     * @param shopId shop id
+     * @return successful operation
+     */
+
+  }, {
+    key: "findShopById",
+    value: function findShopById(shopId) {
+      var _this76 = this;
+
+      var url_ = this.baseUrl + "/shop/{shopId}";
+      if (shopId === undefined || shopId === null) throw new Error("The parameter 'shopId' must be defined.");
+      url_ = url_.replace("{shopId}", encodeURIComponent("" + shopId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this76.processFindShopById(_response);
+      });
+    }
+  }, {
+    key: "processFindShopById",
+    value: function processFindShopById(response) {
+      var _this77 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this77.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update shop
+     * @param shopId shop id
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateShop",
+    value: function updateShop(shopId, body) {
+      var _this78 = this;
+
+      var url_ = this.baseUrl + "/shop/{shopId}";
+      if (shopId === undefined || shopId === null) throw new Error("The parameter 'shopId' must be defined.");
+      url_ = url_.replace("{shopId}", encodeURIComponent("" + shopId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this78.processUpdateShop(_response);
+      });
+    }
+  }, {
+    key: "processUpdateShop",
+    value: function processUpdateShop(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create shops
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createShop",
+    value: function createShop(body) {
+      var _this79 = this;
+
+      var url_ = this.baseUrl + "/shop";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this79.processCreateShop(_response);
+      });
+    }
+  }, {
+    key: "processCreateShop",
+    value: function processCreateShop(response) {
+      var _this80 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this80.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this80.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find shops
+     * @param search (optional) search query
+     * @param isActive (optional) isActive filter
+     * @param owner (optional) owner filter
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findShops",
+    value: function findShops(search, isActive, owner, first, sortBy, before, after) {
+      var _this81 = this;
+
+      var url_ = this.baseUrl + "/shop?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (isActive === null) throw new Error("The parameter 'isActive' cannot be null.");else if (isActive !== undefined) url_ += "isActive=" + encodeURIComponent("" + isActive) + "&";
+      if (owner === null) throw new Error("The parameter 'owner' cannot be null.");else if (owner !== undefined) url_ += "owner=" + encodeURIComponent("" + owner) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this81.processFindShops(_response);
+      });
+    }
+  }, {
+    key: "processFindShops",
+    value: function processFindShops(response) {
+      var _this82 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this82.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find news by id
+     * @param newsId newsId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findNewsById",
+    value: function findNewsById(newsId) {
+      var _this83 = this;
+
+      var url_ = this.baseUrl + "/news/{newsId}";
+      if (newsId === undefined || newsId === null) throw new Error("The parameter 'newsId' must be defined.");
+      url_ = url_.replace("{newsId}", encodeURIComponent("" + newsId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this83.processFindNewsById(_response);
+      });
+    }
+  }, {
+    key: "processFindNewsById",
+    value: function processFindNewsById(response) {
+      var _this84 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this84.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update news
+     * @param newsId newsId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateNews",
+    value: function updateNews(newsId, body) {
+      var _this85 = this;
+
+      var url_ = this.baseUrl + "/news/{newsId}";
+      if (newsId === undefined || newsId === null) throw new Error("The parameter 'newsId' must be defined.");
+      url_ = url_.replace("{newsId}", encodeURIComponent("" + newsId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this85.processUpdateNews(_response);
+      });
+    }
+  }, {
+    key: "processUpdateNews",
+    value: function processUpdateNews(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find news statistics for admin
+     * @param startDate startDate
+     * @param endDate endDate
+     * @return successful operation
+     */
+
+  }, {
+    key: "findNewsStatisticsInfo",
+    value: function findNewsStatisticsInfo(startDate, endDate) {
+      var _this86 = this;
+
+      var url_ = this.baseUrl + "/news/statistics/info?";
+      if (startDate === undefined || startDate === null) throw new Error("The parameter 'startDate' must be defined and cannot be null.");else url_ += "startDate=" + encodeURIComponent("" + startDate) + "&";
+      if (endDate === undefined || endDate === null) throw new Error("The parameter 'endDate' must be defined and cannot be null.");else url_ += "endDate=" + encodeURIComponent("" + endDate) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this86.processFindNewsStatisticsInfo(_response);
+      });
+    }
+  }, {
+    key: "processFindNewsStatisticsInfo",
+    value: function processFindNewsStatisticsInfo(response) {
+      var _this87 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this87.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find news by owner
+     * @param ownerId ownerId
+     * @param status news status
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findNewsByOwner",
+    value: function findNewsByOwner(ownerId, status, first, sortBy, before, after) {
+      var _this88 = this;
+
+      var url_ = this.baseUrl + "/news/get-by-owner/{ownerId}?";
+      if (ownerId === undefined || ownerId === null) throw new Error("The parameter 'ownerId' must be defined.");
+      url_ = url_.replace("{ownerId}", encodeURIComponent("" + ownerId));
+      if (status === undefined || status === null) throw new Error("The parameter 'status' must be defined and cannot be null.");else url_ += "status=" + encodeURIComponent("" + status) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this88.processFindNewsByOwner(_response);
+      });
+    }
+  }, {
+    key: "processFindNewsByOwner",
+    value: function processFindNewsByOwner(response) {
+      var _this89 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this89.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find news
+     * @param keyword (optional) search keyword
+     * @param state (optional) product state (old/new)
+     * @param priceType (optional) price type (fixed/negociate)
+     * @param minPrice (optional) min price
+     * @param maxPrice (optional) max price
+     * @param newsType (optional) news type (sell/buy/...)
+     * @param owner (optional) news owner id
+     * @param shop (optional) shop id
+     * @param location (optional) location (only by city)
+     * @param type (optional) product type (may ui/may xuc/may dao)
+     * @param brand (optional) product's brand
+     * @param model (optional) product model
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findNews",
+    value: function findNews(keyword, state, priceType, minPrice, maxPrice, newsType, owner, shop, location, type, brand, model, first, sortBy, before, after) {
+      var _this90 = this;
+
+      var url_ = this.baseUrl + "/news?";
+      if (keyword === null) throw new Error("The parameter 'keyword' cannot be null.");else if (keyword !== undefined) url_ += "keyword=" + encodeURIComponent("" + keyword) + "&";
+      if (state === null) throw new Error("The parameter 'state' cannot be null.");else if (state !== undefined) url_ += "state=" + encodeURIComponent("" + state) + "&";
+      if (priceType === null) throw new Error("The parameter 'priceType' cannot be null.");else if (priceType !== undefined) url_ += "priceType=" + encodeURIComponent("" + priceType) + "&";
+      if (minPrice === null) throw new Error("The parameter 'minPrice' cannot be null.");else if (minPrice !== undefined) url_ += "minPrice=" + encodeURIComponent("" + minPrice) + "&";
+      if (maxPrice === null) throw new Error("The parameter 'maxPrice' cannot be null.");else if (maxPrice !== undefined) url_ += "maxPrice=" + encodeURIComponent("" + maxPrice) + "&";
+      if (newsType === null) throw new Error("The parameter 'newsType' cannot be null.");else if (newsType !== undefined) url_ += "newsType=" + encodeURIComponent("" + newsType) + "&";
+      if (owner === null) throw new Error("The parameter 'owner' cannot be null.");else if (owner !== undefined) url_ += "owner=" + encodeURIComponent("" + owner) + "&";
+      if (shop === null) throw new Error("The parameter 'shop' cannot be null.");else if (shop !== undefined) url_ += "shop=" + encodeURIComponent("" + shop) + "&";
+      if (location === null) throw new Error("The parameter 'location' cannot be null.");else if (location !== undefined) url_ += "location=" + encodeURIComponent("" + location) + "&";
+      if (type === null) throw new Error("The parameter 'type' cannot be null.");else if (type !== undefined) url_ += "type=" + encodeURIComponent("" + type) + "&";
+      if (brand === null) throw new Error("The parameter 'brand' cannot be null.");else if (brand !== undefined) url_ += "brand=" + encodeURIComponent("" + brand) + "&";
+      if (model === null) throw new Error("The parameter 'model' cannot be null.");else if (model !== undefined) url_ += "model=" + encodeURIComponent("" + model) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this90.processFindNews(_response);
+      });
+    }
+  }, {
+    key: "processFindNews",
+    value: function processFindNews(response) {
+      var _this91 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this91.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create news
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createNews",
+    value: function createNews(body) {
+      var _this92 = this;
+
+      var url_ = this.baseUrl + "/news";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this92.processCreateNews(_response);
+      });
+    }
+  }, {
+    key: "processCreateNews",
+    value: function processCreateNews(response) {
+      var _this93 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this93.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this93.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find brands
+     * @param search (optional) search query to filter brands
+     * @param first search query to filter brands
+     * @param sortBy search query to filter brands
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findBrands",
+    value: function findBrands(search, first, sortBy, before, after) {
+      var _this94 = this;
+
+      var url_ = this.baseUrl + "/brands?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this94.processFindBrands(_response);
+      });
+    }
+  }, {
+    key: "processFindBrands",
+    value: function processFindBrands(response) {
+      var _this95 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this95.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create brand
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createBrand",
+    value: function createBrand(body) {
+      var _this96 = this;
+
+      var url_ = this.baseUrl + "/brands";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this96.processCreateBrand(_response);
+      });
+    }
+  }, {
+    key: "processCreateBrand",
+    value: function processCreateBrand(response) {
+      var _this97 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this97.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this97.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find brands list
+     * @return successful operation
+     */
+
+  }, {
+    key: "findBrandList",
+    value: function findBrandList() {
+      var _this98 = this;
+
+      var url_ = this.baseUrl + "/brands/customs/find-brand-list";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this98.processFindBrandList(_response);
+      });
+    }
+  }, {
+    key: "processFindBrandList",
+    value: function processFindBrandList(response) {
+      var _this99 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this99.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find brand detail by slug
+     * @param brandSlug brandSlug
+     * @return successful operation
+     */
+
+  }, {
+    key: "findBrandDetail",
+    value: function findBrandDetail(brandSlug) {
+      var _this100 = this;
+
+      var url_ = this.baseUrl + "/brands/customs/find-brand-detail/{brandSlug}";
+      if (brandSlug === undefined || brandSlug === null) throw new Error("The parameter 'brandSlug' must be defined.");
+      url_ = url_.replace("{brandSlug}", encodeURIComponent("" + brandSlug));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this100.processFindBrandDetail(_response);
+      });
+    }
+  }, {
+    key: "processFindBrandDetail",
+    value: function processFindBrandDetail(response) {
+      var _this101 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this101.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find top brands
+     * @return successful operation
+     */
+
+  }, {
+    key: "findTopBrands",
+    value: function findTopBrands() {
+      var _this102 = this;
+
+      var url_ = this.baseUrl + "/brands/customs/find-top-brands";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this102.processFindTopBrands(_response);
+      });
+    }
+  }, {
+    key: "processFindTopBrands",
+    value: function processFindTopBrands(response) {
+      var _this103 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this103.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find brand by id
+     * @param brandId brandId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findBrandById",
+    value: function findBrandById(brandId) {
+      var _this104 = this;
+
+      var url_ = this.baseUrl + "/brands/{brandId}";
+      if (brandId === undefined || brandId === null) throw new Error("The parameter 'brandId' must be defined.");
+      url_ = url_.replace("{brandId}", encodeURIComponent("" + brandId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this104.processFindBrandById(_response);
+      });
+    }
+  }, {
+    key: "processFindBrandById",
+    value: function processFindBrandById(response) {
+      var _this105 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this105.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update brand
+     * @param brandId brandId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateBrand",
+    value: function updateBrand(brandId, body) {
+      var _this106 = this;
+
+      var url_ = this.baseUrl + "/brands/{brandId}";
+      if (brandId === undefined || brandId === null) throw new Error("The parameter 'brandId' must be defined.");
+      url_ = url_.replace("{brandId}", encodeURIComponent("" + brandId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this106.processUpdateBrand(_response);
+      });
+    }
+  }, {
+    key: "processUpdateBrand",
+    value: function processUpdateBrand(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find categories
+     * @return successful operation
+     */
+
+  }, {
+    key: "findCategories",
+    value: function findCategories() {
+      var _this107 = this;
+
+      var url_ = this.baseUrl + "/categories";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this107.processFindCategories(_response);
+      });
+    }
+  }, {
+    key: "processFindCategories",
+    value: function processFindCategories(response) {
+      var _this108 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this108.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create category
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createCategory",
+    value: function createCategory(body) {
+      var _this109 = this;
+
+      var url_ = this.baseUrl + "/categories";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this109.processCreateCategory(_response);
+      });
+    }
+  }, {
+    key: "processCreateCategory",
+    value: function processCreateCategory(response) {
+      var _this110 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this110.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this110.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find category detail by slug
+     * @param categorySlug categorySlug
+     * @return successful operation
+     */
+
+  }, {
+    key: "findCategoryDetail",
+    value: function findCategoryDetail(categorySlug) {
+      var _this111 = this;
+
+      var url_ = this.baseUrl + "/categories/customs/find-category-detail/{categorySlug}";
+      if (categorySlug === undefined || categorySlug === null) throw new Error("The parameter 'categorySlug' must be defined.");
+      url_ = url_.replace("{categorySlug}", encodeURIComponent("" + categorySlug));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this111.processFindCategoryDetail(_response);
+      });
+    }
+  }, {
+    key: "processFindCategoryDetail",
+    value: function processFindCategoryDetail(response) {
+      var _this112 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this112.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find category by id
+     * @param categoryId categoryId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findCategoryById",
+    value: function findCategoryById(categoryId) {
+      var _this113 = this;
+
+      var url_ = this.baseUrl + "/categories/{categoryId}";
+      if (categoryId === undefined || categoryId === null) throw new Error("The parameter 'categoryId' must be defined.");
+      url_ = url_.replace("{categoryId}", encodeURIComponent("" + categoryId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this113.processFindCategoryById(_response);
+      });
+    }
+  }, {
+    key: "processFindCategoryById",
+    value: function processFindCategoryById(response) {
+      var _this114 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this114.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update category
+     * @param categoryId categoryId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateCategory",
+    value: function updateCategory(categoryId, body) {
+      var _this115 = this;
+
+      var url_ = this.baseUrl + "/categories/{categoryId}";
+      if (categoryId === undefined || categoryId === null) throw new Error("The parameter 'categoryId' must be defined.");
+      url_ = url_.replace("{categoryId}", encodeURIComponent("" + categoryId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this115.processUpdateCategory(_response);
+      });
+    }
+  }, {
+    key: "processUpdateCategory",
+    value: function processUpdateCategory(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find models
+     * @param search (optional) search string
+     * @param brand (optional) brand
+     * @param category (optional) category
+     * @param first search query to filter brands
+     * @param sortBy search query to filter brands
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "findModels",
+    value: function findModels(search, brand, category, first, sortBy, before, after) {
+      var _this116 = this;
+
+      var url_ = this.baseUrl + "/models?";
+      if (search === null) throw new Error("The parameter 'search' cannot be null.");else if (search !== undefined) url_ += "search=" + encodeURIComponent("" + search) + "&";
+      if (brand === null) throw new Error("The parameter 'brand' cannot be null.");else if (brand !== undefined) url_ += "brand=" + encodeURIComponent("" + brand) + "&";
+      if (category === null) throw new Error("The parameter 'category' cannot be null.");else if (category !== undefined) url_ += "category=" + encodeURIComponent("" + category) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this116.processFindModels(_response);
+      });
+    }
+  }, {
+    key: "processFindModels",
+    value: function processFindModels(response) {
+      var _this117 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this117.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create model
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createModel",
+    value: function createModel(body) {
+      var _this118 = this;
+
+      var url_ = this.baseUrl + "/models";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this118.processCreateModel(_response);
+      });
+    }
+  }, {
+    key: "processCreateModel",
+    value: function processCreateModel(response) {
+      var _this119 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this119.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this119.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find model by id
+     * @param modelId modelId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findModelById",
+    value: function findModelById(modelId) {
+      var _this120 = this;
+
+      var url_ = this.baseUrl + "/models/{modelId}";
+      if (modelId === undefined || modelId === null) throw new Error("The parameter 'modelId' must be defined.");
+      url_ = url_.replace("{modelId}", encodeURIComponent("" + modelId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this120.processFindModelById(_response);
+      });
+    }
+  }, {
+    key: "processFindModelById",
+    value: function processFindModelById(response) {
+      var _this121 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this121.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update model
+     * @param modelId modelId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateModel",
+    value: function updateModel(modelId, body) {
+      var _this122 = this;
+
+      var url_ = this.baseUrl + "/models/{modelId}";
+      if (modelId === undefined || modelId === null) throw new Error("The parameter 'modelId' must be defined.");
+      url_ = url_.replace("{modelId}", encodeURIComponent("" + modelId));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this122.processUpdateModel(_response);
+      });
+    }
+  }, {
+    key: "processUpdateModel",
+    value: function processUpdateModel(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find provinces
+     * @return successful operation
+     */
+
+  }, {
+    key: "findProvinces",
+    value: function findProvinces() {
+      var _this123 = this;
+
+      var url_ = this.baseUrl + "/provinces";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this123.processFindProvinces(_response);
+      });
+    }
+  }, {
+    key: "processFindProvinces",
+    value: function processFindProvinces(response) {
+      var _this124 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this124.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Create province
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "createProvince",
+    value: function createProvince(body) {
+      var _this125 = this;
+
+      var url_ = this.baseUrl + "/provinces";
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this125.processCreateProvince(_response);
+      });
+    }
+  }, {
+    key: "processCreateProvince",
+    value: function processCreateProvince(response) {
+      var _this126 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this126.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          var result201 = null;
+          result201 = _responseText === "" ? null : JSON.parse(_responseText, _this126.jsonParseReviver);
+          return result201;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find province by id
+     * @param provinceId provinceId
+     * @return successful operation
+     */
+
+  }, {
+    key: "findProvinceById",
+    value: function findProvinceById(provinceId) {
+      var _this127 = this;
+
+      var url_ = this.baseUrl + "/provinces/{provinceId}";
+      if (provinceId === undefined || provinceId === null) throw new Error("The parameter 'provinceId' must be defined.");
+      url_ = url_.replace("{provinceId}", encodeURIComponent("" + provinceId));
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this127.processFindProvinceById(_response);
+      });
+    }
+  }, {
+    key: "processFindProvinceById",
+    value: function processFindProvinceById(response) {
+      var _this128 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this128.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Update province
+     * @param province provinceId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "updateProvince",
+    value: function updateProvince(province, body) {
+      var _this129 = this;
+
+      var url_ = this.baseUrl + "/provinces/{provinceId}";
+      if (province === undefined || province === null) throw new Error("The parameter 'province' must be defined.");
+      url_ = url_.replace("{province}", encodeURIComponent("" + province));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this129.processUpdateProvince(_response);
+      });
+    }
+  }, {
+    key: "processUpdateProvince",
+    value: function processUpdateProvince(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Search by elasticsearch
+     * @param keyword (optional) search keyword
+     * @param state (optional) product state (old/new)
+     * @param priceType (optional) price type (fixed/negociate)
+     * @param minPrice (optional) min price
+     * @param maxPrice (optional) max price
+     * @param weightRange (optional) weight range
+     * @param otherNewsType (optional) news type (sell/buy/...)
+     * @param newsType (optional) news type (sell/buy/...)
+     * @param categoryId (optional) categoryID
+     * @param owner (optional) news owner id
+     * @param shop (optional) shop id
+     * @param location (optional) location (only by city)
+     * @param type (optional) product type (may ui/may xuc/may dao)
+     * @param brand (optional) product's brand
+     * @param model (optional) product model
+     * @param first number of records returned
+     * @param sortBy sort field
+     * @param before (optional) before token
+     * @param after (optional) after token
+     * @return successful operation
+     */
+
+  }, {
+    key: "searchElasticsearch",
+    value: function searchElasticsearch(keyword, state, priceType, minPrice, maxPrice, weightRange, otherNewsType, newsType, categoryId, owner, shop, location, type, brand, model, first, sortBy, before, after) {
+      var _this130 = this;
+
+      var url_ = this.baseUrl + "/search?";
+      if (keyword === null) throw new Error("The parameter 'keyword' cannot be null.");else if (keyword !== undefined) url_ += "keyword=" + encodeURIComponent("" + keyword) + "&";
+      if (state === null) throw new Error("The parameter 'state' cannot be null.");else if (state !== undefined) url_ += "state=" + encodeURIComponent("" + state) + "&";
+      if (priceType === null) throw new Error("The parameter 'priceType' cannot be null.");else if (priceType !== undefined) url_ += "priceType=" + encodeURIComponent("" + priceType) + "&";
+      if (minPrice === null) throw new Error("The parameter 'minPrice' cannot be null.");else if (minPrice !== undefined) url_ += "minPrice=" + encodeURIComponent("" + minPrice) + "&";
+      if (maxPrice === null) throw new Error("The parameter 'maxPrice' cannot be null.");else if (maxPrice !== undefined) url_ += "maxPrice=" + encodeURIComponent("" + maxPrice) + "&";
+      if (weightRange === null) throw new Error("The parameter 'weightRange' cannot be null.");else if (weightRange !== undefined) url_ += "weightRange=" + encodeURIComponent("" + weightRange) + "&";
+      if (otherNewsType === null) throw new Error("The parameter 'otherNewsType' cannot be null.");else if (otherNewsType !== undefined) url_ += "otherNewsType=" + encodeURIComponent("" + otherNewsType) + "&";
+      if (newsType === null) throw new Error("The parameter 'newsType' cannot be null.");else if (newsType !== undefined) url_ += "newsType=" + encodeURIComponent("" + newsType) + "&";
+      if (categoryId === null) throw new Error("The parameter 'categoryId' cannot be null.");else if (categoryId !== undefined) url_ += "categoryId=" + encodeURIComponent("" + categoryId) + "&";
+      if (owner === null) throw new Error("The parameter 'owner' cannot be null.");else if (owner !== undefined) url_ += "owner=" + encodeURIComponent("" + owner) + "&";
+      if (shop === null) throw new Error("The parameter 'shop' cannot be null.");else if (shop !== undefined) url_ += "shop=" + encodeURIComponent("" + shop) + "&";
+      if (location === null) throw new Error("The parameter 'location' cannot be null.");else if (location !== undefined) url_ += "location=" + encodeURIComponent("" + location) + "&";
+      if (type === null) throw new Error("The parameter 'type' cannot be null.");else if (type !== undefined) url_ += "type=" + encodeURIComponent("" + type) + "&";
+      if (brand === null) throw new Error("The parameter 'brand' cannot be null.");else if (brand !== undefined) url_ += "brand=" + encodeURIComponent("" + brand) + "&";
+      if (model === null) throw new Error("The parameter 'model' cannot be null.");else if (model !== undefined) url_ += "model=" + encodeURIComponent("" + model) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this130.processSearchElasticsearch(_response);
+      });
+    }
+  }, {
+    key: "processSearchElasticsearch",
+    value: function processSearchElasticsearch(response) {
+      var _this131 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this131.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Follow
+     * @param id newsId
+     * @param body (optional) 
+     * @return successful operation
+     */
+
+  }, {
+    key: "follow",
+    value: function follow(id, body) {
+      var _this132 = this;
+
+      var url_ = this.baseUrl + "/follows/{id}";
+      if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined.");
+      url_ = url_.replace("{id}", encodeURIComponent("" + id));
+      url_ = url_.replace(/[?&]$/, "");
+      var content_ = JSON.stringify(body);
+      var options_ = {
+        body: content_,
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this132.processFollow(_response);
+      });
+    }
+  }, {
+    key: "processFollow",
+    value: function processFollow(response) {
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 201) {
+        return response.text().then(function (_responseText) {
+          return;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+    /**
+     * Find follow by user/news
+     * @param id id
+     * @param type type
+     * @param newsType (optional) type
+     * @param first first
+     * @param sortBy sortBy
+     * @param before (optional) before
+     * @param after (optional) after
+     * @return successful operation
+     */
+
+  }, {
+    key: "findFollow",
+    value: function findFollow(id, type, newsType, first, sortBy, before, after) {
+      var _this133 = this;
+
+      var url_ = this.baseUrl + "/follows?";
+      if (id === undefined || id === null) throw new Error("The parameter 'id' must be defined and cannot be null.");else url_ += "id=" + encodeURIComponent("" + id) + "&";
+      if (type === undefined || type === null) throw new Error("The parameter 'type' must be defined and cannot be null.");else url_ += "type=" + encodeURIComponent("" + type) + "&";
+      if (newsType === null) throw new Error("The parameter 'newsType' cannot be null.");else if (newsType !== undefined) url_ += "newsType=" + encodeURIComponent("" + newsType) + "&";
+      if (first === undefined || first === null) throw new Error("The parameter 'first' must be defined and cannot be null.");else url_ += "first=" + encodeURIComponent("" + first) + "&";
+      if (sortBy === undefined || sortBy === null) throw new Error("The parameter 'sortBy' must be defined and cannot be null.");else url_ += "sortBy=" + encodeURIComponent("" + sortBy) + "&";
+      if (before === null) throw new Error("The parameter 'before' cannot be null.");else if (before !== undefined) url_ += "before=" + encodeURIComponent("" + before) + "&";
+      if (after === null) throw new Error("The parameter 'after' cannot be null.");else if (after !== undefined) url_ += "after=" + encodeURIComponent("" + after) + "&";
+      url_ = url_.replace(/[?&]$/, "");
+      var options_ = {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        }
+      };
+      return this.http.fetch(url_, options_).then(function (_response) {
+        return _this133.processFindFollow(_response);
+      });
+    }
+  }, {
+    key: "processFindFollow",
+    value: function processFindFollow(response) {
+      var _this134 = this;
+
+      var status = response.status;
+      var _headers = {};
+
+      if (response.headers && response.headers.forEach) {
+        response.headers.forEach(function (v, k) {
+          return _headers[k] = v;
+        });
+      }
+
+      ;
+
+      if (status === 200) {
+        return response.text().then(function (_responseText) {
+          var result200 = null;
+          result200 = _responseText === "" ? null : JSON.parse(_responseText, _this134.jsonParseReviver);
+          return result200;
+        });
+      } else if (status === 400) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 401) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status === 500) {
+        return response.text().then(function (_responseText) {
+          return throwException("A server error occurred.", status, _responseText, _headers);
+        });
+      } else if (status !== 200 && status !== 204) {
+        return response.text().then(function (_responseText) {
+          return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+        });
+      }
+
+      return Promise.resolve(null);
+    }
+  }]);
+
+  return ServiceProxy;
+}();
+var State;
+
+(function (State) {
+  State["PENDING"] = "PENDING";
+  State["RESOLVED"] = "RESOLVED";
+})(State || (State = {}));
+
+var Reason;
+
+(function (Reason) {
+  Reason["WRONG_INFO"] = "WRONG_INFO";
+  Reason["SOLD"] = "SOLD";
+  Reason["VIOLATE"] = "VIOLATE";
+})(Reason || (Reason = {}));
+
+var ActivateRolePayloadOperation;
+
+(function (ActivateRolePayloadOperation) {
+  ActivateRolePayloadOperation["Activate"] = "activate";
+})(ActivateRolePayloadOperation || (ActivateRolePayloadOperation = {}));
+
+var DeactivateRolePayloadOperation;
+
+(function (DeactivateRolePayloadOperation) {
+  DeactivateRolePayloadOperation["Deactivate"] = "deactivate";
+})(DeactivateRolePayloadOperation || (DeactivateRolePayloadOperation = {}));
+
+var UpdateRolePayloadOperation;
+
+(function (UpdateRolePayloadOperation) {
+  UpdateRolePayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateRolePayloadOperation || (UpdateRolePayloadOperation = {}));
+
+var FacebookLoginProvider;
+
+(function (FacebookLoginProvider) {
+  FacebookLoginProvider["Facebook"] = "facebook";
+})(FacebookLoginProvider || (FacebookLoginProvider = {}));
+
+var GoogleLoginProvider;
+
+(function (GoogleLoginProvider) {
+  GoogleLoginProvider["Google"] = "google";
+})(GoogleLoginProvider || (GoogleLoginProvider = {}));
+
+var PhoneLoginProvider;
+
+(function (PhoneLoginProvider) {
+  PhoneLoginProvider["Phone"] = "phone";
+})(PhoneLoginProvider || (PhoneLoginProvider = {}));
+
+var EmailLoginProvider;
+
+(function (EmailLoginProvider) {
+  EmailLoginProvider["Email"] = "email";
+})(EmailLoginProvider || (EmailLoginProvider = {}));
+
+var UpdateUserPayloadOperation;
+
+(function (UpdateUserPayloadOperation) {
+  UpdateUserPayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateUserPayloadOperation || (UpdateUserPayloadOperation = {}));
+
+var UpdateProfilePayloadOperation;
+
+(function (UpdateProfilePayloadOperation) {
+  UpdateProfilePayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateProfilePayloadOperation || (UpdateProfilePayloadOperation = {}));
+
+var ActivateUserPayloadOperation;
+
+(function (ActivateUserPayloadOperation) {
+  ActivateUserPayloadOperation["Activate"] = "activate";
+})(ActivateUserPayloadOperation || (ActivateUserPayloadOperation = {}));
+
+var DeactivateUserPayloadOperation;
+
+(function (DeactivateUserPayloadOperation) {
+  DeactivateUserPayloadOperation["Deactivate"] = "deactivate";
+})(DeactivateUserPayloadOperation || (DeactivateUserPayloadOperation = {}));
+
+var UpdateAvatarPayloadOperation;
+
+(function (UpdateAvatarPayloadOperation) {
+  UpdateAvatarPayloadOperation["UpdateAvatar"] = "updateAvatar";
+})(UpdateAvatarPayloadOperation || (UpdateAvatarPayloadOperation = {}));
+
+var UpdateAdsensePayloadOperation;
+
+(function (UpdateAdsensePayloadOperation) {
+  UpdateAdsensePayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateAdsensePayloadOperation || (UpdateAdsensePayloadOperation = {}));
+
+var UpdateFeatureBrandPayloadOperation;
+
+(function (UpdateFeatureBrandPayloadOperation) {
+  UpdateFeatureBrandPayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateFeatureBrandPayloadOperation || (UpdateFeatureBrandPayloadOperation = {}));
+
+var UpdateRentalPeriodPayloadOperation;
+
+(function (UpdateRentalPeriodPayloadOperation) {
+  UpdateRentalPeriodPayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateRentalPeriodPayloadOperation || (UpdateRentalPeriodPayloadOperation = {}));
+
+var UpdateWeightRangePayloadOperation;
+
+(function (UpdateWeightRangePayloadOperation) {
+  UpdateWeightRangePayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateWeightRangePayloadOperation || (UpdateWeightRangePayloadOperation = {}));
+
+var ReadNotificationPayloadOperation;
+
+(function (ReadNotificationPayloadOperation) {
+  ReadNotificationPayloadOperation["ReadNotification"] = "readNotification";
+})(ReadNotificationPayloadOperation || (ReadNotificationPayloadOperation = {}));
+
+var ReadAllNotificationsPayloadOperation;
+
+(function (ReadAllNotificationsPayloadOperation) {
+  ReadAllNotificationsPayloadOperation["ReadAllNotifications"] = "readAllNotifications";
+})(ReadAllNotificationsPayloadOperation || (ReadAllNotificationsPayloadOperation = {}));
+
+var NotificationState;
+
+(function (NotificationState) {
+  NotificationState["READ"] = "READ";
+  NotificationState["UNREAD"] = "UNREAD";
+})(NotificationState || (NotificationState = {}));
+
+var NotificationType;
+
+(function (NotificationType) {
+  NotificationType["FOLLOW_USER"] = "FOLLOW_USER";
+  NotificationType["FOLLOW_SHOP"] = "FOLLOW_SHOP";
+  NotificationType["CREATE_NEWS"] = "CREATE_NEWS";
+})(NotificationType || (NotificationType = {}));
+
+var UpdateReportPayloadOperation;
+
+(function (UpdateReportPayloadOperation) {
+  UpdateReportPayloadOperation["ResolveReport"] = "resolveReport";
+})(UpdateReportPayloadOperation || (UpdateReportPayloadOperation = {}));
+
+var ReportState;
+
+(function (ReportState) {
+  ReportState["PENDING"] = "PENDING";
+  ReportState["RESOLVED"] = "RESOLVED";
+})(ReportState || (ReportState = {}));
+
+var ReportResolvedResult;
+
+(function (ReportResolvedResult) {
+  ReportResolvedResult["SKIP"] = "SKIP";
+  ReportResolvedResult["DELETE"] = "DELETE";
+})(ReportResolvedResult || (ReportResolvedResult = {}));
+
+var CreateReportPayloadReason;
+
+(function (CreateReportPayloadReason) {
+  CreateReportPayloadReason["WRONG_INFO"] = "WRONG_INFO";
+  CreateReportPayloadReason["SOLD"] = "SOLD";
+  CreateReportPayloadReason["VIOLATE"] = "VIOLATE";
+})(CreateReportPayloadReason || (CreateReportPayloadReason = {}));
+
+var UpdateIntroImagesShopPayloadOperation;
+
+(function (UpdateIntroImagesShopPayloadOperation) {
+  UpdateIntroImagesShopPayloadOperation["UpdateCover"] = "updateCover";
+})(UpdateIntroImagesShopPayloadOperation || (UpdateIntroImagesShopPayloadOperation = {}));
+
+var UpdateLogoImageShopPayloadOperation;
+
+(function (UpdateLogoImageShopPayloadOperation) {
+  UpdateLogoImageShopPayloadOperation["UpdateAvatar"] = "updateAvatar";
+})(UpdateLogoImageShopPayloadOperation || (UpdateLogoImageShopPayloadOperation = {}));
+
+var DeactivateShopPayloadOperation;
+
+(function (DeactivateShopPayloadOperation) {
+  DeactivateShopPayloadOperation["Deactivate"] = "deactivate";
+})(DeactivateShopPayloadOperation || (DeactivateShopPayloadOperation = {}));
+
+var ActivateShopPayloadOperation;
+
+(function (ActivateShopPayloadOperation) {
+  ActivateShopPayloadOperation["Activate"] = "activate";
+})(ActivateShopPayloadOperation || (ActivateShopPayloadOperation = {}));
+
+var UpdateShopPayloadOperation;
+
+(function (UpdateShopPayloadOperation) {
+  UpdateShopPayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateShopPayloadOperation || (UpdateShopPayloadOperation = {}));
+
+var UpdateBrandPayloadOperation;
+
+(function (UpdateBrandPayloadOperation) {
+  UpdateBrandPayloadOperation["UpdateDetail"] = "updateDetail";
+})(UpdateBrandPayloadOperation || (UpdateBrandPayloadOperation = {}));
+
+var UpdateCategoryPayloadOperation;
+
+(function (UpdateCategoryPayloadOperation) {
+  UpdateCategoryPayloadOperation["UdpateDetail"] = "udpateDetail";
+})(UpdateCategoryPayloadOperation || (UpdateCategoryPayloadOperation = {}));
+
+var Payload9ResolvedResult;
+
+(function (Payload9ResolvedResult) {
+  Payload9ResolvedResult["SKIP"] = "SKIP";
+  Payload9ResolvedResult["DELETE"] = "DELETE";
+})(Payload9ResolvedResult || (Payload9ResolvedResult = {}));
+
+var ReportsReason;
+
+(function (ReportsReason) {
+  ReportsReason["WRONG_INFO"] = "WRONG_INFO";
+  ReportsReason["SOLD"] = "SOLD";
+  ReportsReason["VIOLATE"] = "VIOLATE";
+})(ReportsReason || (ReportsReason = {}));
+
+var SwaggerException =
+/*#__PURE__*/
+function (_Error) {
+  _inherits(SwaggerException, _Error);
+
+  function SwaggerException(message, status, response, headers, result) {
+    var _this135;
+
+    _classCallCheck(this, SwaggerException);
+
+    _this135 = _possibleConstructorReturn(this, _getPrototypeOf(SwaggerException).call(this));
+
+    _defineProperty(_assertThisInitialized(_this135), "message", void 0);
+
+    _defineProperty(_assertThisInitialized(_this135), "status", void 0);
+
+    _defineProperty(_assertThisInitialized(_this135), "response", void 0);
+
+    _defineProperty(_assertThisInitialized(_this135), "headers", void 0);
+
+    _defineProperty(_assertThisInitialized(_this135), "result", void 0);
+
+    _defineProperty(_assertThisInitialized(_this135), "isSwaggerException", true);
+
+    _this135.message = message;
+    _this135.status = status;
+    _this135.response = response;
+    _this135.headers = headers;
+    _this135.result = result;
+    return _this135;
+  }
+
+  _createClass(SwaggerException, null, [{
+    key: "isSwaggerException",
+    value: function isSwaggerException(obj) {
+      return obj.isSwaggerException === true;
+    }
+  }]);
+
+  return SwaggerException;
+}(_wrapNativeSuper(Error));
+
+function throwException(message, status, response, headers, result) {
+  if (result !== null && result !== undefined) throw result;else throw new SwaggerException(message, status, response, headers, null);
+}
+// EXTERNAL MODULE: ./config/index.ts + 2 modules
+var config = __webpack_require__(8);
+
+// EXTERNAL MODULE: external "isomorphic-fetch"
+var external_isomorphic_fetch_ = __webpack_require__(68);
+var external_isomorphic_fetch_default = /*#__PURE__*/__webpack_require__.n(external_isomorphic_fetch_);
+
+// CONCATENATED MODULE: ./services/index.ts
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return services_getServiceProxy; });
+
+
+
+
+
+var services_getAuthHttp = function getAuthHttp(idToken) {
+  return {
+    fetch: function fetch(url, option) {
+      option.headers.Authorization = "".concat(idToken);
+      option.headers['Access-Control-Allow-Origin'] = '*';
+      option.credentials = 'include';
+      return external_isomorphic_fetch_default()(url, option);
+    }
+  };
+};
+
+var services_getServiceProxy = function getServiceProxy() {
+  var idToken = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var httpOption = services_getAuthHttp(idToken);
+  return new ServiceProxy(config["a" /* config */].url.api, httpOption);
+};
+
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/row");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// CONCATENATED MODULE: ./config/override.config.ts
+var overrideConfig = {
+  appName: 'excado-develop',
+  facebookAppId: '329120894475942',
+  firebase: {
+    apiKey: 'AIzaSyDaNVSsb66VTC7olY2VuAiKmO-J5e_PDYM',
+    authDomain: 'techkids-ac7a7.firebaseapp.com',
+    databaseURL: 'https://techkids-ac7a7.firebaseio.com',
+    projectId: 'techkids-ac7a7',
+    storageBucket: 'techkids-ac7a7.appspot.com',
+    messagingSenderId: '809846546437'
+  },
+  url: {
+    main: 'http://timmay.local:3000',
+    api: 'http://localhost:3000/api',
+    shop: 'http://shopDomain.timmay.local:3000'
+  },
+  cookies: {
+    domain: 'timmay.local',
+    maxAge: 60 * 60 * 1000
+  }
+};
+// CONCATENATED MODULE: ./config/default.config.ts
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var config = _objectSpread({
+  appName: '',
+  firebase: {
+    apiKey: '',
+    authDomain: '',
+    databaseURL: '',
+    projectId: '',
+    storageBucket: '',
+    messagingSenderId: ''
+  },
+  url: {
+    main: '',
+    api: '',
+    shop: ''
+  },
+  i18n: {
+    VN: 'vn',
+    EN: 'en',
+    defaultLang: 'vn'
+  },
+  upload: {
+    allowImageExt: /\.(gif|jpg|jpeg|tiff|png|JPG|PNG|JPEG|GIF|TIFF)$/,
+    allowExcelExt: /\.(csv|xls|xlsm|xlsx|xml|xlsb|xlam)$/,
+    shopIntroImageNumber: 10
+  },
+  googleMaps: {
+    apiKey: 'AIzaSyBWcb9PYE2yddvlnN53fB76Y1XSfjURHFk' // 'AIzaSyCvrUsYnz-hSv0rZF3zAx7gx98uz4O-bvM',
+
+  },
+  cookies: {
+    domain: '',
+    maxAge: 0
+  },
+  regex: {
+    password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
+    email: /^[a-z][a-z0-9_\.]{5,40}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$/,
+    phone: /^([+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*){8,}$/
+  }
+}, overrideConfig);
+// CONCATENATED MODULE: ./config/index.ts
+/* concated harmony reexport config */__webpack_require__.d(__webpack_exports__, "a", function() { return config; });
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("yup");
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "next-i18next"
+var external_next_i18next_ = __webpack_require__(70);
+var external_next_i18next_default = /*#__PURE__*/__webpack_require__.n(external_next_i18next_);
+
+// EXTERNAL MODULE: ./config/index.ts + 2 modules
+var config = __webpack_require__(8);
+
+// CONCATENATED MODULE: ./i18n/i18n.ts
+
+
+var i18n = new external_next_i18next_default.a({
+  defaultLanguage: config["a" /* config */].i18n.defaultLang,
+  otherLanguages: [config["a" /* config */].i18n.EN],
+  localePath: "".concat( false ? undefined : 'dist', "/client/static/locales"),
+  detection: {
+    cookieDomain: config["a" /* config */].cookies.domain
+  }
+});
+var appWithTranslation = i18n.appWithTranslation;
+
+var changeLanguage = function changeLanguage(lang) {
+  i18n.i18n.changeLanguage(lang);
+};
+
+var withNamespaces = i18n.withNamespaces;
+
+// CONCATENATED MODULE: ./i18n/index.ts
+/* concated harmony reexport i18n */__webpack_require__.d(__webpack_exports__, "c", function() { return i18n; });
+/* concated harmony reexport appWithTranslation */__webpack_require__.d(__webpack_exports__, "a", function() { return appWithTranslation; });
+/* concated harmony reexport changeLanguage */__webpack_require__.d(__webpack_exports__, "b", function() { return changeLanguage; });
+/* concated harmony reexport withNamespaces */__webpack_require__.d(__webpack_exports__, "d", function() { return withNamespaces; });
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/form");
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/icon");
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/button");
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/menu");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/input");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(71);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "initStore", function() { return _store__WEBPACK_IMPORTED_MODULE_0__["a"]; });
+
+/* harmony import */ var _withRematch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "getOrCreateStore", function() { return _withRematch__WEBPACK_IMPORTED_MODULE_1__["a"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withRematch", function() { return _withRematch__WEBPACK_IMPORTED_MODULE_1__["b"]; });
+
+/* harmony import */ var _models_profile_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73);
+/* harmony import */ var _models_profile_interface__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_models_profile_interface__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _models_profile_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50);
+/* harmony import */ var _models_follow_interface__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74);
+/* harmony import */ var _models_follow_interface__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_models_follow_interface__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _models_follow_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(51);
+/* harmony import */ var _models_search_interface__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75);
+/* harmony import */ var _models_search_interface__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_models_search_interface__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(52);
+/* harmony import */ var _models_metadata_interface__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(76);
+/* harmony import */ var _models_metadata_interface__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_models_metadata_interface__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _models_metadata_model__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(53);
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/select");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/icon/style");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("formik");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: ./components/MachineDetailBox/MachineDetailBox.tsx
+var MachineDetailBox = __webpack_require__(69);
+
+// EXTERNAL MODULE: external "antd/lib/divider/style"
+var style_ = __webpack_require__(84);
+
+// EXTERNAL MODULE: external "antd/lib/divider"
+var divider_ = __webpack_require__(38);
+var divider_default = /*#__PURE__*/__webpack_require__.n(divider_);
+
+// EXTERNAL MODULE: external "antd/lib/menu/style"
+var menu_style_ = __webpack_require__(35);
+
+// EXTERNAL MODULE: external "antd/lib/menu"
+var menu_ = __webpack_require__(14);
+var menu_default = /*#__PURE__*/__webpack_require__.n(menu_);
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
+// EXTERNAL MODULE: ./components/CommonLayout/DropdownMenu.less
+var CommonLayout_DropdownMenu = __webpack_require__(96);
+
+// EXTERNAL MODULE: ./i18n/index.ts + 1 modules
+var i18n = __webpack_require__(10);
+
+// CONCATENATED MODULE: ./components/CommonLayout/DropdownMenu.tsx
+
+
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var MenuItem = menu_default.a.Item;
+
+var DropdownMenu_DropdownMenu =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(DropdownMenu, _React$Component);
+
+  function DropdownMenu() {
+    _classCallCheck(this, DropdownMenu);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(DropdownMenu).apply(this, arguments));
+  }
+
+  _createClass(DropdownMenu, [{
+    key: "render",
+    value: function render() {
+      var translate = this.props.t;
+      return external_react_default.a.createElement(menu_default.a, {
+        className: "dropdown-menu",
+        mode: "inline"
+      }, external_react_default.a.createElement(MenuItem, {
+        key: "1",
+        className: "user-image-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/thong-tin-ca-nhan",
+        className: "link"
+      }, external_react_default.a.createElement("div", {
+        className: "user-image"
+      }, external_react_default.a.createElement("div", {
+        style: {
+          width: '100%',
+          height: '100%',
+          backgroundImage: "url(".concat(this.props.profileState.authUser && this.props.profileState.authUser.avatarUrl ? this.props.profileState.authUser.avatarUrl : '/static/images/default-avatar.jpg', ")"),
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }
+      })), external_react_default.a.createElement("div", {
+        className: "user-info"
+      }, external_react_default.a.createElement("span", {
+        className: "title"
+      }, this.props.profileState.authUser.fullName), external_react_default.a.createElement("span", {
+        className: "title small-text"
+      }, translate('common:edit-your-profile'))))), external_react_default.a.createElement(divider_default.a, null), external_react_default.a.createElement(MenuItem, {
+        key: "2",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/quan-li-tin-dang",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/quan-li-tin-dang-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:news-managenment'))))), external_react_default.a.createElement(MenuItem, {
+        key: "3",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/tin-da-luu",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/tin-da-luu-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:followed-news'))))), external_react_default.a.createElement(divider_default.a, null), this.props.profileState.authUser && this.props.profileState.authUser.shopDomain ? external_react_default.a.createElement(MenuItem, {
+        key: "4",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/cua-hang-cua-toi",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/cua-hang-cua-toi-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:my-shop'))))) : external_react_default.a.createElement(MenuItem, {
+        key: "4",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/tao-cua-hang",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/cua-hang-cua-toi-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:create-your-shop'))))), external_react_default.a.createElement(MenuItem, {
+        key: "5",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "#",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/dang-ki-quang-cao-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:advertisement-registration'))))), external_react_default.a.createElement(divider_default.a, null), external_react_default.a.createElement(MenuItem, {
+        key: "6",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "#",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/tro-giup-icon.jpg",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:help'))))), external_react_default.a.createElement(divider_default.a, null), this.props.profileState.authUser && this.props.profileState.authUser.roles && this.props.profileState.authUser.roles.indexOf('5c7f747708898183ac62f2af') > -1 && external_react_default.a.createElement(MenuItem, {
+        key: "7",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        href: "/quan-ly/danh-sach-hang",
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/admin.png",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:admin'))))), this.props.profileState.authUser && this.props.profileState.authUser.roles && this.props.profileState.authUser.roles.indexOf('5c7f747708898183ac62f2af') > -1 && external_react_default.a.createElement(divider_default.a, null), external_react_default.a.createElement(MenuItem, {
+        key: "8",
+        className: "menu-item-container"
+      }, external_react_default.a.createElement("a", {
+        onClick: this.props.logOut,
+        className: "link"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/icon-signout.png",
+        className: "item-image"
+      }), external_react_default.a.createElement("div", {
+        className: "item-info"
+      }, external_react_default.a.createElement("span", {
+        className: "item-title"
+      }, translate('common:log-out'))))));
+    }
+  }]);
+
+  return DropdownMenu;
+}(external_react_default.a.Component);
+
+/* harmony default export */ var components_CommonLayout_DropdownMenu = (Object(i18n["d" /* withNamespaces */])('common')(DropdownMenu_DropdownMenu));
+// EXTERNAL MODULE: external "antd/lib/modal/style"
+var modal_style_ = __webpack_require__(42);
+
+// EXTERNAL MODULE: external "antd/lib/modal"
+var modal_ = __webpack_require__(23);
+var modal_default = /*#__PURE__*/__webpack_require__.n(modal_);
+
+// EXTERNAL MODULE: external "antd/lib/row/style"
+var row_style_ = __webpack_require__(22);
+
+// EXTERNAL MODULE: external "antd/lib/row"
+var row_ = __webpack_require__(7);
+var row_default = /*#__PURE__*/__webpack_require__.n(row_);
+
+// EXTERNAL MODULE: external "antd/lib/col/style"
+var col_style_ = __webpack_require__(24);
+
+// EXTERNAL MODULE: external "antd/lib/col"
+var col_ = __webpack_require__(2);
+var col_default = /*#__PURE__*/__webpack_require__.n(col_);
+
+// EXTERNAL MODULE: external "antd/lib/tabs/style"
+var tabs_style_ = __webpack_require__(78);
+
+// EXTERNAL MODULE: external "antd/lib/tabs"
+var tabs_ = __webpack_require__(36);
+var tabs_default = /*#__PURE__*/__webpack_require__.n(tabs_);
+
+// EXTERNAL MODULE: external "antd/lib/button/style"
+var button_style_ = __webpack_require__(27);
+
+// EXTERNAL MODULE: external "antd/lib/button"
+var button_ = __webpack_require__(13);
+var button_default = /*#__PURE__*/__webpack_require__.n(button_);
+
+// EXTERNAL MODULE: external "antd/lib/form/style"
+var form_style_ = __webpack_require__(40);
+
+// EXTERNAL MODULE: external "antd/lib/form"
+var form_ = __webpack_require__(11);
+var form_default = /*#__PURE__*/__webpack_require__.n(form_);
+
+// EXTERNAL MODULE: external "antd/lib/input/style"
+var input_style_ = __webpack_require__(37);
+
+// EXTERNAL MODULE: external "antd/lib/input"
+var input_ = __webpack_require__(15);
+var input_default = /*#__PURE__*/__webpack_require__.n(input_);
+
+// EXTERNAL MODULE: external "antd/lib/select/style"
+var select_style_ = __webpack_require__(46);
+
+// EXTERNAL MODULE: external "antd/lib/select"
+var select_ = __webpack_require__(17);
+var select_default = /*#__PURE__*/__webpack_require__.n(select_);
+
+// EXTERNAL MODULE: external "antd/lib/icon/style"
+var icon_style_ = __webpack_require__(18);
+
+// EXTERNAL MODULE: external "antd/lib/icon"
+var icon_ = __webpack_require__(12);
+var icon_default = /*#__PURE__*/__webpack_require__.n(icon_);
+
+// EXTERNAL MODULE: external "@babel/runtime/regenerator"
+var regenerator_ = __webpack_require__(1);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator_);
+
+// EXTERNAL MODULE: external "antd/lib/message/style"
+var message_style_ = __webpack_require__(31);
+
+// EXTERNAL MODULE: external "antd/lib/message"
+var message_ = __webpack_require__(3);
+var message_default = /*#__PURE__*/__webpack_require__.n(message_);
+
+// EXTERNAL MODULE: ./components/CommonLayout/LoginModal.less
+var LoginModal = __webpack_require__(97);
+
+// EXTERNAL MODULE: external "firebase/app"
+var app_ = __webpack_require__(6);
+var app_default = /*#__PURE__*/__webpack_require__.n(app_);
+
+// EXTERNAL MODULE: external "firebase/auth"
+var auth_ = __webpack_require__(21);
+
+// EXTERNAL MODULE: ./services/index.ts + 1 modules
+var services = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./core/index.ts + 20 modules
+var core = __webpack_require__(4);
+
+// EXTERNAL MODULE: external "formik"
+var external_formik_ = __webpack_require__(19);
+
+// EXTERNAL MODULE: external "yup"
+var external_yup_ = __webpack_require__(9);
+
+// EXTERNAL MODULE: ./config/index.ts + 2 modules
+var config = __webpack_require__(8);
+
+// EXTERNAL MODULE: ./components/CommonLayout/ForgotPasswordModal.less
+var ForgotPasswordModal = __webpack_require__(98);
+
+// CONCATENATED MODULE: ./components/CommonLayout/ForgotPasswordModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function ForgotPasswordModal_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { ForgotPasswordModal_typeof = function _typeof(obj) { return typeof obj; }; } else { ForgotPasswordModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return ForgotPasswordModal_typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ForgotPasswordModal_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function ForgotPasswordModal_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function ForgotPasswordModal_createClass(Constructor, protoProps, staticProps) { if (protoProps) ForgotPasswordModal_defineProperties(Constructor.prototype, protoProps); if (staticProps) ForgotPasswordModal_defineProperties(Constructor, staticProps); return Constructor; }
+
+function ForgotPasswordModal_possibleConstructorReturn(self, call) { if (call && (ForgotPasswordModal_typeof(call) === "object" || typeof call === "function")) { return call; } return ForgotPasswordModal_assertThisInitialized(self); }
+
+function ForgotPasswordModal_getPrototypeOf(o) { ForgotPasswordModal_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return ForgotPasswordModal_getPrototypeOf(o); }
+
+function ForgotPasswordModal_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function ForgotPasswordModal_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) ForgotPasswordModal_setPrototypeOf(subClass, superClass); }
+
+function ForgotPasswordModal_setPrototypeOf(o, p) { ForgotPasswordModal_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return ForgotPasswordModal_setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var ForgotPasswordModal_BaseForgotPasswordModal =
+/*#__PURE__*/
+function (_React$Component) {
+  ForgotPasswordModal_inherits(BaseForgotPasswordModal, _React$Component);
+
+  function BaseForgotPasswordModal() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    ForgotPasswordModal_classCallCheck(this, BaseForgotPasswordModal);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = ForgotPasswordModal_possibleConstructorReturn(this, (_getPrototypeOf2 = ForgotPasswordModal_getPrototypeOf(BaseForgotPasswordModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(ForgotPasswordModal_assertThisInitialized(_this), "state", {
+      loading: false,
+      gettingCode: false,
+      phone: {
+        phoneNo: '',
+        countryCode: ''
+      }
+    });
+
+    _defineProperty(ForgotPasswordModal_assertThisInitialized(_this), "getCode",
+    /*#__PURE__*/
+    function () {
+      var _ref = _asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values) {
+        var fullPhoneNumber, serviceProxy, phoneNoExistResult, appVerifier, confirmationResult;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  phone: {
+                    phoneNo: values.phoneNo,
+                    countryCode: values.countryCode
+                  },
+                  gettingCode: true
+                });
+
+                _context.prev = 1;
+                fullPhoneNumber = "".concat(values.countryCode).concat(values.phoneNo);
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context.next = 6;
+                return serviceProxy.checkPhoneNoExist(fullPhoneNumber);
+
+              case 6:
+                phoneNoExistResult = _context.sent;
+
+                if (!phoneNoExistResult.phoneNoExist) {
+                  _context.next = 17;
+                  break;
+                }
+
+                appVerifier = window.recaptchaVerifier;
+                _context.next = 11;
+                return app_default.a.auth().signInWithPhoneNumber(fullPhoneNumber, appVerifier);
+
+              case 11:
+                confirmationResult = _context.sent;
+                window.confirmationResult = confirmationResult;
+
+                message_default.a.success(_this.props.t('common:sendVerifyCodeSuccess'));
+
+                _this.setState({
+                  gettingCode: false
+                });
+
+                _context.next = 19;
+                break;
+
+              case 17:
+                _this.setState({
+                  gettingCode: false
+                });
+
+                message_default.a.error(_this.props.t('common:notFoundPhoneNo'));
+
+              case 19:
+                _context.next = 25;
+                break;
+
+              case 21:
+                _context.prev = 21;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_this.props.t(_context.t0.code));
+
+                _this.setState({
+                  gettingCode: false
+                });
+
+              case 25:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 21]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    _defineProperty(ForgotPasswordModal_assertThisInitialized(_this), "handleOk",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = _asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(values) {
+        var idToken;
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+
+                if (!(_this.props.type === 'email')) {
+                  _context2.next = 8;
+                  break;
+                }
+
+                Object(core["j" /* initializeFirebaseApp */])();
+                app_default.a.auth().sendPasswordResetEmail(values.email);
+
+                message_default.a.success(_this.props.t('common:send-reset-password-email-success'));
+
+                _this.props.onCancel();
+
+                _context2.next = 26;
+                break;
+
+              case 8:
+                _context2.next = 10;
+                return window.confirmationResult;
+
+              case 10:
+                if (!_context2.sent) {
+                  _context2.next = 25;
+                  break;
+                }
+
+                _this.setState({
+                  loading: true
+                });
+
+                _context2.next = 14;
+                return window.confirmationResult.confirm(values.verifyCode);
+
+              case 14:
+                _context2.next = 16;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 16:
+                idToken = _context2.sent;
+                _context2.next = 19;
+                return fetch("".concat(config["a" /* config */].url.api, "/auth/update-password"), {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    idToken: idToken,
+                    newPassword: values.password
+                  })
+                });
+
+              case 19:
+                app_default.a.auth().signOut();
+
+                message_default.a.success(_this.props.t('common:update-password-success'));
+
+                _this.setState({
+                  loading: false
+                });
+
+                _this.props.onCancel();
+
+                _context2.next = 26;
+                break;
+
+              case 25:
+                message_default.a.error(_this.props.t('common:invalid-verify-code'));
+
+              case 26:
+                _context2.next = 32;
+                break;
+
+              case 28:
+                _context2.prev = 28;
+                _context2.t0 = _context2["catch"](0);
+
+                message_default.a.error(_this.props.t("common:".concat(_context2.t0.code || _context2.t0.message)));
+
+                _this.setState({
+                  loading: false
+                });
+
+              case 32:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 28]]);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  ForgotPasswordModal_createClass(BaseForgotPasswordModal, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var ForgotEmailPasswordValidateSchema = external_yup_["object"]().shape({
+        email: external_yup_["string"]().required(translate('common:pleaseInputVerifyCode')).matches(config["a" /* config */].regex.email, translate('common:invalidEmail'))
+      });
+      var PhoneNumberValidateSchema = external_yup_["object"]().shape({
+        countryCode: external_yup_["string"]().required(translate('common:pleaseInputCountryCode')),
+        phoneNo: external_yup_["string"]().matches(config["a" /* config */].regex.phone, translate('common:invalidPhoneNo')).required(translate('common:pleaseInputPhoneNo'))
+      });
+      var ForgotPhonePasswordValidateSchema = external_yup_["object"]().shape({
+        verifyCode: external_yup_["string"]().required(translate('common:pleaseInputVerifyCode')),
+        password: external_yup_["string"]().required(translate('common:pleaseInputPassword')).max(100, translate('common:passwordTooLong')).matches(config["a" /* config */].regex.password, translate('common:invalidPassword')),
+        confirmPassword: external_yup_["string"]().required(translate('common:pleaseConfirmPassword'))
+      });
+
+      if (this.props.type === 'email') {
+        return external_react_default.a.createElement(external_formik_["Formik"], {
+          initialValues: {
+            email: ''
+          },
+          enableReinitialize: true,
+          validateOnChange: false,
+          validationSchema: ForgotEmailPasswordValidateSchema,
+          onSubmit:
+          /*#__PURE__*/
+          function () {
+            var _ref3 = _asyncToGenerator(
+            /*#__PURE__*/
+            regenerator_default.a.mark(function _callee3(values, formikBag) {
+              return regenerator_default.a.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      _context3.next = 2;
+                      return _this2.handleOk(values);
+
+                    case 2:
+                      formikBag.resetForm({
+                        email: ''
+                      });
+
+                    case 3:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3);
+            }));
+
+            return function (_x3, _x4) {
+              return _ref3.apply(this, arguments);
+            };
+          }()
+        }, function (context) {
+          return external_react_default.a.createElement(modal_default.a, {
+            title: translate('common:forgotPassword'),
+            visible: _this2.props.visible,
+            onOk: context.handleSubmit,
+            onCancel: _this2.props.onCancel,
+            confirmLoading: _this2.state.loading,
+            okText: translate('common:send-reset-password-email'),
+            cancelText: translate('common:cancel')
+          }, external_react_default.a.createElement(form_default.a, {
+            onSubmit: context.handleSubmit
+          }, external_react_default.a.createElement(form_default.a.Item, {
+            label: translate('common:your-email'),
+            validateStatus: context.errors.email ? 'error' : undefined,
+            help: context.errors.email
+          }, external_react_default.a.createElement(input_default.a, {
+            value: context.values.email,
+            onChange: context.handleChange,
+            onBlur: function onBlur() {
+              return Object(core["u" /* validateField */])({
+                fieldName: 'email',
+                validateSchema: ForgotEmailPasswordValidateSchema,
+                context: context
+              });
+            },
+            name: "email",
+            prefix: external_react_default.a.createElement(icon_default.a, {
+              type: "mail",
+              style: {
+                color: 'rgba(0,0,0,.25)'
+              }
+            }),
+            placeholder: translate('common:your-email')
+          }))));
+        });
+      } else {
+        return external_react_default.a.createElement(modal_default.a, {
+          className: "reset-password-modal",
+          visible: this.props.visible,
+          footer: null,
+          onCancel: this.props.onCancel,
+          destroyOnClose: true
+        }, external_react_default.a.createElement(external_formik_["Formik"], {
+          initialValues: {
+            countryCode: '+84',
+            phoneNo: ''
+          },
+          validateOnChange: false,
+          validationSchema: PhoneNumberValidateSchema,
+          onSubmit:
+          /*#__PURE__*/
+          function () {
+            var _ref4 = _asyncToGenerator(
+            /*#__PURE__*/
+            regenerator_default.a.mark(function _callee4(values) {
+              return regenerator_default.a.wrap(function _callee4$(_context4) {
+                while (1) {
+                  switch (_context4.prev = _context4.next) {
+                    case 0:
+                      _context4.next = 2;
+                      return _this2.getCode(values);
+
+                    case 2:
+                    case "end":
+                      return _context4.stop();
+                  }
+                }
+              }, _callee4);
+            }));
+
+            return function (_x5) {
+              return _ref4.apply(this, arguments);
+            };
+          }()
+        }, function (context) {
+          return external_react_default.a.createElement(form_default.a.Item, {
+            validateStatus: context.errors.phoneNo || context.errors.countryCode ? 'error' : undefined,
+            help: context.errors.phoneNo || context.errors.countryCode
+          }, external_react_default.a.createElement(input_default.a.Search, {
+            addonBefore: external_react_default.a.createElement(select_default.a, {
+              style: {
+                width: 120
+              },
+              value: context.values.countryCode,
+              onChange: context.handleChange
+            }, external_react_default.a.createElement(select_default.a.Option, {
+              value: "+84"
+            }, "VN (+84)")),
+            value: context.values.phoneNo,
+            onChange: context.handleChange,
+            onBlur: context.handleBlur,
+            placeholder: translate('common:phoneNo'),
+            enterButton: external_react_default.a.createElement(button_default.a, {
+              type: "primary",
+              loading: _this2.state.gettingCode
+            }, translate('common:sendCode')),
+            onSearch: context.handleSubmit,
+            name: "phoneNo"
+          }));
+        }), external_react_default.a.createElement(external_formik_["Formik"], {
+          initialValues: {
+            verifyCode: '',
+            password: '',
+            confirmPassword: ''
+          },
+          validateOnChange: false,
+          validationSchema: ForgotPhonePasswordValidateSchema,
+          onSubmit:
+          /*#__PURE__*/
+          function () {
+            var _ref5 = _asyncToGenerator(
+            /*#__PURE__*/
+            regenerator_default.a.mark(function _callee5(values, formikBag) {
+              return regenerator_default.a.wrap(function _callee5$(_context5) {
+                while (1) {
+                  switch (_context5.prev = _context5.next) {
+                    case 0:
+                      _context5.next = 2;
+                      return _this2.handleOk(values);
+
+                    case 2:
+                      formikBag.resetForm({
+                        verifyCode: '',
+                        password: '',
+                        confirmPassword: ''
+                      });
+
+                    case 3:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }
+              }, _callee5);
+            }));
+
+            return function (_x6, _x7) {
+              return _ref5.apply(this, arguments);
+            };
+          }()
+        }, function (context) {
+          return external_react_default.a.createElement(form_default.a, {
+            onSubmit: context.handleSubmit
+          }, external_react_default.a.createElement(form_default.a.Item, {
+            validateStatus: context.errors.verifyCode ? 'error' : undefined,
+            help: context.errors.verifyCode
+          }, external_react_default.a.createElement(input_default.a, {
+            value: context.values.verifyCode,
+            onChange: context.handleChange,
+            onBlur: function onBlur() {
+              return Object(core["u" /* validateField */])({
+                fieldName: 'verifyCode',
+                validateSchema: ForgotPhonePasswordValidateSchema,
+                context: context
+              });
+            },
+            placeholder: translate('common:verifyCode'),
+            name: "verifyCode"
+          })), external_react_default.a.createElement(form_default.a.Item, {
+            validateStatus: context.errors.password ? 'error' : undefined,
+            help: context.errors.password
+          }, external_react_default.a.createElement(input_default.a, {
+            value: context.values.password,
+            onChange: context.handleChange,
+            onBlur: function onBlur() {
+              return Object(core["u" /* validateField */])({
+                fieldName: 'password',
+                validateSchema: ForgotPhonePasswordValidateSchema,
+                context: context
+              });
+            },
+            placeholder: translate('common:password'),
+            type: "password",
+            name: "password"
+          })), external_react_default.a.createElement(form_default.a.Item, {
+            validateStatus: context.errors.confirmPassword ? 'error' : undefined,
+            help: context.errors.confirmPassword
+          }, external_react_default.a.createElement(input_default.a, {
+            value: context.values.confirmPassword,
+            onChange: context.handleChange,
+            onBlur: function onBlur() {
+              if (context.values.confirmPassword && context.values.confirmPassword !== context.values.password) {
+                context.setFieldError('confirmPassword', translate('common:confirmPasswordDidntMatch'));
+              } else {
+                Object(core["u" /* validateField */])({
+                  fieldName: 'confirmPassword',
+                  validateSchema: ForgotPhonePasswordValidateSchema,
+                  context: context
+                });
+              }
+            },
+            placeholder: translate('common:confirmPassword'),
+            type: "password",
+            name: "confirmPassword"
+          })), external_react_default.a.createElement(form_default.a.Item, {
+            className: "button-container",
+            style: {
+              textAlign: 'right'
+            }
+          }, external_react_default.a.createElement(button_default.a, {
+            type: "primary",
+            className: "login-button",
+            htmlType: "submit",
+            loading: _this2.state.loading
+          }, translate('common:update-password')), external_react_default.a.createElement("br", null)));
+        }));
+      }
+    }
+  }]);
+
+  return BaseForgotPasswordModal;
+}(external_react_default.a.Component);
+
+var ForgotPasswordModal_ForgotPasswordModal = Object(i18n["d" /* withNamespaces */])('common')(form_default.a.create()(ForgotPasswordModal_BaseForgotPasswordModal));
+// CONCATENATED MODULE: ./components/CommonLayout/LoginModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function LoginModal_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { LoginModal_typeof = function _typeof(obj) { return typeof obj; }; } else { LoginModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return LoginModal_typeof(obj); }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { LoginModal_defineProperty(target, key, source[key]); }); } return target; }
+
+function LoginModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function LoginModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { LoginModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { LoginModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function LoginModal_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function LoginModal_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function LoginModal_createClass(Constructor, protoProps, staticProps) { if (protoProps) LoginModal_defineProperties(Constructor.prototype, protoProps); if (staticProps) LoginModal_defineProperties(Constructor, staticProps); return Constructor; }
+
+function LoginModal_possibleConstructorReturn(self, call) { if (call && (LoginModal_typeof(call) === "object" || typeof call === "function")) { return call; } return LoginModal_assertThisInitialized(self); }
+
+function LoginModal_getPrototypeOf(o) { LoginModal_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return LoginModal_getPrototypeOf(o); }
+
+function LoginModal_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function LoginModal_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) LoginModal_setPrototypeOf(subClass, superClass); }
+
+function LoginModal_setPrototypeOf(o, p) { LoginModal_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return LoginModal_setPrototypeOf(o, p); }
+
+function LoginModal_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var LoginModal_BaseLoginModal =
+/*#__PURE__*/
+function (_React$Component) {
+  LoginModal_inherits(BaseLoginModal, _React$Component);
+
+  function BaseLoginModal() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    LoginModal_classCallCheck(this, BaseLoginModal);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = LoginModal_possibleConstructorReturn(this, (_getPrototypeOf2 = LoginModal_getPrototypeOf(BaseLoginModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "state", {
+      activeTab: 'phone',
+      phone: {
+        countryCode: '',
+        phoneNo: ''
+      },
+      loading: {
+        login: false,
+        getVerifyCode: false
+      },
+      forgotPassword: false
+    });
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "activeTabChange", function (_ref) {
+      var activeTab = _ref.activeTab;
+
+      _this.setState({
+        activeTab: activeTab
+      });
+    });
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "login",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = LoginModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values) {
+        var email, signInResult, idToken, serviceProxy;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  loading: _objectSpread({}, _this.state.loading, {
+                    login: true
+                  })
+                });
+
+                _context.prev = 1;
+                email = _this.state.activeTab === 'phone' ? "".concat(values.countryCode.replace('+', '')).concat(values.phoneNo, "@timmay.vn") : values.email;
+                _context.next = 5;
+                return app_default.a.auth().signInWithEmailAndPassword(email, values.password);
+
+              case 5:
+                signInResult = _context.sent;
+
+                if (!signInResult.user.emailVerified) {
+                  _context.next = 16;
+                  break;
+                }
+
+                _context.next = 9;
+                return app_default.a.auth().currentUser.getIdToken(true);
+
+              case 9:
+                idToken = _context.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                serviceProxy.registerUser({
+                  idToken: idToken
+                });
+
+                message_default.a.success(_this.props.t('common:loginSuccess'));
+
+                Object(core["t" /* submitLoginForm */])(idToken);
+                _context.next = 18;
+                break;
+
+              case 16:
+                message_default.a.error(_this.props.t('common:unverifiedAccount'));
+
+                _this.setState({
+                  loading: _objectSpread({}, _this.state.loading, {
+                    login: false
+                  })
+                });
+
+              case 18:
+                _context.next = 24;
+                break;
+
+              case 20:
+                _context.prev = 20;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_this.props.t(_context.t0.code));
+
+                _this.setState({
+                  loading: _objectSpread({}, _this.state.loading, {
+                    login: false
+                  })
+                });
+
+              case 24:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 20]]);
+      }));
+
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "loginWithFacebook",
+    /*#__PURE__*/
+    LoginModal_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var provider, idToken, serviceProxy;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              provider = new app_default.a.auth.FacebookAuthProvider();
+              _context2.next = 4;
+              return app_default.a.auth().signInWithPopup(provider);
+
+            case 4:
+              _context2.next = 6;
+              return app_default.a.auth().currentUser.getIdToken(true);
+
+            case 6:
+              idToken = _context2.sent;
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context2.next = 10;
+              return serviceProxy.registerUser({
+                idToken: idToken
+              });
+
+            case 10:
+              message_default.a.success(_this.props.t('common:loginSuccess'));
+
+              Object(core["t" /* submitLoginForm */])(idToken);
+              _context2.next = 17;
+              break;
+
+            case 14:
+              _context2.prev = 14;
+              _context2.t0 = _context2["catch"](0);
+
+              message_default.a.error(_this.props.t("common:".concat(_context2.t0.code)));
+
+            case 17:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 14]]);
+    })));
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "loginWithGoogle",
+    /*#__PURE__*/
+    LoginModal_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var provider, idToken, serviceProxy;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.prev = 0;
+              provider = new app_default.a.auth.GoogleAuthProvider();
+              _context3.next = 4;
+              return app_default.a.auth().signInWithPopup(provider);
+
+            case 4:
+              _context3.next = 6;
+              return app_default.a.auth().currentUser.getIdToken(true);
+
+            case 6:
+              idToken = _context3.sent;
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context3.next = 10;
+              return serviceProxy.registerUser({
+                idToken: idToken
+              });
+
+            case 10:
+              message_default.a.success(_this.props.t('common:loginSuccess'));
+
+              Object(core["t" /* submitLoginForm */])(idToken);
+              _context3.next = 17;
+              break;
+
+            case 14:
+              _context3.prev = 14;
+              _context3.t0 = _context3["catch"](0);
+
+              message_default.a.error(_this.props.t("common:".concat(_context3.t0.code)));
+
+            case 17:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[0, 14]]);
+    })));
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "showForgotPasswordModal", function () {
+      _this.setState({
+        forgotPassword: true
+      });
+    });
+
+    LoginModal_defineProperty(LoginModal_assertThisInitialized(_this), "hideForgotPasswordModal", function () {
+      _this.setState({
+        forgotPassword: false
+      });
+    });
+
+    return _this;
+  }
+
+  LoginModal_createClass(BaseLoginModal, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var EmailValidateSchema = external_yup_["object"]().shape({
+        email: external_yup_["string"]().required(translate('common:pleaseInputEmail')),
+        password: external_yup_["string"]().max(100, translate('common:passwordTooLong')).matches(/[^\s]/, translate('common:passwordCantContainSpace')).required(translate('common:pleaseInputPassword'))
+      });
+      var PhoneNumberValidateSchema = external_yup_["object"]().shape({
+        countryCode: external_yup_["string"]().required(translate('common:pleaseInputCountryCode')),
+        phoneNo: external_yup_["string"]().matches(config["a" /* config */].regex.phone, translate('common:invalidPhoneNo')).required(translate('common:pleaseInputPhoneNo')),
+        password: external_yup_["string"]().required(translate('common:pleaseInputPassword')).max(100, translate('common:passwordTooLong')).matches(/[^\s]/, translate('common:passwordCantContainSpace'))
+      });
+      return external_react_["createElement"](modal_default.a, {
+        className: "login-modal",
+        visible: this.props.profileState.modal.login,
+        footer: null,
+        onCancel: function onCancel() {
+          return _this2.props.profileReducers.closeModal({
+            modalName: 'login'
+          });
+        },
+        destroyOnClose: true
+      }, external_react_["createElement"]("h2", null, translate('common:login')), external_react_["createElement"]("hr", {
+        className: "title-underline"
+      }), external_react_["createElement"](tabs_default.a, {
+        defaultActiveKey: this.state.activeTab,
+        onChange: function onChange(activeTab) {
+          return _this2.activeTabChange({
+            activeTab: activeTab
+          });
+        }
+      }, external_react_["createElement"](tabs_default.a.TabPane, {
+        tab: external_react_["createElement"]("span", null, external_react_["createElement"](icon_default.a, {
+          type: "phone"
+        }), translate('common:sms')),
+        key: "phone"
+      }, external_react_["createElement"](external_formik_["Formik"], {
+        initialValues: {
+          countryCode: '+84',
+          phoneNo: '',
+          password: ''
+        },
+        validateOnChange: false,
+        validationSchema: PhoneNumberValidateSchema,
+        onSubmit:
+        /*#__PURE__*/
+        function () {
+          var _ref5 = LoginModal_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee4(values, formikBag) {
+            return regenerator_default.a.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    _context4.next = 2;
+                    return _this2.login(values);
+
+                  case 2:
+                    formikBag.resetForm({
+                      countryCode: '+84',
+                      phoneNo: values.phoneNo,
+                      password: ''
+                    });
+
+                  case 3:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4);
+          }));
+
+          return function (_x2, _x3) {
+            return _ref5.apply(this, arguments);
+          };
+        }()
+      }, function (context) {
+        return external_react_["createElement"](form_default.a, {
+          onSubmit: context.handleSubmit
+        }, external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.phoneNo || context.errors.countryCode ? 'error' : undefined,
+          help: context.errors.phoneNo || context.errors.countryCode
+        }, external_react_["createElement"](input_default.a, {
+          addonBefore: external_react_["createElement"](select_default.a, {
+            style: {
+              width: 120
+            },
+            value: context.values.countryCode,
+            onChange: context.handleChange
+          }, external_react_["createElement"](select_default.a.Option, {
+            value: "+84"
+          }, "VN (+84)")),
+          value: context.values.phoneNo,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'phoneNo',
+              validateSchema: PhoneNumberValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:phoneNo'),
+          name: "phoneNo"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.password ? 'error' : undefined,
+          help: context.errors.password
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.password,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'password',
+              validateSchema: PhoneNumberValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:password'),
+          type: "password",
+          name: "password"
+        })), external_react_["createElement"](form_default.a.Item, {
+          className: "button-container"
+        }, external_react_["createElement"](button_default.a, {
+          type: "primary",
+          className: "login-button",
+          htmlType: "submit",
+          loading: _this2.state.loading.login
+        }, translate('common:login')), external_react_["createElement"]("br", null), external_react_["createElement"](button_default.a, {
+          type: "default",
+          className: "forgot-password-button",
+          onClick: _this2.showForgotPasswordModal
+        }, translate('common:forgotPassword'))));
+      })), external_react_["createElement"](tabs_default.a.TabPane, {
+        tab: external_react_["createElement"]("span", null, external_react_["createElement"](icon_default.a, {
+          type: "mail"
+        }), translate('common:email')),
+        key: "email"
+      }, external_react_["createElement"](external_formik_["Formik"], {
+        initialValues: {
+          email: '',
+          password: ''
+        },
+        validateOnChange: false,
+        validationSchema: EmailValidateSchema,
+        onSubmit:
+        /*#__PURE__*/
+        function () {
+          var _ref6 = LoginModal_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee5(values, formikBag) {
+            return regenerator_default.a.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    _context5.next = 2;
+                    return _this2.login(values);
+
+                  case 2:
+                    formikBag.resetForm({
+                      email: values.email,
+                      password: ''
+                    });
+
+                  case 3:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
+
+          return function (_x4, _x5) {
+            return _ref6.apply(this, arguments);
+          };
+        }()
+      }, function (context) {
+        return external_react_["createElement"](form_default.a, {
+          onSubmit: context.handleSubmit
+        }, external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.email ? 'error' : undefined,
+          help: context.errors.email
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.email,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'email',
+              validateSchema: EmailValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:email'),
+          type: "email",
+          name: "email"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.password ? 'error' : undefined,
+          help: context.errors.password
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.password,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'password',
+              validateSchema: EmailValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:password'),
+          type: "password",
+          name: "password"
+        })), external_react_["createElement"](form_default.a.Item, {
+          className: "button-container"
+        }, external_react_["createElement"](button_default.a, {
+          type: "primary",
+          className: "login-button",
+          htmlType: "submit",
+          loading: _this2.state.loading.login
+        }, translate('common:login')), external_react_["createElement"]("br", null), external_react_["createElement"](button_default.a, {
+          type: "default",
+          className: "forgot-password-button",
+          onClick: _this2.showForgotPasswordModal
+        }, translate('common:forgotPassword'))));
+      }))), external_react_["createElement"](row_default.a, null, external_react_["createElement"](col_default.a, {
+        lg: 10
+      }, external_react_["createElement"]("hr", null)), external_react_["createElement"](col_default.a, {
+        lg: 4,
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_["createElement"]("span", null, translate('common:or'))), external_react_["createElement"](col_default.a, {
+        lg: 10
+      }, external_react_["createElement"]("hr", null))), external_react_["createElement"](row_default.a, null, external_react_["createElement"](button_default.a, {
+        type: "primary",
+        className: "login-facebook-button",
+        onClick: this.loginWithFacebook
+      }, translate('common:facebookLogin')), external_react_["createElement"](button_default.a, {
+        type: "primary",
+        className: "login-google-button",
+        onClick: this.loginWithGoogle
+      }, translate('common:googleLogin'))), external_react_["createElement"]("hr", null), external_react_["createElement"](row_default.a, {
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_["createElement"]("span", {
+        style: {
+          color: '#000'
+        }
+      }, translate('common:dontHaveAccount'), "? "), external_react_["createElement"]("span", {
+        style: {
+          color: 'blue',
+          cursor: 'pointer'
+        },
+        onClick: function onClick() {
+          _this2.props.profileReducers.closeModal({
+            modalName: 'login'
+          });
+
+          _this2.props.profileReducers.openModal({
+            modalName: 'register'
+          });
+        }
+      }, translate('common:register'))), external_react_["createElement"]("form", {
+        id: "form",
+        method: "post",
+        action: "/auth/login",
+        style: {
+          display: 'none'
+        }
+      }), external_react_["createElement"](ForgotPasswordModal_ForgotPasswordModal, {
+        type: this.state.activeTab,
+        visible: this.state.forgotPassword,
+        onCancel: this.hideForgotPasswordModal
+      }));
+    }
+  }]);
+
+  return BaseLoginModal;
+}(external_react_["Component"]);
+
+var LoginModal_LoginModal = Object(i18n["d" /* withNamespaces */])('common')(LoginModal_BaseLoginModal);
+// EXTERNAL MODULE: ./components/CommonLayout/RegisterModal.less
+var RegisterModal = __webpack_require__(99);
+
+// CONCATENATED MODULE: ./components/CommonLayout/RegisterModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function RegisterModal_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { RegisterModal_typeof = function _typeof(obj) { return typeof obj; }; } else { RegisterModal_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return RegisterModal_typeof(obj); }
+
+function RegisterModal_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { RegisterModal_defineProperty(target, key, source[key]); }); } return target; }
+
+function RegisterModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function RegisterModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { RegisterModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { RegisterModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function RegisterModal_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function RegisterModal_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function RegisterModal_createClass(Constructor, protoProps, staticProps) { if (protoProps) RegisterModal_defineProperties(Constructor.prototype, protoProps); if (staticProps) RegisterModal_defineProperties(Constructor, staticProps); return Constructor; }
+
+function RegisterModal_possibleConstructorReturn(self, call) { if (call && (RegisterModal_typeof(call) === "object" || typeof call === "function")) { return call; } return RegisterModal_assertThisInitialized(self); }
+
+function RegisterModal_getPrototypeOf(o) { RegisterModal_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return RegisterModal_getPrototypeOf(o); }
+
+function RegisterModal_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function RegisterModal_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) RegisterModal_setPrototypeOf(subClass, superClass); }
+
+function RegisterModal_setPrototypeOf(o, p) { RegisterModal_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return RegisterModal_setPrototypeOf(o, p); }
+
+function RegisterModal_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var RegisterModal_BaseRegisterModal =
+/*#__PURE__*/
+function (_React$Component) {
+  RegisterModal_inherits(BaseRegisterModal, _React$Component);
+
+  function BaseRegisterModal() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    RegisterModal_classCallCheck(this, BaseRegisterModal);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = RegisterModal_possibleConstructorReturn(this, (_getPrototypeOf2 = RegisterModal_getPrototypeOf(BaseRegisterModal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "state", {
+      activeTab: 'phone',
+      phone: {
+        countryCode: '',
+        phoneNo: ''
+      },
+      loading: {
+        register: false,
+        getVerifyCode: false
+      }
+    });
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "activeTabChange", function (_ref) {
+      var activeTab = _ref.activeTab;
+
+      _this.setState({
+        activeTab: activeTab
+      });
+    });
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "getCode",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = RegisterModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values) {
+        var fullPhoneNumber, serviceProxy, phoneNoExistResult, appVerifier, confirmationResult;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  phone: {
+                    phoneNo: values.phoneNo,
+                    countryCode: values.countryCode
+                  },
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    getVerifyCode: true
+                  })
+                });
+
+                _context.prev = 1;
+                fullPhoneNumber = "".concat(values.countryCode).concat(values.phoneNo);
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context.next = 6;
+                return serviceProxy.checkPhoneNoExist(fullPhoneNumber);
+
+              case 6:
+                phoneNoExistResult = _context.sent;
+
+                if (phoneNoExistResult.phoneNoExist) {
+                  _context.next = 16;
+                  break;
+                }
+
+                appVerifier = window.recaptchaVerifier;
+                _context.next = 11;
+                return app_default.a.auth().signInWithPhoneNumber(fullPhoneNumber, appVerifier);
+
+              case 11:
+                confirmationResult = _context.sent;
+                window.confirmationResult = confirmationResult;
+
+                message_default.a.success(_this.props.t('common:sendVerifyCodeSuccess'));
+
+                _context.next = 17;
+                break;
+
+              case 16:
+                message_default.a.error(_this.props.t('common:phoneNoHasBeenUsed'));
+
+              case 17:
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    getVerifyCode: false
+                  })
+                });
+
+                _context.next = 23;
+                break;
+
+              case 20:
+                _context.prev = 20;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_this.props.t(_context.t0.code));
+
+              case 23:
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    getVerifyCode: false
+                  })
+                });
+
+              case 24:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 20]]);
+      }));
+
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "register",
+    /*#__PURE__*/
+    function () {
+      var _ref3 = RegisterModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(values) {
+        var newUser, serviceProxy, idToken, phoneNo, _idToken, _serviceProxy;
+
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    register: true
+                  })
+                });
+
+                _context2.prev = 1;
+
+                if (!(_this.state.activeTab === 'email')) {
+                  _context2.next = 16;
+                  break;
+                }
+
+                _context2.next = 5;
+                return app_default.a.auth().createUserWithEmailAndPassword(values.email, values.password);
+
+              case 5:
+                newUser = _context2.sent;
+                newUser.user.sendEmailVerification(); // create mongodb record
+
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context2.next = 10;
+                return app_default.a.auth().currentUser.getIdToken(true);
+
+              case 10:
+                idToken = _context2.sent;
+                serviceProxy.registerUser({
+                  idToken: idToken
+                }); // redirect
+
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    register: false
+                  })
+                });
+
+                message_default.a.success(_this.props.t('common:registerEmailSuccess'), 4);
+
+                _context2.next = 32;
+                break;
+
+              case 16:
+                if (!(_this.state.activeTab === 'phone')) {
+                  _context2.next = 32;
+                  break;
+                }
+
+                phoneNo = "".concat(_this.state.phone.countryCode).concat(_this.state.phone.phoneNo);
+                _context2.next = 20;
+                return window.confirmationResult.confirm(values.verifyCode);
+
+              case 20:
+                _context2.next = 22;
+                return app_default.a.auth().currentUser.updateEmail("".concat(phoneNo.replace('+', ''), "@timmay.vn"));
+
+              case 22:
+                _context2.next = 24;
+                return app_default.a.auth().currentUser.updatePassword(values.password);
+
+              case 24:
+                _context2.next = 26;
+                return app_default.a.auth().currentUser.getIdToken(true);
+
+              case 26:
+                _idToken = _context2.sent;
+                _serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context2.next = 30;
+                return _serviceProxy.registerUser({
+                  idToken: _idToken
+                });
+
+              case 30:
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    register: false
+                  })
+                });
+
+                message_default.a.success(_this.props.t('common:registerSuccess'));
+
+              case 32:
+                _context2.next = 38;
+                break;
+
+              case 34:
+                _context2.prev = 34;
+                _context2.t0 = _context2["catch"](1);
+
+                message_default.a.error(_this.props.t(_context2.t0.code));
+
+                _this.setState({
+                  loading: RegisterModal_objectSpread({}, _this.state.loading, {
+                    register: false
+                  })
+                });
+
+              case 38:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[1, 34]]);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "loginWithFacebook",
+    /*#__PURE__*/
+    RegisterModal_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var provider, serviceProxy, idToken;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.prev = 0;
+              provider = new app_default.a.auth.FacebookAuthProvider();
+              _context3.next = 4;
+              return app_default.a.auth().signInWithPopup(provider);
+
+            case 4:
+              // create mongodb record
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context3.next = 7;
+              return app_default.a.auth().currentUser.getIdToken(true);
+
+            case 7:
+              idToken = _context3.sent;
+              serviceProxy.registerUser({
+                idToken: idToken
+              });
+
+              message_default.a.success(_this.props.t('common:registerSuccess'));
+
+              Object(core["t" /* submitLoginForm */])(idToken);
+              _context3.next = 16;
+              break;
+
+            case 13:
+              _context3.prev = 13;
+              _context3.t0 = _context3["catch"](0);
+
+              message_default.a.error(_this.props.t("common:".concat(_context3.t0.code)));
+
+            case 16:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[0, 13]]);
+    })));
+
+    RegisterModal_defineProperty(RegisterModal_assertThisInitialized(_this), "loginWithGoogle",
+    /*#__PURE__*/
+    RegisterModal_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee4() {
+      var provider, serviceProxy, idToken;
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.prev = 0;
+              provider = new app_default.a.auth.GoogleAuthProvider();
+              _context4.next = 4;
+              return app_default.a.auth().signInWithPopup(provider);
+
+            case 4:
+              // create mongodb record
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context4.next = 7;
+              return app_default.a.auth().currentUser.getIdToken(true);
+
+            case 7:
+              idToken = _context4.sent;
+              serviceProxy.registerUser({
+                idToken: idToken
+              });
+
+              message_default.a.success(_this.props.t('common:registerSuccess'));
+
+              Object(core["t" /* submitLoginForm */])(idToken);
+              _context4.next = 16;
+              break;
+
+            case 13:
+              _context4.prev = 13;
+              _context4.t0 = _context4["catch"](0);
+
+              message_default.a.error(_this.props.t("common:".concat(_context4.t0.code)));
+
+            case 16:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[0, 13]]);
+    })));
+
+    return _this;
+  }
+
+  RegisterModal_createClass(BaseRegisterModal, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var EmailValidateSchema = external_yup_["object"]().shape({
+        email: external_yup_["string"]().required(translate('common:pleaseInputEmail')).matches(config["a" /* config */].regex.email, translate('common:invalidEmail')),
+        password: external_yup_["string"]().required(translate('common:pleaseInputPassword')).max(100, translate('common:passwordTooLong')).matches(config["a" /* config */].regex.password, translate('common:invalidPassword')),
+        confirmPassword: external_yup_["string"]().required(translate('common:pleaseConfirmPassword'))
+      });
+      var PhoneNumberValidateSchema = external_yup_["object"]().shape({
+        countryCode: external_yup_["string"]().required(translate('common:pleaseInputCountryCode')),
+        phoneNo: external_yup_["string"]().matches(config["a" /* config */].regex.phone, translate('common:invalidPhoneNo')).required(translate('common:pleaseInputPhoneNo'))
+      });
+      var VerifyCodeValidateSchema = external_yup_["object"]().shape({
+        verifyCode: external_yup_["string"]().required(translate('common:pleaseInputVerifyCode')),
+        password: external_yup_["string"]().required(translate('common:pleaseInputPassword')).max(100, translate('common:passwordTooLong')).matches(config["a" /* config */].regex.password, translate('common:invalidPassword')),
+        confirmPassword: external_yup_["string"]().required(translate('common:pleaseConfirmPassword'))
+      });
+      return external_react_["createElement"](modal_default.a, {
+        className: "register-modal",
+        visible: this.props.profileState.modal.register,
+        footer: null,
+        onCancel: function onCancel() {
+          return _this2.props.profileReducers.closeModal({
+            modalName: 'register'
+          });
+        },
+        destroyOnClose: true
+      }, external_react_["createElement"]("h2", null, translate('common:register')), external_react_["createElement"]("hr", {
+        className: "title-underline"
+      }), external_react_["createElement"](tabs_default.a, {
+        defaultActiveKey: this.state.activeTab,
+        onChange: function onChange(activeTab) {
+          return _this2.activeTabChange({
+            activeTab: activeTab
+          });
+        }
+      }, external_react_["createElement"](tabs_default.a.TabPane, {
+        tab: external_react_["createElement"]("span", null, external_react_["createElement"](icon_default.a, {
+          type: "phone"
+        }), translate('common:sms')),
+        key: "phone"
+      }, external_react_["createElement"](external_formik_["Formik"], {
+        initialValues: {
+          countryCode: '+84',
+          phoneNo: ''
+        },
+        validateOnChange: false,
+        validationSchema: PhoneNumberValidateSchema,
+        onSubmit:
+        /*#__PURE__*/
+        function () {
+          var _ref6 = RegisterModal_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee5(values) {
+            return regenerator_default.a.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    _context5.next = 2;
+                    return _this2.getCode(values);
+
+                  case 2:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5);
+          }));
+
+          return function (_x3) {
+            return _ref6.apply(this, arguments);
+          };
+        }()
+      }, function (context) {
+        return external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.phoneNo || context.errors.countryCode ? 'error' : undefined,
+          help: context.errors.phoneNo || context.errors.countryCode
+        }, external_react_["createElement"](input_default.a.Search, {
+          addonBefore: external_react_["createElement"](select_default.a, {
+            style: {
+              width: 120
+            },
+            value: context.values.countryCode,
+            onChange: context.handleChange
+          }, external_react_["createElement"](select_default.a.Option, {
+            value: "+84"
+          }, "VN (+84)")),
+          value: context.values.phoneNo,
+          onChange: context.handleChange,
+          onBlur: context.handleBlur,
+          placeholder: translate('common:phoneNo'),
+          enterButton: external_react_["createElement"](button_default.a, {
+            type: "primary",
+            loading: _this2.state.loading.getVerifyCode
+          }, translate('common:sendCode')),
+          onSearch: context.handleSubmit,
+          name: "phoneNo"
+        }));
+      }), external_react_["createElement"](external_formik_["Formik"], {
+        initialValues: {
+          verifyCode: '',
+          password: '',
+          confirmPassword: ''
+        },
+        validateOnChange: false,
+        validationSchema: VerifyCodeValidateSchema,
+        onSubmit:
+        /*#__PURE__*/
+        function () {
+          var _ref7 = RegisterModal_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee6(values, formikBag) {
+            return regenerator_default.a.wrap(function _callee6$(_context6) {
+              while (1) {
+                switch (_context6.prev = _context6.next) {
+                  case 0:
+                    _context6.next = 2;
+                    return _this2.register(values);
+
+                  case 2:
+                    formikBag.resetForm({});
+
+                  case 3:
+                  case "end":
+                    return _context6.stop();
+                }
+              }
+            }, _callee6);
+          }));
+
+          return function (_x4, _x5) {
+            return _ref7.apply(this, arguments);
+          };
+        }()
+      }, function (context) {
+        return external_react_["createElement"](form_default.a, {
+          onSubmit: context.handleSubmit
+        }, external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.verifyCode ? 'error' : undefined,
+          help: context.errors.verifyCode
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.verifyCode,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'verifyCode',
+              validateSchema: VerifyCodeValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:verifyCode'),
+          name: "verifyCode"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.password ? 'error' : undefined,
+          help: context.errors.password
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.password,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'password',
+              validateSchema: VerifyCodeValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:password'),
+          type: "password",
+          name: "password"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.confirmPassword ? 'error' : undefined,
+          help: context.errors.confirmPassword
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.confirmPassword,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            if (context.values.confirmPassword && context.values.confirmPassword !== context.values.password) {
+              context.setFieldError('confirmPassword', translate('common:confirmPasswordDidntMatch'));
+            } else {
+              Object(core["u" /* validateField */])({
+                fieldName: 'confirmPassword',
+                validateSchema: VerifyCodeValidateSchema,
+                context: context
+              });
+            }
+          },
+          placeholder: translate('common:confirmPassword'),
+          type: "password",
+          name: "confirmPassword"
+        })), external_react_["createElement"](form_default.a.Item, {
+          className: "button-container"
+        }, external_react_["createElement"](button_default.a, {
+          type: "primary",
+          className: "login-button",
+          htmlType: "submit",
+          loading: _this2.state.loading.register
+        }, translate('common:register')), external_react_["createElement"]("br", null)));
+      })), external_react_["createElement"](tabs_default.a.TabPane, {
+        tab: external_react_["createElement"]("span", null, external_react_["createElement"](icon_default.a, {
+          type: "mail"
+        }), "Email"),
+        key: "email"
+      }, external_react_["createElement"](external_formik_["Formik"], {
+        initialValues: {
+          email: '',
+          password: '',
+          confirmPassword: ''
+        },
+        validateOnChange: false,
+        validationSchema: EmailValidateSchema,
+        validate: function validate(values) {
+          var errors = {};
+
+          if (values.password !== values.confirmPassword) {
+            errors.confirmPassword = translate('common:confirmPasswordDidntMatch');
+          }
+
+          return errors;
+        },
+        onSubmit:
+        /*#__PURE__*/
+        function () {
+          var _ref8 = RegisterModal_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee7(values, formikBag) {
+            return regenerator_default.a.wrap(function _callee7$(_context7) {
+              while (1) {
+                switch (_context7.prev = _context7.next) {
+                  case 0:
+                    _context7.next = 2;
+                    return _this2.register(values);
+
+                  case 2:
+                    formikBag.resetForm({
+                      email: '',
+                      password: '',
+                      confirmPassword: ''
+                    });
+
+                  case 3:
+                  case "end":
+                    return _context7.stop();
+                }
+              }
+            }, _callee7);
+          }));
+
+          return function (_x6, _x7) {
+            return _ref8.apply(this, arguments);
+          };
+        }()
+      }, function (context) {
+        return external_react_["createElement"](form_default.a, {
+          onSubmit: context.handleSubmit
+        }, external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.email ? 'error' : undefined,
+          help: context.errors.email
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.email,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'email',
+              validateSchema: EmailValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:email'),
+          type: "email",
+          name: "email"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.password ? 'error' : undefined,
+          help: context.errors.password
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.password,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            return Object(core["u" /* validateField */])({
+              fieldName: 'password',
+              validateSchema: EmailValidateSchema,
+              context: context
+            });
+          },
+          placeholder: translate('common:password'),
+          type: "password",
+          name: "password"
+        })), external_react_["createElement"](form_default.a.Item, {
+          validateStatus: context.errors.confirmPassword ? 'error' : undefined,
+          help: context.errors.confirmPassword
+        }, external_react_["createElement"](input_default.a, {
+          value: context.values.confirmPassword,
+          onChange: context.handleChange,
+          onBlur: function onBlur() {
+            if (context.values.confirmPassword && context.values.confirmPassword !== context.values.password) {
+              context.setFieldError('confirmPassword', translate('common:confirmPasswordDidntMatch'));
+            } else {
+              Object(core["u" /* validateField */])({
+                fieldName: 'confirmPassword',
+                validateSchema: EmailValidateSchema,
+                context: context
+              });
+            }
+          },
+          placeholder: translate('common:confirmPassword'),
+          type: "password",
+          name: "confirmPassword"
+        })), external_react_["createElement"](form_default.a.Item, {
+          className: "button-container"
+        }, external_react_["createElement"](button_default.a, {
+          type: "primary",
+          className: "login-button",
+          htmlType: "submit",
+          loading: _this2.state.loading.register
+        }, translate('common:register')), external_react_["createElement"]("br", null)));
+      }))), external_react_["createElement"](row_default.a, null, external_react_["createElement"](col_default.a, {
+        lg: 10
+      }, external_react_["createElement"]("hr", null)), external_react_["createElement"](col_default.a, {
+        lg: 4,
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_["createElement"]("span", null, translate('common:or'))), external_react_["createElement"](col_default.a, {
+        lg: 10
+      }, external_react_["createElement"]("hr", null))), external_react_["createElement"](row_default.a, null, external_react_["createElement"](button_default.a, {
+        type: "primary",
+        className: "login-facebook-button",
+        onClick: this.loginWithFacebook
+      }, translate('common:registerFacebook')), external_react_["createElement"](button_default.a, {
+        type: "primary",
+        className: "login-google-button",
+        onClick: this.loginWithGoogle
+      }, translate('common:registerGoogle'))), external_react_["createElement"]("hr", null), external_react_["createElement"](row_default.a, {
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_["createElement"]("span", {
+        style: {
+          color: '#000'
+        }
+      }, translate('common:alreadyHaveAccount'), "? "), external_react_["createElement"]("span", {
+        style: {
+          color: 'blue',
+          cursor: 'pointer'
+        },
+        onClick: function onClick() {
+          _this2.props.profileReducers.closeModal({
+            modalName: 'register'
+          });
+
+          _this2.props.profileReducers.openModal({
+            modalName: 'login'
+          });
+        }
+      }, translate('common:login'))), external_react_["createElement"]("form", {
+        id: "form",
+        method: "post",
+        action: "/auth/login",
+        style: {
+          display: 'none'
+        }
+      }));
+    }
+  }]);
+
+  return BaseRegisterModal;
+}(external_react_["Component"]);
+
+var RegisterModal_RegisterModal = Object(i18n["d" /* withNamespaces */])('common')(RegisterModal_BaseRegisterModal);
+// EXTERNAL MODULE: ./components/CommonLayout/Footer.tsx + 1 modules
+var Footer = __webpack_require__(55);
+
+// EXTERNAL MODULE: external "antd/lib/tag/style"
+var tag_style_ = __webpack_require__(66);
+
+// EXTERNAL MODULE: external "antd/lib/tag"
+var tag_ = __webpack_require__(39);
+var tag_default = /*#__PURE__*/__webpack_require__.n(tag_);
+
+// EXTERNAL MODULE: external "antd/lib/dropdown/style"
+var dropdown_style_ = __webpack_require__(43);
+
+// EXTERNAL MODULE: external "antd/lib/dropdown"
+var dropdown_ = __webpack_require__(25);
+var dropdown_default = /*#__PURE__*/__webpack_require__.n(dropdown_);
+
+// EXTERNAL MODULE: external "antd/lib/badge/style"
+var badge_style_ = __webpack_require__(102);
+
+// EXTERNAL MODULE: external "antd/lib/badge"
+var badge_ = __webpack_require__(86);
+var badge_default = /*#__PURE__*/__webpack_require__.n(badge_);
+
+// EXTERNAL MODULE: ./components/CommonLayout/Header.less
+var Header = __webpack_require__(103);
+
+// EXTERNAL MODULE: external "js-cookie"
+var external_js_cookie_ = __webpack_require__(33);
+
+// EXTERNAL MODULE: external "antd/lib/spin/style"
+var spin_style_ = __webpack_require__(41);
+
+// EXTERNAL MODULE: external "antd/lib/spin"
+var spin_ = __webpack_require__(26);
+var spin_default = /*#__PURE__*/__webpack_require__.n(spin_);
+
+// EXTERNAL MODULE: external "antd/lib/list/style"
+var list_style_ = __webpack_require__(104);
+
+// EXTERNAL MODULE: external "antd/lib/list"
+var list_ = __webpack_require__(47);
+var list_default = /*#__PURE__*/__webpack_require__.n(list_);
+
+// EXTERNAL MODULE: external "moment"
+var external_moment_ = __webpack_require__(32);
+
+// EXTERNAL MODULE: ./components/CommonLayout/NotificationDropdown.less
+var CommonLayout_NotificationDropdown = __webpack_require__(105);
+
+// CONCATENATED MODULE: ./components/CommonLayout/NotificationDropdown.tsx
+
+
+
+
+
+
+
+
+function NotificationDropdown_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function NotificationDropdown_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { NotificationDropdown_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { NotificationDropdown_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+var NotificationDropdown_NotificationDropdown = function NotificationDropdown(props) {
+  var getNotificationContent = function getNotificationContent(notification) {
+    if (notification.type === 'CREATE_NEWS') {
+      var isShop = notification.news.shop && notification.news.shop._id;
+
+      if (isShop) {
+        var displayName = notification.news.shop.name;
+        return external_react_default.a.createElement("p", null, "B\xE0i vi\u1EBFt \xA0", external_react_default.a.createElement("a", {
+          title: notification.news.title,
+          onClick: function onClick() {
+            props.readNotification(notification._id);
+            window.location.href = "".concat(Object(core["i" /* getShopUrl */])(notification.news.shop.domain), "/bai-dang-cua-hang/").concat(notification.news._id);
+          }
+        }, external_react_default.a.createElement("b", null, notification.news.title)), " \xA0 \u0111\xE3 \u0111\u01B0\u1EE3c \u0111\u0103ng th\xE0nh c\xF4ng trong c\u1EEDa h\xE0ng \xA0", external_react_default.a.createElement("a", {
+          title: displayName,
+          onClick: function onClick() {
+            props.readNotification(notification._id);
+            window.location.href = "".concat(Object(core["i" /* getShopUrl */])(notification.news.shop.domain), "/thong-tin-cua-hang");
+          }
+        }, external_react_default.a.createElement("b", null, displayName)));
+      } else {
+        return external_react_default.a.createElement("p", null, "B\xE0i vi\u1EBFt \xA0", external_react_default.a.createElement("a", {
+          title: notification.news.title,
+          onClick: function onClick() {
+            props.readNotification(notification._id);
+            window.location.href = "/bai-dang/".concat(notification.news._id);
+          }
+        }, external_react_default.a.createElement("b", null, notification.news.title)), " \xA0 \u0111\xE3 \u0111\u01B0\u1EE3c \u0111\u0103ng th\xE0nh c\xF4ng");
+      }
+    } else if (notification.type === 'FOLLOW_USER') {
+      var _displayName = notification.news.owner.fullName || notification.news.owner.email || notification.news.owner.phoneNo;
+
+      return external_react_default.a.createElement("p", null, "Ng\u01B0\u1EDDi d\xF9ng \xA0", external_react_default.a.createElement("a", {
+        title: _displayName,
+        onClick: function onClick() {
+          props.readNotification(notification._id);
+          window.location.href = "/nguoi-dung/".concat(notification.news.owner._id);
+        }
+      }, external_react_default.a.createElement("b", null, _displayName)), " \xA0 v\u1EEBa \u0111\u0103ng b\xE0i vi\u1EBFt \xA0", external_react_default.a.createElement("a", {
+        title: notification.news.title,
+        onClick: function onClick() {
+          props.readNotification(notification._id);
+          window.location.href = "/bai-dang/".concat(notification.news._id);
+        }
+      }, external_react_default.a.createElement("b", null, notification.news.title)));
+    } else if (notification.type === 'FOLLOW_SHOP') {
+      var _displayName2 = notification.news.shop.name;
+      return external_react_default.a.createElement("p", null, "C\u1EEDa h\xE0ng \xA0", external_react_default.a.createElement("a", {
+        title: _displayName2,
+        onClick: function onClick() {
+          props.readNotification(notification._id);
+          window.location.href = "".concat(Object(core["i" /* getShopUrl */])(notification.news.shop.domain), "/thong-tin-cua-hang");
+        }
+      }, external_react_default.a.createElement("b", null, _displayName2)), " \xA0 v\u1EEBa \u0111\u0103ng b\xE0i vi\u1EBFt \xA0", external_react_default.a.createElement("a", {
+        title: notification.news.title,
+        onClick: function onClick() {
+          props.readNotification(notification._id);
+          window.location.href = "".concat(Object(core["i" /* getShopUrl */])(notification.news.shop.domain), "/bai-dang-cua-hang/").concat(notification.news._id);
+        }
+      }, external_react_default.a.createElement("b", null, notification.news.title)));
+    }
+
+    return;
+  };
+
+  return external_react_default.a.createElement("div", {
+    className: "notification-dropdown"
+  }, external_react_default.a.createElement(spin_default.a, {
+    spinning: props.loadingNotification
+  }, props.notificationList.length > 0 ? external_react_default.a.createElement("div", null, external_react_default.a.createElement(list_default.a, {
+    className: "notification-list",
+    itemLayout: "horizontal",
+    dataSource: props.notificationList,
+    renderItem: function renderItem(item) {
+      return external_react_default.a.createElement(list_default.a.Item, {
+        onClick:
+        /*#__PURE__*/
+        NotificationDropdown_asyncToGenerator(
+        /*#__PURE__*/
+        regenerator_default.a.mark(function _callee() {
+          return regenerator_default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  return _context.abrupt("return", props.readNotification(item._id));
+
+                case 1:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        })),
+        style: item.state === 'UNREAD' ? {
+          background: '#e6f7ff',
+          cursor: 'pointer'
+        } : {}
+      }, external_react_default.a.createElement(list_default.a.Item.Meta, {
+        title: getNotificationContent(item),
+        description: external_react_default.a.createElement("span", {
+          style: {
+            fontSize: '12px'
+          }
+        }, external_react_default.a.createElement(icon_default.a, {
+          type: "clock-circle"
+        }), " ", external_moment_(item.createdAt).format('DD-MM-YYYY HH:mm'))
+      }));
+    }
+  }, props.hasNext && external_react_default.a.createElement(list_default.a.Item, {
+    className: "loadmore-containter"
+  }, external_react_default.a.createElement("a", {
+    className: "loadmore-button",
+    onClick: props.loadMoreNotifications,
+    type: "primary"
+  }, "Xem th\xEAm"))), external_react_default.a.createElement("div", {
+    className: "small-text"
+  }, external_react_default.a.createElement("a", {
+    onClick: props.readAllNotifications
+  }, "\u0110\xE1nh d\u1EA5u \u0111\xE3 \u0111\u1ECDc t\u1EA5t c\u1EA3"))) : external_react_default.a.createElement("div", {
+    style: {
+      height: '60px',
+      textAlign: 'center',
+      marginTop: '40px',
+      fontWeight: 500
+    }
+  }, props.loadingNotification ? '' : 'Bạn không có thông báo nào')));
+};
+// CONCATENATED MODULE: ./components/CommonLayout/HamburgerMenu.tsx
+
+
+
+
+
+function HamburgerMenu_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { HamburgerMenu_typeof = function _typeof(obj) { return typeof obj; }; } else { HamburgerMenu_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return HamburgerMenu_typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function HamburgerMenu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function HamburgerMenu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function HamburgerMenu_createClass(Constructor, protoProps, staticProps) { if (protoProps) HamburgerMenu_defineProperties(Constructor.prototype, protoProps); if (staticProps) HamburgerMenu_defineProperties(Constructor, staticProps); return Constructor; }
+
+function HamburgerMenu_possibleConstructorReturn(self, call) { if (call && (HamburgerMenu_typeof(call) === "object" || typeof call === "function")) { return call; } return HamburgerMenu_assertThisInitialized(self); }
+
+function HamburgerMenu_getPrototypeOf(o) { HamburgerMenu_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return HamburgerMenu_getPrototypeOf(o); }
+
+function HamburgerMenu_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function HamburgerMenu_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) HamburgerMenu_setPrototypeOf(subClass, superClass); }
+
+function HamburgerMenu_setPrototypeOf(o, p) { HamburgerMenu_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return HamburgerMenu_setPrototypeOf(o, p); }
+
+function HamburgerMenu_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+var HamburgerMenu_HamburgerMenu =
+/*#__PURE__*/
+function (_React$Component) {
+  HamburgerMenu_inherits(HamburgerMenu, _React$Component);
+
+  function HamburgerMenu() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    HamburgerMenu_classCallCheck(this, HamburgerMenu);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = HamburgerMenu_possibleConstructorReturn(this, (_getPrototypeOf2 = HamburgerMenu_getPrototypeOf(HamburgerMenu)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    HamburgerMenu_defineProperty(HamburgerMenu_assertThisInitialized(_this), "state", {});
+
+    return _this;
+  }
+
+  HamburgerMenu_createClass(HamburgerMenu, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      return external_react_["createElement"](external_react_["Fragment"], null, external_react_["createElement"]("div", {
+        className: "dark-overlay",
+        style: this.props.toggle ? {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 3,
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          transition: 'opacity .25s ease-in-out'
+        } : {
+          display: 'none'
+        },
+        onClick: this.props.handleHamburgerMenuClick
+      }), external_react_["createElement"]("nav", {
+        role: "navigation"
+      }, external_react_["createElement"]("div", {
+        id: "menuToggle"
+      }, external_react_["createElement"]("input", _extends({
+        onClick: this.props.handleHamburgerMenuClick,
+        type: "checkbox"
+      }, this.props.toggle ? {
+        checked: true
+      } : {})), external_react_["createElement"]("span", {
+        className: "hamburger"
+      }), external_react_["createElement"]("span", {
+        className: "hamburger"
+      }), external_react_["createElement"]("span", {
+        className: "hamburger"
+      }), external_react_["createElement"]("ul", {
+        id: "menu",
+        style: this.props.handleHamburgerMenuClick ? {
+          overflowY: 'scroll',
+          height: '100vh'
+        } : {}
+      }, this.props.profileState && this.props.profileState.authUser && this.props.profileState.authUser.id ? external_react_["createElement"]("div", null, external_react_["createElement"]("a", {
+        href: "/thong-tin-ca-nhan",
+        className: "link"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-login"
+      }, external_react_["createElement"](col_default.a, {
+        md: 6,
+        xs: 6,
+        sm: 6
+      }, external_react_["createElement"]("div", {
+        className: "image-hamburger-rounded"
+      }, external_react_["createElement"]("img", {
+        src: this.props.profileState.authUser && this.props.profileState.authUser.avatarUrl ? this.props.profileState.authUser.avatarUrl : '/static/images/default-avatar.jpg'
+      }))), external_react_["createElement"](col_default.a, {
+        md: 18,
+        xs: 18,
+        sm: 18
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text menu-text-fullname"
+      }, this.props.profileState.authUser.fullName), external_react_["createElement"]("br", null), external_react_["createElement"]("span", {
+        className: "menu-item-text",
+        style: {
+          color: '#FFC500',
+          fontSize: '12px'
+        }
+      }, translate('common:edit-your-profile'))))), external_react_["createElement"]("hr", null), external_react_["createElement"]("a", {
+        href: "/dang-tin"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/create-news.png",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:createNews'))))), external_react_["createElement"]("a", {
+        href: "#"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/icon-noti.png",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:notifications'))))), external_react_["createElement"]("hr", null), external_react_["createElement"]("a", {
+        href: "/quan-li-tin-dang"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/quan-li-tin-dang-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:news-managenment'))))), external_react_["createElement"]("a", {
+        href: "/tin-da-luu"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/tin-da-luu-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:followed-news'))))), external_react_["createElement"]("hr", null), this.props.profileState.authUser && this.props.profileState.authUser.shopDomain ? external_react_["createElement"]("a", {
+        href: "/cua-hang-cua-toi"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/cua-hang-cua-toi-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:my-shop'))))) : external_react_["createElement"]("a", {
+        href: "/tao-cua-hang"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/tao-cua-hang-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:create-your-shop'))))), external_react_["createElement"]("a", {
+        href: "#"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/dang-ki-quang-cao-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:advertisement-registration'))))), external_react_["createElement"]("hr", null), external_react_["createElement"]("a", {
+        href: "#"
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/tro-giup-icon.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:help'))))), external_react_["createElement"]("hr", null), external_react_["createElement"]("a", {
+        onClick: this.props.logOut
+      }, external_react_["createElement"](row_default.a, {
+        className: "menu-item"
+      }, external_react_["createElement"](col_default.a, {
+        md: 3,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/icon-signout.png",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 21,
+        xs: 21,
+        sm: 21
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:log-out')))))) : external_react_["createElement"](row_default.a, {
+        className: "menu-login",
+        onClick: function onClick() {
+          return _this2.props.profileReducers.openModal({
+            modalName: 'login'
+          });
+        }
+      }, external_react_["createElement"](col_default.a, {
+        md: 6,
+        xs: 6,
+        sm: 6
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/default-avatar.jpg",
+        width: "100%"
+      })), external_react_["createElement"](col_default.a, {
+        md: 18,
+        xs: 18,
+        sm: 18
+      }, external_react_["createElement"]("span", {
+        className: "menu-item-text"
+      }, translate('common:login'), " /\x1C ", translate('common:register'))))))));
+    }
+  }]);
+
+  return HamburgerMenu;
+}(external_react_["Component"]);
+
+/* harmony default export */ var CommonLayout_HamburgerMenu = (Object(i18n["d" /* withNamespaces */])('common')(HamburgerMenu_HamburgerMenu));
+// CONCATENATED MODULE: ./components/CommonLayout/Header.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Header_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Header_typeof = function _typeof(obj) { return typeof obj; }; } else { Header_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Header_typeof(obj); }
+
+function Header_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { Header_defineProperty(target, key, source[key]); }); } return target; }
+
+function Header_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function Header_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { Header_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { Header_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function Header_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Header_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Header_createClass(Constructor, protoProps, staticProps) { if (protoProps) Header_defineProperties(Constructor.prototype, protoProps); if (staticProps) Header_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Header_possibleConstructorReturn(self, call) { if (call && (Header_typeof(call) === "object" || typeof call === "function")) { return call; } return Header_assertThisInitialized(self); }
+
+function Header_getPrototypeOf(o) { Header_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Header_getPrototypeOf(o); }
+
+function Header_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Header_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Header_setPrototypeOf(subClass, superClass); }
+
+function Header_setPrototypeOf(o, p) { Header_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Header_setPrototypeOf(o, p); }
+
+function Header_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Search = input_default.a.Search;
+
+var Header_MainHeader =
+/*#__PURE__*/
+function (_React$Component) {
+  Header_inherits(MainHeader, _React$Component);
+
+  function MainHeader() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    Header_classCallCheck(this, MainHeader);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = Header_possibleConstructorReturn(this, (_getPrototypeOf2 = Header_getPrototypeOf(MainHeader)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "state", {
+      toggle: false,
+      loadingNotification: false,
+      notifications: {
+        data: [],
+        before: undefined,
+        after: undefined
+      },
+      sortBy: 'createdAt|desc',
+      first: 10,
+      unreadNotifications: 0,
+      hasNotification: true,
+      currentLanguage: config["a" /* config */].i18n.defaultLang,
+      searchBarStatus: false
+    });
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "loadProfileInfo",
+    /*#__PURE__*/
+    Header_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxy, profileData;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              if (!(_this.props.profileState.authUser && _this.props.profileState.authUser.id)) {
+                _context.next = 7;
+                break;
+              }
+
+              idToken = external_js_cookie_["get"]('token');
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 5;
+              return serviceProxy.findPublicProfile(_this.props.profileState.authUser.id);
+
+            case 5:
+              profileData = _context.sent;
+
+              _this.setState({
+                userProfile: profileData
+              });
+
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "loadNotificationCount",
+    /*#__PURE__*/
+    Header_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var idToken, serviceProxy, countNotificationResult;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              if (!(_this.props.profileState.authUser && _this.props.profileState.authUser.id)) {
+                _context2.next = 7;
+                break;
+              }
+
+              idToken = external_js_cookie_["get"]('token');
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context2.next = 5;
+              return serviceProxy.countUnreadNotifications(_this.props.profileState.authUser.id);
+
+            case 5:
+              countNotificationResult = _context2.sent;
+
+              _this.setState({
+                unreadNotifications: countNotificationResult.unreadNotifications
+              });
+
+            case 7:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "onTurnOnSearchBar", function () {
+      _this.setState({
+        searchBarStatus: true
+      });
+    });
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "onTurnOffSearchBar", function () {
+      _this.setState({
+        searchBarStatus: false
+      });
+    });
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "changeLanguage",
+    /*#__PURE__*/
+    function () {
+      var _ref3 = Header_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee3(lang) {
+        return regenerator_default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                Object(i18n["b" /* changeLanguage */])(lang);
+                window.location.reload();
+
+              case 2:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "handleHamburgerMenuClick",
+    /*#__PURE__*/
+    Header_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee4() {
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _context4.next = 2;
+              return _this.setState({
+                toggle: !_this.state.toggle
+              });
+
+            case 2:
+              if (_this.state.toggle) {
+                document.body.style.overflow = 'hidden';
+                document.body.style.height = '100vh';
+              } else {
+                document.body.style.overflow = 'auto';
+                document.body.style.height = 'auto';
+              }
+
+            case 3:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4);
+    })));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "logOut", function () {
+      app_default.a.auth().signOut();
+      window.location.href = '/auth/logout';
+    });
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "loadNotifications",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = Header_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee5(dropdownVisible) {
+        var idToken, serviceProxy, notificationsResult;
+        return regenerator_default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                if (!(dropdownVisible && _this.state.notifications.data.length === 0 && _this.state.hasNotification)) {
+                  _context5.next = 15;
+                  break;
+                }
+
+                _this.setState({
+                  loadingNotification: true
+                });
+
+                _context5.prev = 2;
+                idToken = external_js_cookie_["get"]('token');
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context5.next = 7;
+                return serviceProxy.findNotifications(_this.state.first, _this.state.sortBy, undefined, undefined);
+
+              case 7:
+                notificationsResult = _context5.sent;
+
+                _this.setState({
+                  loadingNotification: false,
+                  notifications: notificationsResult,
+                  hasNotification: notificationsResult.data.length > 0
+                });
+
+                _context5.next = 15;
+                break;
+
+              case 11:
+                _context5.prev = 11;
+                _context5.t0 = _context5["catch"](2);
+                // tslint:disable-next-line:no-console
+                console.log(_context5.t0);
+
+                _this.setState({
+                  loadingNotification: false
+                });
+
+              case 15:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, null, [[2, 11]]);
+      }));
+
+      return function (_x2) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "loadMoreNotifications",
+    /*#__PURE__*/
+    Header_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee6() {
+      var idToken, serviceProxy, notificationsResult;
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              if (!_this.state.notifications.after) {
+                _context6.next = 15;
+                break;
+              }
+
+              _this.setState({
+                loadingNotification: true
+              });
+
+              _context6.prev = 2;
+              idToken = external_js_cookie_["get"]('token');
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context6.next = 7;
+              return serviceProxy.findNotifications(_this.state.first, _this.state.sortBy, undefined, _this.state.notifications.after);
+
+            case 7:
+              notificationsResult = _context6.sent;
+
+              _this.setState({
+                loadingNotification: false,
+                notifications: notificationsResult
+              });
+
+              _context6.next = 15;
+              break;
+
+            case 11:
+              _context6.prev = 11;
+              _context6.t0 = _context6["catch"](2);
+              // tslint:disable-next-line:no-console
+              console.log(_context6.t0);
+
+              _this.setState({
+                loadingNotification: false
+              });
+
+            case 15:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[2, 11]]);
+    })));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "readAllNotifications",
+    /*#__PURE__*/
+    Header_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee7() {
+      var idToken, serviceProxy;
+      return regenerator_default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _this.setState({
+                notifications: Header_objectSpread({}, _this.state.notifications, {
+                  data: _this.state.notifications.data.map(function (item) {
+                    if (item.state === core["n" /* notificationState */].UNREAD) {
+                      return Header_objectSpread({}, item, {
+                        state: core["n" /* notificationState */].READ
+                      });
+                    } else {
+                      return item;
+                    }
+                  })
+                }),
+                unreadNotifications: 0
+              });
+
+              try {
+                if (_this.props.profileState.authUser && _this.props.profileState.authUser.id) {
+                  idToken = external_js_cookie_["get"]('token');
+                  serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                  serviceProxy.readNotifications(_this.props.profileState.authUser.id, {
+                    operation: 'readAllNotifications'
+                  });
+                }
+              } catch (error) {
+                // tslint:disable-next-line:no-console
+                console.log(error);
+              }
+
+            case 2:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7);
+    })));
+
+    Header_defineProperty(Header_assertThisInitialized(_this), "readNotification",
+    /*#__PURE__*/
+    function () {
+      var _ref8 = Header_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee8(notificationId) {
+        var idToken, serviceProxy;
+        return regenerator_default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                _this.setState({
+                  notifications: Header_objectSpread({}, _this.state.notifications, {
+                    data: _this.state.notifications.data.map(function (item) {
+                      return item._id === notificationId ? Header_objectSpread({}, item, {
+                        state: core["n" /* notificationState */].READ
+                      }) : item;
+                    })
+                  }),
+                  unreadNotifications: _this.state.unreadNotifications - 1
+                });
+
+                try {
+                  if (_this.props.profileState.authUser && _this.props.profileState.authUser.id) {
+                    idToken = external_js_cookie_["get"]('token');
+                    serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                    serviceProxy.readNotifications(_this.props.profileState.authUser.id, {
+                      operation: 'readNotification',
+                      payload: {
+                        notificationId: notificationId
+                      }
+                    });
+                  }
+                } catch (error) {
+                  // tslint:disable-next-line:no-console
+                  console.log(error);
+                }
+
+              case 2:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8);
+      }));
+
+      return function (_x3) {
+        return _ref8.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  Header_createClass(MainHeader, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.loadNotificationCount();
+      this.loadProfileInfo();
+      Object(core["j" /* initializeFirebaseApp */])();
+      window.recaptchaVerifier = new app_default.a.auth.RecaptchaVerifier('recaptcha', {
+        'size': 'invisible'
+      });
+      this.setState({
+        currentLanguage: i18n["c" /* i18n */].i18n.language
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      return external_react_["createElement"]("header", {
+        id: "header"
+      }, external_react_["createElement"]("div", {
+        className: "dark-overlay",
+        onClick: this.onTurnOffSearchBar,
+        style: this.state.searchBarStatus ? {
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 3,
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          transition: 'opacity .25s ease-in-out'
+        } : {
+          display: 'none'
+        }
+      }), external_react_["createElement"](row_default.a, {
+        className: "header-container"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 6
+      }, external_react_["createElement"]("a", {
+        href: "/"
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/logo-timmay.png",
+        width: "100%"
+      }))), external_react_["createElement"](col_default.a, {
+        lg: 12
+      }), external_react_["createElement"](col_default.a, {
+        lg: 6,
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }
+      }, external_react_["createElement"](select_default.a, {
+        value: this.state.currentLanguage,
+        style: {
+          width: '140px',
+          border: '1px solid #000000',
+          color: '#000000'
+        },
+        onChange: function onChange(value) {
+          return _this2.changeLanguage(value);
+        }
+      }, external_react_["createElement"](select_default.a.Option, {
+        value: config["a" /* config */].i18n.VN
+      }, translate('common:vn')), external_react_["createElement"](select_default.a.Option, {
+        value: config["a" /* config */].i18n.EN
+      }, translate('common:en'))))), external_react_["createElement"](row_default.a, {
+        className: "mobile-header",
+        style: this.state.searchBarStatus ? {
+          zIndex: 4
+        } : {}
+      }, external_react_["createElement"](col_default.a, {
+        lg: 1,
+        md: 1,
+        xs: 0,
+        sm: 0
+      }), this.state.searchBarStatus ? external_react_["createElement"](col_default.a, {
+        lg: 22,
+        md: 22,
+        sm: 24,
+        xs: 24
+      }, external_react_["createElement"](Search, {
+        placeholder: translate('common:search'),
+        onSearch: function onSearch() {
+          return window.location.href = "/tim-kiem".concat(_this2.props.searchKeyword ? "?keyword=".concat(_this2.props.searchKeyword) : '');
+        },
+        onChange: function onChange(e) {
+          return _this2.props.updateFilters({
+            keyword: e.target.value
+          });
+        },
+        value: this.props.searchKeyword,
+        style: {
+          width: '100%',
+          borderRadius: '0px'
+        }
+      })) : external_react_["createElement"](external_react_["Fragment"], null, external_react_["createElement"](col_default.a, {
+        lg: 7,
+        md: 7,
+        xs: 12,
+        sm: 12
+      }, external_react_["createElement"]("a", {
+        href: "/"
+      }, external_react_["createElement"]("img", {
+        src: "/static/images/logo-timmay.png",
+        width: "100%"
+      }))), external_react_["createElement"](col_default.a, {
+        lg: 11,
+        md: 11,
+        xs: 3,
+        sm: 3
+      }), external_react_["createElement"](col_default.a, {
+        lg: 2,
+        md: 2,
+        xs: 4,
+        sm: 4
+      }, external_react_["createElement"]("img", {
+        className: "icon-search",
+        src: "/static/images/icon-search.png",
+        width: "30px",
+        onClick: this.onTurnOnSearchBar
+      })), external_react_["createElement"](col_default.a, {
+        lg: 2,
+        md: 2,
+        xs: 3,
+        sm: 3
+      }, external_react_["createElement"](CommonLayout_HamburgerMenu, {
+        handleHamburgerMenuClick: this.handleHamburgerMenuClick,
+        toggle: this.state.toggle,
+        profileState: Header_objectSpread({}, this.props.profileState, {
+          authUser: Header_objectSpread({}, this.props.profileState.authUser, this.state.userProfile)
+        }),
+        profileReducers: this.props.profileReducers,
+        logOut: this.logOut
+      }))), external_react_["createElement"](col_default.a, {
+        lg: 1,
+        md: 1,
+        xs: 0,
+        sm: 0
+      })), external_react_["createElement"]("div", {
+        className: "header-desktop"
+      }, external_react_["createElement"](row_default.a, {
+        className: "search-bar"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 8,
+        sm: 0,
+        xs: 0
+      }), external_react_["createElement"](col_default.a, {
+        lg: 12,
+        md: 8,
+        sm: 0,
+        xs: 0
+      }, external_react_["createElement"](Search, {
+        placeholder: translate('common:search'),
+        onSearch: function onSearch() {
+          return window.location.href = "/tim-kiem".concat(_this2.props.searchKeyword ? "?keyword=".concat(_this2.props.searchKeyword) : '');
+        },
+        onChange: function onChange(e) {
+          return _this2.props.updateFilters({
+            keyword: e.target.value
+          });
+        },
+        value: this.props.searchKeyword,
+        style: {
+          width: '95%',
+          height: '100%',
+          borderRadius: '8px'
+        }
+      })), this.props.profileState.authUser && this.props.profileState.authUser.id ? external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 8,
+        sm: 0,
+        xs: 0,
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center'
+        }
+      }, external_react_["createElement"](dropdown_default.a, {
+        overlay: external_react_["createElement"](NotificationDropdown_NotificationDropdown, {
+          loadingNotification: this.state.loadingNotification,
+          hasNext: Boolean(this.state.notifications.after),
+          loadMoreNotifications: this.loadMoreNotifications,
+          readAllNotifications: this.readAllNotifications,
+          notificationList: this.state.notifications.data,
+          readNotification: this.readNotification
+        }),
+        trigger: ['click'],
+        placement: "bottomCenter",
+        onVisibleChange: this.loadNotifications,
+        overlayClassName: "dropdown-menu"
+      }, external_react_["createElement"](badge_default.a, {
+        count: this.state.unreadNotifications
+      }, external_react_["createElement"]("a", null, external_react_["createElement"](icon_default.a, {
+        type: "bell",
+        theme: "filled",
+        style: {
+          color: '#000000',
+          fontSize: '24px'
+        }
+      })))), external_react_["createElement"](dropdown_default.a, {
+        overlay: external_react_["createElement"](components_CommonLayout_DropdownMenu, {
+          profileState: Header_objectSpread({}, this.props.profileState, {
+            authUser: Header_objectSpread({}, this.state.userProfile, this.props.profileState.authUser, {
+              avatarUrl: this.state.userProfile ? this.state.userProfile.avatarUrl : undefined,
+              fullName: this.props.fullName ? this.props.fullName : this.state.userProfile ? this.state.userProfile.fullName : undefined
+            })
+          }),
+          logOut: this.logOut
+        }),
+        trigger: ['click'],
+        placement: "bottomCenter",
+        overlayClassName: "dropdown-menu"
+      }, external_react_["createElement"](button_default.a, {
+        type: "default",
+        size: "large",
+        className: "search-bar-button",
+        icon: "user",
+        style: {
+          marginRight: '10px',
+          marginLeft: '16px'
+        }
+      }, translate('common:account'))), external_react_["createElement"]("a", {
+        href: "/dang-tin"
+      }, external_react_["createElement"](button_default.a, {
+        icon: "plus",
+        type: "default",
+        size: "large",
+        className: "search-bar-button",
+        style: {
+          width: '100%'
+        }
+      }, translate('common:createNews')))) : external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 8,
+        sm: 0,
+        xs: 0,
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center'
+        }
+      }, external_react_["createElement"](button_default.a, {
+        type: "default",
+        size: "large",
+        className: "search-bar-button",
+        style: {
+          marginRight: '10px',
+          marginLeft: '16px'
+        },
+        onClick: function onClick() {
+          return _this2.props.profileReducers.openModal({
+            modalName: 'register'
+          });
+        }
+      }, translate('common:register')), external_react_["createElement"](button_default.a, {
+        type: "default",
+        size: "large",
+        className: "search-bar-button",
+        onClick: function onClick() {
+          return _this2.props.profileReducers.openModal({
+            modalName: 'login'
+          });
+        }
+      }, translate('common:login')))), external_react_["createElement"](row_default.a, {
+        className: "popular-keyword"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 6
+      }), external_react_["createElement"](col_default.a, {
+        lg: 12,
+        style: {
+          marginTop: '6px',
+          display: 'flex',
+          alignItems: 'center'
+        }
+      }, external_react_["createElement"]("span", null, translate('common:commonKeywords'), ": \xA0 "), this.props.commonKeywords.slice(0, 4).map(function (item, index) {
+        return external_react_["createElement"]("a", {
+          style: {
+            color: '#000000'
+          },
+          key: index,
+          onClick: function onClick() {
+            window.location.href = "/tim-kiem?keyword=".concat(item.keyword);
+          }
+        }, external_react_["createElement"](tag_default.a, {
+          color: "orange"
+        }, item.keyword));
+      })), external_react_["createElement"](col_default.a, {
+        lg: 6
+      }))), external_react_["createElement"](LoginModal_LoginModal, {
+        profileState: this.props.profileState,
+        profileReducers: this.props.profileReducers
+      }), external_react_["createElement"](RegisterModal_RegisterModal, {
+        profileState: this.props.profileState,
+        profileReducers: this.props.profileReducers
+      }), external_react_["createElement"]("div", {
+        id: "recaptcha"
+      }));
+    }
+  }]);
+
+  return MainHeader;
+}(external_react_["Component"]);
+
+var Header_Header = Object(i18n["d" /* withNamespaces */])('common')(Header_MainHeader);
+// EXTERNAL MODULE: ./components/CommonLayout/LeftSideBar.less
+var LeftSideBar = __webpack_require__(106);
+
+// EXTERNAL MODULE: external "react-device-detect"
+var external_react_device_detect_ = __webpack_require__(29);
+
+// CONCATENATED MODULE: ./components/CommonLayout/LeftSideBar.tsx
+
+
+
+
+
+function LeftSideBar_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { LeftSideBar_typeof = function _typeof(obj) { return typeof obj; }; } else { LeftSideBar_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return LeftSideBar_typeof(obj); }
+
+function LeftSideBar_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function LeftSideBar_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function LeftSideBar_createClass(Constructor, protoProps, staticProps) { if (protoProps) LeftSideBar_defineProperties(Constructor.prototype, protoProps); if (staticProps) LeftSideBar_defineProperties(Constructor, staticProps); return Constructor; }
+
+function LeftSideBar_possibleConstructorReturn(self, call) { if (call && (LeftSideBar_typeof(call) === "object" || typeof call === "function")) { return call; } return LeftSideBar_assertThisInitialized(self); }
+
+function LeftSideBar_getPrototypeOf(o) { LeftSideBar_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return LeftSideBar_getPrototypeOf(o); }
+
+function LeftSideBar_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function LeftSideBar_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) LeftSideBar_setPrototypeOf(subClass, superClass); }
+
+function LeftSideBar_setPrototypeOf(o, p) { LeftSideBar_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return LeftSideBar_setPrototypeOf(o, p); }
+
+function LeftSideBar_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+var SubMenu = menu_default.a.SubMenu;
+
+var LeftSideBar_BaseLeftSideBar =
+/*#__PURE__*/
+function (_React$Component) {
+  LeftSideBar_inherits(BaseLeftSideBar, _React$Component);
+
+  function BaseLeftSideBar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    LeftSideBar_classCallCheck(this, BaseLeftSideBar);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = LeftSideBar_possibleConstructorReturn(this, (_getPrototypeOf2 = LeftSideBar_getPrototypeOf(BaseLeftSideBar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    LeftSideBar_defineProperty(LeftSideBar_assertThisInitialized(_this), "state", {
+      isOpenDropdownMenu: false
+    });
+
+    return _this;
+  }
+
+  LeftSideBar_createClass(BaseLeftSideBar, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var renderMenuBar = this.props.topBrands.map(function (brand) {
+        return external_react_["createElement"](SubMenu, {
+          key: brand._id,
+          title: external_react_["createElement"]("span", {
+            style: {
+              color: '#000',
+              fontSize: '12px'
+            }
+          }, brand.name.toUpperCase(), " (", brand.totalNews, ")"),
+          onTitleClick: function onTitleClick() {
+            return window.location.href = "/danh-sach-hang/".concat(brand.slug);
+          }
+        }, brand.brandCategories.map(function (category) {
+          return external_react_["createElement"](menu_default.a.Item, {
+            key: category.slug
+          }, external_react_["createElement"]("a", {
+            title: category.name,
+            style: {
+              fontSize: '12px'
+            }
+          }, category.name, " (", category.totalNews, ")"));
+        }));
+      });
+      var adsPosition2 = this.props.adsense.filter(function (item) {
+        return item.position === 2;
+      })[0];
+      return external_react_["createElement"]("div", {
+        className: external_react_device_detect_["isMobile"] ? 'left-sidebar-mobile' : 'left-sidebar'
+      }, external_react_["createElement"]("span", {
+        className: "title"
+      }, external_react_["createElement"]("b", null, translate('common:list-of-brand')), external_react_device_detect_["isMobile"] ? external_react_["createElement"]("a", {
+        style: {
+          float: 'right',
+          color: 'white'
+        },
+        onClick: function onClick() {
+          return _this2.setState({
+            isOpenDropdownMenu: !_this2.state.isOpenDropdownMenu
+          });
+        }
+      }, external_react_["createElement"](icon_default.a, {
+        type: "caret-down"
+      })) : external_react_["createElement"]("div", null)), external_react_device_detect_["isMobile"] && this.state.isOpenDropdownMenu ? external_react_["createElement"](menu_default.a, {
+        style: {
+          width: '100%',
+          background: '#fff',
+          border: '1px solid #F4F4F4',
+          borderBottom: 'none',
+          boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)'
+        },
+        mode: 'inline',
+        onClick: function onClick(info) {
+          var selectedBrand = _this2.props.topBrands.filter(function (brand) {
+            return brand._id === info.keyPath[1];
+          })[0].slug;
+
+          var selectedCategory = info.keyPath[0];
+          window.location.href = "/tim-kiem?brand=".concat(selectedBrand, "&category=").concat(selectedCategory);
+        }
+      }, renderMenuBar) : external_react_["createElement"]("div", null), !external_react_device_detect_["isMobile"] ? external_react_["createElement"](menu_default.a, {
+        style: {
+          width: '100%',
+          background: '#fff',
+          border: '1px solid #F4F4F4',
+          borderBottom: 'none',
+          boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)'
+        } // mode={window.innerWidth < 992 ? 'inline' : 'vertical'}
+        ,
+        mode: 'vertical',
+        onClick: function onClick(info) {
+          var selectedBrand = _this2.props.topBrands.filter(function (brand) {
+            return brand._id === info.keyPath[1];
+          })[0].slug;
+
+          var selectedCategory = info.keyPath[0];
+          window.location.href = "/tim-kiem?brand=".concat(selectedBrand, "&category=").concat(selectedCategory);
+        }
+      }, renderMenuBar) : external_react_["createElement"]("div", null), external_react_["createElement"]("a", {
+        href: "/danh-sach-hang",
+        title: "Danh s\xE1ch h\xE3ng",
+        className: "all-brand"
+      }, external_react_["createElement"]("b", null, translate('common:all-brands'))), external_react_["createElement"]("a", {
+        href: adsPosition2 && adsPosition2.hyperlink ? adsPosition2.hyperlink : '#'
+      }, external_react_["createElement"]("img", {
+        src: adsPosition2 && adsPosition2.imageUrl ? adsPosition2.imageUrl : '/static/images/sidebar-1.png',
+        width: "100%",
+        className: "image-promotion-right"
+      })));
+    }
+  }]);
+
+  return BaseLeftSideBar;
+}(external_react_["Component"]);
+
+var LeftSideBar_LeftSideBar = Object(i18n["d" /* withNamespaces */])('common')(LeftSideBar_BaseLeftSideBar);
+// CONCATENATED MODULE: ./components/CommonLayout/RightSideBar.tsx
+function RightSideBar_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { RightSideBar_typeof = function _typeof(obj) { return typeof obj; }; } else { RightSideBar_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return RightSideBar_typeof(obj); }
+
+function RightSideBar_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function RightSideBar_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function RightSideBar_createClass(Constructor, protoProps, staticProps) { if (protoProps) RightSideBar_defineProperties(Constructor.prototype, protoProps); if (staticProps) RightSideBar_defineProperties(Constructor, staticProps); return Constructor; }
+
+function RightSideBar_possibleConstructorReturn(self, call) { if (call && (RightSideBar_typeof(call) === "object" || typeof call === "function")) { return call; } return RightSideBar_assertThisInitialized(self); }
+
+function RightSideBar_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function RightSideBar_getPrototypeOf(o) { RightSideBar_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return RightSideBar_getPrototypeOf(o); }
+
+function RightSideBar_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) RightSideBar_setPrototypeOf(subClass, superClass); }
+
+function RightSideBar_setPrototypeOf(o, p) { RightSideBar_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return RightSideBar_setPrototypeOf(o, p); }
+
+
+var Fragment = external_react_["Fragment"];
+var RightSideBar_RightSideBar =
+/*#__PURE__*/
+function (_React$Component) {
+  RightSideBar_inherits(RightSideBar, _React$Component);
+
+  function RightSideBar() {
+    RightSideBar_classCallCheck(this, RightSideBar);
+
+    return RightSideBar_possibleConstructorReturn(this, RightSideBar_getPrototypeOf(RightSideBar).apply(this, arguments));
+  }
+
+  RightSideBar_createClass(RightSideBar, [{
+    key: "render",
+    value: function render() {
+      var adsPosition4 = this.props.adsense.filter(function (item) {
+        return item.position === 4;
+      })[0];
+      var adsPosition5 = this.props.adsense.filter(function (item) {
+        return item.position === 5;
+      })[0];
+      return external_react_["createElement"](Fragment, null, external_react_["createElement"]("a", {
+        href: adsPosition4 && adsPosition4.hyperlink ? adsPosition4.hyperlink : '#'
+      }, external_react_["createElement"]("img", {
+        src: adsPosition4 && adsPosition4.imageUrl ? adsPosition4.imageUrl : '/static/images/sidebar-1.png',
+        width: "100%"
+      })), external_react_["createElement"]("a", {
+        href: adsPosition5 && adsPosition5.hyperlink ? adsPosition5.hyperlink : '#'
+      }, external_react_["createElement"]("img", {
+        src: adsPosition5 && adsPosition5.imageUrl ? adsPosition5.imageUrl : '/static/images/sidebar-1.png',
+        width: "100%",
+        style: {
+          marginTop: '30px'
+        }
+      })));
+    }
+  }]);
+
+  return RightSideBar;
+}(external_react_["Component"]);
+// CONCATENATED MODULE: ./components/CommonLayout/LeftSideBarWithoutMenu.tsx
+function LeftSideBarWithoutMenu_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { LeftSideBarWithoutMenu_typeof = function _typeof(obj) { return typeof obj; }; } else { LeftSideBarWithoutMenu_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return LeftSideBarWithoutMenu_typeof(obj); }
+
+function LeftSideBarWithoutMenu_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function LeftSideBarWithoutMenu_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function LeftSideBarWithoutMenu_createClass(Constructor, protoProps, staticProps) { if (protoProps) LeftSideBarWithoutMenu_defineProperties(Constructor.prototype, protoProps); if (staticProps) LeftSideBarWithoutMenu_defineProperties(Constructor, staticProps); return Constructor; }
+
+function LeftSideBarWithoutMenu_possibleConstructorReturn(self, call) { if (call && (LeftSideBarWithoutMenu_typeof(call) === "object" || typeof call === "function")) { return call; } return LeftSideBarWithoutMenu_assertThisInitialized(self); }
+
+function LeftSideBarWithoutMenu_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function LeftSideBarWithoutMenu_getPrototypeOf(o) { LeftSideBarWithoutMenu_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return LeftSideBarWithoutMenu_getPrototypeOf(o); }
+
+function LeftSideBarWithoutMenu_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) LeftSideBarWithoutMenu_setPrototypeOf(subClass, superClass); }
+
+function LeftSideBarWithoutMenu_setPrototypeOf(o, p) { LeftSideBarWithoutMenu_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return LeftSideBarWithoutMenu_setPrototypeOf(o, p); }
+
+
+var LeftSideBarWithoutMenu_Fragment = external_react_["Fragment"];
+
+var LeftSideBarWithoutMenu_LeftSideBarWithoutMenu =
+/*#__PURE__*/
+function (_React$Component) {
+  LeftSideBarWithoutMenu_inherits(LeftSideBarWithoutMenu, _React$Component);
+
+  function LeftSideBarWithoutMenu() {
+    LeftSideBarWithoutMenu_classCallCheck(this, LeftSideBarWithoutMenu);
+
+    return LeftSideBarWithoutMenu_possibleConstructorReturn(this, LeftSideBarWithoutMenu_getPrototypeOf(LeftSideBarWithoutMenu).apply(this, arguments));
+  }
+
+  LeftSideBarWithoutMenu_createClass(LeftSideBarWithoutMenu, [{
+    key: "render",
+    value: function render() {
+      return external_react_["createElement"](LeftSideBarWithoutMenu_Fragment, null, external_react_["createElement"]("img", {
+        src: "/static/images/sidebar-1.png",
+        width: "100%"
+      }), external_react_["createElement"]("img", {
+        src: "/static/images/sidebar-2.png",
+        width: "100%",
+        style: {
+          marginTop: '30px'
+        }
+      }));
+    }
+  }]);
+
+  return LeftSideBarWithoutMenu;
+}(external_react_["Component"]);
+
+/* harmony default export */ var CommonLayout_LeftSideBarWithoutMenu = (LeftSideBarWithoutMenu_LeftSideBarWithoutMenu);
+// EXTERNAL MODULE: ./components/CommonLayout/MainContent.less
+var CommonLayout_MainContent = __webpack_require__(107);
+
+// EXTERNAL MODULE: ./modules/machine-news/screens/HomePageScreen/components/BrandList.tsx
+var BrandList = __webpack_require__(85);
+
+// CONCATENATED MODULE: ./components/CommonLayout/MainContent.tsx
+
+
+
+
+
+
+function MainContent_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { MainContent_typeof = function _typeof(obj) { return typeof obj; }; } else { MainContent_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return MainContent_typeof(obj); }
+
+function MainContent_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function MainContent_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { MainContent_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { MainContent_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function MainContent_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function MainContent_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function MainContent_createClass(Constructor, protoProps, staticProps) { if (protoProps) MainContent_defineProperties(Constructor.prototype, protoProps); if (staticProps) MainContent_defineProperties(Constructor, staticProps); return Constructor; }
+
+function MainContent_possibleConstructorReturn(self, call) { if (call && (MainContent_typeof(call) === "object" || typeof call === "function")) { return call; } return MainContent_assertThisInitialized(self); }
+
+function MainContent_getPrototypeOf(o) { MainContent_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return MainContent_getPrototypeOf(o); }
+
+function MainContent_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function MainContent_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) MainContent_setPrototypeOf(subClass, superClass); }
+
+function MainContent_setPrototypeOf(o, p) { MainContent_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return MainContent_setPrototypeOf(o, p); }
+
+function MainContent_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var MainContent_MainContent =
+/*#__PURE__*/
+function (_React$Component) {
+  MainContent_inherits(MainContent, _React$Component);
+
+  function MainContent() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    MainContent_classCallCheck(this, MainContent);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = MainContent_possibleConstructorReturn(this, (_getPrototypeOf2 = MainContent_getPrototypeOf(MainContent)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    MainContent_defineProperty(MainContent_assertThisInitialized(_this), "state", {
+      adsense: [],
+      featureBrands: []
+    });
+
+    MainContent_defineProperty(MainContent_assertThisInitialized(_this), "getAdsense",
+    /*#__PURE__*/
+    MainContent_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var serviceProxy, adsense;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context.next = 4;
+              return serviceProxy.getAdsense(5, 'position|asc', undefined, undefined);
+
+            case 4:
+              adsense = _context.sent;
+
+              _this.setState({
+                adsense: adsense.data
+              });
+
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](0);
+              // tslint:disable-next-line: no-console
+              console.log(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 8]]);
+    })));
+
+    MainContent_defineProperty(MainContent_assertThisInitialized(_this), "getFeatureBrands",
+    /*#__PURE__*/
+    MainContent_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var serviceProxy, featureBrands;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.prev = 0;
+              serviceProxy = Object(services["a" /* getServiceProxy */])();
+              _context2.next = 4;
+              return serviceProxy.getFeatureBrands(10, 'order|asc', undefined, undefined);
+
+            case 4:
+              featureBrands = _context2.sent;
+
+              _this.setState({
+                featureBrands: featureBrands.data
+              });
+
+              _context2.next = 11;
+              break;
+
+            case 8:
+              _context2.prev = 8;
+              _context2.t0 = _context2["catch"](0);
+              // tslint:disable-next-line: no-console
+              console.log(_context2.t0);
+
+            case 11:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[0, 8]]);
+    })));
+
+    return _this;
+  }
+
+  MainContent_createClass(MainContent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getAdsense();
+      this.getFeatureBrands();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var adsPosition1 = this.state.adsense.filter(function (item) {
+        return item.position === 1;
+      })[0];
+      var adsPosition3 = this.state.adsense.filter(function (item) {
+        return item.position === 3;
+      })[0];
+      return external_react_["createElement"]("main", {
+        className: "main-content"
+      }, this.props.hasBrandList && external_react_["createElement"](row_default.a, {
+        className: "home-page-brand-list",
+        type: "flex",
+        justify: "center"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 0,
+        sm: 0,
+        xs: 0
+      }, external_react_["createElement"]("a", {
+        href: adsPosition1 && adsPosition1.hyperlink ? adsPosition1.hyperlink : '#'
+      }, external_react_["createElement"]("img", {
+        className: "image-promote",
+        src: adsPosition1 && adsPosition1.imageUrl ? adsPosition1.imageUrl : '/static/images/promotion.png',
+        style: {
+          maxHeight: '60px'
+        }
+      }))), external_react_["createElement"](col_default.a, {
+        lg: 18,
+        md: 24,
+        xs: 24,
+        sm: 24
+      }, external_react_["createElement"](BrandList["a" /* default */], {
+        featureBrands: this.state.featureBrands
+      })), external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 0,
+        sm: 0,
+        xs: 0
+      }, external_react_["createElement"]("a", {
+        href: adsPosition3 && adsPosition3.hyperlink ? adsPosition3.hyperlink : '#'
+      }, external_react_["createElement"]("img", {
+        className: "image-promote",
+        src: adsPosition3 && adsPosition3.imageUrl ? adsPosition3.imageUrl : '/static/images/promotion.png',
+        style: {
+          maxHeight: '60px'
+        }
+      })))), this.props.hasSideBar ? external_react_["createElement"](row_default.a, {
+        className: "padding-of-page"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 24,
+        sm: 24,
+        xs: 24
+      }, this.props.hasMenuItems ? external_react_["createElement"](LeftSideBar_LeftSideBar, {
+        topBrands: this.props.topBrands,
+        adsense: this.state.adsense
+      }) : external_react_["createElement"](CommonLayout_LeftSideBarWithoutMenu, null)), external_react_["createElement"](col_default.a, {
+        className: "main-col",
+        lg: 18,
+        md: 24,
+        sm: 24,
+        xs: 24
+      }, this.props.children), external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 0,
+        sm: 0,
+        xs: 0
+      }, external_react_["createElement"](RightSideBar_RightSideBar, {
+        adsense: this.state.adsense
+      }))) : external_react_["createElement"](row_default.a, {
+        className: "padding-of-page"
+      }, external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 0,
+        sm: 0,
+        xs: 0
+      }), external_react_["createElement"](col_default.a, {
+        className: "main-col",
+        lg: 18,
+        md: 24,
+        sm: 24,
+        xs: 24,
+        style: {
+          padding: '0px 20px'
+        }
+      }, this.props.children), external_react_["createElement"](col_default.a, {
+        lg: 3,
+        md: 0,
+        sm: 0,
+        xs: 0
+      })));
+    }
+  }]);
+
+  return MainContent;
+}(external_react_["Component"]);
+// EXTERNAL MODULE: ./components/CommonLayout/CurrentTime.tsx
+var CurrentTime = __webpack_require__(56);
+
+// EXTERNAL MODULE: ./components/MachineItem/MachineItem.tsx
+var MachineItem = __webpack_require__(48);
+
+// EXTERNAL MODULE: ./components/MapWithSearchBox/MapWithSearchBox.tsx
+var MapWithSearchBox = __webpack_require__(82);
+
+// EXTERNAL MODULE: external "antd/lib/layout/style"
+var layout_style_ = __webpack_require__(63);
+
+// EXTERNAL MODULE: external "antd/lib/layout"
+var layout_ = __webpack_require__(30);
+var layout_default = /*#__PURE__*/__webpack_require__.n(layout_);
+
+// EXTERNAL MODULE: ./components/AdminLayout/AdminSidebar.less
+var AdminSidebar = __webpack_require__(111);
+
+// CONCATENATED MODULE: ./components/AdminLayout/AdminSidebar.tsx
+
+
+
+
+
+
+
+
+
+var AdminSidebar_AdminSidebar = Object(i18n["d" /* withNamespaces */])('admin-reports')(function (props) {
+  var menuWidth = 256;
+  var menuTheme = 'light';
+  var translate = props.t;
+  return external_react_default.a.createElement(layout_default.a.Sider, {
+    trigger: null,
+    collapsible: true,
+    breakpoint: "lg",
+    width: menuWidth,
+    theme: menuTheme,
+    className: "sider"
+  }, external_react_default.a.createElement("div", {
+    className: "logo",
+    id: "logo"
+  }, external_react_default.a.createElement("a", {
+    href: "/users"
+  }, external_react_default.a.createElement("img", {
+    src: "/static/images/logo-timmay.png",
+    alt: "logo"
+  }))), external_react_default.a.createElement(menu_default.a, {
+    key: "Menu",
+    mode: "inline",
+    theme: menuTheme,
+    style: {
+      padding: '16px 0',
+      width: '100%'
+    },
+    className: "sider"
+  }, external_react_default.a.createElement(menu_default.a.Item, {
+    key: "/admin/reports"
+  }, external_react_default.a.createElement("a", {
+    href: "/admin/reports"
+  }, external_react_default.a.createElement(icon_default.a, {
+    type: "warning"
+  }), external_react_default.a.createElement("span", null, translate('admin-reports:reports'))))));
+});
+// CONCATENATED MODULE: ./components/AdminLayout/AdminSearchbar.tsx
+
+
+
+
+
+
+
+
+
+
+var AdminSearchbar = Object(i18n["d" /* withNamespaces */])('common')(function (props) {
+  var translate = props.t;
+  return external_react_default.a.createElement(row_default.a, {
+    type: "flex",
+    style: {
+      marginBottom: '24px'
+    },
+    justify: "space-between"
+  }, external_react_default.a.createElement(col_default.a, {
+    xs: 12,
+    xl: 8
+  }, props.showSearch && external_react_default.a.createElement(input_default.a.Search, {
+    enterButton: true,
+    placeholder: props.placeholder,
+    onChange: function onChange(e) {
+      return props.handleSearchChange(e.target.value);
+    },
+    onSearch: function onSearch(value) {
+      return props.handleSearch(value);
+    }
+  })), external_react_default.a.createElement(col_default.a, {
+    xs: 12,
+    xl: 16,
+    style: {
+      textAlign: 'right'
+    }
+  }, props.hasCreate && external_react_default.a.createElement(button_default.a, {
+    type: "primary",
+    onClick: props.onCreateClick
+  }, translate('common:create'))));
+});
+
+// CONCATENATED MODULE: ./components/AdminLayout/PagingButtons.tsx
+
+
+
+
+
+
+var PagingButtons_PagingButtons = function PagingButtons(props) {
+  return external_react_default.a.createElement("div", {
+    className: "pagination",
+    style: {
+      display: 'flex',
+      justifyContent: 'flex-end'
+    }
+  }, props.before && external_react_default.a.createElement(button_default.a, {
+    onClick: props.getPrevPage
+  }, external_react_default.a.createElement(icon_default.a, {
+    type: "left"
+  }), " Prev"), props.after && external_react_default.a.createElement(button_default.a, {
+    onClick: props.getNextPage
+  }, "Next ", external_react_default.a.createElement(icon_default.a, {
+    type: "right"
+  })));
+};
+
+
+// EXTERNAL MODULE: ./components/AdminLayout/Authorize.less
+var AdminLayout_Authorize = __webpack_require__(112);
+
+// EXTERNAL MODULE: external "next/router"
+var router_ = __webpack_require__(59);
+var router_default = /*#__PURE__*/__webpack_require__.n(router_);
+
+// EXTERNAL MODULE: ./store/index.ts
+var store = __webpack_require__(16);
+
+// CONCATENATED MODULE: ./layouts/Page/Page.tsx
+function Page_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Page_typeof = function _typeof(obj) { return typeof obj; }; } else { Page_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Page_typeof(obj); }
+
+function Page_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Page_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Page_createClass(Constructor, protoProps, staticProps) { if (protoProps) Page_defineProperties(Constructor.prototype, protoProps); if (staticProps) Page_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Page_possibleConstructorReturn(self, call) { if (call && (Page_typeof(call) === "object" || typeof call === "function")) { return call; } return Page_assertThisInitialized(self); }
+
+function Page_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Page_getPrototypeOf(o) { Page_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Page_getPrototypeOf(o); }
+
+function Page_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Page_setPrototypeOf(subClass, superClass); }
+
+function Page_setPrototypeOf(o, p) { Page_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Page_setPrototypeOf(o, p); }
+
+
+var Page_Page =
+/*#__PURE__*/
+function (_React$Component) {
+  Page_inherits(Page, _React$Component);
+
+  function Page() {
+    Page_classCallCheck(this, Page);
+
+    return Page_possibleConstructorReturn(this, Page_getPrototypeOf(Page).apply(this, arguments));
+  }
+
+  Page_createClass(Page, [{
+    key: "render",
+    value: function render() {
+      return external_react_default.a.createElement("div", null, this.props.children);
+    }
+  }]);
+
+  return Page;
+}(external_react_default.a.Component);
+// EXTERNAL MODULE: ./layouts/Auth/AuthLayout.less
+var Auth_AuthLayout = __webpack_require__(113);
+
+// EXTERNAL MODULE: external "react-firebaseui/StyledFirebaseAuth"
+var StyledFirebaseAuth_ = __webpack_require__(89);
+var StyledFirebaseAuth_default = /*#__PURE__*/__webpack_require__.n(StyledFirebaseAuth_);
+
+// EXTERNAL MODULE: ./routes.ts
+var routes = __webpack_require__(61);
+
+// CONCATENATED MODULE: ./layouts/Auth/AuthLayout.tsx
+
+
+
+
+function AuthLayout_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AuthLayout_typeof = function _typeof(obj) { return typeof obj; }; } else { AuthLayout_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AuthLayout_typeof(obj); }
+
+function AuthLayout_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AuthLayout_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AuthLayout_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AuthLayout_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AuthLayout_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AuthLayout_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AuthLayout_createClass(Constructor, protoProps, staticProps) { if (protoProps) AuthLayout_defineProperties(Constructor.prototype, protoProps); if (staticProps) AuthLayout_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AuthLayout_possibleConstructorReturn(self, call) { if (call && (AuthLayout_typeof(call) === "object" || typeof call === "function")) { return call; } return AuthLayout_assertThisInitialized(self); }
+
+function AuthLayout_getPrototypeOf(o) { AuthLayout_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AuthLayout_getPrototypeOf(o); }
+
+function AuthLayout_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AuthLayout_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AuthLayout_setPrototypeOf(subClass, superClass); }
+
+function AuthLayout_setPrototypeOf(o, p) { AuthLayout_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AuthLayout_setPrototypeOf(o, p); }
+
+function AuthLayout_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var AuthLayout_AuthLayout =
+/*#__PURE__*/
+function (_React$Component) {
+  AuthLayout_inherits(AuthLayout, _React$Component);
+
+  function AuthLayout(props) {
+    var _this;
+
+    AuthLayout_classCallCheck(this, AuthLayout);
+
+    _this = AuthLayout_possibleConstructorReturn(this, AuthLayout_getPrototypeOf(AuthLayout).call(this, props));
+
+    AuthLayout_defineProperty(AuthLayout_assertThisInitialized(_this), "componentDidMount", function () {
+      _this.setState({
+        clientOnly: true
+      });
+    });
+
+    AuthLayout_defineProperty(AuthLayout_assertThisInitialized(_this), "uiConfig", {
+      signInFlow: 'popup',
+      signInOptions: [app_default.a.auth.GoogleAuthProvider.PROVIDER_ID, app_default.a.auth.FacebookAuthProvider.PROVIDER_ID],
+      callbacks: {
+        signInSuccessWithAuthResult: function signInSuccessWithAuthResult(_authResult, _redirectUrl) {
+          AuthLayout_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee() {
+            var idToken, form, input;
+            return regenerator_default.a.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    _context.next = 2;
+                    return app_default.a.auth().currentUser.getIdToken();
+
+                  case 2:
+                    idToken = _context.sent;
+                    form = document.getElementById('form');
+                    input = document.createElement('input');
+                    input.type = 'text';
+                    input.name = 'token';
+                    input.value = idToken;
+                    form.appendChild(input);
+                    form.submit();
+
+                  case 10:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }))();
+
+          return false;
+        },
+        signInFailure: function () {
+          var _signInFailure = AuthLayout_asyncToGenerator(
+          /*#__PURE__*/
+          regenerator_default.a.mark(function _callee2(error) {
+            return regenerator_default.a.wrap(function _callee2$(_context2) {
+              while (1) {
+                switch (_context2.prev = _context2.next) {
+                  case 0:
+                    // tslint:disable-next-line:no-console
+                    console.log(error);
+
+                  case 1:
+                  case "end":
+                    return _context2.stop();
+                }
+              }
+            }, _callee2);
+          }));
+
+          function signInFailure(_x) {
+            return _signInFailure.apply(this, arguments);
+          }
+
+          return signInFailure;
+        }()
+      }
+    });
+
+    _this.state = {
+      clientOnly: false
+    };
+    return _this;
+  }
+
+  AuthLayout_createClass(AuthLayout, [{
+    key: "render",
+    value: function render() {
+      return external_react_default.a.createElement("div", {
+        className: "auth-container"
+      }, external_react_default.a.createElement("div", {
+        className: "form-wrapper"
+      }, external_react_default.a.createElement("div", {
+        className: "logo"
+      }, external_react_default.a.createElement("span", null, "Techkids Software")), this.props.children, external_react_default.a.createElement(divider_default.a, {
+        dashed: true
+      }), this.state.clientOnly && external_react_default.a.createElement(StyledFirebaseAuth_default.a, {
+        uiConfig: this.uiConfig,
+        firebaseAuth: app_default.a.auth(),
+        className: "oauth-container"
+      }), external_react_default.a.createElement("div", {
+        className: "links-wrapper"
+      }, external_react_default.a.createElement("a", {
+        href: "#",
+        className: "forgot"
+      }, "Forgot password"), this.props.pageName === 'login' && external_react_default.a.createElement(routes["a" /* Link */], {
+        route: "/dang-ki"
+      }, external_react_default.a.createElement("a", {
+        className: "login-register"
+      }, "Create an account")), this.props.pageName === 'register' && external_react_default.a.createElement(routes["a" /* Link */], {
+        route: "/dang-nhap"
+      }, external_react_default.a.createElement("a", {
+        className: "login-register"
+      }, "Already have an account? Log in")), external_react_default.a.createElement("form", {
+        id: "form",
+        method: "post",
+        action: "/auth/login",
+        style: {
+          display: 'none'
+        }
+      }))));
+    }
+  }]);
+
+  return AuthLayout;
+}(external_react_default.a.Component);
+// EXTERNAL MODULE: ./layouts/Page/CommonLayout.tsx
+var CommonLayout = __webpack_require__(64);
+
+// EXTERNAL MODULE: ./layouts/Admin/AdminLayout.less
+var AdminLayout = __webpack_require__(114);
+
+// EXTERNAL MODULE: ./layouts/Admin/components/SideBar.less
+var SideBar = __webpack_require__(115);
+
+// CONCATENATED MODULE: ./layouts/Admin/components/SideBar.tsx
+
+
+
+
+
+
+
+function SideBar_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { SideBar_typeof = function _typeof(obj) { return typeof obj; }; } else { SideBar_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return SideBar_typeof(obj); }
+
+function SideBar_extends() { SideBar_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return SideBar_extends.apply(this, arguments); }
+
+function SideBar_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function SideBar_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function SideBar_createClass(Constructor, protoProps, staticProps) { if (protoProps) SideBar_defineProperties(Constructor.prototype, protoProps); if (staticProps) SideBar_defineProperties(Constructor, staticProps); return Constructor; }
+
+function SideBar_possibleConstructorReturn(self, call) { if (call && (SideBar_typeof(call) === "object" || typeof call === "function")) { return call; } return SideBar_assertThisInitialized(self); }
+
+function SideBar_getPrototypeOf(o) { SideBar_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return SideBar_getPrototypeOf(o); }
+
+function SideBar_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function SideBar_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) SideBar_setPrototypeOf(subClass, superClass); }
+
+function SideBar_setPrototypeOf(o, p) { SideBar_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return SideBar_setPrototypeOf(o, p); }
+
+function SideBar_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var SideBar_SideBarMenu =
+/*#__PURE__*/
+function (_React$Component) {
+  SideBar_inherits(SideBarMenu, _React$Component);
+
+  function SideBarMenu() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    SideBar_classCallCheck(this, SideBarMenu);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = SideBar_possibleConstructorReturn(this, (_getPrototypeOf2 = SideBar_getPrototypeOf(SideBarMenu)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    SideBar_defineProperty(SideBar_assertThisInitialized(_this), "state", {
+      selectedMenuItem: '',
+      openedSubMenu: ''
+    });
+
+    return _this;
+  }
+
+  SideBar_createClass(SideBarMenu, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+
+      var getMenuItem = function getMenuItem(item) {
+        if (Object(core["a" /* checkPermission */])(_this2.props.authUser, item.permission)) {
+          return external_react_default.a.createElement(menu_default.a.Item, {
+            key: item.path
+          }, external_react_default.a.createElement("a", {
+            href: item.path
+          }, external_react_default.a.createElement("span", null, translate("common:".concat(item.name)))));
+        }
+
+        return;
+      };
+
+      var getSubMenus = function getSubMenus(subMenu) {
+        var render = false;
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = subMenu.items[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var item = _step.value;
+
+            if (Object(core["a" /* checkPermission */])(_this2.props.authUser, item.permission)) {
+              render = true;
+              break;
+            }
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return != null) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+
+        if (render) {
+          return external_react_default.a.createElement(menu_default.a.SubMenu, {
+            key: subMenu.name,
+            title: external_react_default.a.createElement("span", null, external_react_default.a.createElement(icon_default.a, {
+              type: subMenu.icon
+            }), external_react_default.a.createElement("span", null, translate("common:".concat(subMenu.name))))
+          }, subMenu.items.map(function (item) {
+            return getMenuItem(item);
+          }));
+        }
+
+        return;
+      };
+
+      var menuProps = {};
+
+      if (!this.props.menuCollapsed) {
+        menuProps.openKeys = [this.props.openedSubMenu];
+      }
+
+      return external_react_default.a.createElement(layout_default.a.Sider, {
+        trigger: null,
+        collapsible: true,
+        collapsed: this.props.menuCollapsed,
+        breakpoint: "lg",
+        width: this.props.menuWidth,
+        collapsedWidth: this.props.collapsedWidth,
+        theme: this.props.menuTheme,
+        className: "sider"
+      }, external_react_default.a.createElement("div", {
+        className: "logo",
+        id: "logo"
+      }, external_react_default.a.createElement("a", {
+        href: "#"
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/logo-timmay.png",
+        alt: "logo"
+      }))), external_react_default.a.createElement(menu_default.a, SideBar_extends({
+        key: "Menu",
+        mode: "inline",
+        inlineCollapsed: this.props.menuCollapsed,
+        theme: this.props.menuTheme,
+        style: {
+          padding: '16px 0',
+          width: '100%'
+        },
+        className: "sider",
+        onOpenChange: function onOpenChange(openKeys) {
+          return _this2.props.openSubMenuChange(openKeys[openKeys.length - 1]);
+        },
+        selectedKeys: [this.props.selectedMenuItem]
+      }, menuProps), Object(core["h" /* getMenuConfigs */])().map(function (item) {
+        return getSubMenus(item);
+      })));
+    }
+  }]);
+
+  return SideBarMenu;
+}(external_react_default.a.Component);
+
+var mapState = function mapState(rootState) {
+  return {
+    authUser: rootState.profileModel.authUser
+  };
+};
+
+var mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var SideBar_SideBar = Object(i18n["d" /* withNamespaces */])('common')(Object(store["withRematch"])(store["initStore"], mapState, mapDispatch)(SideBar_SideBarMenu));
+
+// EXTERNAL MODULE: ./layouts/Admin/components/CollapsedButton.less
+var components_CollapsedButton = __webpack_require__(116);
+
+// CONCATENATED MODULE: ./layouts/Admin/components/CollapsedButton.tsx
+
+
+
+
+var CollapsedButton_CollapsedButton = function CollapsedButton(props) {
+  return external_react_default.a.createElement("span", {
+    className: "trigger",
+    onClick: props.toggle
+  }, external_react_default.a.createElement(icon_default.a, {
+    type: props.menuCollapsed ? 'menu-unfold' : 'menu-fold'
+  }));
+};
+// EXTERNAL MODULE: external "antd/lib/avatar/style"
+var avatar_style_ = __webpack_require__(95);
+
+// EXTERNAL MODULE: external "antd/lib/avatar"
+var avatar_ = __webpack_require__(80);
+var avatar_default = /*#__PURE__*/__webpack_require__.n(avatar_);
+
+// EXTERNAL MODULE: ./layouts/Admin/components/HeaderDropdown.less
+var HeaderDropdown = __webpack_require__(117);
+
+// CONCATENATED MODULE: ./layouts/Admin/components/HeaderDropdown.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var HeaderDropdown_logOut = function logOut() {
+  Object(core["j" /* initializeFirebaseApp */])();
+  app_default.a.auth().signOut();
+  window.location.href = '/auth/logout';
+};
+
+var menu = external_react_default.a.createElement(menu_default.a, {
+  className: "dropdownMenu",
+  selectedKeys: []
+}, external_react_default.a.createElement(menu_default.a.Item, {
+  key: "homePage"
+}, external_react_default.a.createElement("a", {
+  href: "/"
+}, external_react_default.a.createElement(icon_default.a, {
+  type: "home"
+}), "\xA0 ", external_react_default.a.createElement("span", null, "Quay l\u1EA1i trang ch\u1EE7"))), external_react_default.a.createElement(menu_default.a.Divider, null), external_react_default.a.createElement(menu_default.a.Item, {
+  key: "logout"
+}, external_react_default.a.createElement("a", {
+  onClick: HeaderDropdown_logOut
+}, external_react_default.a.createElement(icon_default.a, {
+  type: "logout"
+}), "\xA0 ", external_react_default.a.createElement("span", null, "\u0110\u0103ng xu\u1EA5t"))));
+
+var HeaderDropdown_DropdownMenu = function DropdownMenu(props) {
+  var avatarUrl = props.authUser && props.authUser.avatarUrl ? props.authUser.avatarUrl : '/static/images/default-avatar.jpg';
+  return external_react_default.a.createElement(dropdown_default.a, {
+    overlayClassName: "headerDropdown",
+    overlay: menu
+  }, external_react_default.a.createElement("span", {
+    className: "action account"
+  }, external_react_default.a.createElement(avatar_default.a, {
+    size: "small",
+    className: "avatar",
+    src: avatarUrl,
+    alt: "avatar"
+  }), external_react_default.a.createElement("span", {
+    className: "name"
+  }, props.authUser ? props.authUser.fullName : 'Admin')));
+};
+
+var HeaderDropdown_mapState = function mapState(rootState) {
+  return {
+    authUser: rootState.profileModel.authUser
+  };
+};
+
+var HeaderDropdown_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var HeaderDropdown_HeaderDropdown = Object(store["withRematch"])(store["initStore"], HeaderDropdown_mapState, HeaderDropdown_mapDispatch)(HeaderDropdown_DropdownMenu);
+
+// CONCATENATED MODULE: ./layouts/Admin/AdminLayout.tsx
+
+
+
+
+
+
+
+
+
+
+
+function AdminLayout_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminLayout_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminLayout_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminLayout_typeof(obj); }
+
+function AdminLayout_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminLayout_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminLayout_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminLayout_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminLayout_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminLayout_possibleConstructorReturn(self, call) { if (call && (AdminLayout_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminLayout_assertThisInitialized(self); }
+
+function AdminLayout_getPrototypeOf(o) { AdminLayout_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminLayout_getPrototypeOf(o); }
+
+function AdminLayout_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminLayout_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminLayout_setPrototypeOf(subClass, superClass); }
+
+function AdminLayout_setPrototypeOf(o, p) { AdminLayout_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminLayout_setPrototypeOf(o, p); }
+
+function AdminLayout_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+var AdminLayout_BaseAdminLayout =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminLayout_inherits(BaseAdminLayout, _React$Component);
+
+  function BaseAdminLayout() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminLayout_classCallCheck(this, BaseAdminLayout);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminLayout_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminLayout_getPrototypeOf(BaseAdminLayout)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminLayout_defineProperty(AdminLayout_assertThisInitialized(_this), "state", {
+      openedSubMenu: _this.props.openedSubMenu,
+      selectedMenuItem: _this.props.selectedMenuItem,
+      menuCollapsed: false,
+      isChangingLanguage: false
+    });
+
+    AdminLayout_defineProperty(AdminLayout_assertThisInitialized(_this), "toggle", function () {
+      _this.setState({
+        menuCollapsed: !_this.state.menuCollapsed
+      });
+    });
+
+    AdminLayout_defineProperty(AdminLayout_assertThisInitialized(_this), "openSubMenuChange", function (newOpenedSubMenu) {
+      _this.setState({
+        openedSubMenu: newOpenedSubMenu
+      });
+    });
+
+    AdminLayout_defineProperty(AdminLayout_assertThisInitialized(_this), "changeLanguage", function (newLang) {
+      _this.setState({
+        isChangingLanguage: true
+      });
+
+      Object(i18n["b" /* changeLanguage */])(newLang);
+
+      _this.setState({
+        isChangingLanguage: false
+      });
+    });
+
+    return _this;
+  }
+
+  AdminLayout_createClass(BaseAdminLayout, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var menuTheme = 'light';
+      var menuWidth = 256;
+      var collapsedWidth = 80;
+      var links = [{
+        key: 'Pro Antd',
+        title: 'Pro Antd',
+        href: 'https://pro.ant.design',
+        blankTarget: true
+      }, {
+        key: 'github',
+        title: external_react_default.a.createElement(icon_default.a, {
+          type: "github"
+        }),
+        href: 'https://github.com/ant-design/ant-design-pro',
+        blankTarget: true
+      }, {
+        key: 'Ant Design',
+        title: 'Ant Design',
+        href: 'https://ant.design',
+        blankTarget: true
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-container"
+      }, external_react_default.a.createElement(spin_default.a, {
+        spinning: this.state.isChangingLanguage
+      }, external_react_default.a.createElement(layout_default.a, null, external_react_default.a.createElement(SideBar_SideBar, {
+        menuWidth: menuWidth,
+        collapsedWidth: collapsedWidth,
+        menuTheme: menuTheme,
+        openedSubMenu: this.state.openedSubMenu,
+        selectedMenuItem: this.state.selectedMenuItem,
+        openSubMenuChange: this.openSubMenuChange,
+        menuCollapsed: this.state.menuCollapsed
+      }), external_react_default.a.createElement(layout_default.a, {
+        style: {
+          minHeight: '100vh'
+        }
+      }, external_react_default.a.createElement(layout_default.a.Header, {
+        style: {
+          padding: 0
+        }
+      }, external_react_default.a.createElement("div", {
+        className: "header"
+      }, external_react_default.a.createElement(CollapsedButton_CollapsedButton, {
+        menuCollapsed: this.state.menuCollapsed,
+        toggle: this.toggle
+      }), external_react_default.a.createElement("div", {
+        className: "right"
+      }, external_react_default.a.createElement(dropdown_default.a, {
+        placement: "bottomCenter",
+        overlay: external_react_default.a.createElement(menu_default.a, {
+          onClick: function onClick(_ref) {
+            var key = _ref.key;
+            return _this2.changeLanguage(key);
+          },
+          selectedKeys: [this.props.currentLanguage]
+        }, external_react_default.a.createElement(menu_default.a.Item, {
+          key: "en"
+        }, external_react_default.a.createElement("img", {
+          src: "/static/images/en.png",
+          style: {
+            width: '20px',
+            height: '20px'
+          }
+        }), " \xA0 ", translate("common:en")), external_react_default.a.createElement(menu_default.a.Item, {
+          key: "vn"
+        }, external_react_default.a.createElement("img", {
+          src: "/static/images/vn.png",
+          style: {
+            width: '20px',
+            height: '20px'
+          }
+        }), " \xA0 ", translate("common:vn")))
+      }, external_react_default.a.createElement("span", {
+        className: "ant-dropdown-link",
+        style: {
+          marginRight: '10px',
+          cursor: 'pointer'
+        }
+      }, external_react_default.a.createElement("img", {
+        src: "/static/images/".concat(this.props.currentLanguage, ".png"),
+        style: {
+          width: '20px',
+          height: '20px'
+        }
+      }), " \xA0 ", translate("common:".concat(this.props.currentLanguage)))), external_react_default.a.createElement(HeaderDropdown_HeaderDropdown, null)))), external_react_default.a.createElement(layout_default.a.Content, {
+        className: "content"
+      }, this.props.children), external_react_default.a.createElement(layout_default.a.Footer, {
+        style: {
+          padding: 0
+        }
+      }, external_react_default.a.createElement("footer", {
+        className: "footer"
+      }, external_react_default.a.createElement("div", {
+        className: "links"
+      }, links.map(function (link) {
+        return external_react_default.a.createElement("a", {
+          key: link.key,
+          title: link.key,
+          target: link.blankTarget ? '_blank' : '_self',
+          href: link.href
+        }, link.title);
+      })), external_react_default.a.createElement("div", {
+        className: "copyright"
+      }, external_react_default.a.createElement(external_react_["Fragment"], null, "Copyright ", external_react_default.a.createElement(icon_default.a, {
+        type: "copyright"
+      }), " 2018 - Techkids Software"))))))));
+    }
+  }]);
+
+  return BaseAdminLayout;
+}(external_react_default.a.Component);
+
+var AdminLayout_AdminLayout = Object(i18n["d" /* withNamespaces */])('common')(AdminLayout_BaseAdminLayout);
+// CONCATENATED MODULE: ./layouts/index.ts
+
+
+
+
+// CONCATENATED MODULE: ./components/AdminLayout/Authorize.tsx
+
+
+
+
+function Authorize_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Authorize_typeof = function _typeof(obj) { return typeof obj; }; } else { Authorize_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Authorize_typeof(obj); }
+
+function Authorize_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function Authorize_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { Authorize_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { Authorize_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function Authorize_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Authorize_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Authorize_createClass(Constructor, protoProps, staticProps) { if (protoProps) Authorize_defineProperties(Constructor.prototype, protoProps); if (staticProps) Authorize_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Authorize_possibleConstructorReturn(self, call) { if (call && (Authorize_typeof(call) === "object" || typeof call === "function")) { return call; } return Authorize_assertThisInitialized(self); }
+
+function Authorize_getPrototypeOf(o) { Authorize_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Authorize_getPrototypeOf(o); }
+
+function Authorize_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Authorize_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Authorize_setPrototypeOf(subClass, superClass); }
+
+function Authorize_setPrototypeOf(o, p) { Authorize_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Authorize_setPrototypeOf(o, p); }
+
+function Authorize_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+var Authorize_Authorize = function Authorize(Component, permission, authenticationRequired, layoutName) {
+  return function (props) {
+    var AuthorizeComponent =
+    /*#__PURE__*/
+    function (_React$Component) {
+      Authorize_inherits(AuthorizeComponent, _React$Component);
+
+      function AuthorizeComponent() {
+        var _getPrototypeOf2;
+
+        var _this;
+
+        Authorize_classCallCheck(this, AuthorizeComponent);
+
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        _this = Authorize_possibleConstructorReturn(this, (_getPrototypeOf2 = Authorize_getPrototypeOf(AuthorizeComponent)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+        Authorize_defineProperty(Authorize_assertThisInitialized(_this), "state", {
+          isAuthenticated: undefined,
+          isAuthorized: undefined,
+          openedSubMenu: '',
+          selectedMenuItem: '',
+          currentLanguage: ''
+        });
+
+        return _this;
+      }
+
+      Authorize_createClass(AuthorizeComponent, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+          var _this2 = this;
+
+          Object(core["j" /* initializeFirebaseApp */])();
+          app_default.a.auth().onAuthStateChanged(
+          /*#__PURE__*/
+          function () {
+            var _ref = Authorize_asyncToGenerator(
+            /*#__PURE__*/
+            regenerator_default.a.mark(function _callee(user) {
+              var idTokenInfo, isAuthorized, filterPermission, authUser, pathname, openedSubMenu;
+              return regenerator_default.a.wrap(function _callee$(_context) {
+                while (1) {
+                  switch (_context.prev = _context.next) {
+                    case 0:
+                      if (user) {
+                        _context.next = 4;
+                        break;
+                      }
+
+                      _this2.setState({
+                        isAuthenticated: false
+                      });
+
+                      _context.next = 10;
+                      break;
+
+                    case 4:
+                      _context.next = 6;
+                      return user.getIdTokenResult();
+
+                    case 6:
+                      idTokenInfo = _context.sent;
+                      isAuthorized = false;
+
+                      if (!permission || permission.length === 0) {
+                        isAuthorized = true;
+                      } else if (permission && permission.length && idTokenInfo.claims.permissions) {
+                        filterPermission = permission.filter(function (val) {
+                          return idTokenInfo.claims.permissions.indexOf(val) === -1;
+                        });
+                        filterPermission && filterPermission.length ? isAuthorized = false : isAuthorized = true;
+                      }
+
+                      if (isAuthorized) {
+                        authUser = {
+                          id: idTokenInfo.claims.user_id,
+                          email: idTokenInfo.claims.email,
+                          fullName: idTokenInfo.claims.name,
+                          avatarUrl: idTokenInfo.claims.avatarUrl,
+                          roles: idTokenInfo.claims.roles,
+                          permissions: idTokenInfo.claims.permissions
+                        };
+                        Object(store["getOrCreateStore"])(store["initStore"], {}).dispatch.profileModel.updateProfileInfo(authUser);
+                        pathname = window.location.pathname;
+                        openedSubMenu = '';
+                        Object(core["h" /* getMenuConfigs */])().map(function (subMenu) {
+                          subMenu.items.map(function (item) {
+                            if (item.path === pathname) {
+                              openedSubMenu = subMenu.name;
+                            }
+                          });
+                        });
+
+                        _this2.setState({
+                          isAuthenticated: true,
+                          isAuthorized: isAuthorized,
+                          openedSubMenu: openedSubMenu,
+                          selectedMenuItem: pathname,
+                          currentLanguage: i18n["c" /* i18n */].i18n.language ? i18n["c" /* i18n */].i18n.language : config["a" /* config */].i18n.defaultLang
+                        });
+                      } else {
+                        _this2.setState({
+                          isAuthenticated: true,
+                          isAuthorized: isAuthorized
+                        });
+                      }
+
+                    case 10:
+                    case "end":
+                      return _context.stop();
+                  }
+                }
+              }, _callee);
+            }));
+
+            return function (_x) {
+              return _ref.apply(this, arguments);
+            };
+          }());
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          var _this3 = this;
+
+          if (this.state.isAuthenticated === false) {
+            if (authenticationRequired) {
+              router_default.a.push('/auth/login');
+            }
+          }
+
+          if (this.state.isAuthorized === false) {
+            router_default.a.push('/_error');
+          }
+
+          var renderAdminLayout = function renderAdminLayout() {
+            return external_react_default.a.createElement("div", null, _this3.state.isAuthenticated && _this3.state.isAuthorized || !authenticationRequired ? external_react_default.a.createElement(AdminLayout_AdminLayout, {
+              openedSubMenu: _this3.state.openedSubMenu,
+              selectedMenuItem: _this3.state.selectedMenuItem,
+              currentLanguage: _this3.state.currentLanguage
+            }, external_react_default.a.createElement(Component, props)) : external_react_default.a.createElement("div", {
+              className: "loader"
+            }, external_react_default.a.createElement(spin_default.a, {
+              spinning: true
+            })));
+          };
+
+          switch (layoutName) {
+            case 'admin':
+              return renderAdminLayout();
+
+            default:
+              return renderAdminLayout();
+          }
+        }
+      }]);
+
+      return AuthorizeComponent;
+    }(external_react_default.a.Component);
+
+    return external_react_default.a.createElement(AuthorizeComponent, null);
+  };
+};
+// CONCATENATED MODULE: ./components/index.ts
+/* unused concated harmony import LoginModal */
+/* unused concated harmony import RegisterModal */
+/* concated harmony reexport Header */__webpack_require__.d(__webpack_exports__, "c", function() { return Header_Header; });
+/* unused concated harmony import LeftSideBar */
+/* unused concated harmony import RightSideBar */
+/* concated harmony reexport MainContent */__webpack_require__.d(__webpack_exports__, "d", function() { return MainContent_MainContent; });
+/* unused concated harmony import AdminSidebar */
+/* concated harmony reexport AdminSearchbar */__webpack_require__.d(__webpack_exports__, "a", function() { return AdminSearchbar; });
+/* concated harmony reexport PagingButtons */__webpack_require__.d(__webpack_exports__, "e", function() { return PagingButtons_PagingButtons; });
+/* concated harmony reexport Authorize */__webpack_require__.d(__webpack_exports__, "b", function() { return Authorize_Authorize; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/auth");
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/row/style");
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/modal");
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/col/style");
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/dropdown");
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/spin");
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/button/style");
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+module.exports = require("@rematch/core");
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-device-detect");
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/layout");
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/message/style");
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = require("moment");
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports = require("js-cookie");
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/table");
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/menu/style");
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/tabs");
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/input/style");
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/divider");
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/tag");
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/form/style");
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/spin/style");
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/modal/style");
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/dropdown/style");
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+module.exports = require("slugify");
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps");
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/select/style");
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/list");
+
+/***/ }),
+/* 48 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd_lib_col_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony import */ var antd_lib_col_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_col_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd_lib_col__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd_lib_col__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd_lib_row_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
+/* harmony import */ var antd_lib_row_style__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd_lib_row_style__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd_lib_row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_lib_row__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(18);
+/* harmony import */ var antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var antd_lib_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12);
+/* harmony import */ var antd_lib_icon__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(antd_lib_icon__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4);
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+
+
+
+
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var MachineItem =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MachineItem, _React$Component);
+
+  function MachineItem() {
+    _classCallCheck(this, MachineItem);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MachineItem).apply(this, arguments));
+  }
+
+  _createClass(MachineItem, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var newsState = _core__WEBPACK_IMPORTED_MODULE_7__[/* newsStates */ "k"].filter(function (item) {
+        return item.value === _this.props.newsState;
+      })[0];
+      return react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        className: "grid-post",
+        lg: this.props.lg,
+        md: this.props.md,
+        sm: this.props.sm,
+        xs: this.props.xs
+      }, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        style: {
+          marginBottom: 10
+        }
+      }, this.props.currentUserId !== this.props.ownerId ? react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("a", {
+        className: "star-following",
+        title: "Follow ".concat(this.props.title)
+      }, react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_icon__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        type: "star",
+        theme: this.props.starStatus,
+        onClick: function onClick() {
+          return _this.props.changeFollowStatus(_this.props.starStatus, _this.props.id);
+        }
+      })) : null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("a", {
+        href: this.props.linkRedirect,
+        title: this.props.title,
+        style: {
+          backgroundImage: "url('".concat(this.props.imageUrl, "')")
+        },
+        className: "grid-post-image"
+      })), react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("a", {
+        href: this.props.linkRedirect,
+        title: this.props.title,
+        className: "grid-post-title"
+      }, this.props.title)), react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-price"
+      }, this.props.price ? Object(_core__WEBPACK_IMPORTED_MODULE_7__[/* formatMoney */ "c"])(Number(this.props.price)) : "".concat(this.props.t('common:contact')))), react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        lg: 12,
+        md: 12,
+        sm: 24,
+        xs: 24
+      }, newsState && react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-status"
+      }, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("em", null, this.props.t("common:".concat(newsState.value.toLowerCase()))))), react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        lg: 12,
+        md: 12,
+        sm: 0,
+        xs: 0
+      }, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-owner-name"
+      }, this.props.ownerName))), react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-location"
+      }, this.props.location)), this.props.isShowTotalFollowAndView ? react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", null, this.props.totalFollow ? react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-location"
+      }, this.props.t('common:total-followers'), " : ", this.props.totalFollow)) : null, this.props.totalView ? react__WEBPACK_IMPORTED_MODULE_6__["createElement"](antd_lib_row__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", {
+        className: "grid-post-location"
+      }, this.props.t('common:total-views'), " : ", this.props.totalView)) : null) : null)));
+    }
+  }]);
+
+  return MachineItem;
+}(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(_i18n__WEBPACK_IMPORTED_MODULE_8__[/* withNamespaces */ "d"])('common')(MachineItem));
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/card");
+
+/***/ }),
+/* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rematch_core__WEBPACK_IMPORTED_MODULE_0__);
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var profileModel = Object(_rematch_core__WEBPACK_IMPORTED_MODULE_0__["createModel"])({
+  state: {
+    modal: {
+      login: false,
+      register: false
+    },
+    authUser: null
+  },
+  reducers: {
+    openModal: function openModal(state, payload) {
+      return _objectSpread({}, state, {
+        modal: _objectSpread({}, state.modal, _defineProperty({}, payload.modalName, true))
+      });
+    },
+    closeModal: function closeModal(state, payload) {
+      return _objectSpread({}, state, {
+        modal: _objectSpread({}, state.modal, _defineProperty({}, payload.modalName, false))
+      });
+    },
+    changeModal: function changeModal(state) {
+      return _objectSpread({}, state, {
+        modal: {
+          login: !state.modal.login,
+          register: !state.modal.register
+        }
+      });
+    },
+    updateProfileInfo: function updateProfileInfo(state, payload) {
+      return _objectSpread({}, state, {
+        authUser: _objectSpread({}, state.authUser, payload)
+      });
+    }
+  },
+  effects: {}
+});
+/* harmony default export */ __webpack_exports__["a"] = (profileModel);
+
+/***/ }),
+/* 51 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd_lib_message_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(31);
+/* harmony import */ var antd_lib_message_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_message_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd_lib_message__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd_lib_message__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_rematch_core__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var followModel = Object(_rematch_core__WEBPACK_IMPORTED_MODULE_3__["createModel"])({
+  state: {
+    data: [],
+    currentTab: 'SELL',
+    currentType: 'news'
+  },
+  reducers: {
+    getFollowDataSuccess: function getFollowDataSuccess(state, payload) {
+      return _objectSpread({}, state, {
+        data: payload.data
+      });
+    }
+  },
+  effects: {
+    getFollowData: function () {
+      var _getFollowData = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee(payload) {
+        var serviceProxies, data;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context.next = 4;
+                return serviceProxies.findFollow(payload.id, payload.type, payload.newsType, payload.first, payload.sortBy, payload.before, payload.after);
+
+              case 4:
+                data = _context.sent;
+                this.getFollowDataSuccess(data);
+                _context.next = 11;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                // tslint:disable-next-line:no-console
+                console.log(_context.t0);
+
+              case 11:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 8]]);
+      }));
+
+      function getFollowData(_x) {
+        return _getFollowData.apply(this, arguments);
+      }
+
+      return getFollowData;
+    }(),
+    followNews: function () {
+      var _followNews = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee2(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context2.next = 4;
+                return serviceProxies.follow(payload.userId, {
+                  operation: 'followNews',
+                  payload: {
+                    newsId: payload.newsId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success('Theo dõi tin thành công');
+
+                _context2.next = 10;
+                break;
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 7]]);
+      }));
+
+      function followNews(_x2) {
+        return _followNews.apply(this, arguments);
+      }
+
+      return followNews;
+    }(),
+    unfollowNews: function () {
+      var _unfollowNews = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee3(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context3.next = 4;
+                return serviceProxies.follow(payload.userId, {
+                  operation: 'unfollowNews',
+                  payload: {
+                    newsId: payload.newsId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success('Bỏ theo dõi tin thành công');
+
+                _context3.next = 10;
+                break;
+
+              case 7:
+                _context3.prev = 7;
+                _context3.t0 = _context3["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 7]]);
+      }));
+
+      function unfollowNews(_x3) {
+        return _unfollowNews.apply(this, arguments);
+      }
+
+      return unfollowNews;
+    }(),
+    followUser: function () {
+      var _followUser = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee4(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context4.next = 4;
+                return serviceProxies.follow(payload.authId, {
+                  operation: 'followUser',
+                  payload: {
+                    userId: payload.userId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success('Theo dõi người bán thành công');
+
+                _context4.next = 10;
+                break;
+
+              case 7:
+                _context4.prev = 7;
+                _context4.t0 = _context4["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 7]]);
+      }));
+
+      function followUser(_x4) {
+        return _followUser.apply(this, arguments);
+      }
+
+      return followUser;
+    }(),
+    unfollowUser: function () {
+      var _unfollowUser = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee5(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _context5.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context5.next = 4;
+                return serviceProxies.follow(payload.authId, {
+                  operation: 'unfollowUser',
+                  payload: {
+                    userId: payload.userId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success(' Bỏ theo dõi người bán thành công');
+
+                _context5.next = 10;
+                break;
+
+              case 7:
+                _context5.prev = 7;
+                _context5.t0 = _context5["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, null, [[0, 7]]);
+      }));
+
+      function unfollowUser(_x5) {
+        return _unfollowUser.apply(this, arguments);
+      }
+
+      return unfollowUser;
+    }(),
+    followShop: function () {
+      var _followShop = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee6(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context6.next = 4;
+                return serviceProxies.follow(payload.authId, {
+                  operation: 'followShop',
+                  payload: {
+                    shopId: payload.shopId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success('Theo dõi cửa hàng thành công');
+
+                _context6.next = 10;
+                break;
+
+              case 7:
+                _context6.prev = 7;
+                _context6.t0 = _context6["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, null, [[0, 7]]);
+      }));
+
+      function followShop(_x6) {
+        return _followShop.apply(this, arguments);
+      }
+
+      return followShop;
+    }(),
+    unfollowShop: function () {
+      var _unfollowShop = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.mark(function _callee7(payload) {
+        var serviceProxies;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_2___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                _context7.prev = 0;
+                serviceProxies = Object(_services__WEBPACK_IMPORTED_MODULE_4__[/* getServiceProxy */ "a"])();
+                _context7.next = 4;
+                return serviceProxies.follow(payload.authId, {
+                  operation: 'unfollowShop',
+                  payload: {
+                    shopId: payload.shopId
+                  }
+                });
+
+              case 4:
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.success('Bỏ theo dõi cửa hàng thành công');
+
+                _context7.next = 10;
+                break;
+
+              case 7:
+                _context7.prev = 7;
+                _context7.t0 = _context7["catch"](0);
+
+                antd_lib_message__WEBPACK_IMPORTED_MODULE_1___default.a.error('Đã có lỗi xảy ra');
+
+              case 10:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7, null, [[0, 7]]);
+      }));
+
+      function unfollowShop(_x7) {
+        return _unfollowShop.apply(this, arguments);
+      }
+
+      return unfollowShop;
+    }()
+  }
+});
+/* harmony default export */ __webpack_exports__["a"] = (followModel);
+
+/***/ }),
+/* 52 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_rematch_core__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+var searchModel = Object(_rematch_core__WEBPACK_IMPORTED_MODULE_1__["createModel"])({
+  state: {
+    filters: {
+      keyword: undefined,
+      state: undefined,
+      priceType: undefined,
+      minPrice: undefined,
+      maxPrice: undefined,
+      minWeight: undefined,
+      maxWeight: undefined,
+      newsType: undefined,
+      owner: undefined,
+      shop: undefined,
+      location: undefined,
+      type: undefined,
+      brand: undefined,
+      model: undefined,
+      category: undefined
+    },
+    data: [],
+    first: 16,
+    sortBy: 'elasticsearchCreatedAt|desc',
+    // fieldName|sortOrder
+    before: undefined,
+    after: undefined,
+    statusNewsTypeSearch: 'SELL',
+    statusTab: '1',
+    isLoading: false,
+    isLoadingDataSell: false,
+    isLoadingDataBuy: false,
+    isLoadingDataLease: false,
+    isLoadingDataMostFollow: false,
+    isLoadingDataNewMachine: false,
+    dataTotal: {
+      dataSell: {
+        data: [],
+        after: undefined,
+        before: undefined
+      },
+      dataBuy: {
+        data: [],
+        before: undefined,
+        after: undefined
+      },
+      dataLease: {
+        data: [],
+        before: undefined,
+        after: undefined
+      },
+      dataMostFollow: {
+        data: [],
+        before: undefined,
+        after: undefined
+      },
+      dataNewMachine: {
+        data: [],
+        before: undefined,
+        after: undefined
+      }
+    }
+  },
+  reducers: {
+    onFollowChangeOnSearchDetailScreenSuccess: function onFollowChangeOnSearchDetailScreenSuccess(state, payload) {
+      if (payload.starStatus === 'filled') {
+        return _objectSpread({}, state, {
+          data: state.data.map(function (value) {
+            if (value._id === payload.newsId) {
+              return _objectSpread({}, value, {
+                isFollowing: false
+              });
+            } else {
+              return value;
+            }
+          })
+        });
+      } else {
+        return _objectSpread({}, state, {
+          data: state.data.map(function (value) {
+            if (value._id === payload.newsId) {
+              return _objectSpread({}, value, {
+                isFollowing: true
+              });
+            } else {
+              return value;
+            }
+          })
+        });
+      }
+    },
+    onFollowChangeMostFollowNewsSuccess: function onFollowChangeMostFollowNewsSuccess(state, payload) {
+      if (payload.starStatus === 'filled') {
+        return _objectSpread({}, state, {
+          dataTotal: _objectSpread({}, state.dataTotal, {
+            dataMostFollow: _objectSpread({}, state.dataTotal.dataMostFollow, {
+              data: state.dataTotal.dataMostFollow.data.map(function (value) {
+                if (value._id === payload.newsId) {
+                  return _objectSpread({}, value, {
+                    isFollowing: false
+                  });
+                } else {
+                  return value;
+                }
+              })
+            })
+          })
+        });
+      } else {
+        return _objectSpread({}, state, {
+          dataTotal: _objectSpread({}, state.dataTotal, {
+            dataMostFollow: _objectSpread({}, state.dataTotal.dataMostFollow, {
+              data: state.dataTotal.dataMostFollow.data.map(function (value) {
+                if (value._id === payload.newsId) {
+                  return _objectSpread({}, value, {
+                    isFollowing: true
+                  });
+                } else {
+                  return value;
+                }
+              })
+            })
+          })
+        });
+      }
+    },
+    onFollowChangeOnHomeScreenSuccess: function onFollowChangeOnHomeScreenSuccess(state, payload) {
+      if (payload.starStatus === 'filled') {
+        switch (state.statusTab) {
+          case '1':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataSell: _objectSpread({}, state.dataTotal.dataSell, {
+                  data: state.dataTotal.dataSell.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: false
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          case '2':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataBuy: _objectSpread({}, state.dataTotal.dataBuy, {
+                  data: state.dataTotal.dataBuy.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: false
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          case '3':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataLease: _objectSpread({}, state.dataTotal.dataLease, {
+                  data: state.dataTotal.dataLease.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: false
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          default:
+            return _objectSpread({}, state);
+        }
+      } else {
+        switch (state.statusTab) {
+          case '1':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataSell: _objectSpread({}, state.dataTotal.dataSell, {
+                  data: state.dataTotal.dataSell.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: true
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          case '2':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataBuy: _objectSpread({}, state.dataTotal.dataBuy, {
+                  data: state.dataTotal.dataBuy.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: true
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          case '3':
+            return _objectSpread({}, state, {
+              dataTotal: _objectSpread({}, state.dataTotal, {
+                dataLease: _objectSpread({}, state.dataTotal.dataLease, {
+                  data: state.dataTotal.dataLease.data.map(function (value) {
+                    if (value._id === payload.newsId) {
+                      return _objectSpread({}, value, {
+                        isFollowing: true
+                      });
+                    } else {
+                      return value;
+                    }
+                  })
+                })
+              })
+            });
+
+          default:
+            return _objectSpread({}, state);
+        }
+      }
+    },
+    activeLoading: function activeLoading(state, payload) {
+      return _objectSpread({}, state, payload);
+    },
+    updateFilters: function updateFilters(state, payload) {
+      return _objectSpread({}, state, {
+        filters: _objectSpread({}, state.filters, payload)
+      });
+    },
+    changeTabsOnHomePage: function changeTabsOnHomePage(state, payload) {
+      return _objectSpread({}, state, {
+        statusTab: payload
+      });
+    },
+    changeStatusNewsTypeSearch: function changeStatusNewsTypeSearch(state, payload) {
+      return _objectSpread({}, state, {
+        statusNewsTypeSearch: payload
+      });
+    },
+    updateSort: function updateSort(state, payload) {
+      return _objectSpread({}, state, {
+        sortBy: payload.sortBy
+      });
+    },
+    getDataSuccess: function getDataSuccess(state, payload) {
+      return _objectSpread({}, state, {
+        data: payload.data,
+        before: payload.before,
+        after: payload.after,
+        isLoading: false
+      });
+    },
+    getDataInTabsSuccess: function getDataInTabsSuccess(state, payload) {
+      switch (payload.newsType) {
+        case 'SELL':
+          return _objectSpread({}, state, {
+            dataTotal: _objectSpread({}, state.dataTotal, {
+              dataSell: payload.result
+            }),
+            isLoadingDataSell: false
+          });
+          break;
+
+        case 'BUY':
+          return _objectSpread({}, state, {
+            dataTotal: _objectSpread({}, state.dataTotal, {
+              dataBuy: payload.result
+            }),
+            isLoadingDataBuy: false
+          });
+          break;
+
+        case 'LEASE':
+          return _objectSpread({}, state, {
+            dataTotal: _objectSpread({}, state.dataTotal, {
+              dataLease: payload.result
+            }),
+            isLoadingDataLease: false
+          });
+          break;
+
+        default:
+          return _objectSpread({}, state);
+      }
+    },
+    getDataMostFollowSuccess: function getDataMostFollowSuccess(state, payload) {
+      return _objectSpread({}, state, {
+        dataTotal: _objectSpread({}, state.dataTotal, {
+          dataMostFollow: payload
+        }),
+        isLoadingDataMostFollow: false
+      });
+    },
+    getDataNewMachineSuccess: function getDataNewMachineSuccess(state, payload) {
+      return _objectSpread({}, state, {
+        dataTotal: _objectSpread({}, state.dataTotal, {
+          dataNewMachine: payload
+        }),
+        isLoadingDataNewMachine: false
+      });
+    }
+  },
+  effects: {
+    handleFiltersChange: function () {
+      var _handleFiltersChange = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(payload, rootState) {
+        var searchState, newFilters, serviceProxy, result;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                searchState = rootState.searchModel;
+                newFilters = {
+                  keyword: payload.keyword || searchState.filters.keyword,
+                  state: typeof payload.state === 'string' ? payload.state : searchState.filters.state,
+                  priceType: typeof payload.priceType === 'string' ? payload.priceType : searchState.filters.priceType,
+                  minPrice: typeof payload.minPrice === 'string' || typeof payload.minPrice === 'number' ? Number(payload.minPrice) > 0 ? Number(payload.minPrice) : undefined : searchState.filters.minPrice,
+                  maxPrice: typeof payload.maxPrice === 'string' || typeof payload.maxPrice === 'number' ? Number(payload.maxPrice) > 0 ? Number(payload.maxPrice) : undefined : searchState.filters.maxPrice,
+                  weightRange: typeof payload.weightRange === 'string' ? payload.weightRange : searchState.filters.weightRange,
+                  newsType: typeof payload.newsType === 'string' ? payload.newsType : searchState.filters.newsType,
+                  category: typeof payload.category === 'string' ? payload.category : searchState.filters.category,
+                  searchState: payload.owner || searchState.filters.owner,
+                  shop: payload.shop || searchState.filters.shop,
+                  location: typeof payload.location === 'string' ? payload.location : searchState.filters.location,
+                  type: typeof payload.type === 'string' ? payload.type : searchState.filters.type,
+                  brand: typeof payload.brand === 'string' ? payload.brand : searchState.filters.brand,
+                  model: typeof payload.model === 'string' ? payload.model : searchState.filters.model
+                };
+                this.updateFilters(newFilters);
+                serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_2__[/* getServiceProxy */ "a"])();
+                _context.next = 7;
+                return serviceProxy.searchElasticsearch(payload.keyword || searchState.filters.keyword, typeof payload.state === 'string' ? payload.state : searchState.filters.state, typeof payload.state === 'string' ? payload.priceType : searchState.filters.priceType, typeof payload.minPrice === 'string' || typeof payload.minPrice === 'number' ? Number(payload.minPrice) > 0 ? Number(payload.minPrice) : undefined : searchState.filters.minPrice, typeof payload.maxPrice === 'string' || typeof payload.maxPrice === 'number' ? Number(payload.maxPrice) > 0 ? Number(payload.maxPrice) : undefined : searchState.filters.maxPrice, typeof payload.weightRange === 'string' ? payload.weightRange : searchState.filters.weightRange, undefined, typeof payload.newsType === 'string' ? payload.newsType : searchState.filters.newsType, typeof payload.category === 'string' ? payload.category : searchState.filters.category, payload.owner || searchState.filters.owner, payload.shop || searchState.filters.shop, typeof payload.location === 'string' ? payload.location : searchState.filters.location, typeof payload.type === 'string' ? payload.type : searchState.filters.type, typeof payload.brand === 'string' ? payload.brand : searchState.filters.brand, typeof payload.model === 'string' ? payload.model : searchState.filters.model, searchState.first, searchState.sortBy, undefined, undefined);
+
+              case 7:
+                result = _context.sent;
+                this.getDataSuccess(result);
+                _context.next = 14;
+                break;
+
+              case 11:
+                _context.prev = 11;
+                _context.t0 = _context["catch"](0);
+                // tslint:disable-next-line:no-console
+                console.log(_context.t0); // message.error(JSON.parse(error.response).message);
+
+              case 14:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[0, 11]]);
+      }));
+
+      function handleFiltersChange(_x, _x2) {
+        return _handleFiltersChange.apply(this, arguments);
+      }
+
+      return handleFiltersChange;
+    }(),
+    handleSortChange: function () {
+      var _handleSortChange = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(payload, rootState) {
+        var searchState, serviceProxy, result;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                this.updateSort(payload);
+                searchState = rootState.searchModel;
+                serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_2__[/* getServiceProxy */ "a"])();
+                _context2.next = 6;
+                return serviceProxy.searchElasticsearch(searchState.filters.keyword, searchState.filters.state, searchState.filters.priceType, searchState.filters.minPrice, searchState.filters.maxPrice, searchState.filters.weightRange, undefined, searchState.filters.newsType, searchState.filters.category, searchState.filters.owner, searchState.filters.shop, searchState.filters.location, searchState.filters.type, searchState.filters.brand, searchState.filters.model, searchState.first, payload.sortBy, undefined, undefined);
+
+              case 6:
+                result = _context2.sent;
+                this.getDataSuccess(result);
+                _context2.next = 13;
+                break;
+
+              case 10:
+                _context2.prev = 10;
+                _context2.t0 = _context2["catch"](0);
+                // tslint:disable-next-line:no-console
+                console.log(_context2.t0); // message.error(JSON.parse(error.response).message);
+
+              case 13:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, this, [[0, 10]]);
+      }));
+
+      function handleSortChange(_x3, _x4) {
+        return _handleSortChange.apply(this, arguments);
+      }
+
+      return handleSortChange;
+    }(),
+    getNextPage: function () {
+      var _getNextPage = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(_payload, rootState) {
+        var searchState, serviceProxy, result;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                searchState = rootState.searchModel;
+                serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_2__[/* getServiceProxy */ "a"])();
+                _context3.next = 5;
+                return serviceProxy.searchElasticsearch(searchState.filters.keyword, searchState.filters.state, searchState.filters.priceType, searchState.filters.minPrice, searchState.filters.maxPrice, searchState.filters.weightRange, undefined, searchState.filters.newsType, searchState.filters.category, searchState.filters.owner, searchState.filters.shop, searchState.filters.location, searchState.filters.type, searchState.filters.brand, searchState.filters.model, searchState.first, searchState.sortBy, undefined, searchState.after);
+
+              case 5:
+                result = _context3.sent;
+                this.getDataSuccess(result);
+                _context3.next = 12;
+                break;
+
+              case 9:
+                _context3.prev = 9;
+                _context3.t0 = _context3["catch"](0);
+                // tslint:disable-next-line:no-console
+                console.log(_context3.t0); // message.error(JSON.parse(error.response).message);
+
+              case 12:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, this, [[0, 9]]);
+      }));
+
+      function getNextPage(_x5, _x6) {
+        return _getNextPage.apply(this, arguments);
+      }
+
+      return getNextPage;
+    }(),
+    getPrevPage: function () {
+      var _getPrevPage = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(_payload, rootState) {
+        var searchState, serviceProxy, result;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                searchState = rootState.searchModel;
+                serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_2__[/* getServiceProxy */ "a"])();
+                _context4.next = 5;
+                return serviceProxy.searchElasticsearch(searchState.filters.keyword, searchState.filters.state, searchState.filters.priceType, searchState.filters.minPrice, searchState.filters.maxPrice, searchState.filters.weightRange, undefined, searchState.filters.newsType, searchState.filters.category, searchState.filters.owner, searchState.filters.shop, searchState.filters.location, searchState.filters.type, searchState.filters.brand, searchState.filters.model, searchState.first, searchState.sortBy, searchState.before, undefined);
+
+              case 5:
+                result = _context4.sent;
+                this.getDataSuccess(result);
+                _context4.next = 12;
+                break;
+
+              case 9:
+                _context4.prev = 9;
+                _context4.t0 = _context4["catch"](0);
+                // tslint:disable-next-line:no-console
+                console.log(_context4.t0); // message.error(JSON.parse(error.response).message);
+
+              case 12:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, this, [[0, 9]]);
+      }));
+
+      function getPrevPage(_x7, _x8) {
+        return _getPrevPage.apply(this, arguments);
+      }
+
+      return getPrevPage;
+    }()
+  }
+});
+/* harmony default export */ __webpack_exports__["a"] = (searchModel);
+
+/***/ }),
+/* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rematch_core__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var metadataModel = Object(_rematch_core__WEBPACK_IMPORTED_MODULE_0__["createModel"])({
+  state: {
+    loaded: false,
+    brands: [],
+    categories: [],
+    models: [],
+    provinces: [],
+    weightRanges: [],
+    rentalPeriods: [],
+    state: [],
+    commonKeywords: []
+  },
+  reducers: {
+    loadMetadataSuccess: function loadMetadataSuccess(state) {
+      return _objectSpread({}, state);
+    },
+    addNewModel: function addNewModel(state, payload) {
+      return _objectSpread({}, state, {
+        models: [].concat(_toConsumableArray(state.models), [payload])
+      });
+    }
+  },
+  effects: {}
+});
+/* harmony default export */ __webpack_exports__["a"] = (metadataModel);
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/upload");
+
+/***/ }),
+/* 55 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "antd/lib/row/style"
+var style_ = __webpack_require__(22);
+
+// EXTERNAL MODULE: external "antd/lib/row"
+var row_ = __webpack_require__(7);
+var row_default = /*#__PURE__*/__webpack_require__.n(row_);
+
+// EXTERNAL MODULE: external "antd/lib/col/style"
+var col_style_ = __webpack_require__(24);
+
+// EXTERNAL MODULE: external "antd/lib/col"
+var col_ = __webpack_require__(2);
+var col_default = /*#__PURE__*/__webpack_require__.n(col_);
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+
+// EXTERNAL MODULE: ./components/CommonLayout/Footer.less
+var CommonLayout_Footer = __webpack_require__(100);
+
+// EXTERNAL MODULE: ./components/CommonLayout/Container.less
+var CommonLayout_Container = __webpack_require__(101);
+
+// CONCATENATED MODULE: ./components/CommonLayout/Container.tsx
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Container_Container =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Container, _React$Component);
+
+  function Container() {
+    _classCallCheck(this, Container);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Container).apply(this, arguments));
+  }
+
+  _createClass(Container, [{
+    key: "render",
+    value: function render() {
+      return external_react_["createElement"]("div", {
+        className: "container"
+      }, this.props.children);
+    }
+  }]);
+
+  return Container;
+}(external_react_["Component"]);
+
+/* harmony default export */ var components_CommonLayout_Container = (Container_Container);
+// EXTERNAL MODULE: ./i18n/index.ts + 1 modules
+var i18n = __webpack_require__(10);
+
+// EXTERNAL MODULE: external "react-device-detect"
+var external_react_device_detect_ = __webpack_require__(29);
+
+// CONCATENATED MODULE: ./components/CommonLayout/Footer.tsx
+
+
+
+
+
+function Footer_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { Footer_typeof = function _typeof(obj) { return typeof obj; }; } else { Footer_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return Footer_typeof(obj); }
+
+function Footer_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Footer_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function Footer_createClass(Constructor, protoProps, staticProps) { if (protoProps) Footer_defineProperties(Constructor.prototype, protoProps); if (staticProps) Footer_defineProperties(Constructor, staticProps); return Constructor; }
+
+function Footer_possibleConstructorReturn(self, call) { if (call && (Footer_typeof(call) === "object" || typeof call === "function")) { return call; } return Footer_assertThisInitialized(self); }
+
+function Footer_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function Footer_getPrototypeOf(o) { Footer_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return Footer_getPrototypeOf(o); }
+
+function Footer_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) Footer_setPrototypeOf(subClass, superClass); }
+
+function Footer_setPrototypeOf(o, p) { Footer_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return Footer_setPrototypeOf(o, p); }
+
+
+
+
+
+
+var Fragment = external_react_["Fragment"];
+
+var Footer_Footer =
+/*#__PURE__*/
+function (_React$Component) {
+  Footer_inherits(Footer, _React$Component);
+
+  function Footer() {
+    Footer_classCallCheck(this, Footer);
+
+    return Footer_possibleConstructorReturn(this, Footer_getPrototypeOf(Footer).apply(this, arguments));
+  }
+
+  Footer_createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      var translate = this.props.t;
+      return external_react_["createElement"]("footer", {
+        className: "footer"
+      }, external_react_["createElement"](components_CommonLayout_Container, null, external_react_["createElement"](row_default.a, {
+        className: "all-link"
+      }, !external_react_device_detect_["isMobile"] ? external_react_["createElement"](Fragment, null, external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 6,
+        xs: 0,
+        sm: 0,
+        className: "footer-item"
+      }, external_react_["createElement"]("h3", null, translate('common:link')), external_react_["createElement"]("img", {
+        src: "/static/images/Facebook.png"
+      }), external_react_["createElement"]("span", null, " Facebook"), external_react_["createElement"]("br", null), external_react_["createElement"]("img", {
+        src: "/static/images/Youtube.png"
+      }), external_react_["createElement"]("span", null, " Youtube"), external_react_["createElement"]("br", null)), external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 6,
+        xs: 0,
+        sm: 0,
+        className: "footer-item"
+      }, external_react_["createElement"]("h3", null, translate('common:about-timmay')), external_react_["createElement"]("span", null, translate('common:about-us')), external_react_["createElement"]("br", null), external_react_["createElement"]("span", null, translate('common:contact')), external_react_["createElement"]("br", null)), external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 6,
+        xs: 0,
+        sm: 0,
+        className: "footer-item"
+      }, external_react_["createElement"]("h3", null, translate('common:support-customer')), external_react_["createElement"]("span", null, translate('common:central-of-support')), external_react_["createElement"]("br", null), external_react_["createElement"]("span", null, translate('common:posting-regulations')), external_react_["createElement"]("br", null), external_react_["createElement"]("span", null, translate('common:operating-regulations')), external_react_["createElement"]("br", null)), external_react_["createElement"](col_default.a, {
+        lg: 6,
+        md: 6,
+        xs: 24,
+        sm: 24,
+        className: "footer-item"
+      }, external_react_["createElement"]("h3", null, translate('common:certificate')), external_react_["createElement"]("img", {
+        src: '/static/images/certificate.png',
+        width: "50%"
+      }))) : external_react_["createElement"](row_default.a, null, external_react_["createElement"](col_default.a, {
+        lg: 24,
+        md: 24,
+        xs: 24,
+        sm: 24,
+        style: {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginBottom: '40px'
+        }
+      }, external_react_["createElement"]("a", {
+        href: "#",
+        style: {
+          marginLeft: '15px'
+        }
+      }, external_react_["createElement"]("span", null, translate('common:about-us'), " "), external_react_["createElement"]("br", null)), external_react_["createElement"]("a", {
+        href: "#",
+        style: {
+          marginLeft: '15px'
+        }
+      }, external_react_["createElement"]("span", null, " Facebook "), external_react_["createElement"]("br", null)), external_react_["createElement"]("a", {
+        href: "#",
+        style: {
+          marginLeft: '15px'
+        }
+      }, external_react_["createElement"]("span", null, translate('common:central-of-support')), external_react_["createElement"]("br", null))), external_react_["createElement"](col_default.a, {
+        lg: 24,
+        md: 24,
+        xs: 24,
+        sm: 24,
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }
+      }, external_react_["createElement"]("h3", null, translate('common:certificate')), external_react_["createElement"]("img", {
+        src: '/static/images/certificate.png',
+        width: "50%"
+      })))), external_react_["createElement"](row_default.a, {
+        style: {
+          textAlign: 'center',
+          paddingBottom: '20px'
+        },
+        className: "address"
+      }, external_react_["createElement"]("span", null, translate('common:info-footer'), external_react_["createElement"]("br", null), translate('common:info-footer-2'), external_react_["createElement"]("br", null), translate('common:info-footer-3'), external_react_["createElement"]("br", null), translate('common:info-footer-4'))), external_react_["createElement"](row_default.a, {
+        className: "license"
+      }, external_react_["createElement"]("span", null, " B\u1EA3n quy\u1EC1n thu\u1ED9c v\u1EC1 Timmay.vn "))));
+    }
+  }]);
+
+  return Footer;
+}(external_react_["Component"]);
+
+/* harmony default export */ var components_CommonLayout_Footer = __webpack_exports__["a"] = (Object(i18n["d" /* withNamespaces */])('common')(Footer_Footer));
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CurrentTime_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(109);
+/* harmony import */ var _CurrentTime_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_CurrentTime_less__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+var timerID;
+
+var CurrentTime =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CurrentTime, _React$Component);
+
+  function CurrentTime(props) {
+    var _this;
+
+    _classCallCheck(this, CurrentTime);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CurrentTime).call(this, props));
+    _this.state = {
+      date: new Date()
+    };
+    return _this;
+  }
+
+  _createClass(CurrentTime, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      timerID = setInterval(function () {
+        return _this2.tick();
+      }, 60000);
+    }
+  }, {
+    key: "componentWillUnmount",
+    value: function componentWillUnmount() {
+      clearInterval(timerID);
+    }
+  }, {
+    key: "tick",
+    value: function tick() {
+      this.setState({
+        date: new Date()
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var vietnameseDay = ['Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy', 'Chủ nhật'];
+      var day = vietnameseDay[this.state.date.getDay()];
+      var date = this.state.date.getDate() < 10 ? "0".concat(this.state.date.getDate()) : this.state.date.getDate();
+      var month = this.state.date.getMonth() + 1 < 10 ? "0".concat(this.state.date.getMonth() + 1) : this.state.date.getMonth() + 1;
+      var year = this.state.date.getFullYear();
+      var hours = this.state.date.getHours() < 10 ? "0".concat(this.state.date.getHours()) : this.state.date.getHours();
+      var minutes = this.state.date.getMinutes() < 10 ? "0".concat(this.state.date.getMinutes()) : this.state.date.getMinutes();
+      var timeZone = "GMT".concat(this.state.date.getTimezoneOffset() / -60 > 0 ? "+".concat(this.state.date.getTimezoneOffset() / -60) : this.state.date.getTimezoneOffset() / -60);
+      return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", {
+        className: "current-time"
+      }, react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("span", {
+        className: "city-time"
+      }, "".concat(day, ", ").concat(date, "/").concat(month, "/").concat(year, ", ").concat(hours, ":").concat(minutes, " (").concat(timeZone, ")")));
+    }
+  }]);
+
+  return CurrentTime;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (CurrentTime);
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+module.exports = require("recompose");
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/table/style");
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-redux");
+
+/***/ }),
+/* 61 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Link; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Router; });
+/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(83);
+/* harmony import */ var next_routes__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(next_routes__WEBPACK_IMPORTED_MODULE_0__);
+
+var routes = next_routes__WEBPACK_IMPORTED_MODULE_0___default()();
+var Link = routes.Link;
+var Router = routes.Router;
+
+/* unused harmony default export */ var _unused_webpack_default_export = (routes);
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/layout/style");
+
+/***/ }),
+/* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20);
+/* harmony import */ var _components_CommonLayout_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(55);
+/* harmony import */ var _components_CommonLayout_CurrentTime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(56);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+var Fragment = react__WEBPACK_IMPORTED_MODULE_1__["Fragment"];
+
+
+
+
+
+var CommonLayout =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(CommonLayout, _React$Component);
+
+  function CommonLayout() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, CommonLayout);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(CommonLayout)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      commonKeywords: []
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getCommonKeywords",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var serviceProxy, commonKeywords;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_5__[/* getServiceProxy */ "a"])();
+              _context.next = 4;
+              return serviceProxy.getCommonKeywords(4, 'count|desc', undefined, undefined);
+
+            case 4:
+              commonKeywords = _context.sent;
+
+              _this.setState({
+                commonKeywords: commonKeywords.data
+              });
+
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](0);
+              // tslint:disable-next-line: no-console
+              console.log(_context.t0);
+
+            case 11:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 8]]);
+    })));
+
+    return _this;
+  }
+
+  _createClass(CommonLayout, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getCommonKeywords();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_1__["createElement"](Fragment, null, react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_components_CommonLayout_CurrentTime__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], null), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_components__WEBPACK_IMPORTED_MODULE_2__[/* Header */ "c"], {
+        commonKeywords: this.state.commonKeywords,
+        searchKeyword: this.props.searchKeyword,
+        updateFilters: this.props.updateFilters,
+        profileState: this.props.profileState,
+        profileReducers: this.props.profileReducers,
+        fullName: this.props.fullName
+      }), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_components__WEBPACK_IMPORTED_MODULE_2__[/* MainContent */ "d"], {
+        topBrands: this.props.topBrands,
+        hasSideBar: this.props.hasSideBar,
+        hasMenuItems: this.props.hasMenuItems
+      }, this.props.children), react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", {
+        style: {
+          marginBottom: '350px'
+        },
+        className: "push"
+      }), react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_components_CommonLayout_Footer__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], null));
+    }
+  }]);
+
+  return CommonLayout;
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (CommonLayout);
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports) {
+
+module.exports = require("uuid");
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/tag/style");
+
+/***/ }),
+/* 67 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isMobile; });
+var isMobile = function isMobile(req) {
+  var userAgent = req ? req.headers['user-agent'] : navigator.userAgent;
+  return userAgent.match(/Android/i) || userAgent.match(/webOS/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i) || userAgent.match(/BlackBerry/i) || userAgent.match(/Windows Phone/i) ? true : false;
+};
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-fetch");
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd_lib_row_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var antd_lib_row_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_row_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd_lib_row__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var antd_lib_row__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd_lib_row__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var antd_lib_col_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24);
+/* harmony import */ var antd_lib_col_style__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(antd_lib_col_style__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var antd_lib_col__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+/* harmony import */ var antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd_lib_col__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var antd_lib_button_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(27);
+/* harmony import */ var antd_lib_button_style__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(antd_lib_button_style__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
+/* harmony import */ var antd_lib_button__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(antd_lib_button__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(18);
+/* harmony import */ var antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(antd_lib_icon_style__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var antd_lib_icon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
+/* harmony import */ var antd_lib_icon__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(antd_lib_icon__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _MachineDetailBox_less__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(94);
+/* harmony import */ var _MachineDetailBox_less__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_MachineDetailBox_less__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _MachineItem_MachineItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(48);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4);
+
+
+
+
+
+
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+var MachineDetailBox =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(MachineDetailBox, _Component);
+
+  function MachineDetailBox() {
+    _classCallCheck(this, MachineDetailBox);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(MachineDetailBox).apply(this, arguments));
+  }
+
+  _createClass(MachineDetailBox, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      var renderMachineDetailList = this.props.data.filter(function (ite) {
+        return Boolean(ite);
+      }).map(function (item, index) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_MachineItem_MachineItem__WEBPACK_IMPORTED_MODULE_10__[/* default */ "a"], {
+          id: item._id,
+          key: index,
+          lg: _this.props.lg,
+          md: _this.props.md,
+          sm: _this.props.sm,
+          xs: _this.props.xs,
+          linkRedirect: item._id ? "/bai-dang/".concat(item._id) : '#',
+          imageUrl: item.imageUrls ? item.imageUrls.length > 0 ? Object(_core__WEBPACK_IMPORTED_MODULE_11__[/* getImageUrl */ "g"])(item.imageUrls[0], 'small') : item.categoryId.imageUrl : '',
+          title: item.title ? item.title : '',
+          price: item.price ? item.price : 0,
+          newsState: item.state,
+          location: item.location ? item.location.name : '',
+          ownerName: item.shop ? item.shop.name : item.owner && item.owner.fullName ? item.owner.fullName : item.owner && item.owner.email ? item.owner.email : item.owner && item.owner.phoneNo ? item.owner.phoneNo : '',
+          starStatus: item.isFollowing ? 'filled' : 'outlined',
+          changeFollowStatus: _this.props.changeFollowStatus,
+          totalFollow: item.counterFollow && item.counterFollow !== 0 ? item.counterFollow : undefined,
+          totalView: item.counterView && item.counterView !== 0 ? item.counterView : undefined,
+          isShowTotalFollowAndView: _this.props.isShowTotalFollowAndView,
+          ownerId: item.owner ? item.owner._id : '',
+          currentUserId: _this.props.profileState && _this.props.profileState.authUser && _this.props.profileState.authUser.id ? _this.props.profileState.authUser.id : ''
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_8__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h3", {
+        className: "title"
+      }, this.props.title), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_row__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        gutter: 12,
+        type: "flex",
+        className: "grid-view"
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        className: "button-pagging",
+        lg: 1,
+        md: 1,
+        sm: 1,
+        xs: 1
+      }, !this.props.hiddenButton ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        disabled: this.props.disabledButtonLeft,
+        onClick: this.props.buttonLeft,
+        className: "button-left"
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_icon__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        type: "arrow-left"
+      })) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null)), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        lg: 22,
+        md: 22,
+        sm: 22,
+        xs: 22
+      }, renderMachineDetailList), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_col__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        className: "button-pagging-right",
+        lg: 1,
+        md: 1,
+        sm: 1,
+        xs: 1
+      }, !this.props.hiddenButton ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_button__WEBPACK_IMPORTED_MODULE_5___default.a, {
+        disabled: this.props.disabledButtonRight,
+        onClick: this.props.buttonRight,
+        className: "button-right"
+      }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(antd_lib_icon__WEBPACK_IMPORTED_MODULE_7___default.a, {
+        type: "arrow-right"
+      })) : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("div", null))));
+    }
+  }]);
+
+  return MachineDetailBox;
+}(react__WEBPACK_IMPORTED_MODULE_8__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (MachineDetailBox);
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
+
+module.exports = require("next-i18next");
+
+/***/ }),
+/* 71 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initStore; });
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(28);
+/* harmony import */ var _rematch_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_rematch_core__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _rematch_loading__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
+/* harmony import */ var _rematch_loading__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_rematch_loading__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _models_profile_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(50);
+/* harmony import */ var _models_follow_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(51);
+/* harmony import */ var _models_search_model__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52);
+/* harmony import */ var _models_metadata_model__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(53);
+
+
+
+
+
+ // loading plugin
+
+var loadingOptions = {};
+var loading = _rematch_loading__WEBPACK_IMPORTED_MODULE_1___default()(loadingOptions); // init store
+
+var initStore = function initStore() {
+  var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  return Object(_rematch_core__WEBPACK_IMPORTED_MODULE_0__["init"])({
+    models: {
+      profileModel: _models_profile_model__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"],
+      followModel: _models_follow_model__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"],
+      searchModel: _models_search_model__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"],
+      metadataModel: _models_metadata_model__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"]
+    },
+    redux: {
+      initialState: initialState
+    },
+    plugins: [loading]
+  });
+};
+
+/***/ }),
+/* 72 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getOrCreateStore; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return withRematch; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(60);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+
+var __NEXT_REMATCH_STORE__ = '__NEXT_REMATCH_STORE__'; // https://github.com/iliakan/detect-node
+
+var checkServer = function checkServer() {
+  return Object.prototype.toString.call(global.process) === '[object process]';
+};
+
+var getOrCreateStore = function getOrCreateStore(initStore, initialState) {
+  // Always make a new store if server
+  if (checkServer() || typeof window === 'undefined') {
+    return initStore(initialState);
+  } // Memoize store in global variable if client
+
+
+  if (!window[__NEXT_REMATCH_STORE__]) {
+    window[__NEXT_REMATCH_STORE__] = initStore(initialState);
+  }
+
+  return window[__NEXT_REMATCH_STORE__];
+};
+var withRematch = function withRematch() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return function (Component) {
+    // First argument is initStore, the rest are redux connect arguments and get passed
+    var initStore = args[0],
+        connectArgs = args.slice(1); // Connect page to redux with connect arguments
+
+    var ConnectedComponent = react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"].apply(null, connectArgs)(Component);
+
+    var ComponentWithRematch = function ComponentWithRematch() {
+      var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      var store = props.store,
+          initialProps = props.initialProps,
+          initialState = props.initialState,
+          others = _objectWithoutProperties(props, ["store", "initialProps", "initialState"]); // Wrap with redux Provider with store
+      // Create connected page with initialProps
+
+
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
+        store: store && store.dispatch ? store : getOrCreateStore(initStore, initialState)
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(ConnectedComponent, _objectSpread({}, initialProps, others)));
+    };
+
+    ComponentWithRematch.getInitialProps =
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var props,
+          isServer,
+          authUser,
+          shopResult,
+          serviceProxy,
+          store,
+          initialProps,
+          _args = arguments;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              props = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};
+              isServer = checkServer();
+
+              if (!isServer) {
+                _context.next = 9;
+                break;
+              }
+
+              authUser = props.req.authUser;
+              serviceProxy = Object(_services__WEBPACK_IMPORTED_MODULE_3__[/* getServiceProxy */ "a"])(props.req.cookies.token);
+
+              if (!(authUser && authUser.id)) {
+                _context.next = 9;
+                break;
+              }
+
+              _context.next = 8;
+              return serviceProxy.findShopByOwner(authUser.id);
+
+            case 8:
+              shopResult = _context.sent;
+
+            case 9:
+              store = getOrCreateStore(initStore, {
+                profileModel: {
+                  modal: {
+                    login: false,
+                    register: false
+                  },
+                  authUser: authUser ? _objectSpread({}, authUser, {
+                    shopDomain: shopResult && shopResult.domain ? shopResult.domain : undefined
+                  }) : undefined
+                }
+              }); // Run page getInitialProps with store and isServer
+
+              if (!Component.getInitialProps) {
+                _context.next = 16;
+                break;
+              }
+
+              _context.next = 13;
+              return Component.getInitialProps(_objectSpread({}, props, {
+                isServer: isServer,
+                store: store
+              }));
+
+            case 13:
+              _context.t0 = _context.sent;
+              _context.next = 17;
+              break;
+
+            case 16:
+              _context.t0 = {};
+
+            case 17:
+              initialProps = _context.t0;
+              return _context.abrupt("return", {
+                store: store,
+                initialState: store.getState(),
+                initialProps: initialProps
+              });
+
+            case 19:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return ComponentWithRematch;
+  };
+};
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports) {
+
+module.exports = require("@rematch/loading");
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/tabs/style");
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash");
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/avatar");
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports) {
+
+module.exports = require("xlsx");
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd_lib_spin_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
+/* harmony import */ var antd_lib_spin_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(antd_lib_spin_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd_lib_spin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26);
+/* harmony import */ var antd_lib_spin__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd_lib_spin__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(57);
+/* harmony import */ var recompose__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(recompose__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(45);
+/* harmony import */ var react_google_maps__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_google_maps__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_google_maps_lib_components_places_SearchBox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88);
+/* harmony import */ var react_google_maps_lib_components_places_SearchBox__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_google_maps_lib_components_places_SearchBox__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(79);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _MapWithSearchBox_less__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(110);
+/* harmony import */ var _MapWithSearchBox_less__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_MapWithSearchBox_less__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(8);
+
+
+
+
+
+
+
+
+
+var MapWithSearchBox = Object(recompose__WEBPACK_IMPORTED_MODULE_3__["compose"])(Object(recompose__WEBPACK_IMPORTED_MODULE_3__["withProps"])({
+  googleMapURL: "https://maps.googleapis.com/maps/api/js?key=".concat(_config__WEBPACK_IMPORTED_MODULE_8__[/* config */ "a"].googleMaps.apiKey, "&libraries=geometry,drawing,places"),
+  loadingElement: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    style: {
+      height: "100%",
+      textAlign: 'center'
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(antd_lib_spin__WEBPACK_IMPORTED_MODULE_1___default.a, null)),
+  containerElement: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    style: {
+      height: "400px"
+    }
+  }),
+  mapElement: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    style: {
+      height: "100%"
+    }
+  })
+}), Object(recompose__WEBPACK_IMPORTED_MODULE_3__["lifecycle"])({
+  componentWillMount: function componentWillMount() {
+    var _this = this;
+
+    var refs = {};
+    this.setState({
+      bounds: null,
+      center: this.props.geocode ? this.props.geocode : {
+        lat: 21.0277644,
+        lng: 105.8341598
+      },
+      markers: [{
+        position: this.props.geocode ? this.props.geocode : {
+          lat: 21.0277644,
+          lng: 105.8341598
+        }
+      }],
+      onMapMounted: function onMapMounted(ref) {
+        refs.map = ref;
+      },
+      onBoundsChanged: function onBoundsChanged() {
+        _this.setState({
+          bounds: refs.map.getBounds(),
+          center: refs.map.getCenter()
+        });
+      },
+      onSearchBoxMounted: function onSearchBoxMounted(ref) {
+        refs.searchBox = ref;
+      },
+      onPlacesChanged: function onPlacesChanged() {
+        var places = refs.searchBox.getPlaces();
+        var newAddress = places[0]['formatted_address'].indexOf(places[0].name) > -1 ? places[0]['formatted_address'] : "".concat(places[0].name, ", ").concat(places[0]['formatted_address']);
+
+        _this.props.selectAddress('address', newAddress);
+
+        _this.props.selectAddress('geocode', {
+          lng: places[0].geometry.location.lng(),
+          lat: places[0].geometry.location.lat()
+        });
+
+        var bounds = new window.google.maps.LatLngBounds();
+        places.forEach(function (place) {
+          if (place.geometry.viewport) {
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        var nextMarkers = places.map(function (place) {
+          return {
+            position: place.geometry.location
+          };
+        });
+        var nextCenter = Object(lodash__WEBPACK_IMPORTED_MODULE_6__["get"])(nextMarkers, '0.position', _this.state.center);
+
+        _this.setState({
+          center: nextCenter,
+          markers: nextMarkers
+        });
+      }
+    });
+  }
+}), react_google_maps__WEBPACK_IMPORTED_MODULE_4__["withScriptjs"], react_google_maps__WEBPACK_IMPORTED_MODULE_4__["withGoogleMap"])(function (props) {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_4__["GoogleMap"], {
+    ref: props.onMapMounted,
+    defaultZoom: 16,
+    center: props.center,
+    onBoundsChanged: props.onBoundsChanged
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_google_maps_lib_components_places_SearchBox__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    ref: props.onSearchBoxMounted,
+    bounds: props.bounds,
+    controlPosition: window.google.maps.ControlPosition.TOP_LEFT,
+    onPlacesChanged: props.onPlacesChanged
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("input", {
+    type: "text",
+    defaultValue: props.address,
+    placeholder: "Nh\u1EADp \u0111\u1ECBa ch\u1EC9 c\u1EEDa h\xE0ng ...",
+    style: {
+      boxSizing: "border-box",
+      border: "1px solid transparent",
+      width: "240px",
+      height: "32px",
+      marginTop: "10px",
+      marginLeft: "10px",
+      padding: "0 12px",
+      borderRadius: "3px",
+      boxShadow: "0 2px 6px rgba(0, 0, 0, 0.3)",
+      fontSize: "14px",
+      outline: "none",
+      textOverflow: "ellipses"
+    }
+  })), props.markers.map(function (marker, index) {
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_google_maps__WEBPACK_IMPORTED_MODULE_4__["Marker"], {
+      key: index,
+      position: marker.position,
+      draggable: true
+    });
+  }));
+});
+/* harmony default export */ __webpack_exports__["a"] = (MapWithSearchBox);
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+module.exports = require("next-routes");
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/divider/style");
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _BrandList_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(108);
+/* harmony import */ var _BrandList_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_BrandList_less__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87);
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+var BrandList = function BrandList(props) {
+  var renderBrand = props.featureBrands.map(function (featureBrand, index) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "brand-image",
+      key: index
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      href: "".concat(featureBrand.hyperlink),
+      title: featureBrand.brand.name
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: featureBrand.logoImage
+    })));
+  });
+  var settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 4000,
+    responsive: [{
+      breakpoint: 1120,
+      settings: {
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 4000
+      }
+    }, {
+      breakpoint: 768,
+      settings: {
+        dots: false,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 4000
+      }
+    }, {
+      breakpoint: 425,
+      settings: {
+        dots: false,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 4000
+      }
+    }, {
+      breakpoint: 576,
+      settings: {
+        dots: false,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 0,
+        autoplay: true,
+        speed: 4000,
+        autoplaySpeed: 4000
+      }
+    }]
+  };
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    name: "google",
+    content: "notranslate"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("meta", {
+    charSet: "utf-8"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "stylesheet",
+    type: "text/css",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "stylesheet",
+    type: "text/css",
+    href: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+    rel: "shortcut icon",
+    type: "image/png",
+    href: "/static/images/favicon.png"
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Timmay.vn | Ch\u1EE3 m\xE1y c\xF4ng tr\xECnh")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "brand-list"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_slick__WEBPACK_IMPORTED_MODULE_2___default.a, settings, renderBrand)));
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (BrandList);
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/badge");
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-slick");
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-google-maps/lib/components/places/SearchBox");
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-firebaseui/StyledFirebaseAuth");
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/upload/style");
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/input-number");
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports) {
+
+module.exports = require("lodash/debounce");
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/card/style");
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/avatar/style");
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/badge/style");
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/list/style");
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/checkbox");
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports) {
+
+module.exports = require("file-saver");
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/input-number/style");
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/skeleton");
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/date-picker");
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXTERNAL MODULE: external "antd/lib/table/style"
+var style_ = __webpack_require__(58);
+
+// EXTERNAL MODULE: external "antd/lib/table"
+var table_ = __webpack_require__(34);
+var table_default = /*#__PURE__*/__webpack_require__.n(table_);
+
+// EXTERNAL MODULE: external "antd/lib/dropdown/style"
+var dropdown_style_ = __webpack_require__(43);
+
+// EXTERNAL MODULE: external "antd/lib/dropdown"
+var dropdown_ = __webpack_require__(25);
+var dropdown_default = /*#__PURE__*/__webpack_require__.n(dropdown_);
+
+// EXTERNAL MODULE: external "antd/lib/icon/style"
+var icon_style_ = __webpack_require__(18);
+
+// EXTERNAL MODULE: external "antd/lib/icon"
+var icon_ = __webpack_require__(12);
+var icon_default = /*#__PURE__*/__webpack_require__.n(icon_);
+
+// EXTERNAL MODULE: external "antd/lib/tag/style"
+var tag_style_ = __webpack_require__(66);
+
+// EXTERNAL MODULE: external "antd/lib/tag"
+var tag_ = __webpack_require__(39);
+var tag_default = /*#__PURE__*/__webpack_require__.n(tag_);
+
+// EXTERNAL MODULE: external "antd/lib/menu/style"
+var menu_style_ = __webpack_require__(35);
+
+// EXTERNAL MODULE: external "antd/lib/menu"
+var menu_ = __webpack_require__(14);
+var menu_default = /*#__PURE__*/__webpack_require__.n(menu_);
+
+// EXTERNAL MODULE: external "@babel/runtime/regenerator"
+var regenerator_ = __webpack_require__(1);
+var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator_);
+
+// EXTERNAL MODULE: external "antd/lib/message/style"
+var message_style_ = __webpack_require__(31);
+
+// EXTERNAL MODULE: external "antd/lib/message"
+var message_ = __webpack_require__(3);
+var message_default = /*#__PURE__*/__webpack_require__.n(message_);
+
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
+// EXTERNAL MODULE: ./components/index.ts + 22 modules
+var components = __webpack_require__(20);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminReportsScreen/AdminReportsScreen.less
+var AdminReportsScreen = __webpack_require__(125);
+
+// EXTERNAL MODULE: ./i18n/index.ts + 1 modules
+var i18n = __webpack_require__(10);
+
+// EXTERNAL MODULE: external "js-cookie"
+var external_js_cookie_ = __webpack_require__(33);
+
+// EXTERNAL MODULE: ./services/index.ts + 1 modules
+var services = __webpack_require__(5);
+
+// EXTERNAL MODULE: ./core/index.ts + 20 modules
+var core = __webpack_require__(4);
+
+// EXTERNAL MODULE: external "moment"
+var external_moment_ = __webpack_require__(32);
+var external_moment_default = /*#__PURE__*/__webpack_require__.n(external_moment_);
+
+// EXTERNAL MODULE: ./store/index.ts
+var store = __webpack_require__(16);
+
+// EXTERNAL MODULE: external "firebase/app"
+var app_ = __webpack_require__(6);
+var app_default = /*#__PURE__*/__webpack_require__.n(app_);
+
+// EXTERNAL MODULE: external "firebase/auth"
+var auth_ = __webpack_require__(21);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminReportsScreen/AdminReportsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminReportsScreen_AdminReports =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(AdminReports, _React$Component);
+
+  function AdminReports() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, AdminReports);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(AdminReports)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {
+      filters: {
+        search: undefined,
+        reason: undefined,
+        state: undefined
+      },
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "createdAt|desc",
+      loading: {
+        table: true
+      }
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "handleSearchChange", function (value) {
+      _this.setState({
+        filters: _objectSpread({}, _this.state.filters, {
+          search: value
+        })
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.findReports(_this.state.filters.search, _this.state.filters.state, _this.state.filters.reason, _this.state.first, _this.state.sortBy, undefined, undefined);
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context2.prev = 1;
+              _context2.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context2.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context2.next = 8;
+              return serviceProxies.findReports(_this.state.filters.search, _this.state.filters.state, _this.state.filters.reason, _this.state.first, _this.state.sortBy, undefined, _this.state.after);
+
+            case 8:
+              result = _context2.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context2.next = 16;
+              break;
+
+            case 12:
+              _context2.prev = 12;
+              _context2.t0 = _context2["catch"](1);
+
+              message_default.a.error(_context2.t0.message);
+
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 12]]);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    _asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context3.prev = 1;
+              idToken = external_js_cookie_["get"]('token');
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context3.next = 6;
+              return serviceProxies.findReports(_this.state.filters.search, _this.state.filters.state, _this.state.filters.reason, _this.state.first, _this.state.sortBy, _this.state.before, undefined);
+
+            case 6:
+              result = _context3.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context3.next = 14;
+              break;
+
+            case 10:
+              _context3.prev = 10;
+              _context3.t0 = _context3["catch"](1);
+
+              message_default.a.error(_context3.t0.message);
+
+              _this.setState({
+                loading: _objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 14:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 10]]);
+    })));
+
+    _defineProperty(_assertThisInitialized(_this), "resolveReport",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = _asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(payload) {
+        var idToken, serviceProxies;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this.setState({
+                  loading: _objectSpread({}, _this.state.loading, {
+                    table: true
+                  })
+                });
+
+                _context4.prev = 1;
+                idToken = external_js_cookie_["get"]('token');
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+                _context4.next = 6;
+                return serviceProxies.updateReport(payload.reportId, {
+                  operation: 'resolveReport',
+                  payload: {
+                    resolvedResult: payload.resolvedResult
+                  }
+                });
+
+              case 6:
+                _this.setState({
+                  data: _this.state.data.map(function (item) {
+                    if (item._id === payload.reportId) {
+                      return _objectSpread({}, item, {
+                        state: 'RESOLVED',
+                        resolvedResult: payload.resolvedResult,
+                        resolvedAt: new Date().getTime(),
+                        resolvedBy: _this.props.profileState.authUser.id
+                      });
+                    } else {
+                      return item;
+                    }
+                  }),
+                  loading: _objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-reports:resolve-report-success'));
+
+                _context4.next = 13;
+                break;
+
+              case 10:
+                _context4.prev = 10;
+                _context4.t0 = _context4["catch"](1);
+
+                message_default.a.error(_context4.t0.message);
+
+              case 13:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[1, 10]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  _createClass(AdminReports, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.resolveReport({
+              reportId: record._id,
+              resolvedResult: core["r" /* reportResults */].SKIP
+            });
+          }
+        }, translate('admin-reports:skip'))), external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.resolveReport({
+              reportId: record._id,
+              resolvedResult: core["r" /* reportResults */].DELETE
+            });
+          }
+        }, translate('admin-reports:delete'))));
+      };
+
+      var columns = [{
+        title: translate('admin-reports:news-title'),
+        dataIndex: 'newsTitle',
+        key: 'newsTitle',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("a", {
+            href: record.news.shop ? "".concat(Object(core["i" /* getShopUrl */])(record.news.shop.domain), "/bai-dang-cua-hang/").concat(record.news._id) : "/bai-dang/".concat(record.news._id),
+            target: "_blank"
+          }, record.news.title);
+        }
+      }, {
+        title: translate('admin-reports:report-reasons'),
+        dataIndex: 'reportReasons',
+        key: 'reportReasons',
+        render: function render(_text, record) {
+          return record.reports.slice(0, 2).map(function (report, index) {
+            return external_react_default.a.createElement(tag_default.a, {
+              key: index,
+              color: "red"
+            }, core["q" /* reportReasons */].filter(function (item) {
+              return item.value === report.reason;
+            })[0].label);
+          });
+        }
+      }, {
+        title: translate('admin-reports:report-state'),
+        dataIndex: 'reportState',
+        key: 'reportState',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(tag_default.a, {
+            color: record.state === 'PENDING' ? 'red' : 'blue'
+          }, record.state === 'PENDING' ? translate('admin-reports:pending-report') : translate('admin-reports:resolved-report'));
+        }
+      }, {
+        title: translate('admin-reports:resolved-result'),
+        dataIndex: 'resolvedResult',
+        key: 'resolvedResult',
+        render: function render(_text, record) {
+          return record.resolvedResult ? external_react_default.a.createElement(tag_default.a, {
+            color: record.resolvedResult === 'DELETE' ? 'red' : 'blue'
+          }, record.resolvedResult === 'DELETE' ? translate('admin-reports:pending-report') : translate('admin-reports:resolved-report')) : '';
+        }
+      }, {
+        title: translate('admin-reports:resolved-at'),
+        dataIndex: 'resolvedAt',
+        key: 'resolvedAt',
+        render: function render(_text, record) {
+          return record.resolvedAt ? external_moment_(new Date(record.resolvedAt)).format(dateFormat) : '';
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-reports-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        handleSearch: this.getData,
+        value: this.state.filters.search,
+        showSearch: true,
+        handleSearchChange: this.handleSearchChange,
+        placeholder: translate('admin-reports:search-reports')
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data,
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }));
+    }
+  }]);
+
+  return AdminReports;
+}(external_react_default.a.Component);
+
+var mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminReportsScreen_AdminReportsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], mapState, mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-reports')(AdminReportsScreen_AdminReports)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminBrandsScreen/AdminBrandsScreen.less
+var AdminBrandsScreen = __webpack_require__(126);
+
+// EXTERNAL MODULE: external "antd/lib/modal/style"
+var modal_style_ = __webpack_require__(42);
+
+// EXTERNAL MODULE: external "antd/lib/modal"
+var modal_ = __webpack_require__(23);
+var modal_default = /*#__PURE__*/__webpack_require__.n(modal_);
+
+// EXTERNAL MODULE: external "antd/lib/card/style"
+var card_style_ = __webpack_require__(93);
+
+// EXTERNAL MODULE: external "antd/lib/card"
+var card_ = __webpack_require__(49);
+var card_default = /*#__PURE__*/__webpack_require__.n(card_);
+
+// EXTERNAL MODULE: external "antd/lib/upload/style"
+var upload_style_ = __webpack_require__(90);
+
+// EXTERNAL MODULE: external "antd/lib/upload"
+var upload_ = __webpack_require__(54);
+var upload_default = /*#__PURE__*/__webpack_require__.n(upload_);
+
+// EXTERNAL MODULE: external "antd/lib/button/style"
+var button_style_ = __webpack_require__(27);
+
+// EXTERNAL MODULE: external "antd/lib/button"
+var button_ = __webpack_require__(13);
+var button_default = /*#__PURE__*/__webpack_require__.n(button_);
+
+// EXTERNAL MODULE: external "antd/lib/form/style"
+var form_style_ = __webpack_require__(40);
+
+// EXTERNAL MODULE: external "antd/lib/form"
+var form_ = __webpack_require__(11);
+var form_default = /*#__PURE__*/__webpack_require__.n(form_);
+
+// EXTERNAL MODULE: external "antd/lib/input/style"
+var input_style_ = __webpack_require__(37);
+
+// EXTERNAL MODULE: external "antd/lib/input"
+var input_ = __webpack_require__(15);
+var input_default = /*#__PURE__*/__webpack_require__.n(input_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminBrandsScreen/components/BrandModal.less
+var components_BrandModal = __webpack_require__(127);
+
+// EXTERNAL MODULE: external "formik"
+var external_formik_ = __webpack_require__(19);
+
+// EXTERNAL MODULE: external "yup"
+var external_yup_ = __webpack_require__(9);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminBrandsScreen/components/BrandModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function BrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function BrandModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { BrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { BrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var BrandModal_BrandModal = function BrandModal(props) {
+  var translate = props.t;
+  var BrandValidateSchema = external_yup_["object"]().shape({
+    name: external_yup_["string"]().required(translate('admin-brands:pleaseInputBrandName')),
+    logoImage: external_yup_["string"]().required(translate('admin-brands:pleaseUploadBrandLogo'))
+  });
+  var initialValues = props.brandInfo && props.brandInfo._id ? {
+    name: props.brandInfo.name,
+    logoImage: props.brandInfo.logoImage
+  } : {
+    name: '',
+    logoImage: ''
+  };
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: BrandValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = BrandModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  name: '',
+                  logoImage: ''
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (brandContext) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.brandInfo && props.brandInfo._id ? "".concat(translate('admin-brands:edit-brand'), ": ").concat(props.brandInfo.name) : "".concat(translate('admin-brands:create-brand')),
+      visible: props.visible,
+      onOk: brandContext.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "brand-modal",
+      width: 420
+    }, external_react_default.a.createElement(form_default.a, {
+      onSubmit: brandContext.handleSubmit
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-brands:brand-name')),
+      validateStatus: brandContext.errors.name ? 'error' : undefined,
+      help: brandContext.errors.name
+    }, external_react_default.a.createElement(input_default.a, {
+      value: brandContext.values.name,
+      onChange: brandContext.handleChange,
+      placeholder: translate('admin-brands:brand-name'),
+      type: "text",
+      name: "name",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'name',
+          validateSchema: BrandValidateSchema,
+          context: brandContext
+        });
+      }
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-brands:brand-logo')),
+      validateStatus: brandContext.errors.logoImage ? 'error' : undefined,
+      help: brandContext.errors.logoImage
+    }, external_react_default.a.createElement(card_default.a, {
+      style: {
+        padding: '20px 20px 0px 20px',
+        margin: '0 auto'
+      },
+      cover: brandContext.values.logoImage ? external_react_default.a.createElement("img", {
+        src: brandContext.values.logoImage,
+        style: {
+          width: '100%',
+          height: 'auto'
+        }
+      }) : null
+    }, external_react_default.a.createElement(card_default.a.Meta, {
+      title: external_react_default.a.createElement(upload_default.a, {
+        beforeUpload: function beforeUpload(file) {
+          props.uploadLogoImage(file);
+          Object(core["f" /* getBase64Image */])(file, function (result) {
+            brandContext.setFieldValue('logoImage', result);
+          });
+          return false;
+        },
+        showUploadList: false
+      }, external_react_default.a.createElement(button_default.a, {
+        icon: "upload"
+      }, translate('admin-brands:upload-brand-logo')))
+    })))));
+  });
+};
+
+/* harmony default export */ var AdminBrandsScreen_components_BrandModal = (Object(i18n["d" /* withNamespaces */])('admin-brands')(BrandModal_BrandModal));
+// EXTERNAL MODULE: ./config/index.ts + 2 modules
+var config = __webpack_require__(8);
+
+// EXTERNAL MODULE: external "slugify"
+var external_slugify_ = __webpack_require__(44);
+var external_slugify_default = /*#__PURE__*/__webpack_require__.n(external_slugify_);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminBrandsScreen/AdminBrandsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminBrandsScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminBrandsScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminBrandsScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminBrandsScreen_typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminBrandsScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminBrandsScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminBrandsScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminBrandsScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminBrandsScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminBrandsScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminBrandsScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminBrandsScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminBrandsScreen_possibleConstructorReturn(self, call) { if (call && (AdminBrandsScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminBrandsScreen_assertThisInitialized(self); }
+
+function AdminBrandsScreen_getPrototypeOf(o) { AdminBrandsScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminBrandsScreen_getPrototypeOf(o); }
+
+function AdminBrandsScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminBrandsScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminBrandsScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminBrandsScreen_setPrototypeOf(o, p) { AdminBrandsScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminBrandsScreen_setPrototypeOf(o, p); }
+
+function AdminBrandsScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminBrandsScreen_AdminBrands =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminBrandsScreen_inherits(AdminBrands, _React$Component);
+
+  function AdminBrands() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminBrandsScreen_classCallCheck(this, AdminBrands);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminBrandsScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminBrandsScreen_getPrototypeOf(AdminBrands)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "state", {
+      filters: {
+        search: undefined
+      },
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "slug|asc",
+      loading: {
+        table: true,
+        modal: false
+      },
+      brandModalVisible: false,
+      logoImage: undefined,
+      selectedBrand: undefined
+    });
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "openBrandModal", function (selectedBrand) {
+      _this.setState({
+        brandModalVisible: true,
+        selectedBrand: selectedBrand
+      });
+    });
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "closeBrandModal", function () {
+      _this.setState({
+        brandModalVisible: false,
+        selectedBrand: undefined
+      });
+    });
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "handleSearchChange", function (value) {
+      _this.setState({
+        filters: AdminBrandsScreen_objectSpread({}, _this.state.filters, {
+          search: value
+        })
+      });
+    });
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.findBrands(_this.state.filters.search, _this.state.first, _this.state.sortBy, undefined, undefined);
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context2.prev = 1;
+              _context2.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context2.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context2.next = 8;
+              return serviceProxies.findBrands(_this.state.filters.search, _this.state.first, _this.state.sortBy, _this.state.before, undefined);
+
+            case 8:
+              result = _context2.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context2.next = 16;
+              break;
+
+            case 12:
+              _context2.prev = 12;
+              _context2.t0 = _context2["catch"](1);
+
+              message_default.a.error(_context2.t0.message);
+
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 12]]);
+    })));
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context3.prev = 1;
+              _context3.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context3.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context3.next = 8;
+              return serviceProxies.findBrands(_this.state.filters.search, _this.state.first, _this.state.sortBy, undefined, _this.state.after);
+
+            case 8:
+              result = _context3.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context3.next = 16;
+              break;
+
+            case 12:
+              _context3.prev = 12;
+              _context3.t0 = _context3["catch"](1);
+
+              message_default.a.error(_context3.t0.message);
+
+              _this.setState({
+                loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 12]]);
+    })));
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminBrandsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(values) {
+        var logoImageUrl, logoImageFormData, logoImageResult, idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context4.prev = 1;
+                logoImageUrl = '';
+
+                if (!_this.state.logoImage) {
+                  _context4.next = 14;
+                  break;
+                }
+
+                if (!config["a" /* config */].upload.allowImageExt.test(_this.state.logoImage.name)) {
+                  _context4.next = 13;
+                  break;
+                }
+
+                logoImageFormData = new FormData();
+                logoImageFormData.append('brandLogoImage', _this.state.logoImage);
+                _context4.next = 9;
+                return fetch("".concat(config["a" /* config */].url.api, "/upload-image/brand-logo-image"), {
+                  method: 'POST',
+                  body: logoImageFormData
+                }).then(function (res) {
+                  return res.json();
+                });
+
+              case 9:
+                logoImageResult = _context4.sent;
+                logoImageUrl = logoImageResult.logoImage;
+                _context4.next = 14;
+                break;
+
+              case 13:
+                message_default.a.error('Ảnh chỉ nhận các định dạng PNG, JPG, JPEG');
+
+              case 14:
+                _context4.next = 16;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 16:
+                idToken = _context4.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedBrand && _this.state.selectedBrand._id)) {
+                  _context4.next = 25;
+                  break;
+                }
+
+                _context4.next = 21;
+                return serviceProxies.updateBrand(_this.state.selectedBrand._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    name: values.name,
+                    logoImage: logoImageUrl ? logoImageUrl : _this.state.selectedBrand.logoImage
+                  }
+                });
+
+              case 21:
+                _this.setState({
+                  brandModalVisible: false,
+                  loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedBrand: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedBrand._id ? AdminBrandsScreen_objectSpread({}, item, values, {
+                      logoImage: logoImageUrl ? logoImageUrl : _this.state.selectedBrand.logoImage
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-brands:update-success'));
+
+                _context4.next = 30;
+                break;
+
+              case 25:
+                _context4.next = 27;
+                return serviceProxies.createBrand({
+                  name: values.name,
+                  logoImage: logoImageUrl
+                });
+
+              case 27:
+                result = _context4.sent;
+
+                _this.setState({
+                  brandModalVisible: false,
+                  loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedBrand: undefined,
+                  data: [{
+                    _id: result.id,
+                    name: values.name,
+                    logoImage: logoImageUrl,
+                    slug: external_slugify_default()(values.name),
+                    createdAt: new Date().getTime()
+                  }].concat(_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-brands:create-success'));
+
+              case 30:
+                _context4.next = 36;
+                break;
+
+              case 32:
+                _context4.prev = 32;
+                _context4.t0 = _context4["catch"](1);
+
+                message_default.a.error(_context4.t0.message);
+
+                _this.setState({
+                  loading: AdminBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 36:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[1, 32]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    AdminBrandsScreen_defineProperty(AdminBrandsScreen_assertThisInitialized(_this), "uploadLogoImage",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = AdminBrandsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee5(file) {
+        return regenerator_default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _this.setState({
+                  logoImage: file
+                });
+
+              case 1:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }));
+
+      return function (_x2) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  AdminBrandsScreen_createClass(AdminBrands, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openBrandModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-brands:brand-name'),
+        dataIndex: 'name',
+        key: 'name',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("a", {
+            href: "/danh-sach-hang/".concat(record.slug),
+            target: "_blank"
+          }, record.name);
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-brands-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: this.state.filters.search,
+        showSearch: true,
+        handleSearchChange: this.handleSearchChange,
+        placeholder: translate('admin-brands:search-brands'),
+        onCreateClick: function onCreateClick() {
+          return _this2.openBrandModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data,
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.brandModalVisible && external_react_default.a.createElement(AdminBrandsScreen_components_BrandModal, {
+        brandInfo: this.state.selectedBrand,
+        loading: this.state.loading.modal,
+        visible: this.state.brandModalVisible,
+        handleCancel: this.closeBrandModal,
+        handleOk: this.handleSubmit,
+        uploadLogoImage: this.uploadLogoImage
+      }));
+    }
+  }]);
+
+  return AdminBrands;
+}(external_react_default.a.Component);
+
+var AdminBrandsScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminBrandsScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminBrandsScreen_AdminBrandsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminBrandsScreen_mapState, AdminBrandsScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-brands')(AdminBrandsScreen_AdminBrands)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminCategoriesScreen/AdminCategoriesScreen.less
+var AdminCategoriesScreen = __webpack_require__(128);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminCategoriesScreen/components/CategoryModal.less
+var components_CategoryModal = __webpack_require__(129);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminCategoriesScreen/components/CategoryModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function CategoryModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function CategoryModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { CategoryModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { CategoryModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var CategoryModal_CategoryModal = function CategoryModal(props) {
+  var translate = props.t;
+  var CategoryValidateSchema = external_yup_["object"]().shape({
+    name: external_yup_["string"]().required(translate('admin-categories:pleaseInputCategoryName')),
+    imageUrl: external_yup_["string"]().required(translate('admin-categories:pleaseUploadCategoryImage'))
+  });
+  var initialValues = props.categoryInfo && props.categoryInfo._id ? {
+    name: props.categoryInfo.name,
+    imageUrl: props.categoryInfo.imageUrl
+  } : {
+    name: '',
+    imageUrl: ''
+  };
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: CategoryValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = CategoryModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  name: '',
+                  imageUrl: ''
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (categoryContext) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.categoryInfo && props.categoryInfo._id ? "".concat(translate('admin-categories:edit-category'), ": ").concat(props.categoryInfo.name) : "".concat(translate('admin-categories:create-category')),
+      visible: props.visible,
+      onOk: categoryContext.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "category-modal",
+      width: 420
+    }, external_react_default.a.createElement(form_default.a, {
+      onSubmit: categoryContext.handleSubmit
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-categories:category-name')),
+      validateStatus: categoryContext.errors.name ? 'error' : undefined,
+      help: categoryContext.errors.name
+    }, external_react_default.a.createElement(input_default.a, {
+      value: categoryContext.values.name,
+      onChange: categoryContext.handleChange,
+      placeholder: translate('admin-categories:category-name'),
+      type: "text",
+      name: "name",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'name',
+          validateSchema: CategoryValidateSchema,
+          context: categoryContext
+        });
+      }
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-categories:category-image')),
+      validateStatus: categoryContext.errors.imageUrl ? 'error' : undefined,
+      help: categoryContext.errors.imageUrl
+    }, external_react_default.a.createElement(card_default.a, {
+      style: {
+        padding: '20px 20px 0px 20px',
+        margin: '0 auto'
+      },
+      cover: categoryContext.values.imageUrl ? external_react_default.a.createElement("img", {
+        src: categoryContext.values.imageUrl,
+        style: {
+          width: '100%',
+          height: 'auto'
+        }
+      }) : null
+    }, external_react_default.a.createElement(card_default.a.Meta, {
+      title: external_react_default.a.createElement(upload_default.a, {
+        beforeUpload: function beforeUpload(file) {
+          props.uploadLogoImage(file);
+          Object(core["f" /* getBase64Image */])(file, function (result) {
+            categoryContext.setFieldValue('imageUrl', result);
+          });
+          return false;
+        },
+        showUploadList: false
+      }, external_react_default.a.createElement(button_default.a, {
+        icon: "upload"
+      }, translate('admin-categories:upload-category-image')))
+    })))));
+  });
+};
+
+/* harmony default export */ var AdminCategoriesScreen_components_CategoryModal = (Object(i18n["d" /* withNamespaces */])('admin-categoires')(CategoryModal_CategoryModal));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminCategoriesScreen/AdminCategoriesScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminCategoriesScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminCategoriesScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminCategoriesScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminCategoriesScreen_typeof(obj); }
+
+function AdminCategoriesScreen_toConsumableArray(arr) { return AdminCategoriesScreen_arrayWithoutHoles(arr) || AdminCategoriesScreen_iterableToArray(arr) || AdminCategoriesScreen_nonIterableSpread(); }
+
+function AdminCategoriesScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminCategoriesScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminCategoriesScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminCategoriesScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminCategoriesScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminCategoriesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminCategoriesScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminCategoriesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminCategoriesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminCategoriesScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminCategoriesScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminCategoriesScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminCategoriesScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminCategoriesScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminCategoriesScreen_possibleConstructorReturn(self, call) { if (call && (AdminCategoriesScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminCategoriesScreen_assertThisInitialized(self); }
+
+function AdminCategoriesScreen_getPrototypeOf(o) { AdminCategoriesScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminCategoriesScreen_getPrototypeOf(o); }
+
+function AdminCategoriesScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminCategoriesScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminCategoriesScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminCategoriesScreen_setPrototypeOf(o, p) { AdminCategoriesScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminCategoriesScreen_setPrototypeOf(o, p); }
+
+function AdminCategoriesScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminCategoriesScreen_AdminCategories =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminCategoriesScreen_inherits(AdminCategories, _React$Component);
+
+  function AdminCategories() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminCategoriesScreen_classCallCheck(this, AdminCategories);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminCategoriesScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminCategoriesScreen_getPrototypeOf(AdminCategories)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "state", {
+      filters: {
+        search: undefined
+      },
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "slug|asc",
+      loading: {
+        table: true,
+        modal: false
+      },
+      categoryModalVisible: false,
+      imageUrl: undefined,
+      selectedCategory: undefined
+    });
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "openCategoryModal", function (selectedCategory) {
+      _this.setState({
+        categoryModalVisible: true,
+        selectedCategory: selectedCategory
+      });
+    });
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "closeBrandModal", function () {
+      _this.setState({
+        categoryModalVisible: false,
+        selectedCategory: undefined
+      });
+    });
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminCategoriesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.findCategories();
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: _this.state.filters.search ? result.data.filter(function (item) {
+                  return external_slugify_default()(item.name.toLocaleLowerCase()).indexOf(external_slugify_default()(_this.state.filters.search.toLocaleLowerCase())) > -1;
+                }) : result.data,
+                loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminCategoriesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminCategoriesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    })));
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "handleSearchChange", function (value) {
+      _this.setState({
+        filters: AdminCategoriesScreen_objectSpread({}, _this.state.filters, {
+          search: value
+        })
+      });
+    });
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminCategoriesScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(values) {
+        var imageUrl, categoryImageFormData, categoryImageResult, idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context4.prev = 1;
+                imageUrl = '';
+
+                if (!_this.state.imageUrl) {
+                  _context4.next = 14;
+                  break;
+                }
+
+                if (!config["a" /* config */].upload.allowImageExt.test(_this.state.imageUrl.name)) {
+                  _context4.next = 13;
+                  break;
+                }
+
+                categoryImageFormData = new FormData();
+                categoryImageFormData.append('categoryImage', _this.state.imageUrl);
+                _context4.next = 9;
+                return fetch("".concat(config["a" /* config */].url.api, "/upload-image/category-image"), {
+                  method: 'POST',
+                  body: categoryImageFormData
+                }).then(function (res) {
+                  return res.json();
+                });
+
+              case 9:
+                categoryImageResult = _context4.sent;
+                imageUrl = categoryImageResult.categoryImage;
+                _context4.next = 14;
+                break;
+
+              case 13:
+                message_default.a.error('Ảnh chỉ nhận các định dạng PNG, JPG, JPEG');
+
+              case 14:
+                _context4.next = 16;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 16:
+                idToken = _context4.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedCategory && _this.state.selectedCategory._id)) {
+                  _context4.next = 25;
+                  break;
+                }
+
+                _context4.next = 21;
+                return serviceProxies.updateCategory(_this.state.selectedCategory._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    name: values.name,
+                    imageUrl: imageUrl ? imageUrl : _this.state.selectedCategory.imageUrl
+                  }
+                });
+
+              case 21:
+                _this.setState({
+                  categoryModalVisible: false,
+                  loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedCategory: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedCategory._id ? AdminCategoriesScreen_objectSpread({}, item, values, {
+                      imageUrl: imageUrl ? imageUrl : _this.state.selectedCategory.imageUrl
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-categories:update-success'));
+
+                _context4.next = 30;
+                break;
+
+              case 25:
+                _context4.next = 27;
+                return serviceProxies.createCategory({
+                  name: values.name,
+                  imageUrl: imageUrl
+                });
+
+              case 27:
+                result = _context4.sent;
+
+                _this.setState({
+                  categoryModalVisible: false,
+                  loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedCategory: undefined,
+                  data: [{
+                    _id: result.id,
+                    name: values.name,
+                    imageUrl: imageUrl,
+                    slug: external_slugify_default()(values.name),
+                    createdAt: new Date().getTime()
+                  }].concat(AdminCategoriesScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-categories:create-success'));
+
+              case 30:
+                _context4.next = 36;
+                break;
+
+              case 32:
+                _context4.prev = 32;
+                _context4.t0 = _context4["catch"](1);
+
+                message_default.a.error(_context4.t0.message);
+
+                _this.setState({
+                  loading: AdminCategoriesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 36:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[1, 32]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    AdminCategoriesScreen_defineProperty(AdminCategoriesScreen_assertThisInitialized(_this), "uploadLogoImage",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = AdminCategoriesScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee5(file) {
+        return regenerator_default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _this.setState({
+                  imageUrl: file
+                });
+
+              case 1:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5);
+      }));
+
+      return function (_x2) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  AdminCategoriesScreen_createClass(AdminCategories, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openCategoryModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-categories:category-name'),
+        dataIndex: 'name',
+        key: 'name',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("a", {
+            href: "/chung-loai-may/".concat(record.slug),
+            target: "_blank"
+          }, record.name);
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('admin-categories:category-image'),
+        dataIndex: 'imageUrl',
+        key: 'imageUrl',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("img", {
+            style: {
+              height: '32px',
+              width: 'auto'
+            },
+            src: "".concat(record.imageUrl),
+            alt: "".concat(record.name)
+          });
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-categories-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: this.state.filters.search,
+        showSearch: true,
+        handleSearchChange: this.handleSearchChange,
+        placeholder: translate('admin-categories:search-categories'),
+        onCreateClick: function onCreateClick() {
+          return _this2.openCategoryModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data.sort(function (a, b) {
+          return a.slug - b.slug;
+        }),
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.categoryModalVisible && external_react_default.a.createElement(AdminCategoriesScreen_components_CategoryModal, {
+        categoryInfo: this.state.selectedCategory,
+        loading: this.state.loading.modal,
+        visible: this.state.categoryModalVisible,
+        handleCancel: this.closeBrandModal,
+        handleOk: this.handleSubmit,
+        uploadLogoImage: this.uploadLogoImage
+      }));
+    }
+  }]);
+
+  return AdminCategories;
+}(external_react_default.a.Component);
+
+var AdminCategoriesScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminCategoriesScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminCategoriesScreen_AdminCategoriesScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminCategoriesScreen_mapState, AdminCategoriesScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-categories')(AdminCategoriesScreen_AdminCategories)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminModelsScreen/AdminModelsScreen.less
+var AdminModelsScreen = __webpack_require__(130);
+
+// EXTERNAL MODULE: external "antd/lib/select/style"
+var select_style_ = __webpack_require__(46);
+
+// EXTERNAL MODULE: external "antd/lib/select"
+var select_ = __webpack_require__(17);
+var select_default = /*#__PURE__*/__webpack_require__.n(select_);
+
+// EXTERNAL MODULE: external "antd/lib/spin/style"
+var spin_style_ = __webpack_require__(41);
+
+// EXTERNAL MODULE: external "antd/lib/spin"
+var spin_ = __webpack_require__(26);
+var spin_default = /*#__PURE__*/__webpack_require__.n(spin_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminModelsScreen/components/ModelModal.less
+var components_ModelModal = __webpack_require__(131);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminModelsScreen/components/ModelModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ModelModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function ModelModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { ModelModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { ModelModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+var ModelModal_ModelModal = function ModelModal(props) {
+  var translate = props.t;
+  var formItemLayout = {
+    labelCol: {
+      span: 6
+    },
+    wrapperCol: {
+      span: 18
+    }
+  };
+  var initialValues = props.modelInfo && props.modelInfo._id ? {
+    name: props.modelInfo.name,
+    brand: props.modelInfo.brand._id,
+    category: props.modelInfo.category._id
+  } : {
+    name: '',
+    brand: '',
+    category: ''
+  };
+  var ModelValidateSchema = external_yup_["object"]().shape({
+    name: external_yup_["string"]().required(translate('admin-models:pleaseInputModelName')),
+    brand: external_yup_["string"]().required(translate('admin-models:pleaseSelectBrand')),
+    category: external_yup_["string"]().required(translate('admin-models:pleaseSelectCategory'))
+  });
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: ModelValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = ModelModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  name: '',
+                  brand: '',
+                  category: ''
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (modelContext) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.modelInfo && props.modelInfo._id ? "".concat(translate('admin-models:edit-model'), ": ").concat(props.modelInfo.name) : "".concat(translate('admin-models:create-model')),
+      visible: props.visible,
+      onOk: modelContext.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "model-modal"
+    }, external_react_default.a.createElement(form_default.a, {
+      onSubmit: modelContext.handleSubmit
+    }, props.modelInfo && props.modelInfo._id ? external_react_default.a.createElement(form_default.a.Item, _extends({
+      label: "".concat(translate('admin-models:brand-name'))
+    }, formItemLayout, {
+      style: {
+        marginBottom: '0px'
+      }
+    }), external_react_default.a.createElement("strong", null, props.modelInfo.brand.name)) : external_react_default.a.createElement(form_default.a.Item, _extends({
+      label: "".concat(translate('admin-models:brand-name')),
+      style: {
+        marginBottom: '0px'
+      },
+      validateStatus: modelContext.errors.brand ? 'error' : undefined,
+      help: modelContext.errors.brand
+    }, formItemLayout), external_react_default.a.createElement(select_default.a, {
+      value: modelContext.values.brand ? modelContext.values.brand : undefined,
+      notFoundContent: props.loadingBrands ? external_react_default.a.createElement("div", {
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_default.a.createElement(spin_default.a, {
+        size: "small"
+      })) : null,
+      showSearch: true,
+      filterOption: false,
+      placeholder: translate('admin-models:select-brand'),
+      onSearch: props.getBrands,
+      onSelect: function onSelect(value) {
+        modelContext.setFieldValue('brand', value);
+      },
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'brand',
+          validateSchema: ModelValidateSchema,
+          context: modelContext
+        });
+      }
+    }, props.brands.map(function (val) {
+      return external_react_default.a.createElement(select_default.a.Option, {
+        value: val._id,
+        key: val._id
+      }, val.name);
+    }))), props.modelInfo && props.modelInfo._id ? external_react_default.a.createElement(form_default.a.Item, _extends({
+      label: "".concat(translate('admin-models:category-name'))
+    }, formItemLayout, {
+      style: {
+        marginBottom: '0px'
+      }
+    }), external_react_default.a.createElement("strong", null, props.modelInfo.category.name)) : external_react_default.a.createElement(form_default.a.Item, _extends({
+      style: {
+        marginBottom: '0px'
+      },
+      validateStatus: modelContext.errors.category ? 'error' : undefined,
+      help: modelContext.errors.category,
+      label: "".concat(translate('admin-models:category-name'))
+    }, formItemLayout), external_react_default.a.createElement(select_default.a, {
+      showSearch: true,
+      filterOption: function filterOption(inputValue, option) {
+        return external_slugify_default()(option.props.children.toLowerCase()).indexOf(external_slugify_default()(inputValue.toLocaleLowerCase())) === 0;
+      },
+      placeholder: translate('admin-models:select-category'),
+      value: modelContext.values.category ? modelContext.values.category : undefined,
+      onChange: function onChange(value) {
+        modelContext.setFieldValue('category', value);
+      },
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'category',
+          validateSchema: ModelValidateSchema,
+          context: modelContext
+        });
+      }
+    }, props.categories.map(function (val) {
+      return external_react_default.a.createElement(select_default.a.Option, {
+        value: val._id,
+        key: val._id
+      }, val.name);
+    }))), external_react_default.a.createElement(form_default.a.Item, _extends({
+      label: "".concat(translate('admin-models:model-name')),
+      validateStatus: modelContext.errors.name ? 'error' : undefined,
+      help: modelContext.errors.name
+    }, formItemLayout), external_react_default.a.createElement(input_default.a, {
+      value: modelContext.values.name,
+      onChange: modelContext.handleChange,
+      placeholder: translate('admin-models:model-name'),
+      type: "text",
+      name: "name",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'name',
+          validateSchema: ModelValidateSchema,
+          context: modelContext
+        });
+      }
+    }))));
+  });
+};
+
+/* harmony default export */ var AdminModelsScreen_components_ModelModal = (Object(i18n["d" /* withNamespaces */])('admin-models')(ModelModal_ModelModal));
+// EXTERNAL MODULE: external "lodash/debounce"
+var debounce_ = __webpack_require__(92);
+var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce_);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminModelsScreen/AdminModelsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminModelsScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminModelsScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminModelsScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminModelsScreen_typeof(obj); }
+
+function AdminModelsScreen_toConsumableArray(arr) { return AdminModelsScreen_arrayWithoutHoles(arr) || AdminModelsScreen_iterableToArray(arr) || AdminModelsScreen_nonIterableSpread(); }
+
+function AdminModelsScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminModelsScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminModelsScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminModelsScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminModelsScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function AdminModelsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminModelsScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminModelsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminModelsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminModelsScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminModelsScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminModelsScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminModelsScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminModelsScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminModelsScreen_possibleConstructorReturn(self, call) { if (call && (AdminModelsScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminModelsScreen_assertThisInitialized(self); }
+
+function AdminModelsScreen_getPrototypeOf(o) { AdminModelsScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminModelsScreen_getPrototypeOf(o); }
+
+function AdminModelsScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminModelsScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminModelsScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminModelsScreen_setPrototypeOf(o, p) { AdminModelsScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminModelsScreen_setPrototypeOf(o, p); }
+
+function AdminModelsScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminModelsScreen_AdminModels =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminModelsScreen_inherits(AdminModels, _React$Component);
+
+  function AdminModels(props) {
+    var _this;
+
+    AdminModelsScreen_classCallCheck(this, AdminModels);
+
+    _this = AdminModelsScreen_possibleConstructorReturn(this, AdminModelsScreen_getPrototypeOf(AdminModels).call(this, props));
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "state", {
+      filters: {
+        search: undefined
+      },
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "slug|asc",
+      loading: {
+        table: true,
+        modal: false,
+        brands: false
+      },
+      modelModalVisible: false,
+      selectedModel: undefined,
+      brands: [],
+      categories: []
+    });
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "getCategories",
+    /*#__PURE__*/
+    AdminModelsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxy, _ref2, _ref3, categories;
+
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 2:
+              idToken = _context.sent;
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 6;
+              return Promise.all([serviceProxy.findCategories()]);
+
+            case 6:
+              _ref2 = _context.sent;
+              _ref3 = _slicedToArray(_ref2, 1);
+              categories = _ref3[0];
+
+              _this.setState({
+                categories: categories.data
+              });
+
+            case 10:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })));
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "getBrands",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminModelsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(value) {
+        var serviceProxy, brands;
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    brands: true
+                  })
+                });
+
+                _context2.prev = 1;
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context2.next = 5;
+                return serviceProxy.findBrands(value, 20, 'slug|asc', undefined, undefined);
+
+              case 5:
+                brands = _context2.sent;
+
+                _this.setState({
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    brands: true
+                  }),
+                  brands: brands.data
+                });
+
+                _context2.next = 13;
+                break;
+
+              case 9:
+                _context2.prev = 9;
+                _context2.t0 = _context2["catch"](1);
+
+                message_default.a.error(_context2.t0.message);
+
+                _this.setState({
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    brands: false
+                  })
+                });
+
+              case 13:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[1, 9]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "openModelModal", function (selectedModel) {
+      _this.setState({
+        modelModalVisible: true,
+        selectedModel: selectedModel
+      });
+    });
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "closeBrandModal", function () {
+      _this.setState({
+        modelModalVisible: false,
+        selectedModel: undefined
+      });
+    });
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "handleSearchChange", function (value) {
+      _this.setState({
+        filters: AdminModelsScreen_objectSpread({}, _this.state.filters, {
+          search: value
+        })
+      });
+    });
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminModelsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context3.prev = 1;
+              _context3.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context3.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context3.next = 8;
+              return serviceProxies.findModels(_this.state.filters.search, undefined, undefined, _this.state.first, _this.state.sortBy, undefined, undefined);
+
+            case 8:
+              result = _context3.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context3.next = 16;
+              break;
+
+            case 12:
+              _context3.prev = 12;
+              _context3.t0 = _context3["catch"](1);
+
+              message_default.a.error(_context3.t0.message);
+
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 12]]);
+    })));
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminModelsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee4() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context4.prev = 1;
+              _context4.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context4.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context4.next = 8;
+              return serviceProxies.findModels(_this.state.filters.search, undefined, undefined, _this.state.first, _this.state.sortBy, undefined, _this.state.after);
+
+            case 8:
+              result = _context4.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context4.next = 16;
+              break;
+
+            case 12:
+              _context4.prev = 12;
+              _context4.t0 = _context4["catch"](1);
+
+              message_default.a.error(_context4.t0.message);
+
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 12]]);
+    })));
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminModelsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee5() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee5$(_context5) {
+        while (1) {
+          switch (_context5.prev = _context5.next) {
+            case 0:
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context5.prev = 1;
+              _context5.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context5.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context5.next = 8;
+              return serviceProxies.findModels(_this.state.filters.search, undefined, undefined, _this.state.first, _this.state.sortBy, _this.state.before, undefined);
+
+            case 8:
+              result = _context5.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context5.next = 16;
+              break;
+
+            case 12:
+              _context5.prev = 12;
+              _context5.t0 = _context5["catch"](1);
+
+              message_default.a.error(_context5.t0.message);
+
+              _this.setState({
+                loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context5.stop();
+          }
+        }
+      }, _callee5, null, [[1, 12]]);
+    })));
+
+    AdminModelsScreen_defineProperty(AdminModelsScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref8 = AdminModelsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee6(values) {
+        var idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context6.prev = 1;
+                _context6.next = 4;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 4:
+                idToken = _context6.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedModel && _this.state.selectedModel._id)) {
+                  _context6.next = 13;
+                  break;
+                }
+
+                _context6.next = 9;
+                return serviceProxies.updateModel(_this.state.selectedModel._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    name: values.name
+                  }
+                });
+
+              case 9:
+                _this.setState({
+                  modelModalVisible: false,
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedModel: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedModel._id ? AdminModelsScreen_objectSpread({}, item, {
+                      name: values.name
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-models:update-success'));
+
+                _context6.next = 18;
+                break;
+
+              case 13:
+                _context6.next = 15;
+                return serviceProxies.createModel({
+                  name: values.name,
+                  brand: values.brand,
+                  category: values.category
+                });
+
+              case 15:
+                result = _context6.sent;
+
+                _this.setState({
+                  modelModalVisible: false,
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedModel: undefined,
+                  data: [{
+                    _id: result.id,
+                    name: values.name,
+                    slug: external_slugify_default()(values.name),
+                    brand: _this.state.brands.filter(function (item) {
+                      return item._id === values.brand;
+                    })[0],
+                    category: _this.state.categories.filter(function (item) {
+                      return item._id === values.category;
+                    })[0],
+                    createdAt: new Date().getTime()
+                  }].concat(AdminModelsScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-models:create-success'));
+
+              case 18:
+                _context6.next = 24;
+                break;
+
+              case 20:
+                _context6.prev = 20;
+                _context6.t0 = _context6["catch"](1);
+
+                message_default.a.error(_context6.t0.message);
+
+                _this.setState({
+                  loading: AdminModelsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 24:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6, null, [[1, 20]]);
+      }));
+
+      return function (_x2) {
+        return _ref8.apply(this, arguments);
+      };
+    }());
+
+    _this.getBrands = debounce_default()(_this.getBrands, 500);
+    return _this;
+  }
+
+  AdminModelsScreen_createClass(AdminModels, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+      this.getBrands('');
+      this.getCategories();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openModelModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-models:model-name'),
+        dataIndex: 'name',
+        key: 'name'
+      }, {
+        title: translate('admin-models:brand'),
+        dataIndex: 'brand',
+        key: 'brand',
+        render: function render(_text, record) {
+          return record.brand.name;
+        }
+      }, {
+        title: translate('common:category'),
+        dataIndex: 'category',
+        key: 'category',
+        render: function render(_text, record) {
+          return record.category.name;
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-models-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: this.state.filters.search,
+        showSearch: true,
+        handleSearchChange: this.handleSearchChange,
+        placeholder: translate('admin-models:search-models'),
+        onCreateClick: function onCreateClick() {
+          return _this2.openModelModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data,
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.modelModalVisible && external_react_default.a.createElement(AdminModelsScreen_components_ModelModal, {
+        brands: this.state.brands,
+        categories: this.state.categories,
+        loadingBrands: this.state.loading.brands,
+        getBrands: this.getBrands,
+        modelInfo: this.state.selectedModel,
+        loading: this.state.loading.modal,
+        visible: this.state.modelModalVisible,
+        handleCancel: this.closeBrandModal,
+        handleOk: this.handleSubmit
+      }));
+    }
+  }]);
+
+  return AdminModels;
+}(external_react_default.a.Component);
+
+var AdminModelsScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminModelsScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminModelsScreen_AdminModelsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminModelsScreen_mapState, AdminModelsScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-models')(AdminModelsScreen_AdminModels)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminWeightRangesScreen/AdminWeightRangesScreen.less
+var AdminWeightRangesScreen = __webpack_require__(132);
+
+// EXTERNAL MODULE: external "antd/lib/input-number/style"
+var input_number_style_ = __webpack_require__(120);
+
+// EXTERNAL MODULE: external "antd/lib/input-number"
+var input_number_ = __webpack_require__(91);
+var input_number_default = /*#__PURE__*/__webpack_require__.n(input_number_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminWeightRangesScreen/components/WeightRangeModal.less
+var components_WeightRangeModal = __webpack_require__(133);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminWeightRangesScreen/components/WeightRangeModal.tsx
+
+
+
+
+
+
+
+
+function WeightRangeModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function WeightRangeModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { WeightRangeModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { WeightRangeModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var WeightRangeModal_WeightRangeModal = function WeightRangeModal(props) {
+  var translate = props.t;
+  var WeightRangeValidateSchema = external_yup_["object"]().shape({
+    min: external_yup_["number"]().required(translate('admin-weight-ranges:pleaseInputMinWeight')).min(1, 'admin-weight-ranges:min-min-weight'),
+    max: external_yup_["number"]()
+  });
+  var initialValues = props.weightRangeInfo && props.weightRangeInfo._id ? {
+    min: props.weightRangeInfo.min,
+    max: props.weightRangeInfo.max
+  } : {
+    min: 1,
+    max: undefined
+  };
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: WeightRangeValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = WeightRangeModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  min: 1,
+                  max: undefined
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (context) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.weightRangeInfo && props.weightRangeInfo._id ? "".concat(translate('admin-weight-ranges:edit-weight-range')) : "".concat(translate('admin-weight-ranges:create-weight-range')),
+      visible: props.visible,
+      onOk: context.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "weight-range-modal"
+    }, external_react_default.a.createElement(form_default.a, {
+      layout: "inline",
+      onSubmit: context.handleSubmit,
+      style: {
+        display: 'flex',
+        alignItems: 'center'
+      }
+    }, translate('common:from'), " \xA0", external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.min ? 'error' : undefined
+    }, external_react_default.a.createElement(input_number_default.a, {
+      value: context.values.min,
+      onChange: function onChange(value) {
+        return context.setFieldValue('min', value ? value : 0);
+      },
+      placeholder: translate('admin-weight-ranges:min-weight'),
+      name: "min",
+      min: 1,
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'min',
+          validateSchema: WeightRangeValidateSchema,
+          context: context
+        });
+      }
+    })), translate('common:to'), " \xA0 \xA0", external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.max ? 'error' : undefined
+    }, external_react_default.a.createElement(input_number_default.a, {
+      value: context.values.max,
+      onChange: function onChange(value) {
+        return context.setFieldValue('max', value ? value : 0);
+      },
+      placeholder: translate('admin-weight-ranges:max-weight'),
+      name: "max",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'max',
+          validateSchema: WeightRangeValidateSchema,
+          context: context
+        });
+      }
+    })), translate('common:ton')), external_react_default.a.createElement("div", {
+      className: "help"
+    }, context.errors.min || context.errors.max));
+  });
+};
+
+/* harmony default export */ var AdminWeightRangesScreen_components_WeightRangeModal = (Object(i18n["d" /* withNamespaces */])('admin-weight-ranges')(WeightRangeModal_WeightRangeModal));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminWeightRangesScreen/AdminWeightRangesScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminWeightRangesScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminWeightRangesScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminWeightRangesScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminWeightRangesScreen_typeof(obj); }
+
+function AdminWeightRangesScreen_toConsumableArray(arr) { return AdminWeightRangesScreen_arrayWithoutHoles(arr) || AdminWeightRangesScreen_iterableToArray(arr) || AdminWeightRangesScreen_nonIterableSpread(); }
+
+function AdminWeightRangesScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminWeightRangesScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminWeightRangesScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminWeightRangesScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminWeightRangesScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminWeightRangesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminWeightRangesScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminWeightRangesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminWeightRangesScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminWeightRangesScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminWeightRangesScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminWeightRangesScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminWeightRangesScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminWeightRangesScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminWeightRangesScreen_possibleConstructorReturn(self, call) { if (call && (AdminWeightRangesScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminWeightRangesScreen_assertThisInitialized(self); }
+
+function AdminWeightRangesScreen_getPrototypeOf(o) { AdminWeightRangesScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminWeightRangesScreen_getPrototypeOf(o); }
+
+function AdminWeightRangesScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminWeightRangesScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminWeightRangesScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminWeightRangesScreen_setPrototypeOf(o, p) { AdminWeightRangesScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminWeightRangesScreen_setPrototypeOf(o, p); }
+
+function AdminWeightRangesScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminWeightRangesScreen_AdminWeightRanges =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminWeightRangesScreen_inherits(AdminWeightRanges, _React$Component);
+
+  function AdminWeightRanges() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminWeightRangesScreen_classCallCheck(this, AdminWeightRanges);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminWeightRangesScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminWeightRangesScreen_getPrototypeOf(AdminWeightRanges)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "state", {
+      filters: {},
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "min|asc",
+      loading: {
+        table: true,
+        modal: false
+      },
+      weightRangeModalVisible: false,
+      selectedWeightRange: undefined
+    });
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "openWeightRangeModal", function (selectedWeightRange) {
+      _this.setState({
+        weightRangeModalVisible: true,
+        selectedWeightRange: selectedWeightRange
+      });
+    });
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "closeWeightRangeModal", function () {
+      _this.setState({
+        weightRangeModalVisible: false,
+        selectedWeightRange: undefined
+      });
+    });
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminWeightRangesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.getAllWeightRanges();
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: result.data,
+                loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminWeightRangesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminWeightRangesScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    })));
+
+    AdminWeightRangesScreen_defineProperty(AdminWeightRangesScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminWeightRangesScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(values) {
+        var idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context4.prev = 1;
+                _context4.next = 4;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 4:
+                idToken = _context4.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedWeightRange && _this.state.selectedWeightRange._id)) {
+                  _context4.next = 13;
+                  break;
+                }
+
+                _context4.next = 9;
+                return serviceProxies.updateWeightRange(_this.state.selectedWeightRange._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    min: values.min,
+                    max: values.max
+                  }
+                });
+
+              case 9:
+                _this.setState({
+                  weightRangeModalVisible: false,
+                  loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedWeightRange: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedWeightRange._id ? AdminWeightRangesScreen_objectSpread({}, item, {
+                      min: values.min,
+                      max: values.max
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-weight-ranges:update-success'));
+
+                _context4.next = 18;
+                break;
+
+              case 13:
+                _context4.next = 15;
+                return serviceProxies.createWeightRange({
+                  min: values.min,
+                  max: values.max
+                });
+
+              case 15:
+                result = _context4.sent;
+
+                _this.setState({
+                  weightRangeModalVisible: false,
+                  loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedWeightRange: undefined,
+                  data: [{
+                    _id: result.id,
+                    min: values.min,
+                    max: values.max,
+                    createdAt: new Date().getTime()
+                  }].concat(AdminWeightRangesScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-weight-ranges:create-success'));
+
+              case 18:
+                _context4.next = 24;
+                break;
+
+              case 20:
+                _context4.prev = 20;
+                _context4.t0 = _context4["catch"](1);
+
+                message_default.a.error(_context4.t0.message);
+
+                _this.setState({
+                  loading: AdminWeightRangesScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 24:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[1, 20]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  AdminWeightRangesScreen_createClass(AdminWeightRanges, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openWeightRangeModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-weight-ranges:weight-range'),
+        dataIndex: 'weight-range',
+        key: 'weight-range',
+        render: function render(_text, record) {
+          var weightRange = record.max ? translate('common:from-to').replace('{from}', record.min.toString()).replace('{to}', record.max.toString()) + ' ' + translate('common:ton') : translate('common:more-than') + ' ' + record.min + ' ' + translate('common:ton');
+          return weightRange;
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-weight-ranges-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: '',
+        showSearch: false,
+        handleSearchChange: function handleSearchChange() {
+          return null;
+        },
+        placeholder: '',
+        onCreateClick: function onCreateClick() {
+          return _this2.openWeightRangeModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data.sort(function (a, b) {
+          return a.min - b.min;
+        }),
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.weightRangeModalVisible && external_react_default.a.createElement(AdminWeightRangesScreen_components_WeightRangeModal, {
+        weightRangeInfo: this.state.selectedWeightRange,
+        loading: this.state.loading.modal,
+        visible: this.state.weightRangeModalVisible,
+        handleCancel: this.closeWeightRangeModal,
+        handleOk: this.handleSubmit
+      }));
+    }
+  }]);
+
+  return AdminWeightRanges;
+}(external_react_default.a.Component);
+
+var AdminWeightRangesScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminWeightRangesScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminWeightRangesScreen_AdminWeightRangesScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminWeightRangesScreen_mapState, AdminWeightRangesScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-weight-ranges')(AdminWeightRangesScreen_AdminWeightRanges)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminRentalPeriodsScreen/AdminRentalPeriodsScreen.less
+var AdminRentalPeriodsScreen = __webpack_require__(134);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminRentalPeriodsScreen/components/RentalPeriodModal.less
+var components_RentalPeriodModal = __webpack_require__(135);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminRentalPeriodsScreen/components/RentalPeriodModal.tsx
+
+
+
+
+
+
+
+
+function RentalPeriodModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function RentalPeriodModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { RentalPeriodModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { RentalPeriodModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var RentalPeriodModal_RentalPeriodModal = function RentalPeriodModal(props) {
+  var translate = props.t;
+  var RentalPeriodValidateSchema = external_yup_["object"]().shape({
+    min: external_yup_["number"]().required(translate('admin-rental-periods:pleaseInputMinRentalPeriod')).min(1, 'admin-rental-periods:min-min-rental-period'),
+    max: external_yup_["number"]()
+  });
+  var initialValues = props.rentalPeriodInfo && props.rentalPeriodInfo._id ? {
+    min: props.rentalPeriodInfo.min,
+    max: props.rentalPeriodInfo.max
+  } : {
+    min: 1,
+    max: undefined
+  };
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: RentalPeriodValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = RentalPeriodModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  min: 1,
+                  max: undefined
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (context) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.rentalPeriodInfo && props.rentalPeriodInfo._id ? "".concat(translate('admin-rental-periods:edit-rental-period')) : "".concat(translate('admin-rental-periods:create-rental-period')),
+      visible: props.visible,
+      onOk: context.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "rental-period-modal"
+    }, external_react_default.a.createElement(form_default.a, {
+      layout: "inline",
+      onSubmit: context.handleSubmit,
+      style: {
+        display: 'flex',
+        alignItems: 'center'
+      }
+    }, translate('common:from'), " \xA0", external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.min ? 'error' : undefined
+    }, external_react_default.a.createElement(input_number_default.a, {
+      value: context.values.min,
+      onChange: function onChange(value) {
+        return context.setFieldValue('min', value ? value : 0);
+      },
+      placeholder: translate('admin-rental-periods:min-rental-period'),
+      name: "min",
+      min: 1,
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'min',
+          validateSchema: RentalPeriodValidateSchema,
+          context: context
+        });
+      }
+    })), translate('common:to'), " \xA0 \xA0", external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.max ? 'error' : undefined
+    }, external_react_default.a.createElement(input_number_default.a, {
+      value: context.values.max,
+      onChange: function onChange(value) {
+        return context.setFieldValue('max', value ? value : 0);
+      },
+      placeholder: translate('admin-rental-periods:max-rental-period'),
+      name: "max",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'max',
+          validateSchema: RentalPeriodValidateSchema,
+          context: context
+        });
+      }
+    })), translate('common:month')), external_react_default.a.createElement("div", {
+      className: "help"
+    }, context.errors.min || context.errors.max));
+  });
+};
+
+/* harmony default export */ var AdminRentalPeriodsScreen_components_RentalPeriodModal = (Object(i18n["d" /* withNamespaces */])('admin-rental-periods')(RentalPeriodModal_RentalPeriodModal));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminRentalPeriodsScreen/AdminRentalPeriodsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminRentalPeriodsScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminRentalPeriodsScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminRentalPeriodsScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminRentalPeriodsScreen_typeof(obj); }
+
+function AdminRentalPeriodsScreen_toConsumableArray(arr) { return AdminRentalPeriodsScreen_arrayWithoutHoles(arr) || AdminRentalPeriodsScreen_iterableToArray(arr) || AdminRentalPeriodsScreen_nonIterableSpread(); }
+
+function AdminRentalPeriodsScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminRentalPeriodsScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminRentalPeriodsScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminRentalPeriodsScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminRentalPeriodsScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminRentalPeriodsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminRentalPeriodsScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminRentalPeriodsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminRentalPeriodsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminRentalPeriodsScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminRentalPeriodsScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminRentalPeriodsScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminRentalPeriodsScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminRentalPeriodsScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminRentalPeriodsScreen_possibleConstructorReturn(self, call) { if (call && (AdminRentalPeriodsScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminRentalPeriodsScreen_assertThisInitialized(self); }
+
+function AdminRentalPeriodsScreen_getPrototypeOf(o) { AdminRentalPeriodsScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminRentalPeriodsScreen_getPrototypeOf(o); }
+
+function AdminRentalPeriodsScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminRentalPeriodsScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminRentalPeriodsScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminRentalPeriodsScreen_setPrototypeOf(o, p) { AdminRentalPeriodsScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminRentalPeriodsScreen_setPrototypeOf(o, p); }
+
+function AdminRentalPeriodsScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminRentalPeriodsScreen_AdminRentalPeriods =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminRentalPeriodsScreen_inherits(AdminRentalPeriods, _React$Component);
+
+  function AdminRentalPeriods() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminRentalPeriodsScreen_classCallCheck(this, AdminRentalPeriods);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminRentalPeriodsScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminRentalPeriodsScreen_getPrototypeOf(AdminRentalPeriods)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "state", {
+      filters: {},
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "min|asc",
+      loading: {
+        table: true,
+        modal: false
+      },
+      rentalPeriodModalVisible: false,
+      selectedRentalPeriod: undefined
+    });
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "openRentalPeriodModal", function (selectedRentalPeriod) {
+      _this.setState({
+        rentalPeriodModalVisible: true,
+        selectedRentalPeriod: selectedRentalPeriod
+      });
+    });
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "closeRentalPeriodModal", function () {
+      _this.setState({
+        rentalPeriodModalVisible: false,
+        selectedRentalPeriod: undefined
+      });
+    });
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminRentalPeriodsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.getAllRentalPeriods();
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: result.data,
+                loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminRentalPeriodsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    })));
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminRentalPeriodsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    })));
+
+    AdminRentalPeriodsScreen_defineProperty(AdminRentalPeriodsScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminRentalPeriodsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(values) {
+        var idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context4.prev = 1;
+                _context4.next = 4;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 4:
+                idToken = _context4.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedRentalPeriod && _this.state.selectedRentalPeriod._id)) {
+                  _context4.next = 13;
+                  break;
+                }
+
+                _context4.next = 9;
+                return serviceProxies.updateRentalPeriod(_this.state.selectedRentalPeriod._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    min: values.min,
+                    max: values.max
+                  }
+                });
+
+              case 9:
+                _this.setState({
+                  rentalPeriodModalVisible: false,
+                  loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedRentalPeriod: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedRentalPeriod._id ? AdminRentalPeriodsScreen_objectSpread({}, item, {
+                      min: values.min,
+                      max: values.max
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-rental-periods:update-success'));
+
+                _context4.next = 18;
+                break;
+
+              case 13:
+                _context4.next = 15;
+                return serviceProxies.createRentalPeriod({
+                  min: values.min,
+                  max: values.max
+                });
+
+              case 15:
+                result = _context4.sent;
+
+                _this.setState({
+                  rentalPeriodModalVisible: false,
+                  loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedRentalPeriod: undefined,
+                  data: [{
+                    _id: result.id,
+                    min: values.min,
+                    max: values.max,
+                    createdAt: new Date().getTime()
+                  }].concat(AdminRentalPeriodsScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-rental-periods:create-success'));
+
+              case 18:
+                _context4.next = 24;
+                break;
+
+              case 20:
+                _context4.prev = 20;
+                _context4.t0 = _context4["catch"](1);
+
+                message_default.a.error(_context4.t0.message);
+
+                _this.setState({
+                  loading: AdminRentalPeriodsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 24:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[1, 20]]);
+      }));
+
+      return function (_x) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  AdminRentalPeriodsScreen_createClass(AdminRentalPeriods, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openRentalPeriodModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-rental-periods:rental-period'),
+        dataIndex: 'rental-period',
+        key: 'rental-period',
+        render: function render(_text, record) {
+          var rentalPeriod = record.max ? translate('common:from-to').replace('{from}', record.min.toString()).replace('{to}', record.max.toString()) + ' ' + translate('common:month') : translate('common:more-than') + ' ' + record.min + ' ' + translate('common:month');
+          return rentalPeriod;
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-rental-periods-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: '',
+        showSearch: false,
+        handleSearchChange: function handleSearchChange() {
+          return null;
+        },
+        placeholder: '',
+        onCreateClick: function onCreateClick() {
+          return _this2.openRentalPeriodModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data.sort(function (a, b) {
+          return a.min - b.min;
+        }),
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.rentalPeriodModalVisible && external_react_default.a.createElement(AdminRentalPeriodsScreen_components_RentalPeriodModal, {
+        rentalPeriodInfo: this.state.selectedRentalPeriod,
+        loading: this.state.loading.modal,
+        visible: this.state.rentalPeriodModalVisible,
+        handleCancel: this.closeRentalPeriodModal,
+        handleOk: this.handleSubmit
+      }));
+    }
+  }]);
+
+  return AdminRentalPeriods;
+}(external_react_default.a.Component);
+
+var AdminRentalPeriodsScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminRentalPeriodsScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminRentalPeriodsScreen_AdminRentalPeriodsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminRentalPeriodsScreen_mapState, AdminRentalPeriodsScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-rental-periods')(AdminRentalPeriodsScreen_AdminRentalPeriods)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminFeatureBrandsScreen/AdminFeatureBrandsScreen.less
+var AdminFeatureBrandsScreen = __webpack_require__(136);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminFeatureBrandsScreen/components/FeatureBrandModal.less
+var components_FeatureBrandModal = __webpack_require__(137);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminFeatureBrandsScreen/components/FeatureBrandModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function FeatureBrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function FeatureBrandModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { FeatureBrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { FeatureBrandModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var FeatureBrandModal_FeatureBrandModal = function FeatureBrandModal(props) {
+  var translate = props.t;
+  var FeatureBrandValidateSchema = external_yup_["object"]().shape({
+    brand: external_yup_["string"]().required(translate('admin-feature-brands:pleaseSelectBrand')),
+    hyperlink: external_yup_["string"]().required(translate('admin-feature-brands:pleaseInputHyperlink')),
+    logoImage: external_yup_["string"]().required(translate('admin-feature-brands:pleaseUploadBrandLogo')),
+    order: external_yup_["number"]().required(translate('admin-feature-brands:pleaseSelectOrder'))
+  });
+  var initialValues = props.featureBrandInfo && props.featureBrandInfo._id ? {
+    brand: props.featureBrandInfo.brand._id,
+    hyperlink: props.featureBrandInfo.hyperlink,
+    logoImage: props.featureBrandInfo.logoImage,
+    order: props.featureBrandInfo.order
+  } : {
+    brand: '',
+    hyperlink: '',
+    logoImage: '',
+    order: 1
+  };
+  var orderOptions = [1, 2, 3, 4, 5, 6];
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: FeatureBrandValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = FeatureBrandModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+                formikBag.resetForm({
+                  brand: '',
+                  hyperlink: '',
+                  logoImage: '',
+                  order: 1
+                });
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (context) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.featureBrandInfo && props.featureBrandInfo._id ? "".concat(translate('admin-feature-brands:edit-feature-brand'), ": ").concat(props.featureBrandInfo.brand.name) : "".concat(translate('admin-feature-brands:create-feature-brand')),
+      visible: props.visible,
+      onOk: context.handleSubmit,
+      onCancel: props.handleCancel,
+      okText: translate('common:save'),
+      cancelText: translate('common:cancel'),
+      confirmLoading: props.loading,
+      className: "feature-brand-modal",
+      width: 420
+    }, external_react_default.a.createElement(form_default.a, {
+      onSubmit: context.handleSubmit
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-feature-brands:brand-name')),
+      style: {
+        marginBottom: '0px'
+      },
+      validateStatus: context.errors.brand ? 'error' : undefined,
+      help: context.errors.brand
+    }, external_react_default.a.createElement(select_default.a, {
+      value: context.values.brand ? context.values.brand : undefined,
+      notFoundContent: props.loadingBrands ? external_react_default.a.createElement("div", {
+        style: {
+          textAlign: 'center'
+        }
+      }, external_react_default.a.createElement(spin_default.a, {
+        size: "small"
+      })) : null,
+      showSearch: true,
+      filterOption: false,
+      placeholder: translate('admin-feature-brands:select-brand'),
+      onSearch: props.getBrands,
+      onSelect: function onSelect(value) {
+        context.setFieldValue('brand', value);
+      },
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'brand',
+          validateSchema: FeatureBrandValidateSchema,
+          context: context
+        });
+      }
+    }, props.brands.map(function (val) {
+      return external_react_default.a.createElement(select_default.a.Option, {
+        value: val._id,
+        key: val._id
+      }, val.name);
+    }))), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-feature-brands:hyperlink')),
+      validateStatus: context.errors.hyperlink ? 'error' : undefined,
+      help: context.errors.hyperlink
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.hyperlink,
+      onChange: context.handleChange,
+      placeholder: translate('admin-feature-brands:hyperlink'),
+      type: "text",
+      name: "hyperlink",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'hyperlink',
+          validateSchema: FeatureBrandValidateSchema,
+          context: context
+        });
+      }
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-feature-brands:order')),
+      style: {
+        marginBottom: '0px'
+      },
+      validateStatus: context.errors.order ? 'error' : undefined,
+      help: context.errors.order
+    }, external_react_default.a.createElement(select_default.a, {
+      value: context.values.order ? context.values.order : undefined,
+      placeholder: translate('admin-feature-brands:order'),
+      onSelect: function onSelect(value) {
+        context.setFieldValue('order', value);
+      },
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'order',
+          validateSchema: FeatureBrandValidateSchema,
+          context: context
+        });
+      }
+    }, orderOptions.map(function (val) {
+      return external_react_default.a.createElement(select_default.a.Option, {
+        value: val,
+        key: val
+      }, "#", val);
+    }))), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(translate('admin-feature-brands:brand-logo')),
+      validateStatus: context.errors.logoImage ? 'error' : undefined,
+      help: context.errors.logoImage
+    }, external_react_default.a.createElement(card_default.a, {
+      style: {
+        padding: '20px 20px 0px 20px',
+        margin: '0 auto'
+      },
+      cover: context.values.logoImage ? external_react_default.a.createElement("img", {
+        src: context.values.logoImage,
+        style: {
+          width: '100%',
+          height: 'auto'
+        }
+      }) : null
+    }, external_react_default.a.createElement(card_default.a.Meta, {
+      title: external_react_default.a.createElement(upload_default.a, {
+        beforeUpload: function beforeUpload(file) {
+          props.uploadLogoImage(file);
+          Object(core["f" /* getBase64Image */])(file, function (result) {
+            context.setFieldValue('logoImage', result);
+          });
+          return false;
+        },
+        showUploadList: false
+      }, external_react_default.a.createElement(button_default.a, {
+        icon: "upload"
+      }, translate('admin-feature-brands:upload-brand-logo')))
+    })))));
+  });
+};
+
+/* harmony default export */ var AdminFeatureBrandsScreen_components_FeatureBrandModal = (Object(i18n["d" /* withNamespaces */])('admin-feature-brands')(FeatureBrandModal_FeatureBrandModal));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminFeatureBrandsScreen/AdminFeatureBrandsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminFeatureBrandsScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminFeatureBrandsScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminFeatureBrandsScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminFeatureBrandsScreen_typeof(obj); }
+
+function AdminFeatureBrandsScreen_toConsumableArray(arr) { return AdminFeatureBrandsScreen_arrayWithoutHoles(arr) || AdminFeatureBrandsScreen_iterableToArray(arr) || AdminFeatureBrandsScreen_nonIterableSpread(); }
+
+function AdminFeatureBrandsScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminFeatureBrandsScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminFeatureBrandsScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminFeatureBrandsScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminFeatureBrandsScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminFeatureBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminFeatureBrandsScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminFeatureBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminFeatureBrandsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminFeatureBrandsScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminFeatureBrandsScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminFeatureBrandsScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminFeatureBrandsScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminFeatureBrandsScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminFeatureBrandsScreen_possibleConstructorReturn(self, call) { if (call && (AdminFeatureBrandsScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminFeatureBrandsScreen_assertThisInitialized(self); }
+
+function AdminFeatureBrandsScreen_getPrototypeOf(o) { AdminFeatureBrandsScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminFeatureBrandsScreen_getPrototypeOf(o); }
+
+function AdminFeatureBrandsScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminFeatureBrandsScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminFeatureBrandsScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminFeatureBrandsScreen_setPrototypeOf(o, p) { AdminFeatureBrandsScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminFeatureBrandsScreen_setPrototypeOf(o, p); }
+
+function AdminFeatureBrandsScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminFeatureBrandsScreen_AdminFeatureBrands =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminFeatureBrandsScreen_inherits(AdminFeatureBrands, _React$Component);
+
+  function AdminFeatureBrands(props) {
+    var _this;
+
+    AdminFeatureBrandsScreen_classCallCheck(this, AdminFeatureBrands);
+
+    _this = AdminFeatureBrandsScreen_possibleConstructorReturn(this, AdminFeatureBrandsScreen_getPrototypeOf(AdminFeatureBrands).call(this, props));
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "state", {
+      filters: {
+        search: undefined
+      },
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: "order|asc",
+      loading: {
+        table: true,
+        modal: false,
+        brands: false
+      },
+      featureBrandModalVisible: false,
+      logoImage: undefined,
+      selectedFeatureBrand: undefined,
+      brands: []
+    });
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "getBrands",
+    /*#__PURE__*/
+    function () {
+      var _ref = AdminFeatureBrandsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(value) {
+        var serviceProxy, brands;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    brands: true
+                  })
+                });
+
+                _context.prev = 1;
+                serviceProxy = Object(services["a" /* getServiceProxy */])();
+                _context.next = 5;
+                return serviceProxy.findBrands(value, 20, 'slug|asc', undefined, undefined);
+
+              case 5:
+                brands = _context.sent;
+
+                _this.setState({
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    brands: true
+                  }),
+                  brands: brands.data
+                });
+
+                _context.next = 13;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_context.t0.message);
+
+                _this.setState({
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    brands: false
+                  })
+                });
+
+              case 13:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 9]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "openBrandModal", function (selectedFeatureBrand) {
+      _this.setState({
+        featureBrandModalVisible: true,
+        selectedFeatureBrand: selectedFeatureBrand
+      });
+    });
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "closeBrandModal", function () {
+      _this.setState({
+        featureBrandModalVisible: false,
+        selectedFeatureBrand: undefined
+      });
+    });
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminFeatureBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee2() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context2.prev = 1;
+              _context2.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context2.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context2.next = 8;
+              return serviceProxies.getFeatureBrands(_this.state.first, _this.state.sortBy, undefined, undefined);
+
+            case 8:
+              result = _context2.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context2.next = 16;
+              break;
+
+            case 12:
+              _context2.prev = 12;
+              _context2.t0 = _context2["catch"](1);
+
+              message_default.a.error(_context2.t0.message);
+
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2, null, [[1, 12]]);
+    })));
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "getPrevPage",
+    /*#__PURE__*/
+    AdminFeatureBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee3() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context3.prev = 1;
+              _context3.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context3.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context3.next = 8;
+              return serviceProxies.getFeatureBrands(_this.state.first, _this.state.sortBy, _this.state.before, undefined);
+
+            case 8:
+              result = _context3.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context3.next = 16;
+              break;
+
+            case 12:
+              _context3.prev = 12;
+              _context3.t0 = _context3["catch"](1);
+
+              message_default.a.error(_context3.t0.message);
+
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3, null, [[1, 12]]);
+    })));
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "getNextPage",
+    /*#__PURE__*/
+    AdminFeatureBrandsScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee4() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee4$(_context4) {
+        while (1) {
+          switch (_context4.prev = _context4.next) {
+            case 0:
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context4.prev = 1;
+              _context4.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context4.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context4.next = 8;
+              return serviceProxies.getFeatureBrands(_this.state.first, _this.state.sortBy, undefined, _this.state.after);
+
+            case 8:
+              result = _context4.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context4.next = 16;
+              break;
+
+            case 12:
+              _context4.prev = 12;
+              _context4.t0 = _context4["catch"](1);
+
+              message_default.a.error(_context4.t0.message);
+
+              _this.setState({
+                loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context4.stop();
+          }
+        }
+      }, _callee4, null, [[1, 12]]);
+    })));
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = AdminFeatureBrandsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee5(values) {
+        var logoImageUrl, logoImageFormData, logoImageResult, idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context5.prev = 1;
+                logoImageUrl = '';
+
+                if (!_this.state.logoImage) {
+                  _context5.next = 14;
+                  break;
+                }
+
+                if (!config["a" /* config */].upload.allowImageExt.test(_this.state.logoImage.name)) {
+                  _context5.next = 13;
+                  break;
+                }
+
+                logoImageFormData = new FormData();
+                logoImageFormData.append('featureBrandLogoImage', _this.state.logoImage);
+                _context5.next = 9;
+                return fetch("".concat(config["a" /* config */].url.api, "/upload-image/feature-brand-logo-image"), {
+                  method: 'POST',
+                  body: logoImageFormData
+                }).then(function (res) {
+                  return res.json();
+                });
+
+              case 9:
+                logoImageResult = _context5.sent;
+                logoImageUrl = logoImageResult.logoImage;
+                _context5.next = 14;
+                break;
+
+              case 13:
+                message_default.a.error('Ảnh chỉ nhận các định dạng PNG, JPG, JPEG');
+
+              case 14:
+                _context5.next = 16;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 16:
+                idToken = _context5.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedFeatureBrand && _this.state.selectedFeatureBrand._id)) {
+                  _context5.next = 25;
+                  break;
+                }
+
+                _context5.next = 21;
+                return serviceProxies.updateFeatureBrand(_this.state.selectedFeatureBrand._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    brand: values.brand,
+                    logoImage: logoImageUrl ? logoImageUrl : _this.state.selectedFeatureBrand.logoImage,
+                    hyperlink: values.hyperlink,
+                    order: values.order
+                  }
+                });
+
+              case 21:
+                _this.setState({
+                  featureBrandModalVisible: false,
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedFeatureBrand: undefined,
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedFeatureBrand._id ? AdminFeatureBrandsScreen_objectSpread({}, item, values, {
+                      brand: values.brand === _this.state.selectedFeatureBrand.brand._id ? _this.state.selectedFeatureBrand.brand : _this.state.brands.filter(function (ite) {
+                        return ite._id === values.brand;
+                      })[0],
+                      logoImage: logoImageUrl ? logoImageUrl : _this.state.selectedFeatureBrand.logoImage
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-brands:update-success'));
+
+                _context5.next = 30;
+                break;
+
+              case 25:
+                _context5.next = 27;
+                return serviceProxies.createFeatureBrand({
+                  logoImage: logoImageUrl,
+                  brand: values.brand,
+                  hyperlink: values.hyperlink,
+                  order: values.order
+                });
+
+              case 27:
+                result = _context5.sent;
+
+                _this.setState({
+                  featureBrandModalVisible: false,
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  selectedFeatureBrand: undefined,
+                  data: [{
+                    _id: result.id,
+                    brand: _this.state.brands.filter(function (item) {
+                      return item._id === values.brand;
+                    })[0],
+                    logoImage: logoImageUrl,
+                    hyperlink: values.hyperlink,
+                    order: values.order,
+                    createdAt: new Date().getTime()
+                  }].concat(AdminFeatureBrandsScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-brands:create-success'));
+
+              case 30:
+                _context5.next = 36;
+                break;
+
+              case 32:
+                _context5.prev = 32;
+                _context5.t0 = _context5["catch"](1);
+
+                message_default.a.error(_context5.t0.message);
+
+                _this.setState({
+                  loading: AdminFeatureBrandsScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 36:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, null, [[1, 32]]);
+      }));
+
+      return function (_x2) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
+
+    AdminFeatureBrandsScreen_defineProperty(AdminFeatureBrandsScreen_assertThisInitialized(_this), "uploadLogoImage",
+    /*#__PURE__*/
+    function () {
+      var _ref6 = AdminFeatureBrandsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee6(file) {
+        return regenerator_default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+                _this.setState({
+                  logoImage: file
+                });
+
+              case 1:
+              case "end":
+                return _context6.stop();
+            }
+          }
+        }, _callee6);
+      }));
+
+      return function (_x3) {
+        return _ref6.apply(this, arguments);
+      };
+    }());
+
+    _this.getBrands = debounce_default()(_this.getBrands, 500);
+    return _this;
+  }
+
+  AdminFeatureBrandsScreen_createClass(AdminFeatureBrands, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+      this.getBrands('');
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+
+      var actionsDropdown = function actionsDropdown(record) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          onClick: function onClick() {
+            return _this2.openBrandModal(record);
+          }
+        }, translate('common:edit'))));
+      };
+
+      var columns = [{
+        title: translate('admin-feature-brands:brand-name'),
+        dataIndex: 'name',
+        key: 'name',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("a", {
+            href: record.hyperlink,
+            target: "_blank"
+          }, record.brand.name);
+        }
+      }, {
+        title: translate('admin-feature-brands:order'),
+        dataIndex: 'order',
+        key: 'order',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(tag_default.a, {
+            color: "volcano"
+          }, "#", record.order);
+        }
+      }, {
+        title: translate('admin-feature-brands:logo-image'),
+        dataIndex: 'logoImage',
+        key: 'logoImage',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("img", {
+            style: {
+              height: '32px',
+              width: 'auto'
+            },
+            src: "".concat(record.logoImage),
+            alt: "".concat(record.brand.name)
+          });
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }, {
+        title: translate('common:actions'),
+        dataIndex: 'operations',
+        key: 'operations',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('common:actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-feature-brands-screen"
+      }, external_react_default.a.createElement(components["a" /* AdminSearchbar */], {
+        hasCreate: true,
+        handleSearch: this.getData,
+        value: '',
+        showSearch: true,
+        handleSearchChange: function handleSearchChange() {
+          return null;
+        },
+        placeholder: translate('admin-feature-brands:search-brands'),
+        onCreateClick: function onCreateClick() {
+          return _this2.openBrandModal();
+        }
+      }), external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data,
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement(components["e" /* PagingButtons */], {
+        before: this.state.before,
+        after: this.state.after,
+        getNextPage: this.getNextPage,
+        getPrevPage: this.getPrevPage
+      }), this.state.featureBrandModalVisible && external_react_default.a.createElement(AdminFeatureBrandsScreen_components_FeatureBrandModal, {
+        loadingBrands: this.state.loading.brands,
+        featureBrandInfo: this.state.selectedFeatureBrand,
+        loading: this.state.loading.modal,
+        visible: this.state.featureBrandModalVisible,
+        handleCancel: this.closeBrandModal,
+        handleOk: this.handleSubmit,
+        uploadLogoImage: this.uploadLogoImage,
+        brands: this.state.selectedFeatureBrand && this.state.selectedFeatureBrand._id ? [this.state.selectedFeatureBrand.brand].concat(AdminFeatureBrandsScreen_toConsumableArray(this.state.brands)) : this.state.brands,
+        getBrands: this.getBrands
+      }));
+    }
+  }]);
+
+  return AdminFeatureBrands;
+}(external_react_default.a.Component);
+
+var AdminFeatureBrandsScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminFeatureBrandsScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminFeatureBrandsScreen_AdminFeatureBrandsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminFeatureBrandsScreen_mapState, AdminFeatureBrandsScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-feature-brands')(AdminFeatureBrandsScreen_AdminFeatureBrands)), [], true, 'admin');
+
+// EXTERNAL MODULE: external "antd/lib/row/style"
+var row_style_ = __webpack_require__(22);
+
+// EXTERNAL MODULE: external "antd/lib/row"
+var row_ = __webpack_require__(7);
+var row_default = /*#__PURE__*/__webpack_require__.n(row_);
+
+// EXTERNAL MODULE: external "antd/lib/col/style"
+var col_style_ = __webpack_require__(24);
+
+// EXTERNAL MODULE: external "antd/lib/col"
+var col_ = __webpack_require__(2);
+var col_default = /*#__PURE__*/__webpack_require__.n(col_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminAdsenseScreen/AdminAdsenseScreen.less
+var AdminAdsenseScreen = __webpack_require__(138);
+
+// EXTERNAL MODULE: external "antd/lib/skeleton/style"
+var skeleton_style_ = __webpack_require__(139);
+
+// EXTERNAL MODULE: external "antd/lib/skeleton"
+var skeleton_ = __webpack_require__(121);
+var skeleton_default = /*#__PURE__*/__webpack_require__.n(skeleton_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminAdsenseScreen/components/AdsensePositions.less
+var components_AdsensePositions = __webpack_require__(140);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminAdsenseScreen/components/AdsensePositions.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+var AdsensePositions_AdsensePositions = function AdsensePositions(props) {
+  var translate = props.t;
+
+  var buttonType = function buttonType(position) {
+    return props.adsenseInfo.position === position ? 'primary' : 'default';
+  };
+
+  return external_react_default.a.createElement("div", null, external_react_default.a.createElement("h2", {
+    className: "adsense-title"
+  }, translate('admin-adsense:adsense-position')), external_react_default.a.createElement("div", {
+    className: "adsense-positions"
+  }, external_react_default.a.createElement(row_default.a, {
+    className: "adsense-positions-header"
+  }, external_react_default.a.createElement(col_default.a, {
+    xs: 24
+  }, external_react_default.a.createElement("div", {
+    className: "text-center"
+  }, "Timmay.vn"))), external_react_default.a.createElement(row_default.a, {
+    type: "flex",
+    justify: "space-between",
+    className: "adsense-positions-main"
+  }, external_react_default.a.createElement(col_default.a, {
+    xs: 5,
+    className: "left"
+  }, external_react_default.a.createElement(button_default.a, {
+    onClick: function onClick() {
+      return props.selectedAdsChange(1);
+    },
+    type: buttonType(1),
+    block: true,
+    className: "left-1"
+  }, "1"), external_react_default.a.createElement(button_default.a, {
+    onClick: function onClick() {
+      return props.selectedAdsChange(2);
+    },
+    type: buttonType(2),
+    block: true,
+    className: "left-2"
+  }, "2")), external_react_default.a.createElement(col_default.a, {
+    xs: 14
+  }, external_react_default.a.createElement(skeleton_default.a, {
+    title: false,
+    paragraph: {
+      rows: 12,
+      width: ['100%']
+    }
+  })), external_react_default.a.createElement(col_default.a, {
+    xs: 5,
+    className: "right"
+  }, external_react_default.a.createElement(button_default.a, {
+    onClick: function onClick() {
+      return props.selectedAdsChange(3);
+    },
+    type: buttonType(3),
+    block: true,
+    className: "right-1"
+  }, "3"), external_react_default.a.createElement(button_default.a, {
+    onClick: function onClick() {
+      return props.selectedAdsChange(4);
+    },
+    type: buttonType(4),
+    block: true,
+    className: "right-2"
+  }, "4"), external_react_default.a.createElement(button_default.a, {
+    onClick: function onClick() {
+      return props.selectedAdsChange(5);
+    },
+    type: buttonType(5),
+    block: true,
+    className: "right-3"
+  }, "5")))));
+};
+
+/* harmony default export */ var AdminAdsenseScreen_components_AdsensePositions = (Object(i18n["d" /* withNamespaces */])('admin-adsense')(AdsensePositions_AdsensePositions));
+// EXTERNAL MODULE: ./modules/admin/screens/AdminAdsenseScreen/components/AdsenseInfo.less
+var components_AdsenseInfo = __webpack_require__(141);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminAdsenseScreen/components/AdsenseInfo.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+function AdsenseInfo_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdsenseInfo_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdsenseInfo_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdsenseInfo_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+var AdsenseInfo_AdsenseInfo = function AdsenseInfo(props) {
+  var BrandValidateSchema = external_yup_["object"]().shape({
+    imageUrl: external_yup_["string"]().required(props.t('admin-adsense:pleaseUploadImage')),
+    hyperlink: external_yup_["string"]().required(props.t('admin-adsense:pleaseInputHyperlink'))
+  });
+  var initialValues = props.adsenseInfo && props.adsenseInfo._id ? {
+    imageUrl: props.adsenseInfo.imageUrl,
+    hyperlink: props.adsenseInfo.hyperlink
+  } : {
+    imageUrl: '',
+    hyperlink: ''
+  };
+  return external_react_default.a.createElement("div", {
+    className: "adsense-info"
+  }, external_react_default.a.createElement("h2", {
+    className: "adsense-title"
+  }, props.t('admin-adsense:adsense-info')), external_react_default.a.createElement(external_formik_["Formik"], {
+    enableReinitialize: true,
+    initialValues: initialValues,
+    validateOnChange: false,
+    validationSchema: BrandValidateSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = AdsenseInfo_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return props.handleOk(values);
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()
+  }, function (context) {
+    return external_react_default.a.createElement(form_default.a, {
+      onSubmit: context.handleSubmit
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(props.t('admin-adsense:ads-image')),
+      validateStatus: context.errors.imageUrl ? 'error' : undefined,
+      help: context.errors.imageUrl
+    }, external_react_default.a.createElement(card_default.a, {
+      style: {
+        padding: '20px 20px 20px 20px',
+        margin: '0 auto'
+      },
+      cover: context.values.imageUrl ? external_react_default.a.createElement("img", {
+        src: context.values.imageUrl,
+        style: {
+          width: 'auto',
+          height: '460px',
+          margin: '0 auto'
+        }
+      }) : null
+    }, external_react_default.a.createElement(card_default.a.Meta, {
+      title: external_react_default.a.createElement(upload_default.a, {
+        beforeUpload: function beforeUpload(file) {
+          props.uploadLogoImage(file);
+          Object(core["f" /* getBase64Image */])(file, function (result) {
+            context.setFieldValue('imageUrl', result);
+          });
+          return false;
+        },
+        showUploadList: false
+      }, external_react_default.a.createElement(button_default.a, {
+        icon: "upload"
+      }, props.t('admin-adsense:upload-ads-image')))
+    }))), external_react_default.a.createElement(form_default.a.Item, {
+      label: "".concat(props.t('admin-adsense:ads-hyperlink')),
+      validateStatus: context.errors.hyperlink ? 'error' : undefined,
+      help: context.errors.hyperlink
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.hyperlink,
+      onChange: context.handleChange,
+      placeholder: props.t('admin-adsense:ads-hyperlink'),
+      type: "text",
+      name: "hyperlink",
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'hyperlink',
+          validateSchema: BrandValidateSchema,
+          context: context
+        });
+      }
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      className: "button-right"
+    }, external_react_default.a.createElement(button_default.a, {
+      className: "save-button",
+      type: "primary",
+      htmlType: "submit",
+      loading: props.loading
+    }, props.t('common:save'))));
+  }));
+};
+
+/* harmony default export */ var AdminAdsenseScreen_components_AdsenseInfo = (Object(i18n["d" /* withNamespaces */])('admin-adsense')(AdsenseInfo_AdsenseInfo));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminAdsenseScreen/AdminAdsenseScreen.tsx
+
+
+
+
+
+
+
+
+
+
+function AdminAdsenseScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminAdsenseScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminAdsenseScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminAdsenseScreen_typeof(obj); }
+
+function AdminAdsenseScreen_toConsumableArray(arr) { return AdminAdsenseScreen_arrayWithoutHoles(arr) || AdminAdsenseScreen_iterableToArray(arr) || AdminAdsenseScreen_nonIterableSpread(); }
+
+function AdminAdsenseScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminAdsenseScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminAdsenseScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminAdsenseScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminAdsenseScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminAdsenseScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminAdsenseScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminAdsenseScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminAdsenseScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminAdsenseScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminAdsenseScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminAdsenseScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminAdsenseScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminAdsenseScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminAdsenseScreen_possibleConstructorReturn(self, call) { if (call && (AdminAdsenseScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminAdsenseScreen_assertThisInitialized(self); }
+
+function AdminAdsenseScreen_getPrototypeOf(o) { AdminAdsenseScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminAdsenseScreen_getPrototypeOf(o); }
+
+function AdminAdsenseScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminAdsenseScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminAdsenseScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminAdsenseScreen_setPrototypeOf(o, p) { AdminAdsenseScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminAdsenseScreen_setPrototypeOf(o, p); }
+
+function AdminAdsenseScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminAdsenseScreen_AdminAdsense =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminAdsenseScreen_inherits(AdminAdsense, _React$Component);
+
+  function AdminAdsense() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminAdsenseScreen_classCallCheck(this, AdminAdsense);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminAdsenseScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminAdsenseScreen_getPrototypeOf(AdminAdsense)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminAdsenseScreen_defineProperty(AdminAdsenseScreen_assertThisInitialized(_this), "state", {
+      data: [],
+      before: undefined,
+      after: undefined,
+      first: 10,
+      sortBy: 'position|asc',
+      loading: {
+        form: false,
+        data: false
+      },
+      logoImage: undefined,
+      selectedAdsense: {
+        position: 1
+      }
+    });
+
+    AdminAdsenseScreen_defineProperty(AdminAdsenseScreen_assertThisInitialized(_this), "getData",
+    /*#__PURE__*/
+    AdminAdsenseScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee() {
+      var idToken, serviceProxies, result;
+      return regenerator_default.a.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setState({
+                loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                  data: true
+                })
+              });
+
+              _context.prev = 1;
+              _context.next = 4;
+              return app_default.a.auth().currentUser.getIdToken;
+
+            case 4:
+              idToken = _context.sent;
+              serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+              _context.next = 8;
+              return serviceProxies.getAdsense(_this.state.first, _this.state.sortBy, undefined, undefined);
+
+            case 8:
+              result = _context.sent;
+
+              _this.setState({
+                data: result.data,
+                loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                  data: false
+                }),
+                selectedAdsense: result.data[0] ? result.data[0] : {
+                  position: 1
+                }
+              });
+
+              _context.next = 16;
+              break;
+
+            case 12:
+              _context.prev = 12;
+              _context.t0 = _context["catch"](1);
+
+              message_default.a.error(_context.t0.message);
+
+              _this.setState({
+                loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                  data: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 12]]);
+    })));
+
+    AdminAdsenseScreen_defineProperty(AdminAdsenseScreen_assertThisInitialized(_this), "handleOk",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = AdminAdsenseScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(values) {
+        var imageUrl, logoImageFormData, logoImageResult, idToken, serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                    form: true
+                  })
+                });
+
+                _context2.prev = 1;
+                // uploadimage
+                imageUrl = '';
+
+                if (!_this.state.logoImage) {
+                  _context2.next = 14;
+                  break;
+                }
+
+                if (!config["a" /* config */].upload.allowImageExt.test(_this.state.logoImage.name)) {
+                  _context2.next = 13;
+                  break;
+                }
+
+                logoImageFormData = new FormData();
+                logoImageFormData.append('adsenseImage', _this.state.logoImage);
+                _context2.next = 9;
+                return fetch("".concat(config["a" /* config */].url.api, "/upload-image/adsense-image"), {
+                  method: 'POST',
+                  body: logoImageFormData
+                }).then(function (res) {
+                  return res.json();
+                });
+
+              case 9:
+                logoImageResult = _context2.sent;
+                imageUrl = logoImageResult.adsenseImage;
+                _context2.next = 14;
+                break;
+
+              case 13:
+                message_default.a.error('Ảnh chỉ nhận các định dạng PNG, JPG, JPEG');
+
+              case 14:
+                _context2.next = 16;
+                return app_default.a.auth().currentUser.getIdToken;
+
+              case 16:
+                idToken = _context2.sent;
+                serviceProxies = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!(_this.state.selectedAdsense && _this.state.selectedAdsense._id)) {
+                  _context2.next = 25;
+                  break;
+                }
+
+                _context2.next = 21;
+                return serviceProxies.updateAdsense(_this.state.selectedAdsense._id, {
+                  operation: 'updateDetail',
+                  payload: {
+                    name: values.name,
+                    hyperlink: values.hyperlink,
+                    imageUrl: imageUrl ? imageUrl : _this.state.selectedAdsense.imageUrl
+                  }
+                });
+
+              case 21:
+                _this.setState({
+                  loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                    form: false
+                  }),
+                  selectedAdsense: AdminAdsenseScreen_objectSpread({}, _this.state.selectedAdsense, values, {
+                    imageUrl: imageUrl ? imageUrl : _this.state.selectedAdsense.imageUrl
+                  }),
+                  data: _this.state.data.map(function (item) {
+                    return item._id === _this.state.selectedAdsense._id ? AdminAdsenseScreen_objectSpread({}, item, values, {
+                      imageUrl: imageUrl ? imageUrl : _this.state.selectedAdsense.imageUrl
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-adsense:update-success'));
+
+                _context2.next = 30;
+                break;
+
+              case 25:
+                _context2.next = 27;
+                return serviceProxies.createAdsense({
+                  name: values.name,
+                  hyperlink: values.hyperlink,
+                  position: _this.state.selectedAdsense.position,
+                  imageUrl: imageUrl
+                });
+
+              case 27:
+                result = _context2.sent;
+
+                _this.setState({
+                  loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                    form: false
+                  }),
+                  selectedAdsense: AdminAdsenseScreen_objectSpread({
+                    _id: result.id
+                  }, values, {
+                    position: _this.state.selectedAdsense.position,
+                    imageUrl: imageUrl
+                  }),
+                  data: [AdminAdsenseScreen_objectSpread({
+                    _id: result.id
+                  }, values, {
+                    position: _this.state.selectedAdsense.position,
+                    imageUrl: imageUrl,
+                    createdAt: new Date().getTime()
+                  })].concat(AdminAdsenseScreen_toConsumableArray(_this.state.data))
+                });
+
+                message_default.a.success(_this.props.t('admin-adsense:update-success'));
+
+              case 30:
+                _context2.next = 36;
+                break;
+
+              case 32:
+                _context2.prev = 32;
+                _context2.t0 = _context2["catch"](1);
+
+                message_default.a.error(_context2.t0.message);
+
+                _this.setState({
+                  loading: AdminAdsenseScreen_objectSpread({}, _this.state.loading, {
+                    form: false
+                  })
+                });
+
+              case 36:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[1, 32]]);
+      }));
+
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    AdminAdsenseScreen_defineProperty(AdminAdsenseScreen_assertThisInitialized(_this), "uploadLogoImage",
+    /*#__PURE__*/
+    function () {
+      var _ref3 = AdminAdsenseScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee3(file) {
+        return regenerator_default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this.setState({
+                  logoImage: file
+                });
+
+              case 1:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }));
+
+      return function (_x2) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+
+    AdminAdsenseScreen_defineProperty(AdminAdsenseScreen_assertThisInitialized(_this), "selectedAdsChange", function (position) {
+      var selectedAds = _this.state.data.filter(function (item) {
+        return item.position === position;
+      })[0];
+
+      _this.setState({
+        selectedAdsense: selectedAds && selectedAds._id ? selectedAds : {
+          position: position
+        }
+      });
+    });
+
+    return _this;
+  }
+
+  AdminAdsenseScreen_createClass(AdminAdsense, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.getData();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return external_react_default.a.createElement("div", {
+        className: "admin-adsense-screen"
+      }, external_react_default.a.createElement(spin_default.a, {
+        spinning: this.state.loading.data
+      }, external_react_default.a.createElement(row_default.a, {
+        gutter: 36
+      }, external_react_default.a.createElement(col_default.a, {
+        xs: 8
+      }, external_react_default.a.createElement(AdminAdsenseScreen_components_AdsensePositions, {
+        adsenseInfo: this.state.selectedAdsense,
+        selectedAdsChange: this.selectedAdsChange
+      })), external_react_default.a.createElement(col_default.a, {
+        xs: 16
+      }, external_react_default.a.createElement(AdminAdsenseScreen_components_AdsenseInfo, {
+        adsenseInfo: this.state.selectedAdsense,
+        loading: this.state.loading.form,
+        handleOk: this.handleOk,
+        uploadLogoImage: this.uploadLogoImage
+      })))));
+    }
+  }]);
+
+  return AdminAdsense;
+}(external_react_default.a.Component);
+
+var AdminAdsenseScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminAdsenseScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminAdsenseScreen_AdminAdsenseScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminAdsenseScreen_mapState, AdminAdsenseScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-adsense')(AdminAdsenseScreen_AdminAdsense)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminUploadExcelScreen/AdminUploadExcelScreen.less
+var AdminUploadExcelScreen = __webpack_require__(142);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminUploadExcelScreen/AdminUploadExcelScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminUploadExcelScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminUploadExcelScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminUploadExcelScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminUploadExcelScreen_typeof(obj); }
+
+function AdminUploadExcelScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminUploadExcelScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminUploadExcelScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminUploadExcelScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminUploadExcelScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminUploadExcelScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminUploadExcelScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminUploadExcelScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminUploadExcelScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminUploadExcelScreen_possibleConstructorReturn(self, call) { if (call && (AdminUploadExcelScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminUploadExcelScreen_assertThisInitialized(self); }
+
+function AdminUploadExcelScreen_getPrototypeOf(o) { AdminUploadExcelScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminUploadExcelScreen_getPrototypeOf(o); }
+
+function AdminUploadExcelScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminUploadExcelScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminUploadExcelScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminUploadExcelScreen_setPrototypeOf(o, p) { AdminUploadExcelScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminUploadExcelScreen_setPrototypeOf(o, p); }
+
+function AdminUploadExcelScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminUploadExcelScreen_AdminUploadExcel =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminUploadExcelScreen_inherits(AdminUploadExcel, _React$Component);
+
+  function AdminUploadExcel() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminUploadExcelScreen_classCallCheck(this, AdminUploadExcel);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminUploadExcelScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminUploadExcelScreen_getPrototypeOf(AdminUploadExcel)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminUploadExcelScreen_defineProperty(AdminUploadExcelScreen_assertThisInitialized(_this), "state", {
+      loading: false,
+      data: [],
+      excelFile: undefined
+    });
+
+    AdminUploadExcelScreen_defineProperty(AdminUploadExcelScreen_assertThisInitialized(_this), "uploadExcelFile",
+    /*#__PURE__*/
+    function () {
+      var _ref = AdminUploadExcelScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(file) {
+        var uploadExcelFileResult, excelFormData, idToken;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!config["a" /* config */].upload.allowExcelExt.test(file.name)) {
+                  _context.next = 19;
+                  break;
+                }
+
+                _context.prev = 1;
+
+                _this.setState({
+                  loading: true,
+                  data: []
+                });
+
+                excelFormData = new FormData();
+                excelFormData.append('newsExcel', file);
+                _context.next = 7;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 7:
+                idToken = _context.sent;
+                _context.next = 10;
+                return fetch("".concat(config["a" /* config */].url.api, "/uploads/news-excel"), {
+                  method: 'POST',
+                  headers: {
+                    authorization: idToken
+                  },
+                  body: excelFormData
+                }).then(function (res) {
+                  return res.json();
+                });
+
+              case 10:
+                uploadExcelFileResult = _context.sent;
+
+                _this.setState({
+                  loading: false,
+                  data: uploadExcelFileResult.data
+                });
+
+                message_default.a.success(_this.props.t('admin-upload-excel:upload-success'));
+
+                _context.next = 19;
+                break;
+
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](1);
+
+                _this.setState({
+                  loading: false,
+                  data: []
+                });
+
+                message_default.a.error(_context.t0.message);
+
+              case 19:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 15]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    AdminUploadExcelScreen_defineProperty(AdminUploadExcelScreen_assertThisInitialized(_this), "beforeUploadExcelFile",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = AdminUploadExcelScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(file) {
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this.uploadExcelFile(file);
+
+                return _context2.abrupt("return", false);
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    return _this;
+  }
+
+  AdminUploadExcelScreen_createClass(AdminUploadExcel, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY HH:mm';
+      var columns = [{
+        title: translate('admin-upload-excel:title'),
+        dataIndex: 'title',
+        key: 'title',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("a", {
+            href: "".concat(config["a" /* config */].url.main, "/bai-dang/").concat(record._id)
+          }, record.title);
+        }
+      }, {
+        title: translate('admin-upload-excel:news-type'),
+        dataIndex: 'newsType',
+        key: 'newsType',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(tag_default.a, {
+            color: "volcano"
+          }, core["m" /* newsTypes */].filter(function (item) {
+            return item.value === record.newsType;
+          })[0].label);
+        }
+      }, {
+        title: translate('admin-upload-excel:category'),
+        dataIndex: 'categoryId',
+        key: 'categoryId',
+        render: function render(_text, record) {
+          return record.categoryId.name;
+        }
+      }, {
+        title: translate('admin-upload-excel:weight-range'),
+        dataIndex: 'weightRange',
+        key: 'weightRange',
+        render: function render(_text, record) {
+          var weightRange = record.weightRange.max ? _this2.props.t('common:from-to').replace('{from}', record.weightRange.min).replace('{to}', record.weightRange.max) + ' ' + _this2.props.t('common:ton') : _this2.props.t('common:more-than') + ' ' + record.weightRange.min + ' ' + _this2.props.t('common:ton');
+          return weightRange;
+        }
+      }, {
+        title: translate('common:created-at'),
+        dataIndex: 'createdAt',
+        key: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_(new Date(record.createdAt)).format(dateFormat);
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-upload-excel-screen"
+      }, external_react_default.a.createElement(row_default.a, null, external_react_default.a.createElement(col_default.a, {
+        xs: 24,
+        style: {
+          textAlign: 'right',
+          marginBottom: '12px'
+        }
+      }, external_react_default.a.createElement("a", {
+        href: "".concat(config["a" /* config */].url.api, "/downloads/excel-template"),
+        target: "_blank"
+      }, external_react_default.a.createElement(button_default.a, {
+        type: "primary"
+      }, translate('admin-upload-excel:download-template'))))), external_react_default.a.createElement(upload_default.a.Dragger, {
+        beforeUpload: this.beforeUploadExcelFile,
+        showUploadList: false
+      }, external_react_default.a.createElement(spin_default.a, {
+        spinning: this.state.loading
+      }, external_react_default.a.createElement("p", {
+        className: "ant-upload-drag-icon"
+      }, external_react_default.a.createElement(icon_default.a, {
+        type: "inbox"
+      })), external_react_default.a.createElement("p", {
+        className: "ant-upload-text"
+      }, translate('admin-upload-excel:instruction')))), this.state.data.length > 0 && external_react_default.a.createElement(table_default.a, {
+        columns: columns,
+        dataSource: this.state.data,
+        loading: this.state.loading,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginTop: '24px',
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }));
+    }
+  }]);
+
+  return AdminUploadExcel;
+}(external_react_default.a.Component);
+
+var AdminUploadExcelScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminUploadExcelScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminUploadExcelScreen_AdminUploadExcelScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminUploadExcelScreen_mapState, AdminUploadExcelScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-upload-excel')(AdminUploadExcelScreen_AdminUploadExcel)), [], true, 'admin');
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminUsersScreen/AdminUsersScreen.less
+var AdminUsersScreen = __webpack_require__(143);
+
+// EXTERNAL MODULE: external "antd/lib/checkbox/style"
+var checkbox_style_ = __webpack_require__(124);
+
+// EXTERNAL MODULE: external "antd/lib/checkbox"
+var checkbox_ = __webpack_require__(118);
+var checkbox_default = /*#__PURE__*/__webpack_require__.n(checkbox_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminUsersScreen/components/UserModal.less
+var components_UserModal = __webpack_require__(144);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminUsersScreen/components/UserModal.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function UserModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function UserModal_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { UserModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { UserModal_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+
+
+
+
+
+
+
+var UserModal_UserModal = function UserModal(props) {
+  var translate = props.t;
+  var createValidationSchema = external_yup_["object"]().shape({
+    familyName: external_yup_["string"]().min(2, translate('admin-users:Too short')).max(50, translate('admin-users:Too long')).required(translate('admin-users:Family name is required')),
+    givenName: external_yup_["string"]().min(2, translate('admin-users:Too short')).max(50, translate('admin-users:Too long')).required(translate('admin-users:Given name is required')),
+    email: external_yup_["string"]().min(2, translate('admin-users:Too short')).email(translate('admin-users:Invalid email')).required(translate('admin-users:Email is required')),
+    password: external_yup_["string"]().matches(config["a" /* config */].regex.password, translate('admin-users:Password must be minimum 6 characters, at least 1 upper letter, 1 number and 1 special character')).required(translate('admin-users:Password is required')),
+    confirmPassword: external_yup_["string"]().required(translate('admin-users:Please confirm your password')),
+    roles: external_yup_["array"]()
+  });
+  var editValidationSchema = external_yup_["object"]().shape({
+    familyName: external_yup_["string"]().min(2, translate('admin-users:Too short')).max(50, translate('admin-users:Too long')).required(translate('admin-users:Family name is required')),
+    givenName: external_yup_["string"]().min(2, translate('admin-users:Too short')).max(50, translate('admin-users:Too long')).required(translate('admin-users:Given name is required')),
+    email: external_yup_["string"]().min(2, translate('admin-users:Too short')).email(translate('admin-users:Invalid email')).required(translate('admin-users:Email is required')),
+    roles: external_yup_["array"]()
+  });
+  var initialValue = props.initialValue && props.initialValue._id ? props.initialValue : {
+    familyName: '',
+    givenName: '',
+    password: '',
+    confirmPassword: '',
+    email: '',
+    roles: []
+  };
+  return external_react_default.a.createElement(external_formik_["Formik"], {
+    initialValues: initialValue,
+    validationSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+    onSubmit:
+    /*#__PURE__*/
+    function () {
+      var _ref = UserModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(values, formikBag) {
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                return _context.abrupt("return", props.handleSubmit(values, formikBag));
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x, _x2) {
+        return _ref.apply(this, arguments);
+      };
+    }(),
+    validateOnChange: false
+  }, function (context) {
+    return external_react_default.a.createElement(modal_default.a, {
+      title: props.title,
+      visible: props.visible,
+      onOk: function onOk(e) {
+        return props.handleSubmit(e, context);
+      },
+      onCancel: props.closeModal,
+      okButtonProps: {
+        onClick: function onClick() {
+          return context.handleSubmit();
+        }
+      },
+      confirmLoading: props.loading,
+      okText: translate('admin-users:Save'),
+      cancelText: translate('admin-users:Cancel')
+    }, external_react_default.a.createElement(form_default.a, null, external_react_default.a.createElement(row_default.a, {
+      type: "flex",
+      gutter: 12
+    }, external_react_default.a.createElement(col_default.a, {
+      xs: 12
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.familyName ? 'error' : undefined,
+      help: context.errors.familyName
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.familyName,
+      onChange: context.handleChange,
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'familyName',
+          validateSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+          context: context
+        });
+      },
+      prefix: external_react_default.a.createElement(icon_default.a, {
+        type: "user"
+      }),
+      placeholder: translate('admin-users:Family name'),
+      name: "familyName"
+    }))), external_react_default.a.createElement(col_default.a, {
+      xs: 12
+    }, external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.givenName ? 'error' : undefined,
+      help: context.errors.givenName
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.givenName,
+      onChange: context.handleChange,
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'givenName',
+          validateSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+          context: context
+        });
+      },
+      prefix: external_react_default.a.createElement(icon_default.a, {
+        type: "user"
+      }),
+      placeholder: translate('admin-users:Given name'),
+      name: "givenName"
+    })))), external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.email ? 'error' : undefined,
+      help: context.errors.email
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.email,
+      onChange: context.handleChange,
+      onBlur:
+      /*#__PURE__*/
+      UserModal_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2() {
+        var serviceProxies, result;
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                Object(core["u" /* validateField */])({
+                  fieldName: 'email',
+                  validateSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+                  context: context
+                });
+
+                if (!context.values.email) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                serviceProxies = Object(services["a" /* getServiceProxy */])();
+                _context2.next = 5;
+                return serviceProxies.checkEmailExist(context.values.email);
+
+              case 5:
+                result = _context2.sent;
+
+                if (result.emailExist) {
+                  context.setFieldError('email', translate('admin-users:Email has been used'));
+                } else {
+                  context.setFieldError('email', '');
+                }
+
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      })),
+      prefix: external_react_default.a.createElement(icon_default.a, {
+        type: "mail"
+      }),
+      placeholder: "Email",
+      name: "email"
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.password ? 'error' : undefined,
+      help: context.errors.password
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.password,
+      onChange: context.handleChange,
+      onBlur: function onBlur() {
+        return Object(core["u" /* validateField */])({
+          fieldName: 'password',
+          validateSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+          context: context
+        });
+      },
+      prefix: external_react_default.a.createElement(icon_default.a, {
+        type: "lock"
+      }),
+      placeholder: translate('admin-users:Password'),
+      name: "password",
+      type: "password"
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      validateStatus: context.errors.confirmPassword ? 'error' : undefined,
+      help: context.errors.confirmPassword
+    }, external_react_default.a.createElement(input_default.a, {
+      value: context.values.confirmPassword,
+      onChange: context.handleChange,
+      onBlur: function onBlur() {
+        Object(core["u" /* validateField */])({
+          fieldName: 'confirmPassword',
+          validateSchema: props.initialValue && props.initialValue._id ? editValidationSchema : createValidationSchema,
+          context: context
+        });
+
+        if (context.values.confirmPassword) {
+          if (context.values.confirmPassword !== context.values.password) {
+            context.setFieldError('confirmPassword', translate('admin-users:Confirm password didnt match'));
+          } else {
+            context.setFieldError('confirmPassword', '');
+          }
+        }
+      },
+      prefix: external_react_default.a.createElement(icon_default.a, {
+        type: "lock"
+      }),
+      placeholder: translate('admin-users:Confirm password'),
+      name: "confirmPassword",
+      type: "password"
+    })), external_react_default.a.createElement(form_default.a.Item, {
+      label: "Roles",
+      validateStatus: context.errors.roles && context.errors.roles.length ? 'error' : undefined,
+      help: context.errors.roles
+    }, external_react_default.a.createElement(checkbox_default.a.Group, {
+      value: context.values.roles,
+      options: props.rolesData ? props.rolesData.map(function (item) {
+        return item.name;
+      }) : [],
+      onChange: function onChange(checkValue) {
+        var selectedRoles = [];
+        props.rolesData.forEach(function (item) {
+          if (checkValue.indexOf(item.name) > -1) {
+            selectedRoles.push(item.name);
+          }
+        });
+        context.setFieldValue('roles', selectedRoles);
+        context.setFieldError('roles', selectedRoles.length > 0 ? '' : translate('admin-users:Roles is required'));
+      }
+    }))));
+  });
+};
+
+/* harmony default export */ var AdminUsersScreen_components_UserModal = (Object(i18n["d" /* withNamespaces */])('admin-users')(UserModal_UserModal));
+// CONCATENATED MODULE: ./modules/admin/screens/AdminUsersScreen/AdminUsersScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminUsersScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminUsersScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminUsersScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminUsersScreen_typeof(obj); }
+
+function AdminUsersScreen_toConsumableArray(arr) { return AdminUsersScreen_arrayWithoutHoles(arr) || AdminUsersScreen_iterableToArray(arr) || AdminUsersScreen_nonIterableSpread(); }
+
+function AdminUsersScreen_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function AdminUsersScreen_iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function AdminUsersScreen_arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function AdminUsersScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminUsersScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminUsersScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminUsersScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminUsersScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminUsersScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminUsersScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminUsersScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminUsersScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminUsersScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminUsersScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminUsersScreen_possibleConstructorReturn(self, call) { if (call && (AdminUsersScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminUsersScreen_assertThisInitialized(self); }
+
+function AdminUsersScreen_getPrototypeOf(o) { AdminUsersScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminUsersScreen_getPrototypeOf(o); }
+
+function AdminUsersScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminUsersScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminUsersScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminUsersScreen_setPrototypeOf(o, p) { AdminUsersScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminUsersScreen_setPrototypeOf(o, p); }
+
+function AdminUsersScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminUsersScreen_AdminUsers =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminUsersScreen_inherits(AdminUsers, _React$Component);
+
+  function AdminUsers() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminUsersScreen_classCallCheck(this, AdminUsers);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminUsersScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminUsersScreen_getPrototypeOf(AdminUsers)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "state", {
+      search: '',
+      roles: [],
+      data: [],
+      before: undefined,
+      after: undefined,
+      sortBy: 'createdAt|desc',
+      pageSize: 10,
+      loading: {
+        table: false,
+        modal: false
+      },
+      modal: {
+        create: false
+      },
+      rolesData: undefined
+    });
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "handleSearch",
+    /*#__PURE__*/
+    function () {
+      var _ref = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(value) {
+        var idToken, serviceProxy, result;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: true
+                  })
+                });
+
+                _context.prev = 1;
+                _context.next = 4;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 4:
+                idToken = _context.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context.next = 8;
+                return serviceProxy.findUsers(value, _this.state.roles.map(function (item) {
+                  return item._id;
+                }), _this.state.pageSize, _this.state.sortBy, undefined, undefined);
+
+              case 8:
+                result = _context.sent;
+
+                _this.setState({
+                  data: result.data,
+                  before: result.before,
+                  after: result.after,
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+                _context.next = 16;
+                break;
+
+              case 12:
+                _context.prev = 12;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_context.t0.response);
+
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+              case 16:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 12]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "activateUser",
+    /*#__PURE__*/
+    function () {
+      var _ref2 = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee2(userId) {
+        var idToken, serviceProxy;
+        return regenerator_default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: true
+                  })
+                });
+
+                _context2.prev = 1;
+                _context2.next = 4;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 4:
+                idToken = _context2.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context2.next = 8;
+                return serviceProxy.updateUser(userId, {
+                  operation: 'activate'
+                });
+
+              case 8:
+                _this.setState({
+                  data: _this.state.data.map(function (item) {
+                    return item._id === userId ? AdminUsersScreen_objectSpread({}, item, {
+                      isActive: true
+                    }) : item;
+                  }),
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-users:Activate user success'));
+
+                _context2.next = 16;
+                break;
+
+              case 12:
+                _context2.prev = 12;
+                _context2.t0 = _context2["catch"](1);
+
+                message_default.a.error(_context2.t0.response);
+
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+              case 16:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[1, 12]]);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }());
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "deactivateUser",
+    /*#__PURE__*/
+    function () {
+      var _ref3 = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee3(userId) {
+        var idToken, serviceProxy;
+        return regenerator_default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: true
+                  })
+                });
+
+                _context3.prev = 1;
+                _context3.next = 4;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 4:
+                idToken = _context3.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context3.next = 8;
+                return serviceProxy.updateUser(userId, {
+                  operation: 'deactivate'
+                });
+
+              case 8:
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  }),
+                  data: _this.state.data.map(function (item) {
+                    return item._id === userId ? AdminUsersScreen_objectSpread({}, item, {
+                      isActive: false
+                    }) : item;
+                  })
+                });
+
+                message_default.a.success(_this.props.t('admin-users:Deactivate user success'));
+
+                _context3.next = 16;
+                break;
+
+              case 12:
+                _context3.prev = 12;
+                _context3.t0 = _context3["catch"](1);
+
+                message_default.a.error(_context3.t0.response);
+
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    table: false
+                  })
+                });
+
+              case 16:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[1, 12]]);
+      }));
+
+      return function (_x3) {
+        return _ref3.apply(this, arguments);
+      };
+    }());
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "openUserModal",
+    /*#__PURE__*/
+    function () {
+      var _ref4 = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee4(user) {
+        var rolesData, idToken, serviceProxy, result;
+        return regenerator_default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                rolesData = _this.state.rolesData;
+
+                if (rolesData) {
+                  _context4.next = 11;
+                  break;
+                }
+
+                _context4.next = 5;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 5:
+                idToken = _context4.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context4.next = 9;
+                return serviceProxy.getAllRoles();
+
+              case 9:
+                result = _context4.sent;
+                rolesData = result.roles;
+
+              case 11:
+                _this.setState({
+                  modal: AdminUsersScreen_objectSpread({}, _this.state.modal, {
+                    create: user ? undefined : {},
+                    update: user ? user : undefined
+                  }),
+                  rolesData: rolesData
+                });
+
+                _context4.next = 17;
+                break;
+
+              case 14:
+                _context4.prev = 14;
+                _context4.t0 = _context4["catch"](0);
+
+                message_default.a.error(_context4.t0.message);
+
+              case 17:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 14]]);
+      }));
+
+      return function (_x4) {
+        return _ref4.apply(this, arguments);
+      };
+    }());
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "closeUserModal", function () {
+      _this.setState({
+        modal: AdminUsersScreen_objectSpread({}, _this.state.modal, {
+          create: undefined,
+          update: undefined
+        })
+      });
+    });
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "handleSubmit",
+    /*#__PURE__*/
+    function () {
+      var _ref5 = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee5(values, formikBag) {
+        var idToken, serviceProxy, result, selectedRoles, _selectedRoles, newInfo;
+
+        return regenerator_default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    modal: true
+                  })
+                });
+
+                _context5.prev = 1;
+                _context5.next = 4;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 4:
+                idToken = _context5.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+
+                if (!_this.state.modal.create) {
+                  _context5.next = 14;
+                  break;
+                }
+
+                selectedRoles = [];
+
+                _this.state.rolesData.forEach(function (item) {
+                  if (values.roles.indexOf(item.name) > -1) {
+                    selectedRoles.push(item._id);
+                  }
+                });
+
+                _context5.next = 11;
+                return serviceProxy.createUser(AdminUsersScreen_objectSpread({}, values, {
+                  roles: selectedRoles
+                }));
+
+              case 11:
+                result = _context5.sent;
+                _context5.next = 19;
+                break;
+
+              case 14:
+                _selectedRoles = [];
+
+                _this.state.rolesData.forEach(function (item) {
+                  if (values.roles.indexOf(item.name) > -1) {
+                    _selectedRoles.push(item._id);
+                  }
+                });
+
+                newInfo = AdminUsersScreen_objectSpread({}, _this.state.modal.update, values, {
+                  fullName: [values.familyName, values.givenName].join(' '),
+                  roles: _selectedRoles
+                });
+                _context5.next = 19;
+                return serviceProxy.updateUser(_this.state.modal.update._id, {
+                  operation: 'updateDetail',
+                  payload: newInfo
+                });
+
+              case 19:
+                message_default.a.success(_this.state.modal.create ? _this.props.t('admin-users:Create user success') : _this.props.t('admin-users:Update user success'));
+
+                _this.setState({
+                  data: _this.state.modal.create ? [AdminUsersScreen_objectSpread({}, result, values, {
+                    _id: result.id,
+                    fullName: [values.familyName, values.givenName].join(' '),
+                    loginDetail: {
+                      provider: 'email',
+                      email: values.email
+                    },
+                    roles: _this.state.rolesData.filter(function (item) {
+                      return values.roles.indexOf(item.name) > -1;
+                    }),
+                    isActive: true,
+                    createdAt: new Date().getTime()
+                  })].concat(AdminUsersScreen_toConsumableArray(_this.state.data)) : _this.state.data.map(function (item) {
+                    if (item._id === _this.state.modal.update._id) {
+                      return AdminUsersScreen_objectSpread({}, _this.state.modal.update, values, {
+                        fullName: [values.familyName, values.givenName].join(' '),
+                        roles: _this.state.rolesData.filter(function (ite) {
+                          return values.roles.indexOf(ite.name) > -1;
+                        })
+                      });
+                    } else {
+                      return item;
+                    }
+                  }),
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  }),
+                  modal: AdminUsersScreen_objectSpread({}, _this.state.modal, {
+                    create: undefined,
+                    update: undefined
+                  })
+                });
+
+                formikBag.resetForm({});
+                _context5.next = 28;
+                break;
+
+              case 24:
+                _context5.prev = 24;
+                _context5.t0 = _context5["catch"](1);
+
+                message_default.a.error(JSON.parse(_context5.t0.response).message);
+
+                _this.setState({
+                  loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                    modal: false
+                  })
+                });
+
+              case 28:
+              case "end":
+                return _context5.stop();
+            }
+          }
+        }, _callee5, null, [[1, 24]]);
+      }));
+
+      return function (_x5, _x6) {
+        return _ref5.apply(this, arguments);
+      };
+    }());
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "loadPrevisousPage",
+    /*#__PURE__*/
+    AdminUsersScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee6() {
+      var idToken, serviceProxy, result;
+      return regenerator_default.a.wrap(function _callee6$(_context6) {
+        while (1) {
+          switch (_context6.prev = _context6.next) {
+            case 0:
+              _this.setState({
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context6.prev = 1;
+              _context6.next = 4;
+              return app_default.a.auth().currentUser.getIdToken();
+
+            case 4:
+              idToken = _context6.sent;
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context6.next = 8;
+              return serviceProxy.findUsers(_this.state.search, _this.state.roles.map(function (item) {
+                return item._id;
+              }), _this.state.pageSize, _this.state.sortBy, _this.state.before, undefined);
+
+            case 8:
+              result = _context6.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context6.next = 16;
+              break;
+
+            case 12:
+              _context6.prev = 12;
+              _context6.t0 = _context6["catch"](1);
+
+              message_default.a.error(_context6.t0.response);
+
+              _this.setState({
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context6.stop();
+          }
+        }
+      }, _callee6, null, [[1, 12]]);
+    })));
+
+    AdminUsersScreen_defineProperty(AdminUsersScreen_assertThisInitialized(_this), "loadNextPage",
+    /*#__PURE__*/
+    AdminUsersScreen_asyncToGenerator(
+    /*#__PURE__*/
+    regenerator_default.a.mark(function _callee7() {
+      var idToken, serviceProxy, result;
+      return regenerator_default.a.wrap(function _callee7$(_context7) {
+        while (1) {
+          switch (_context7.prev = _context7.next) {
+            case 0:
+              _this.setState({
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: true
+                })
+              });
+
+              _context7.prev = 1;
+              _context7.next = 4;
+              return app_default.a.auth().currentUser.getIdToken();
+
+            case 4:
+              idToken = _context7.sent;
+              serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+              _context7.next = 8;
+              return serviceProxy.findUsers(_this.state.search, _this.state.roles.map(function (item) {
+                return item._id;
+              }), _this.state.pageSize, _this.state.sortBy, undefined, _this.state.after);
+
+            case 8:
+              result = _context7.sent;
+
+              _this.setState({
+                data: result.data,
+                before: result.before,
+                after: result.after,
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+              _context7.next = 16;
+              break;
+
+            case 12:
+              _context7.prev = 12;
+              _context7.t0 = _context7["catch"](1);
+
+              message_default.a.error(_context7.t0.response);
+
+              _this.setState({
+                loading: AdminUsersScreen_objectSpread({}, _this.state.loading, {
+                  table: false
+                })
+              });
+
+            case 16:
+            case "end":
+              return _context7.stop();
+          }
+        }
+      }, _callee7, null, [[1, 12]]);
+    })));
+
+    return _this;
+  }
+
+  AdminUsersScreen_createClass(AdminUsers, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = AdminUsersScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee8() {
+        return regenerator_default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                this.handleSearch('');
+
+              case 1:
+              case "end":
+                return _context8.stop();
+            }
+          }
+        }, _callee8, this);
+      }));
+
+      function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      }
+
+      return componentDidMount;
+    }()
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+
+      var actionsDropdown = function actionsDropdown(user) {
+        return external_react_default.a.createElement(menu_default.a, null, external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          rel: "noopener noreferrer",
+          onClick: function onClick() {
+            return _this2.openUserModal(user);
+          }
+        }, translate('admin-users:Edit'))), external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          rel: "noopener noreferrer",
+          onClick: function onClick() {
+            return _this2.activateUser(user._id);
+          }
+        }, translate('admin-users:Activate'))), external_react_default.a.createElement(menu_default.a.Item, null, external_react_default.a.createElement("a", {
+          rel: "noopener noreferrer",
+          onClick: function onClick() {
+            return _this2.deactivateUser(user._id);
+          }
+        }, translate('admin-users:Deactivate'))));
+      };
+
+      var userColumns = [{
+        title: translate('admin-users:Name'),
+        key: 'fullName',
+        dataIndex: 'fullName'
+      }, {
+        title: translate('admin-users:Account'),
+        key: 'email',
+        dataIndex: 'email',
+        render: function render(_text, record) {
+          switch (record.loginDetail.provider) {
+            case 'phone':
+              return record.loginDetail.phoneNo;
+
+            case 'facebook':
+              return record.loginDetail.email;
+
+            case 'google':
+              return record.loginDetail.email;
+
+            case 'email':
+              return record.loginDetail.email;
+          }
+        }
+      }, {
+        title: translate('admin-users:Sign in method'),
+        key: 'loginDetail',
+        dataIndex: 'loginDetail',
+        render: function render(_text, record) {
+          return record.loginDetail ? external_react_default.a.createElement(tag_default.a, {
+            color: "cyan"
+          }, record.loginDetail.provider) : '';
+        }
+      }, {
+        title: translate('admin-users:Roles'),
+        key: 'roles',
+        dataIndex: 'roles',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement("div", null, record.roles.map(function (item, index) {
+            return external_react_default.a.createElement(tag_default.a, {
+              key: index,
+              color: "magenta"
+            }, item.name);
+          }));
+        }
+      }, {
+        title: translate('admin-users:Status'),
+        key: 'isActive',
+        dataIndex: 'isActive',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(tag_default.a, {
+            key: record._id,
+            color: record.isActive ? 'green' : 'red'
+          }, record.isActive ? 'Active' : 'In-Active');
+        }
+      }, {
+        title: translate('admin-users:Created At'),
+        key: 'createdAt',
+        dataIndex: 'createdAt',
+        render: function render(_text, record) {
+          return external_moment_default()(new Date(record.createdAt)).format('DD/MM/YYYY HH:mm');
+        }
+      }, {
+        title: translate('admin-users:Actions'),
+        key: 'actions',
+        dataIndex: 'actions',
+        render: function render(_text, record) {
+          return external_react_default.a.createElement(dropdown_default.a, {
+            overlay: actionsDropdown(record),
+            trigger: ['click']
+          }, external_react_default.a.createElement("a", {
+            className: "ant-dropdown-link"
+          }, translate('admin-users:Actions'), " ", external_react_default.a.createElement(icon_default.a, {
+            type: "down"
+          })));
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "users-container"
+      }, external_react_default.a.createElement(row_default.a, {
+        type: "flex",
+        style: {
+          marginBottom: '24px'
+        },
+        justify: "space-between"
+      }, external_react_default.a.createElement(col_default.a, {
+        xs: 12,
+        xl: 8
+      }, external_react_default.a.createElement(input_default.a.Search, {
+        enterButton: true,
+        placeholder: translate('admin-users:Search name/email/phone'),
+        onSearch: this.handleSearch
+      })), external_react_default.a.createElement(col_default.a, {
+        xs: 10,
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }
+      }, external_react_default.a.createElement(button_default.a, {
+        type: "primary",
+        onClick: function onClick() {
+          return _this2.openUserModal();
+        }
+      }, translate('admin-users:Create')))), external_react_default.a.createElement(row_default.a, {
+        type: "flex"
+      }, external_react_default.a.createElement(col_default.a, {
+        xs: 24
+      }, external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: userColumns,
+        dataSource: this.state.data,
+        loading: this.state.loading.table,
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        }
+      }), external_react_default.a.createElement("div", {
+        className: "pagination",
+        style: {
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }
+      }, this.state.before && external_react_default.a.createElement(button_default.a, {
+        onClick: this.loadPrevisousPage
+      }, external_react_default.a.createElement(icon_default.a, {
+        type: "left"
+      }), " ", translate('admin-users:Prev')), this.state.after && external_react_default.a.createElement(button_default.a, {
+        onClick: this.loadNextPage
+      }, translate('admin-users:Next'), " ", external_react_default.a.createElement(icon_default.a, {
+        type: "right"
+      }))))), (this.state.modal.create || this.state.modal.update) && external_react_default.a.createElement(AdminUsersScreen_components_UserModal, {
+        title: this.state.modal.update ? translate('admin-users:Update user') : translate('admin-users:Create user'),
+        visible: Boolean(this.state.modal.update) || Boolean(this.state.modal.create),
+        handleSubmit: this.handleSubmit,
+        closeModal: this.closeUserModal,
+        initialValue: this.state.modal.update ? AdminUsersScreen_objectSpread({}, this.state.modal.update, {
+          roles: this.state.modal.update.roles.map(function (item) {
+            return item.name;
+          })
+        }) : this.state.modal.create,
+        rolesData: this.state.rolesData,
+        loading: this.state.loading.modal
+      }));
+    }
+  }]);
+
+  return AdminUsers;
+}(external_react_default.a.Component);
+
+var AdminUsersScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminUsersScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminUsersScreen_AdminUsersScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminUsersScreen_mapState, AdminUsersScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-users')(AdminUsersScreen_AdminUsers)), [], true, 'admin');
+
+// EXTERNAL MODULE: external "antd/lib/date-picker/style"
+var date_picker_style_ = __webpack_require__(145);
+
+// EXTERNAL MODULE: external "antd/lib/date-picker"
+var date_picker_ = __webpack_require__(122);
+var date_picker_default = /*#__PURE__*/__webpack_require__.n(date_picker_);
+
+// EXTERNAL MODULE: ./modules/admin/screens/AdminStatisticsScreen/AdminStatisticsScreen.less
+var AdminStatisticsScreen = __webpack_require__(146);
+
+// EXTERNAL MODULE: external "xlsx"
+var external_xlsx_ = __webpack_require__(81);
+
+// EXTERNAL MODULE: external "file-saver"
+var external_file_saver_ = __webpack_require__(119);
+
+// CONCATENATED MODULE: ./modules/admin/screens/AdminStatisticsScreen/AdminStatisticsScreen.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function AdminStatisticsScreen_typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { AdminStatisticsScreen_typeof = function _typeof(obj) { return typeof obj; }; } else { AdminStatisticsScreen_typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return AdminStatisticsScreen_typeof(obj); }
+
+function AdminStatisticsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function AdminStatisticsScreen_asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { AdminStatisticsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { AdminStatisticsScreen_asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function AdminStatisticsScreen_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { AdminStatisticsScreen_defineProperty(target, key, source[key]); }); } return target; }
+
+function AdminStatisticsScreen_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function AdminStatisticsScreen_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function AdminStatisticsScreen_createClass(Constructor, protoProps, staticProps) { if (protoProps) AdminStatisticsScreen_defineProperties(Constructor.prototype, protoProps); if (staticProps) AdminStatisticsScreen_defineProperties(Constructor, staticProps); return Constructor; }
+
+function AdminStatisticsScreen_possibleConstructorReturn(self, call) { if (call && (AdminStatisticsScreen_typeof(call) === "object" || typeof call === "function")) { return call; } return AdminStatisticsScreen_assertThisInitialized(self); }
+
+function AdminStatisticsScreen_getPrototypeOf(o) { AdminStatisticsScreen_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return AdminStatisticsScreen_getPrototypeOf(o); }
+
+function AdminStatisticsScreen_assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function AdminStatisticsScreen_inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) AdminStatisticsScreen_setPrototypeOf(subClass, superClass); }
+
+function AdminStatisticsScreen_setPrototypeOf(o, p) { AdminStatisticsScreen_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return AdminStatisticsScreen_setPrototypeOf(o, p); }
+
+function AdminStatisticsScreen_defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+
+
+
+
+
+var AdminStatisticsScreen_AdminStatistics =
+/*#__PURE__*/
+function (_React$Component) {
+  AdminStatisticsScreen_inherits(AdminStatistics, _React$Component);
+
+  function AdminStatistics() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    AdminStatisticsScreen_classCallCheck(this, AdminStatistics);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = AdminStatisticsScreen_possibleConstructorReturn(this, (_getPrototypeOf2 = AdminStatisticsScreen_getPrototypeOf(AdminStatistics)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    AdminStatisticsScreen_defineProperty(AdminStatisticsScreen_assertThisInitialized(_this), "state", {
+      loading: false,
+      data: {
+        daysOfWeek: [],
+        hoursOfDay: [],
+        brands: [],
+        categories: [],
+        provinces: []
+      },
+      showAll: {
+        brands: false,
+        categories: false,
+        provinces: false
+      }
+    });
+
+    AdminStatisticsScreen_defineProperty(AdminStatisticsScreen_assertThisInitialized(_this), "showAll", function (key) {
+      _this.setState({
+        showAll: AdminStatisticsScreen_objectSpread({}, _this.state.showAll, AdminStatisticsScreen_defineProperty({}, key, true))
+      });
+    });
+
+    AdminStatisticsScreen_defineProperty(AdminStatisticsScreen_assertThisInitialized(_this), "getStatisticsInfo",
+    /*#__PURE__*/
+    function () {
+      var _ref = AdminStatisticsScreen_asyncToGenerator(
+      /*#__PURE__*/
+      regenerator_default.a.mark(function _callee(dates) {
+        var startDate, endDate, idToken, serviceProxy, statisticsData;
+        return regenerator_default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!(dates.length === 2)) {
+                  _context.next = 19;
+                  break;
+                }
+
+                _context.prev = 1;
+
+                _this.setState({
+                  loading: true
+                });
+
+                startDate = new Date(dates[0]).toISOString();
+                endDate = new Date(dates[1]).toISOString();
+                _context.next = 7;
+                return app_default.a.auth().currentUser.getIdToken();
+
+              case 7:
+                idToken = _context.sent;
+                serviceProxy = Object(services["a" /* getServiceProxy */])(idToken);
+                _context.next = 11;
+                return serviceProxy.findNewsStatisticsInfo(startDate, endDate);
+
+              case 11:
+                statisticsData = _context.sent;
+
+                _this.setState({
+                  loading: false,
+                  data: {
+                    daysOfWeek: statisticsData.daysOfWeek,
+                    hoursOfDay: statisticsData.hoursOfDay,
+                    brands: statisticsData.brands,
+                    categories: statisticsData.categories,
+                    provinces: statisticsData.provinces
+                  }
+                });
+
+                _context.next = 19;
+                break;
+
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](1);
+
+                message_default.a.error(_context.t0.message);
+
+                _this.setState({
+                  loading: false
+                });
+
+              case 19:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 15]]);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+
+    AdminStatisticsScreen_defineProperty(AdminStatisticsScreen_assertThisInitialized(_this), "exportExcel", function () {
+      try {
+        var tables = document.getElementsByTagName('table');
+        var workSheets = Array.from(tables).map(function (item) {
+          return external_xlsx_["utils"].table_to_sheet(item);
+        });
+        var jsonData = workSheets.map(function (item) {
+          return external_xlsx_["utils"].sheet_to_json(item, {
+            header: 1
+          });
+        });
+        var result = [];
+        result.concat(jsonData[0]);
+        jsonData.forEach(function (item) {
+          result = result.concat(item).concat(['']);
+        });
+        var worksheet = external_xlsx_["utils"].json_to_sheet(result, {
+          skipHeader: true
+        });
+        var workbook = external_xlsx_["utils"].book_new();
+        external_xlsx_["utils"].book_append_sheet(workbook, worksheet, 'timmay.vn');
+        var file = Object(external_xlsx_["writeFile"])(workbook, 'statistic-timmay.xlsx');
+        external_file_saver_["saveAs"](file, 'statistic-timmay.xlsx');
+      } catch (error) {//
+      }
+    });
+
+    return _this;
+  }
+
+  AdminStatisticsScreen_createClass(AdminStatistics, [{
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var translate = this.props.t;
+      var dateFormat = 'DD/MM/YYYY';
+      var daysOfWeekData = {};
+      this.state.data.daysOfWeek.forEach(function (item) {
+        daysOfWeekData[item._id] = item.totalNews ? item.totalNews : 0;
+      });
+      var daysOfWeekColumns = [{
+        title: translate('admin-statistics:day'),
+        dataIndex: 'totalNews',
+        key: 'totalNews',
+        render: function render() {
+          return translate('admin-statistics:totalNews');
+        }
+      }, {
+        title: translate('admin-statistics:monday'),
+        dataIndex: '2',
+        key: '2',
+        render: function render(_text, record) {
+          return record['2'] ? record['2'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:tuesday'),
+        dataIndex: '3',
+        key: '3',
+        render: function render(_text, record) {
+          return record['3'] ? record['3'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:wednesday'),
+        dataIndex: '4',
+        key: '4',
+        render: function render(_text, record) {
+          return record['4'] ? record['4'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:thursday'),
+        dataIndex: '5',
+        key: '5',
+        render: function render(_text, record) {
+          return record['5'] ? record['5'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:friday'),
+        dataIndex: '6',
+        key: '6',
+        render: function render(_text, record) {
+          return record['6'] ? record['6'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:saturday'),
+        dataIndex: '7',
+        key: '7',
+        render: function render(_text, record) {
+          return record['7'] ? record['7'] : 0;
+        }
+      }, {
+        title: translate('admin-statistics:sunday'),
+        dataIndex: '1',
+        key: '1',
+        render: function render(_text, record) {
+          return record['1'] ? record['1'] : 0;
+        }
+      }];
+      var hoursOfDayColumns = [{
+        title: translate('admin-statistics:hour'),
+        dataIndex: 'totalNews',
+        key: 'totalNews',
+        render: function render() {
+          return translate('admin-statistics:totalNews');
+        }
+      }, {
+        title: "0 - 2",
+        dataIndex: '0',
+        key: '0',
+        render: function render(_text, record) {
+          return record['0'] ? record['0'] : 0;
+        }
+      }, {
+        title: "2 - 4",
+        dataIndex: '2',
+        key: '2',
+        render: function render(_text, record) {
+          return record['2'] ? record['2'] : 0;
+        }
+      }, {
+        title: "4 - 6",
+        dataIndex: '4',
+        key: '4',
+        render: function render(_text, record) {
+          return record['4'] ? record['4'] : 0;
+        }
+      }, {
+        title: "6 - 8",
+        dataIndex: '6',
+        key: '6',
+        render: function render(_text, record) {
+          return record['6'] ? record['6'] : 0;
+        }
+      }, {
+        title: "8 - 10",
+        dataIndex: '8',
+        key: '8',
+        render: function render(_text, record) {
+          return record['8'] ? record['8'] : 0;
+        }
+      }, {
+        title: "10 - 12",
+        dataIndex: '10',
+        key: '10',
+        render: function render(_text, record) {
+          return record['10'] ? record['10'] : 0;
+        }
+      }, {
+        title: "12 - 14",
+        dataIndex: '12',
+        key: '12',
+        render: function render(_text, record) {
+          return record['12'] ? record['12'] : 0;
+        }
+      }, {
+        title: "14 - 16",
+        dataIndex: '14',
+        key: '14',
+        render: function render(_text, record) {
+          return record['14'] ? record['14'] : 0;
+        }
+      }, {
+        title: "16 - 18",
+        dataIndex: '16',
+        key: '16',
+        render: function render(_text, record) {
+          return record['16'] ? record['16'] : 0;
+        }
+      }, {
+        title: "18 - 20",
+        dataIndex: '18',
+        key: '18',
+        render: function render(_text, record) {
+          return record['18'] ? record['18'] : 0;
+        }
+      }, {
+        title: "20 - 22",
+        dataIndex: '20',
+        key: '20',
+        render: function render(_text, record) {
+          return record['20'] ? record['20'] : 0;
+        }
+      }, {
+        title: "22 - 24",
+        dataIndex: '22',
+        key: '22',
+        render: function render(_text, record) {
+          return record['22'] ? record['22'] : 0;
+        }
+      }];
+      var hoursOfDayData = {};
+      this.state.data.hoursOfDay.forEach(function (hour) {
+        if (Number(hour._id) % 2 === 0) {
+          hoursOfDayData[Number(hour._id)] = Number(hour.totalNews);
+        } else {
+          hoursOfDayData[Number(hour._id) - 1] ? hoursOfDayData[Number(hour._id) - 1] += Number(hour.totalNews) : hoursOfDayData[Number(hour._id) - 1] = Number(hour.totalNews);
+        }
+      });
+      var brandsColumns = [{
+        title: translate('admin-statistics:brand'),
+        dataIndex: 'name',
+        key: 'name',
+        sorter: function sorter(a, b) {
+          return a.name - b.name;
+        }
+      }, {
+        title: translate('admin-statistics:totalNews'),
+        dataIndex: 'totalNews',
+        key: 'totalNews',
+        sorter: function sorter(a, b) {
+          return a.totalNews - b.totalNews;
+        }
+      }];
+      var categoriesColumns = [{
+        title: translate('admin-statistics:category'),
+        dataIndex: 'name',
+        key: 'name',
+        sorter: function sorter(a, b) {
+          return a.name - b.name;
+        }
+      }, {
+        title: translate('admin-statistics:totalNews'),
+        dataIndex: 'totalNews',
+        key: 'totalNews',
+        sorter: function sorter(a, b) {
+          return a.totalNews - b.totalNews;
+        }
+      }];
+      var locationsColumns = [{
+        title: translate('admin-statistics:location'),
+        dataIndex: 'name',
+        key: 'name',
+        sorter: function sorter(a, b) {
+          return a.name - b.name;
+        }
+      }, {
+        title: translate('admin-statistics:totalNews'),
+        dataIndex: 'totalNews',
+        key: 'totalNews',
+        sorter: function sorter(a, b) {
+          return a.totalNews - b.totalNews;
+        }
+      }];
+      return external_react_default.a.createElement("div", {
+        className: "admin-statistics-screen"
+      }, external_react_default.a.createElement(row_default.a, {
+        style: {
+          marginBottom: '24px'
+        }
+      }, external_react_default.a.createElement(col_default.a, {
+        xs: 24
+      }, external_react_default.a.createElement("div", {
+        className: "date-picker-container"
+      }, external_react_default.a.createElement(date_picker_default.a.RangePicker, {
+        placeholder: [translate('admin-statistics:startDate'), translate('admin-statistics:endDate')],
+        format: dateFormat,
+        onCalendarChange: function onCalendarChange(dates) {
+          return _this2.getStatisticsInfo(dates);
+        }
+      }), external_react_default.a.createElement(button_default.a, {
+        htmlType: "submit",
+        type: "primary",
+        icon: "download",
+        onClick: this.exportExcel
+      }, translate('admin-statistics:exportToExcel'))))), external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: daysOfWeekColumns,
+        dataSource: this.state.data.daysOfWeek.length > 0 ? [daysOfWeekData] : [],
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        },
+        loading: this.state.loading
+      }), external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: hoursOfDayColumns,
+        dataSource: this.state.data.hoursOfDay.length > 0 ? [hoursOfDayData] : [],
+        pagination: false,
+        scroll: {
+          x: 1000
+        },
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        },
+        loading: this.state.loading
+      }), external_react_default.a.createElement(row_default.a, {
+        type: "flex",
+        gutter: 24
+      }, external_react_default.a.createElement(col_default.a, {
+        xs: 24,
+        lg: 8
+      }, external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: brandsColumns,
+        dataSource: this.state.showAll.brands ? this.state.data.brands.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }) : this.state.data.brands.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }).slice(0, 15),
+        pagination: false,
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        },
+        loading: this.state.loading,
+        footer: function footer() {
+          return _this2.state.data.brands.length > 15 && !_this2.state.showAll.brands ? external_react_default.a.createElement("a", {
+            onClick: function onClick() {
+              return _this2.showAll('brands');
+            }
+          }, translate('admin-statistics:showAll')) : null;
+        }
+      })), external_react_default.a.createElement(col_default.a, {
+        xs: 24,
+        lg: 8
+      }, external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: categoriesColumns,
+        dataSource: this.state.showAll.categories ? this.state.data.categories.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }) : this.state.data.categories.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }).slice(0, 15),
+        pagination: false,
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        },
+        loading: this.state.loading,
+        footer: function footer() {
+          return _this2.state.data.categories.length > 15 && !_this2.state.showAll.categories ? external_react_default.a.createElement("a", {
+            onClick: function onClick() {
+              return _this2.showAll('categories');
+            }
+          }, translate('admin-statistics:showAll')) : null;
+        }
+      })), external_react_default.a.createElement(col_default.a, {
+        xs: 24,
+        lg: 8
+      }, external_react_default.a.createElement(table_default.a, {
+        bordered: true,
+        columns: locationsColumns,
+        dataSource: this.state.showAll.provinces ? this.state.data.provinces.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }) : this.state.data.provinces.sort(function (a, b) {
+          return b.totalNews - a.totalNews;
+        }).slice(0, 15),
+        pagination: false,
+        style: {
+          marginBottom: '24px'
+        },
+        rowKey: function rowKey(record) {
+          return record._id;
+        },
+        loading: this.state.loading,
+        footer: function footer() {
+          return _this2.state.data.provinces.length > 15 && !_this2.state.showAll.provinces ? external_react_default.a.createElement("a", {
+            onClick: function onClick() {
+              return _this2.showAll('provinces');
+            }
+          }, translate('admin-statistics:showAll')) : null;
+        }
+      }))));
+    }
+  }]);
+
+  return AdminStatistics;
+}(external_react_default.a.Component);
+
+var AdminStatisticsScreen_mapState = function mapState(rootState) {
+  return {
+    profileState: rootState.profileModel
+  };
+};
+
+var AdminStatisticsScreen_mapDispatch = function mapDispatch(_rootReducer) {
+  return {};
+};
+
+var AdminStatisticsScreen_AdminStatisticsScreen = Object(components["b" /* Authorize */])(Object(store["withRematch"])(store["initStore"], AdminStatisticsScreen_mapState, AdminStatisticsScreen_mapDispatch)(Object(i18n["d" /* withNamespaces */])('admin-statistics')(AdminStatisticsScreen_AdminStatistics)), [], true, 'admin');
+
+// CONCATENATED MODULE: ./modules/admin/index.ts
+/* concated harmony reexport AdminReportsScreen */__webpack_require__.d(__webpack_exports__, "g", function() { return AdminReportsScreen_AdminReportsScreen; });
+/* concated harmony reexport AdminBrandsScreen */__webpack_require__.d(__webpack_exports__, "b", function() { return AdminBrandsScreen_AdminBrandsScreen; });
+/* concated harmony reexport AdminCategoriesScreen */__webpack_require__.d(__webpack_exports__, "c", function() { return AdminCategoriesScreen_AdminCategoriesScreen; });
+/* concated harmony reexport AdminModelsScreen */__webpack_require__.d(__webpack_exports__, "e", function() { return AdminModelsScreen_AdminModelsScreen; });
+/* concated harmony reexport AdminWeightRangesScreen */__webpack_require__.d(__webpack_exports__, "k", function() { return AdminWeightRangesScreen_AdminWeightRangesScreen; });
+/* concated harmony reexport AdminRentalPeriodsScreen */__webpack_require__.d(__webpack_exports__, "f", function() { return AdminRentalPeriodsScreen_AdminRentalPeriodsScreen; });
+/* concated harmony reexport AdminFeatureBrandsScreen */__webpack_require__.d(__webpack_exports__, "d", function() { return AdminFeatureBrandsScreen_AdminFeatureBrandsScreen; });
+/* concated harmony reexport AdminAdsenseScreen */__webpack_require__.d(__webpack_exports__, "a", function() { return AdminAdsenseScreen_AdminAdsenseScreen; });
+/* concated harmony reexport AdminUploadExcelScreen */__webpack_require__.d(__webpack_exports__, "i", function() { return AdminUploadExcelScreen_AdminUploadExcelScreen; });
+/* concated harmony reexport AdminUsersScreen */__webpack_require__.d(__webpack_exports__, "j", function() { return AdminUsersScreen_AdminUsersScreen; });
+/* concated harmony reexport AdminStatisticsScreen */__webpack_require__.d(__webpack_exports__, "h", function() { return AdminStatisticsScreen_AdminStatisticsScreen; });
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/checkbox/style");
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 126 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/skeleton/style");
+
+/***/ }),
+/* 140 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports) {
+
+module.exports = require("antd/lib/date-picker/style");
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(205);
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _modules_admin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(123);
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(10);
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+var AdminBrands =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(AdminBrands, _React$Component);
+
+  function AdminBrands() {
+    _classCallCheck(this, AdminBrands);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(AdminBrands).apply(this, arguments));
+  }
+
+  _createClass(AdminBrands, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_modules_admin__WEBPACK_IMPORTED_MODULE_2__[/* AdminBrandsScreen */ "b"], null));
+    }
+  }], [{
+    key: "getInitialProps",
+    value: function () {
+      var _getInitialProps = _asyncToGenerator(
+      /*#__PURE__*/
+      _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(_context) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                return _context2.abrupt("return", {
+                  namespacesRequired: ['common', 'admin-brands']
+                });
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      function getInitialProps(_x) {
+        return _getInitialProps.apply(this, arguments);
+      }
+
+      return getInitialProps;
+    }()
+  }]);
+
+  return AdminBrands;
+}(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_i18n__WEBPACK_IMPORTED_MODULE_3__[/* withNamespaces */ "d"])('admin-brands')(AdminBrands));
+
+/***/ })
+/******/ ]);

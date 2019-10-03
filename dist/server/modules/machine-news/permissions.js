@@ -1,0 +1,40 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PERMISSIONS = void 0;
+var PERMISSIONS = Object.freeze({
+  NEWS: {
+    VIEW: 'NEWS.VIEW',
+    CREATE: 'NEWS.CREATE',
+    EDIT: 'NEWS.EDIT',
+    DELETE: 'NEWS.DELETE',
+    VIEW_PENDING: 'NEWS.VIEW_PENDING',
+    CREATE_PENDING: 'NEWS.CREATE_PENDING',
+    EDIT_PENDING: 'NEWS.EDIT_PENDING',
+    DELETE_PENDING: 'NEWS.DELETE_PENDING',
+    VIEW_PUBLIC: 'NEWS.VIEW_PUBLIC',
+    CREATE_PUBLIC: 'NEWS.CREATE_PUBLIC',
+    EDIT_PUBLIC: 'NEWS.EDIT_PUBLIC',
+    DELETE_PUBLIC: 'NEWS.DELETE_PUBLIC'
+  },
+  USERS: {
+    FOLLOW: 'USER.FOLLOW',
+    UNFOLLOW: 'USER.UNFOLLOW'
+  },
+  SHOPS: {
+    VIEW: 'SHOPS.VIEW',
+    CREATE: 'SHOPS.CREATE',
+    EDIT: 'SHOPS.EDIT',
+    DELETE: 'SHOPS.DELETE'
+  },
+  REPORTS: {
+    VIEW: 'REPORTS.REPORTS',
+    CREATE: 'REPORTS.CREATE',
+    EDIT: 'REPORTS.EDIT',
+    DELETE: 'REPORTS.DELETE'
+  }
+});
+exports.PERMISSIONS = PERMISSIONS;
+//# sourceMappingURL=permissions.js.map

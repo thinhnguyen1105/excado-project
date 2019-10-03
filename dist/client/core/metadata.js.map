@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/client/core/metadata.ts"],"names":["metadata"],"mappings":";;;;;;AAAO,IAAMA,QAAQ,GAAG,EAAjB","sourcesContent":["export const metadata = {\n\n};\n"],"file":"metadata.js"}

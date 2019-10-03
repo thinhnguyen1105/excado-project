@@ -1,0 +1,14 @@
+{
+  "resolve-report-success": "Xử lý thành công",
+  "skip": "Bỏ qua",
+  "delete": "Xóa bài đăng",
+  "news-title": "Tiêu đề",
+  "report-reasons": "Lý do",
+  "report-state": "Trạng thái",
+  "pending-report": "Chờ xử lý",
+  "resolved-report": "Đã xử lý",
+  "resolved-result": "Kết quả",
+  "resolved-at": "Thời gian xử lý",
+  "search-reports": "Tìm báo cáo vi phạm",
+  "reports": "Báo cáo vi phạm"
+}

@@ -1,0 +1,4 @@
+import 'firebase/auth';
+import './CreateShopScreen.less';
+declare const _default: any;
+export default _default;

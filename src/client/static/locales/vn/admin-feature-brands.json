@@ -1,0 +1,20 @@
+{
+  "brand-name": "Hãng",
+  "order": "Thứ tự",
+  "logo-image": "Logo",
+  "search-brands": "Tìm kiếm tên hãng",
+  "pleaseSelectBrand": "Vui lòng chọn hãng",
+  "pleaseInputHyperlink": "Vui lòng nhập đường dẫn",
+  "pleaseUploadBrandLogo": "Vui lòng upload logo",
+  "pleaseSelectOrder": "Vui lòng chọn số thứ tự",
+  "edit-feature-brand": "Chỉnh sửa",
+  "select-brand": "Chọn hãng",
+  "hyperlink": "Đường dẫn",
+  "brand-logo": "Logo",
+  "upload-brand-logo": "Upload logo của hãng",
+  "create-feature-brand": "Thêm hãng",
+  "allow-image-type": "Ảnh chỉ nhận các định dạng PNG, JPG, JPEG",
+  "update-success": "Cập nhật thành công",
+  "create-success": "Tạo thành công",
+  "": ""
+}

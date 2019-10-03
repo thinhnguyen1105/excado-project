@@ -1,0 +1,23 @@
+{
+  "create-success": "Tạo hãng thành công",
+  "edit": "Chỉnh sửa",
+  "brand-name": "Tên hãng",
+  "created-at": "Thời điểm tạo",
+  "logo-image": "Logo",
+  "update-success": "Cập nhật thành công",
+  "pleaseInputBrandName": "Vui lòng nhập tên hãng",
+  "pleaseUploadBrandLogo": "Vui lòng upload Logo hãng",
+  "edit-brand": "Chỉnh sửa thông tin hãng",
+  "create-brand": "Thêm hãng mới",
+  "brand-logo": "Logo",
+  "upload-brand-logo": "Upload logo của hãng",
+  "brand-already-exist": "Hãng đã tồn tại",
+  "brandNameTooLong": "Tên hãng quá dài",
+  "allow-image-type": "Ảnh chỉ nhận các định dạng PNG, JPG, JPEG",
+  "search-brands": "Tìm kiếm theo tên hãng",
+  "areYouSureToDelete": "Bạn chắc chắn muốn xóa hãng này?",
+  "yes": "Có",
+  "no": "Không",
+  "brandHaveNews": "Không thể xóa hãng này vì có bài đăng liên quan",
+  "deleteBrandSuccess": "Xóa hãng thành công"
+}

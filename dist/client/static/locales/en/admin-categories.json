@@ -1,0 +1,13 @@
+{
+  "update-success": "Update category successful!",
+  "create-success": "Add category successful!",
+  "category-name": "Category",
+  "category-image": "Feature image",
+  "search-categories": "Find category",
+  "pleaseInputCategoryName": "Please input category name",
+  "pleaseUploadCategoryImage": "Please upload feature image",
+  "edit-category": "Edit",
+  "create-category": "Add new category",
+  "upload-category-image": "Upload feature image",
+  "": ""
+}

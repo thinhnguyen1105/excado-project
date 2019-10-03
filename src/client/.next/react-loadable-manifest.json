@@ -1,0 +1,644 @@
+{
+  "undefined": [
+    {
+      "id": 4,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 6,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 7,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 8,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 9,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 10,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 11,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 12,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 13,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 14,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 15,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 16,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 17,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 18,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 19,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 20,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 21,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 22,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 23,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 24,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 25,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 26,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 27,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 5,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 28,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 29,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 30,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 31,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 32,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 33,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 34,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 35,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 36,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 37,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 38,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 39,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 40,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 41,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 42,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 43,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 44,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 45,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 46,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 48,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 49,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 50,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 51,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 52,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "../../style/index.less": [
+    {
+      "id": "../../node_modules/antd/lib/style/index.less",
+      "name": "../../node_modules/antd/lib/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./index.less": [
+    {
+      "id": "../../node_modules/antd/lib/input/style/index.less",
+      "name": "../../node_modules/antd/lib/input/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/menu/style/index.less",
+      "name": "../../node_modules/antd/lib/menu/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/spin/style/index.less",
+      "name": "../../node_modules/antd/lib/spin/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/select/style/index.less",
+      "name": "../../node_modules/antd/lib/select/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/list/style/index.less",
+      "name": "../../node_modules/antd/lib/list/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/button/style/index.less",
+      "name": "../../node_modules/antd/lib/button/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/pagination/style/index.less",
+      "name": "../../node_modules/antd/lib/pagination/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/empty/style/index.less",
+      "name": "../../node_modules/antd/lib/empty/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/tooltip/style/index.less",
+      "name": "../../node_modules/antd/lib/tooltip/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/message/style/index.less",
+      "name": "../../node_modules/antd/lib/message/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/layout/style/index.less",
+      "name": "../../node_modules/antd/lib/layout/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/modal/style/index.less",
+      "name": "../../node_modules/antd/lib/modal/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/grid/style/index.less",
+      "name": "../../node_modules/antd/lib/grid/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/tabs/style/index.less",
+      "name": "../../node_modules/antd/lib/tabs/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/avatar/style/index.less",
+      "name": "../../node_modules/antd/lib/avatar/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/tag/style/index.less",
+      "name": "../../node_modules/antd/lib/tag/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/divider/style/index.less",
+      "name": "../../node_modules/antd/lib/divider/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/dropdown/style/index.less",
+      "name": "../../node_modules/antd/lib/dropdown/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/form/style/index.less",
+      "name": "../../node_modules/antd/lib/form/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/badge/style/index.less",
+      "name": "../../node_modules/antd/lib/badge/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": "../../node_modules/antd/lib/icon/style/index.less",
+      "name": "../../node_modules/antd/lib/icon/style/index.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./NotificationDropdown.less": [
+    {
+      "id": "./components/CommonLayout/NotificationDropdown.less",
+      "name": "./components/CommonLayout/NotificationDropdown.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./LeftSideBar.less": [
+    {
+      "id": "./components/CommonLayout/LeftSideBar.less",
+      "name": "./components/CommonLayout/LeftSideBar.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./MainContent.less": [
+    {
+      "id": "./components/CommonLayout/MainContent.less",
+      "name": "./components/CommonLayout/MainContent.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./BrandList.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/components/BrandList.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/components/BrandList.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./LoginModal.less": [
+    {
+      "id": "./components/CommonLayout/LoginModal.less",
+      "name": "./components/CommonLayout/LoginModal.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./CurrentTime.less": [
+    {
+      "id": "./components/CommonLayout/CurrentTime.less",
+      "name": "./components/CommonLayout/CurrentTime.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./DropdownMenu.less": [
+    {
+      "id": "./components/CommonLayout/DropdownMenu.less",
+      "name": "./components/CommonLayout/DropdownMenu.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./MapWithSearchBox.less": [
+    {
+      "id": "./components/MapWithSearchBox/MapWithSearchBox.less",
+      "name": "./components/MapWithSearchBox/MapWithSearchBox.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./ForgotPasswordModal.less": [
+    {
+      "id": "./components/CommonLayout/ForgotPasswordModal.less",
+      "name": "./components/CommonLayout/ForgotPasswordModal.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./MachineDetailBox.less": [
+    {
+      "id": "./components/MachineDetailBox/MachineDetailBox.less",
+      "name": "./components/MachineDetailBox/MachineDetailBox.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./AdminSidebar.less": [
+    {
+      "id": "./components/AdminLayout/AdminSidebar.less",
+      "name": "./components/AdminLayout/AdminSidebar.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./RegisterModal.less": [
+    {
+      "id": "./components/CommonLayout/RegisterModal.less",
+      "name": "./components/CommonLayout/RegisterModal.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Authorize.less": [
+    {
+      "id": "./components/AdminLayout/Authorize.less",
+      "name": "./components/AdminLayout/Authorize.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./AuthLayout.less": [
+    {
+      "id": "./layouts/Auth/AuthLayout.less",
+      "name": "./layouts/Auth/AuthLayout.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Footer.less": [
+    {
+      "id": "./components/CommonLayout/Footer.less",
+      "name": "./components/CommonLayout/Footer.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./AdminLayout.less": [
+    {
+      "id": "./layouts/Admin/AdminLayout.less",
+      "name": "./layouts/Admin/AdminLayout.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./SideBar.less": [
+    {
+      "id": "./layouts/Admin/components/SideBar.less",
+      "name": "./layouts/Admin/components/SideBar.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Container.less": [
+    {
+      "id": "./components/CommonLayout/Container.less",
+      "name": "./components/CommonLayout/Container.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./CollapsedButton.less": [
+    {
+      "id": "./layouts/Admin/components/CollapsedButton.less",
+      "name": "./layouts/Admin/components/CollapsedButton.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./HeaderDropdown.less": [
+    {
+      "id": "./layouts/Admin/components/HeaderDropdown.less",
+      "name": "./layouts/Admin/components/HeaderDropdown.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./DetailsHomePage.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/components/DetailsHomePage.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/components/DetailsHomePage.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./CityList.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/components/CityList.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/components/CityList.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./MachineList.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/components/MachineList.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/components/MachineList.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./CommonKeywords.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/components/CommonKeywords.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/components/CommonKeywords.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./HomePageScreen.less": [
+    {
+      "id": "./modules/machine-news/screens/HomePageScreen/HomePageScreen.less",
+      "name": "./modules/machine-news/screens/HomePageScreen/HomePageScreen.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Header.less": [
+    {
+      "id": "./components/CommonLayout/Header.less",
+      "name": "./components/CommonLayout/Header.less",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./noop": [
+    {
+      "id": "../../node_modules/next/dist/client/noop.js",
+      "name": "../../node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ]
+}

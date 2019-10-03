@@ -1,0 +1,14 @@
+{
+  "create-success": "Create brand successful!",
+  "edit": "Edit",
+  "brand-name": "Brand name",
+  "created-at": "Created at",
+  "logo-image": "Logo",
+  "update-success": "Update successful!",
+  "pleaseInputBrandName": "Please input brand name",
+  "pleaseUploadBrandLogo": "Please upload brand logo",
+  "edit-brand": "Edit brand infomation",
+  "create-brand": "Add new brand",
+  "brand-logo": "Logo",
+  "search-brands": "Search brands"
+}

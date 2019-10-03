@@ -1,0 +1,22 @@
+{
+  "update-success": "Update category successful!",
+  "create-success": "Add category successful!",
+  "category-name": "Category",
+  "category-image": "Feature image",
+  "search-categories": "Find category",
+  "pleaseInputCategoryName": "Please input category name",
+  "pleaseUploadCategoryImage": "Please upload feature image",
+  "edit-category": "Edit",
+  "create-category": "Add new category",
+  "upload-category-image": "Upload feature image",
+  "categoryNameIsTooLong": "Category name is too long",
+  "category-already-exist": "Category aleady exist",
+  "allow-image-type": "Only PNG, JPG, JPEG file are allowed",
+  "edit": "Edit",
+  "areYouSureToDelete": "Are you sure delete this category?",
+  "yes": "Yes",
+  "no": "No",
+  "categoryHaveNews": "This category is not deletable because there are news related to it",
+  "deleteCategorySuccess": "Delete category success",
+  "": ""
+}

@@ -1,0 +1,11 @@
+{
+  "accept": "Accept",
+  "reject": "Reject",
+  "approveSuccess": "Approve news success",
+  "rejectSuccess": "Reject news success",
+  "newsTitle": "Title",
+  "newsType": "News type",
+  "category": "Category",
+  "searchNews": "Search news by title",
+  "": ""
+}

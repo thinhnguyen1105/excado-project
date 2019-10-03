@@ -1,0 +1,68 @@
+.auth-container {
+  width: 100%;
+  min-width: 400px;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  background: url(/static/images/auth-background.jpg) no-repeat center center;
+  background-size: cover;
+
+  .form-wrapper {
+    width: 500px;
+    min-width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 10;
+    position: relative;
+    flex-direction: column;
+    padding: 70px 50px;
+    position: relative;
+    background-color: #ffffff;
+
+    .logo {
+      width: 100%;
+      display: flex;
+      margin-bottom: 50px;
+      justify-content: center;
+      flex-shrink: 0;
+
+      span {
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 1;
+        color: #788195;
+      }
+    }
+
+    .oauth-container {
+      .firebaseui-container {
+        max-width: none;
+
+        .firebaseui-card-content {
+          padding: 0px;
+
+          button {
+            max-width: none;
+          }
+        }
+      }
+    }
+
+    .links-wrapper {
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .forgot {
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #797979;
+      }
+    }
+  }
+}

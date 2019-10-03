@@ -1,0 +1,3464 @@
+tags:
+- name: news
+  description: News operations
+- name: brand
+  description: Brand operations
+- name: category
+  description: Category operations
+- name: model
+  description: Model operations
+- name: province
+  description: Province operations
+- name: search
+  description: Search operations
+- name: follow
+  description: Follow operations
+- name: shop
+  description: Shop operations
+- name: search-news-most-follow
+  description: Most Follow operations
+- name: report
+  description: Report operations
+- name: notification
+  description: Notification operations
+- name: recentViewed
+  description: Recent viewed item operations
+- name: commonKeywords
+  description: Common search keywords by users
+- name: weightRanges
+  description: Weight ranges
+- name: rentalPeriods
+  description: Rental periods
+- name: featureBrands
+  description: Feature brand
+- name: adsense
+  description: Feature brand
+paths:
+  /adsense/{adsenseId}:
+    patch:
+      tags:
+      - adsense
+      summary: update adsense
+      operationId: updateAdsense
+      parameters:
+      - name: adsenseId
+        in: path
+        description: adsenseId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateAdsensePayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+  /adsense:
+    post:
+      tags:
+      - adsense
+      summary: Create adsense
+      operationId: createAdsense
+      requestBody:
+        $ref: '#/components/requestBodies/CreateAdsensePayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adsense'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Adsense'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+    get:
+      tags:
+      - adsense
+      summary: Get adsense
+      operationId: getAdsense
+      parameters:
+      - name: first
+        in: query
+        description: limit size
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: order by
+        required: true
+        schema:
+          type: string 
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: any 
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: any
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAdsenseResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /feature-brands/{featureBrandId}:
+    patch:
+      tags:
+      - featureBrands
+      summary: update feature brand
+      operationId: updateFeatureBrand
+      parameters:
+      - name: featureBrandId
+        in: path
+        description: featureBrandId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateFeatureBrandPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+  /feature-brands:
+    get:
+      tags:
+      - featureBrands
+      summary: Get feature brands
+      operationId: getFeatureBrands
+      parameters:
+      - name: first
+        in: query
+        description: limit size
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: order by
+        required: true
+        schema:
+          type: string 
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: any 
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: any
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFeatureBrandsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - featureBrands
+      summary: Create feature brand for ads
+      operationId: createFeatureBrand
+      requestBody:
+        $ref: '#/components/requestBodies/CreateFeatureBrandPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureBrand'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeatureBrand'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+  /rental-periods/{rentalPeriodId}:
+    patch:
+      tags:
+      - rentalPeriods
+      summary: Update rental period
+      operationId: updateRentalPeriod
+      parameters:
+      - name: rentalPeriodId
+        in: path
+        description: rental period id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateRentalPeriodPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []  
+  /rental-periods:
+    post:
+      tags:
+      - rentalPeriods
+      summary: Create rental period item
+      operationId: createRentalPeriod
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRentalPeriodPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RentalPeriod'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RentalPeriod'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+  /rental-periods/customs/get-all:
+    get:
+      tags:
+      - rentalPeriods
+      summary: Get rental periods
+      operationId: getAllRentalPeriods
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllRentalPeriodsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /weight-ranges/{weightRangeId}:
+    patch:
+      tags:
+      - weightRanges
+      summary: Update weight range
+      operationId: updateWeightRange
+      parameters:
+      - name: weightRangeId
+        in: path
+        description: weight range Id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateWeightRangePayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []  
+  /weight-ranges:
+    post:
+      tags:
+      - weightRanges
+      summary: Create weight range item
+      operationId: createWeightRange
+      requestBody:
+        $ref: '#/components/requestBodies/CreateWeightRangePayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeightRange'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WeightRange'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+  /weight-ranges/customs/get-all:
+    get:
+      tags:
+      - weightRanges
+      summary: Get weight ranges
+      operationId: getAllWeightRanges
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAllWeightRangesResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /common-keywords:
+    get:
+      tags:
+      - commonKeywords
+      summary: Get common search keywords
+      operationId: getCommonKeywords
+      parameters:
+      - name: first
+        in: query
+        description: limit size
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: order by
+        required: true
+        schema:
+          type: string 
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: any 
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: any
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCommonKeywordsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /recent-viewed:
+    post:
+      tags:
+      - recentViewed
+      summary: Create recent viewed item
+      operationId: createRecentViewed
+      requestBody:
+        $ref: '#/components/requestBodies/CreateRecentViewedPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecentViewedItem'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecentViewedItem'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+    get:
+      tags:
+      - recentViewed
+      summary: Get recent viewed items by users or uuid key
+      operationId: getRecentViewed
+      parameters:
+      - name: first
+        in: query
+        description: limit size
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: order by
+        required: true
+        schema:
+          type: string 
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: any 
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: any
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRecentViewedResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /search-news-most-follow:
+    get:
+      tags:
+      - search-news-most-follow
+      summary: Search news most follow
+      operationId: searchNewsMostFollow
+      parameters:
+      - name: shopId
+        in: query
+        description: shop Id
+        required: false
+        schema:
+          type: number
+      - name: first
+        in: query
+        description: limit size
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: order by
+        required: true
+        schema:
+          type: string 
+      - name: otherSortBy
+        in: query
+        description: other order by
+        required: true
+        schema:
+          type: string 
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: any 
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: any
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchNewsMostFollowResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /notifications/{ownerId}:
+    get:
+      tags:
+      - notification
+      summary: Count unread notification
+      operationId: countUnreadNotifications
+      parameters:
+      - name: ownerId
+        in: path
+        description: owner id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CountUnreadNotificationsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - notification
+      summary: Read notifications
+      operationId: readNotifications
+      parameters:
+      - name: ownerId
+        in: path
+        description: owner id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ReadNotificationPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []  
+  /notifications:
+    get:
+      tags:
+      - notification
+      summary: Find notifications
+      operationId: findNotifications
+      parameters:
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindNotificationsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /reports/{reportId}:
+    patch:
+      tags:
+      - report
+      summary: Update report
+      operationId: updateReport
+      parameters:
+      - name: reportId
+        in: path
+        description: report id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateReportPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []  
+    get:
+      tags:
+      - report
+      summary: Find report by id
+      operationId: findReportById
+      parameters:
+      - name: reportId
+        in: path
+        description: report id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /reports:
+    post:
+      tags:
+      - report
+      summary: Create report
+      operationId: createReport
+      requestBody:
+        $ref: '#/components/requestBodies/CreateReportPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Report'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+    get:
+      tags:
+      - report
+      summary: Find reports
+      operationId: findReports
+      parameters:
+      - name: search
+        in: query
+        description: state filter
+        required: false
+        schema:
+          type: string
+      - name: state
+        in: query
+        description: state filter
+        required: false
+        schema:
+          type: string
+          enum: [PENDING, RESOLVED]
+      - name: reason
+        in: query
+        description: reason filter
+        required: false
+        schema:
+          type: string
+          enum: [WRONG_INFO, SOLD, VIOLATE]
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindReportsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /shop/get-by-owner/{ownerId}:
+    get:
+      tags:
+      - shop
+      summary: Find shop by owner id
+      operationId: findShopByOwner
+      parameters:
+      - name: ownerId
+        in: path
+        description: shop owner id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /shop/get-by-domain/{shopDomain}:
+    get:
+      tags:
+      - shop
+      summary: Find shop by id
+      operationId: findShopByDomain
+      parameters:
+      - name: shopDomain
+        in: path
+        description: shop domain
+        required: true
+        schema:
+          type: string
+      - name: authId
+        in: query
+        description: authUserId
+        required: false
+        schema:
+          type: string  
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /shop/{shopId}:
+    get:
+      tags:
+      - shop
+      summary: Find news by id
+      operationId: findShopById
+      parameters:
+      - name: shopId
+        in: path
+        description: shop id
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - shop
+      summary: Update shop
+      operationId: updateShop
+      parameters:
+      - name: shopId
+        in: path
+        description: shop id
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateShopPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []  
+  /shop:
+    post:
+      tags:
+      - shop
+      summary: Create shops
+      operationId: createShop
+      requestBody:
+        $ref: '#/components/requestBodies/CreateShopPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Shop'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+    get:
+      tags:
+      - shop
+      summary: Find shops
+      operationId: findShops
+      parameters:
+      - name: search
+        in: query
+        description: search query
+        required: false
+        schema:
+          type: string
+      - name: isActive
+        in: query
+        description: isActive filter
+        required: false
+        schema:
+          type: boolean
+      - name: owner
+        in: query
+        description: owner filter
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindShopsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /news/{newsId}:
+    get:
+      tags:
+      - news
+      summary: Find news by id
+      operationId: findNewsById
+      parameters:
+      - name: newsId
+        in: path
+        description: newsId
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindNewsDetail'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - news
+      summary: Update news
+      operationId: updateNews
+      parameters:
+      - name: newsId
+        in: path
+        description: newsId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateNewsPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /news/statistics/info:
+    get:
+      tags:
+      - news
+      summary: Find news statistics for admin
+      operationId: findNewsStatisticsInfo
+      parameters:
+      - name: startDate
+        in: query
+        description: startDate
+        required: true
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        description: endDate
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsStatisticsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /news/get-by-owner/{ownerId}:
+    get:
+      tags:
+      - news
+      summary: Find news by owner
+      operationId: findNewsByOwner
+      parameters:
+      - name: ownerId
+        in: path
+        description: ownerId
+        required: true
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: news status
+        required: true
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindNewsResultWithFollow'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /news:
+    get:
+      tags:
+      - news
+      summary: Find news
+      operationId: findNews
+      parameters:
+      - name: keyword
+        in: query
+        description: search keyword
+        required: false
+        schema:
+          type: string
+      - name: state
+        in: query
+        description: product state (old/new)
+        required: false
+        schema:
+          type: string
+      - name: priceType
+        in: query
+        description: price type (fixed/negociate)
+        required: false
+        schema:
+          type: string
+      - name: minPrice
+        in: query
+        description: min price
+        required: false
+        schema:
+          type: number
+      - name: maxPrice
+        in: query
+        description: max price
+        required: false
+        schema:
+          type: number
+      - name: newsType
+        in: query
+        description: news type (sell/buy/...)
+        required: false
+        schema:
+          type: string
+      - name: owner
+        in: query
+        description: news owner id
+        required: false
+        schema:
+          type: string
+      - name: shop
+        in: query
+        description: shop id
+        required: false
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location (only by city)
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: product type (may ui/may xuc/may dao)
+        required: false
+        schema:
+          type: string
+      - name: brand
+        in: query
+        description: product's brand
+        required: false
+        schema:
+          type: string
+      - name: model
+        in: query
+        description: product model
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindNewsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - news
+      summary: Create news
+      operationId: createNews
+      requestBody:
+        $ref: '#/components/requestBodies/CreateNewsPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/News'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /brands:
+    get:
+      tags:
+      - brand
+      summary: Find brands
+      operationId: findBrands
+      parameters:
+      - name: search
+        in: query
+        description: search query to filter brands
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: search query to filter brands
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: search query to filter brands
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindBrandsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - brand
+      summary: Create brand
+      operationId: createBrand
+      requestBody:
+        $ref: '#/components/requestBodies/CreateBrandPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /brands/customs/find-brand-list:
+    get:
+      tags:
+      - brand
+      summary: Find brands list
+      operationId: findBrandList
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindBrandsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /brands/customs/find-brand-detail/{brandSlug}:
+    get:
+      tags:
+      - brand
+      summary: Find brand detail by slug
+      operationId: findBrandDetail
+      parameters:
+      - name: brandSlug
+        in: path
+        description: brandSlug
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /brands/customs/find-top-brands:
+    get:
+      tags:
+      - brand
+      summary: Find top brands
+      operationId: findTopBrands
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindBrandsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /brands/{brandId}:
+    get:
+      tags:
+      - brand
+      summary: Find brand by id
+      operationId: findBrandById
+      parameters:
+      - name: brandId
+        in: path
+        description: brandId
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Brand'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - brand
+      summary: Update brand
+      operationId: updateBrand
+      parameters:
+      - name: brandId
+        in: path
+        description: brandId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateBrandPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /categories:
+    get:
+      tags:
+      - category
+      summary: Find categories
+      operationId: findCategories
+      parameters:
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindCategoriesResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - category
+      summary: Create category
+      operationId: createCategory
+      requestBody:
+        $ref: '#/components/requestBodies/CreateCategoryPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /categories/customs/find-category-detail/{categorySlug}:
+    get:
+      tags:
+      - category
+      summary: Find category detail by slug
+      operationId: findCategoryDetail
+      parameters:
+      - name: categorySlug
+        in: path
+        description: categorySlug
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /categories/{categoryId}:
+    get:
+      tags:
+      - category
+      summary: Find category by id
+      operationId: findCategoryById
+      parameters:
+      - name: categoryId
+        in: path
+        description: categoryId
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - category
+      summary: Update category
+      operationId: updateCategory
+      parameters:
+      - name: categoryId
+        in: path
+        description: categoryId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateCategoryPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /models:
+    get:
+      tags:
+      - model
+      summary: Find models
+      operationId: findModels
+      parameters:
+      - name: search
+        in: query
+        description: search string
+        required: false
+        schema:
+          type: string
+      - name: brand
+        in: query
+        description: brand
+        required: false
+        schema:
+          type: string
+      - name: category
+        in: query
+        description: category
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: search query to filter brands
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: search query to filter brands
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindModelsResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - model
+      summary: Create model
+      operationId: createModel
+      requestBody:
+        $ref: '#/components/requestBodies/CreateModelPayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /models/{modelId}:
+    get:
+      tags:
+      - model
+      summary: Find model by id
+      operationId: findModelById
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - model
+      summary: Update model
+      operationId: updateModel
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateModelPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /provinces:
+    get:
+      tags:
+      - province
+      summary: Find provinces
+      operationId: findProvinces
+      parameters:
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindProvincesResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    post:
+      tags:
+      - province
+      summary: Create province
+      operationId: createProvince
+      requestBody:
+        $ref: '#/components/requestBodies/CreateProvincePayload'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+        201:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /provinces/{provinceId}:
+    get:
+      tags:
+      - province
+      summary: Find province by id
+      operationId: findProvinceById
+      parameters:
+      - name: provinceId
+        in: path
+        description: provinceId
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Province'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+    patch:
+      tags:
+      - province
+      summary: Update province
+      operationId: updateProvince
+      parameters:
+      - name: province
+        in: path
+        description: provinceId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/UpdateProvincePayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /search:
+    get:
+      tags:
+        - search
+      summary: Search by elasticsearch
+      operationId: searchElasticsearch
+      parameters:
+      - name: keyword
+        in: query
+        description: search keyword
+        required: false
+        schema:
+          type: string
+      - name: state
+        in: query
+        description: product state (old/new)
+        required: false
+        schema:
+          type: string
+      - name: priceType
+        in: query
+        description: price type (fixed/negociate)
+        required: false
+        schema:
+          type: string
+      - name: minPrice
+        in: query
+        description: min price
+        required: false
+        schema:
+          type: number
+      - name: maxPrice
+        in: query
+        description: max price
+        required: false
+        schema:
+          type: number
+      - name: weightRange
+        in: query
+        description: weight range
+        required: false
+        schema:
+          type: string
+      - name: otherNewsType
+        in: query
+        description: news type (sell/buy/...)
+        required: false
+        schema:
+          type: string
+      - name: newsType
+        in: query
+        description: news type (sell/buy/...)
+        required: false
+        schema:
+          type: string
+      - name: categoryId
+        in: query
+        description: categoryID 
+        required: false
+        schema:
+          type: string
+      - name: owner
+        in: query
+        description: news owner id
+        required: false
+        schema:
+          type: string
+      - name: shop
+        in: query
+        description: shop id
+        required: false
+        schema:
+          type: string
+      - name: location
+        in: query
+        description: location (only by city)
+        required: false
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: product type (may ui/may xuc/may dao)
+        required: false
+        schema:
+          type: string
+      - name: brand
+        in: query
+        description: product's brand
+        required: false
+        schema:
+          type: string
+      - name: model
+        in: query
+        description: product model
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: number of records returned
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sort field
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before token
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after token
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ElasticSearchResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /follows/{id}:
+    patch:
+      tags:
+      - follow
+      summary: Follow
+      operationId: follow
+      parameters:
+      - name: id
+        in: path
+        description: newsId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        $ref: '#/components/requestBodies/FollowPayload'
+      responses:
+        200:
+          description: successful operation
+        201:
+          description: successful operation
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+  /follows:
+    get:
+      tags:
+      - follow
+      summary: Find follow by user/news
+      operationId: findFollow
+      parameters:
+      - name: id
+        in: query
+        description: id
+        required: true
+        schema:
+          type: string
+      - name: type
+        in: query
+        description: type
+        required: true
+        schema:
+          type: string
+      - name: newsType
+        in: query
+        description: type
+        required: false
+        schema:
+          type: string
+      - name: first
+        in: query
+        description: first
+        required: true
+        schema:
+          type: number
+      - name: sortBy
+        in: query
+        description: sortBy
+        required: true
+        schema:
+          type: string
+      - name: before
+        in: query
+        description: before
+        required: false
+        schema:
+          type: string
+      - name: after
+        in: query
+        description: after
+        required: false
+        schema:
+          type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FindFollowResult'
+        400:
+          description: bad request
+        401:
+          description: Token is invalid or expired
+        500:
+          description: internal server error
+      security:
+      - Bearer: []
+components:
+  schemas:
+    NewsStatisticsResult:
+      type: object
+      properties:
+        daysOfWeek:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: number
+              totalNews:
+                type: number
+        hoursOfDay:
+          type: array
+          items:
+            type: object
+            properties:
+              _id:
+                type: number
+              totalNews:
+                type: number
+        brands:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        provinces:
+          type: array
+          items:
+            $ref: '#/components/schemas/Province'
+    UpdateAdsensePayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [updateDetail]
+        payload:
+          type: object
+          properties:
+            name:
+              type: string
+            imageUrl:
+              type: string
+            hyperlink:
+              type: string
+            position:
+              type: number
+    CreateAdsensePayload:
+      type: object
+      properties:
+        name:
+          type: string
+        imageUrl:
+          type: string
+        hyperlink:
+          type: string
+        position:
+          type: number
+    GetAdsenseResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Adsense'
+          before:
+            type: string
+          after:
+            type: string
+    Adsense:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        imageUrl:
+          type: string
+        hyperlink:
+          type: string
+        position:
+          type: number
+        createdAt:
+          type: number
+    UpdateFeatureBrandPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [updateDetail]
+        payload:
+          type: object
+          properties:
+            brand:
+              type: string
+            logoImage:
+              type: string
+            hyperlink:
+              type: string
+            order:
+              type: number
+    GetFeatureBrandsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureBrand'
+        before:
+          type: string
+        after:
+          type: string
+    CreateFeatureBrandPayload:
+      type: object
+      properties:
+        brand:
+          type: string
+        logoImage:
+          type: string
+        hyperlink:
+          type: string
+        order:
+          type: number
+    FeatureBrand:
+      type: object
+      properties:
+        _id:
+          type: string
+        brand:
+          type: any
+        logoImage:
+          type: string
+        hyperlink:
+          type: string
+        order:
+          type: number
+        createdAt:
+          type: number
+    CreateRentalPeriodPayload:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+    UpdateRentalPeriodPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [updateDetail]
+        payload:
+          type: object
+          properties:
+            min:
+              type: number
+            max:
+              type: number
+    UpdateWeightRangePayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [updateDetail]
+        payload:
+          type: object
+          properties:
+            min:
+              type: number
+            max:
+              type: number
+    CreateWeightRangePayload:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+    RentalPeriod:
+      type: object
+      properties:
+        _id:
+          type: string
+        min:
+          type: number
+        max:
+          type: number
+        createdAt:
+          type: number
+    GetAllRentalPeriodsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/RentalPeriod'
+    WeightRange:
+      type: object
+      properties:
+        _id:
+          type: string
+        min:
+          type: number
+        max:
+          type: number
+        createdAt:
+          type: number
+    GetAllWeightRangesResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/WeightRange'
+    CommonKeyword:
+      type: object
+      properties:
+        keyword:
+          type: string
+        count:
+          type: number
+        createdAt:
+          type: number
+    GetCommonKeywordsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CommonKeyword'
+        before:
+          type: string
+        after:
+          type: string
+    CreateRecentViewedPayload:
+      type: object
+      properties:
+        news:
+          type: string
+    RecentViewedItem:
+      type: object
+      properties:
+        _id:
+          type: string
+        uuid:
+          type: string
+        user:
+          type: string
+        news:
+          type: object
+          schema:
+            $ref: '#/components/schemas/News'
+        createdAt:
+          type: number
+        lastModifiedAt:
+          type: number
+    GetRecentViewedResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecentViewedItem'
+        before:
+          type: string
+        after:
+          type: string
+    SearchNewsMostFollowResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items: 
+            $ref: '#/components/schemas/SearchNewsMostFollowItemResult'
+        before:
+          type: string
+        after:
+          type: string
+    ReadNotificationPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [readNotification]
+        payload:
+          type: object
+          properties:
+            notificationId:
+              type: string
+    ReadAllNotificationsPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [readAllNotifications]
+    CountUnreadNotificationsResult:
+      type: object
+      properties:
+        unreadNotifications:
+          type: number
+    Notification:
+      type: object
+      properties:
+        _id:
+          type: string
+        owner:
+          type: any
+        news:
+          type: any
+        state:
+          type: string
+          enum: [READ, UNREAD]
+        type:
+          type: string
+          enum: [FOLLOW_USER, FOLLOW_SHOP, CREATE_NEWS]
+        createdAt:
+          type: number
+    FindNotificationsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Notification'
+        before:
+          type: string
+        after:
+          type: string
+    SearchNewsMostFollowItemResult:
+      type: Object
+      properties:
+        _id:
+          type: string
+        imageUrls:
+          type: array
+          items:
+            type: string
+        isDeleted:
+          type: boolean
+        lastModifiedAt:
+          type: number 
+        isFollowing:
+          type: boolean
+        title:
+          type: string
+        state: 
+          type: string
+        newsType:
+          type: string
+        counterFollow:
+          type: number
+        counterView:
+          type: number
+    FindReportsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Report'
+        before:
+          type: string
+        after:
+          type: string
+    UpdateReportPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [resolveReport]
+        payload:
+          type: object
+          properties:
+            resolvedResult:
+              type: string
+              enum: [SKIP, DELETE]
+    Report:
+      type: object
+      properties:
+        _id:
+          type: stri
+        news:
+          type: any
+        reports:
+          type: array
+          items:
+            type: object
+            properties:
+              reason:
+                type: string
+                enum: [WRONG_INFO, SOLD, VIOLATE]
+              description:
+                type: string
+                example: The news has ben sold but the owner did update it
+              email:
+                type: string
+                example: tienloi123123@gmail.com
+              phoneNo:
+                type: string
+                example: +84123123123
+              createdAt:
+                type: number
+        state:
+          type: string
+          enum: [PENDING, RESOLVED]
+        resolvedResult:
+          type: string
+          enum: [SKIP, DELETE]
+        resolvedBy:
+          type: any
+        resolvedAt:
+          type: number
+    CreateReportPayload:
+      type: object
+      properties:
+        news:
+          type: string
+          example: 1a23xckds83fsd8fajliasdf
+        reason:
+          type: string
+          enum: [WRONG_INFO, SOLD, VIOLATE]
+        description:
+          type: string
+          example: The news has ben sold but the owner did update it
+        email:
+          type: string
+          example: tienloi123123@gmail.com
+        phoneNo:
+          type: string
+          example: +84123123123
+    UpdateIntroImagesShopPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          example: updateCover
+          enum: [updateCover]
+        payload:
+          type: object
+          properties:
+            introImages:
+              type: array
+              items:
+                type: string
+    UpdateLogoImageShopPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          example: updateAvatar
+          enum: [updateAvatar]
+        payload:
+          type: object
+          properties:
+            logoImage:
+              type: string
+    DeactivateShopPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          example: deactivate
+          enum: [deactivate]
+    ActivateShopPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          example: activate
+          enum: [activate]
+    UpdateShopPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          example: updateDetail
+          enum: [updateDetail]
+        payload:
+          type: object
+          properties:
+            domain:
+              type: string
+            name:
+              type: string
+            address:
+              type: string
+            geocode:
+              type: object
+              properties:
+                lng:
+                  type: number
+                lat:
+                  type: number
+            phone:
+              type: string
+            email:
+              type: string
+            expiryDate:
+              type: number
+    CreateShopPayload:
+      type: object
+      properties:
+        owner:
+          type: string
+        domain:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        address:
+          type: string
+        geocode:
+          type: object
+          properties:
+            lng:
+              type: number
+            lat:
+              type: number
+        description:
+          type: string
+        phone:
+          type: string
+        introImages:
+          type: array
+          items:
+            type: string
+        logoImage:
+          type: string
+        expiryDate:
+          type: number
+    FindShopsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Shop'
+        before:
+          type: string
+        after:
+          type: string
+    Shop:
+      type: object
+      properties:
+        _id:
+          type: string
+        owner:
+          type: any
+        domain:
+          type: string
+        name:
+          type: string
+        address:
+          type: string
+        geocode:
+          type: object
+          properties:
+            lng:
+              type: number
+            lat:
+              type: number
+        description:
+          type: string
+        followBy:
+          type: array
+          items:
+            type: any
+        isFollowing:
+          type: boolean
+        phone:
+          type: string
+        email:
+          type: string
+        introImages:
+          type: array
+          items:
+            type: string
+        logoImage:
+          type: string
+    ElasticSearchResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items: 
+            $ref: '#/components/schemas/ElasticSearchItemResult'
+        before:
+          type: string
+        after:
+          type: string
+    ElasticSearchItemResult:
+      type: object
+      properties:
+        title:
+          type: string
+        state:
+          type: string
+        description:
+          type: string
+        imageUrls:
+          type: array
+          items:
+            type: string
+        price: 
+          type: number
+        priceType:
+          type: string
+        newsType:
+          type: string
+        owner: 
+          type: string
+        location: 
+          type: object
+          properties: 
+            isDeleted:
+              type: boolean
+            lastModifiedAt:
+              type: number
+            _id:
+              type: string
+            name:
+              type: string
+            slug:
+              type: string
+        status:
+          type: string
+        usedHours:
+          type: number
+        serialNo:
+          type: number
+        categoryId: 
+          type: object
+          properties:
+            isDeleted:
+              type: boolean
+            lastModifiedAt:
+              type: number
+            _id:
+              type: string
+            name:
+              type: string
+            slug:
+              type: string
+        brand:
+          type: object
+          properties:
+            isDeleted:
+              type: boolean
+            lastModifiedAt:
+              type: number
+            _id:
+              type: string
+            name:
+              type: string
+            slug:
+              type: string
+            totalNews:
+              type: number    
+        model:
+          type: object
+          properties:
+            isDeleted:
+              type: boolean
+            lastModifiedAt:
+              type: number
+            _id:
+              type: string
+            name:
+              type: string
+            slug:
+              type: string
+            brand: 
+              type: string
+            category:
+              type: string
+        weight:
+          type: number
+        year: 
+          type: number
+        followBy:
+          type: array
+          items:
+            type: string
+        isDeleted: 
+          type: boolean
+        createdBy:
+          type: number
+        createdAt:
+          type: number
+        lastModifiedAt:
+          type: number
+        elasticsearchID:
+          type: string
+        elasticsearchTitle:
+          type: string
+        isFollowing:
+          type: boolean
+        _id:
+          type: string
+    News:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 4ddde319cf4cc467858e8152b58b3283
+        title:
+          type: string
+          example: Xe xuc timay
+        state:
+          type: string
+          example: PENDING
+        description:
+          type: string
+        imageUrls:
+          type: array
+          items:
+            type: string
+        price:
+          type: number
+        priceType:
+          type: string
+        newsType:
+          type: string
+        owner:
+          type: any
+        shop:
+          type: any
+        location:
+          type: any
+        status:
+          type: string
+        usedHours:
+          type: number
+        serialNo:
+          type: string
+        categoryId:
+          type: any
+        type:
+          type: any
+        brand:
+          type: any
+        model:
+          type: any
+        weight:
+          type: number
+        year:
+          type: number
+        weightRange:
+          type: object
+          schema:
+            $ref: '#/components/schemas/WeightRange'
+        rentalPeriod:
+          type: object
+          schema:
+            $ref: '#/components/schemas/RentalPeriod'
+        followBy: 
+          type: array
+        isFollowing:
+          type: boolean
+        createdAt:
+          type: number
+        counterFollow:
+          type: number
+        counterView:
+          type: number
+    FindNewsDetail:
+      type: object
+      properties:
+        _id:
+          type: string
+          example: 4ddde319cf4cc467858e8152b58b3283
+        title:
+          type: string
+          example: Xe xuc excado
+        state:
+          type: string
+          example: PENDING
+        description:
+          type: string
+        imageUrls:
+          type: array
+          items:
+            type: string
+        price:
+          type: number
+        priceType:
+          type: string
+        newsType:
+          type: string
+        owner:
+          type: any
+        shop:
+          type: any
+        location:
+          type: any
+        status:
+          type: string
+        usedHours:
+          type: number
+        serialNo:
+          type: string
+        categoryId:
+          type: any
+        type:
+          type: any
+        brand:
+          type: any
+        model:
+          type: any
+        weight:
+          type: number
+        year:
+          type: number
+        weightRange:
+          type: object
+          schema:
+            $ref: '#/components/schemas/WeightRange'
+        rentalPeriod:
+          type: object
+          schema:
+            $ref: '#/components/schemas/RentalPeriod'
+        followBy: 
+          type: array
+        isFollowing:
+          type: boolean
+        createdAt:
+          type: number
+        counterView:
+          type: number
+        counterFollow:
+          type: number
+    CreateNewsPayload:
+      type: object
+      properties:
+        title:
+          type: string
+        state:
+          type: string
+        newsType:
+          type: string
+        priceType:
+          type: string
+        location:
+          type: string
+        owner:
+          type: string
+        status:
+          type: string
+        usedHours:
+          type: number
+        serialNo:
+          type: string
+        categoryId:
+          type: string
+        type:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+        weight:
+          type: number
+        year:
+          type: number
+    UpdateNewsPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+        data:
+          type: object
+          properties:
+            title:
+              type: string
+            state:
+              type: string
+            newsType:
+              type: string
+            priceType:
+              type: string
+            location:
+              type: string
+            owner:
+              type: string
+            status:
+              type: string
+            usedHours:
+              type: number
+            serialNo:
+              type: string
+            categoryId:
+              type: string
+            type:
+              type: string
+            brand:
+              type: string
+            model:
+              type: string
+            weight:
+              type: number
+            year:
+              type: number
+    FindNewsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/News'
+        before:
+          type: string
+        after:
+          type: string
+    FindNewsResultWithFollow:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/FindNewsDetail'
+        before:
+          type: string
+        after:
+          type: string
+    Brand:
+      type: object
+      properties:
+        _id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        logoImage:
+          type: string
+        totalNews:
+          type: number
+        brandCategories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category' 
+        brandModels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model' 
+        createdAt:
+          type: number
+    FindBrandsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'
+        before:
+          type: string
+        after:
+          type: string
+    CreateBrandPayload:
+      type: object
+      properties:
+        name:
+          type: string
+        logoImage:
+          type: string
+    UpdateBrandPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [updateDetail]
+        payload:
+          name:
+            type: string
+          logoImage:
+            type: string
+    Category:
+      type: object
+      properties:
+        _id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        imageUrl:
+          type: string
+        totalNews:
+          type: number
+        categoryBrands:
+          type: array
+          items:
+            $ref: '#/components/schemas/Brand'
+        categoryModels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+        createdAt:
+          type: number
+    FindCategoriesResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+    CreateCategoryPayload:
+      type: object
+      properties:
+        name:
+          type: string
+        imageUrl:
+          type: string
+    UpdateCategoryPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+          enum: [udpateDetail]
+        payload:
+          type: object
+          properties:
+            name:
+              type: string
+            imageUrl:
+              type: string
+    Model:
+      type: object
+      properties:
+        _id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        brand:
+          type: any
+        category:
+          type: any
+        totalNews:
+          type: number
+        createdAt:
+          type: number
+    FindModelsResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+        before:
+          type: string
+        after:
+          type: string
+    CreateModelPayload:
+      type: object
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+    UpdateModelPayload:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+        brand:
+          type: string
+        model:
+          type: string
+    Province:
+      type: object
+      properties:
+        _id:
+          type: string
+        slug:
+          type: string
+        name:
+          type: string
+        totalNews:
+          type: number
+    FindProvincesResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Province'
+    CreateProvincePayload:
+      type: object
+      properties:
+        name:
+          type: string
+        slug:
+          type: string
+    UpdateProvincePayload:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        slug:
+          type: string
+    FollowPayload:
+      type: object
+      properties:
+        operation:
+          type: string
+        payload: 
+          type: object
+          properties:
+            userId: 
+              type: string
+            newsId:
+              type: string
+    FindUserFollowResult:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/FindUserResult'
+    FindUserResult:
+      type: object
+      properties:
+        roles:
+          type: array
+        completeSignUp:
+          type: boolean
+        isActive:
+          type: boolean
+        isDeleted: 
+          type: boolean
+        lastModifiedAt:
+          type: any
+        _id:
+          type: string
+        permissions:
+          type: array
+        email:
+          type: string
+        createdBy:
+          type: string
+        createdAt: 
+          type: any
+        followBy:
+          type: array
+    FindFollowResult:
+      type: object
+      schema:
+        oneOf:
+        - $ref: '#/components/schemas/FindUserFollowResult'
+        - $ref: '#/components/schemas/FindNewsResultWithFollow'
+  requestBodies:
+    UpdateAdsensePayload:
+      description: Update feature brand
+      content:
+        application/json:
+          schema:
+            oneOf:
+            - $ref: '#/components/schemas/UpdateAdsensePayload'
+    CreateAdsensePayload:
+      description: create rental period params
+      content:
+        application/json:
+        schema:
+          - $ref: '#/components/schemas/CreateAdsensePayload'
+    UpdateFeatureBrandPayload:
+      description: Update feature brand
+      content:
+        application/json:
+          schema:
+            oneOf:
+            - $ref: '#/components/schemas/UpdateFeatureBrandPayload'
+    CreateFeatureBrandPayload:
+      description: create rental period params
+      content:
+        application/json:
+        schema:
+          - $ref: '#/components/schemas/CreateFeatureBrandPayload'
+    CreateRentalPeriodPayload:
+      description: create rental period params
+      content:
+        application/json:
+        schema:
+          - $ref: '#/components/schemas/CreateRentalPeriodPayload'
+    UpdateRentalPeriodPayload:
+      description: Update rental period
+      content:
+        application/json:
+          schema:
+            oneOf:
+            - $ref: '#/components/schemas/UpdateRentalPeriodPayload'
+    UpdateWeightRangePayload:
+      description: Update weight range
+      content:
+        application/json:
+          schema:
+            oneOf:
+            - $ref: '#/components/schemas/UpdateWeightRangePayload'
+    CreateWeightRangePayload:
+      description: create weight range params
+      content:
+        application/json:
+        schema:
+          - $ref: '#/components/schemas/CreateWeightRangePayload'
+    CreateRecentViewedPayload:
+      description: create recent view params
+      content:
+        application/json:
+        schema:
+          - $ref: '#/components/schemas/CreateRecentViewedPayload'
+    ReadNotificationPayload:
+      description: read notification params
+      content:
+        application/json:
+        schema:
+          oneOf:
+          - $ref: '#/components/schemas/ReadAllNotificationsPayload'
+          - $ref: '#/components/schemas/ReadNotificationPayload'
+    UpdateReportPayload:
+      description: create report params
+      content:
+        application/json:
+        schema:
+          $ref: '#/components/schemas/UpdateReportPayload'
+    CreateReportPayload:
+      description: create report params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateReportPayload'
+    UpdateShopPayload:
+      description: Update shop params
+      content:
+        application/json:
+          schema:
+            oneOf:
+            - $ref: '#/components/schemas/UpdateShopPayload'
+            - $ref: '#/components/schemas/ActivateShopPayload'
+            - $ref: '#/components/schemas/DeactivateShopPayload'
+            - $ref: '#/components/schemas/UpdateLogoImageShopPayload'
+            - $ref: '#/components/schemas/UpdateIntroImagesShopPayload'
+    CreateShopPayload:
+      description: Create shop params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateShopPayload'
+      required: true
+    CreateNewsPayload:
+      description: Create news params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateNewsPayload'
+      required: true
+    UpdateNewsPayload:
+      description: Update news params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateNewsPayload'
+      required: true
+    CreateBrandPayload:
+      description: Create brand params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateBrandPayload'
+    UpdateBrandPayload:
+      description: Update brand params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateBrandPayload'
+    CreateCategoryPayload:
+      description: Create category params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateCategoryPayload'
+    UpdateCategoryPayload:
+      description: Update category params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateCategoryPayload'
+    CreateModelPayload:
+      description: Create model params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateModelPayload'
+    UpdateModelPayload:
+      description: Update model params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateModelPayload'
+    CreateProvincePayload:
+      description: Create province params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/CreateProvincePayload'
+    UpdateProvincePayload:
+      description: Update province params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UpdateProvincePayload'   
+    FollowPayload:
+      description: Follow params
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/FollowPayload'     
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      name: Authorization
+      in: header

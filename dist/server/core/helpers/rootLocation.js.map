@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/server/core/helpers/rootLocation.ts"],"names":["rootLocation","isDev"],"mappings":";;;;;;;AAAA;;AAEO,IAAMA,YAAY,GAAGC,UAAQ,KAAR,GAAgB,MAArC","sourcesContent":["import { isDev } from '@app/core';\n\nexport const rootLocation = isDev ? 'src' : 'dist';\n"],"file":"rootLocation.js"}

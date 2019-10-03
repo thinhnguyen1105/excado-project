@@ -1,0 +1,17 @@
+{
+  "update-success": "Cập nhập thành công",
+  "create-success": "Thêm Model thành công",
+  "model-name": "Tên Model",
+  "search-brands": "Hãng",
+  "pleaseInputModelName": "Vui lòng nhập tên Model",
+  "pleaseSelectBrand": "Vui lòng chọn hãng sản xuất",
+  "pleaseSelectCategory": "Vui lòng chọn chủng loại máy",
+  "edit-model": "Chỉnh sửa",
+  "create-model": "Thêm Model",
+  "brand-name": "Hãng sản xuất",
+  "select-brand": "Chọn hãng sản xuất",
+  "category-name": "Chủng loại máy",
+  "select-category": "Chọn chủng loại máy",
+  "brand": "Hãng",
+  "": ""
+}

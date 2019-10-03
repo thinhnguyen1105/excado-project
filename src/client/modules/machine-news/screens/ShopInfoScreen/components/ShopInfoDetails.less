@@ -1,0 +1,34 @@
+.outline-body{
+  padding: 20px 70px;
+  background: white;
+  .button-follow{
+    border-radius: 0px;
+    width: 100%;
+  }
+  .send-message-button{
+    border-radius: 0px;
+    width: 100%;
+  }
+}
+
+@media only screen and(max-width: 768px){
+  .outline-body{
+    padding: 0px !important;
+    .button-follow{
+      position: fixed;
+      margin-top: 10px;
+      height: 60px;
+      z-index: 1;
+      bottom: 0px;
+      width: 50%;
+    }
+    .send-message-button{
+      margin-top: 10px;
+      height: 60px;
+      position: fixed;
+      z-index: 1;
+      bottom: 0px;
+      width: 50%;
+    }
+  }
+}

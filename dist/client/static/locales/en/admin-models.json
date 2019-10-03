@@ -1,0 +1,16 @@
+{
+  "update-success": "Update model successful!",
+  "create-success": "Add model successful!",
+  "model-name": "Model name",
+  "search-brands": "Brand",
+  "pleaseInputModelName": "Please input model name",
+  "pleaseSelectBrand": "Please select brand",
+  "pleaseSelectCategory": "Please select category",
+  "edit-model": "Edit",
+  "create-model": "Add new model",
+  "brand-name": "Brand",
+  "select-brand": "Select brand",
+  "category-name": "Select category",
+  "select-category": "Select category",
+  "": ""
+}

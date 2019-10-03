@@ -1,0 +1,13 @@
+{
+  "update-success": "Cập nhật thành công",
+  "create-success": "Thêm chủng loại máy thành công",
+  "category-name": "Chủng loại máy",
+  "category-image": "Ảnh đại diện",
+  "search-categories": "Tìm chủng loại máy",
+  "pleaseInputCategoryName": "Vui lòng nhập tên chủng loại máy",
+  "pleaseUploadCategoryImage": "Vui lòng upload ảnh đại diện",
+  "edit-category": "Chỉnh sửa",
+  "create-category": "Thêm chủng loại",
+  "upload-category-image": "Upload ảnh đại diện",
+  "": ""
+}

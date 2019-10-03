@@ -1,0 +1,110 @@
+.outline{
+  padding: 30px 60px 30px 60px;
+  background: #ffffff;
+
+  .shop-logo {
+    margin: ~'calc((64px - 24px) / 2)' 0;
+    color: #1890ff;
+    background: rgba(255, 255, 255, 0.85);
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .price-group{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .shadow-line {
+    opacity: 0.3;
+    margin-bottom: 5px;
+  }
+
+  .shadow-line-balance {
+    opacity: 0.3;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+
+  .box-information {
+    height: 100px;
+  }
+
+  .money-layout {
+    display: flex;
+    justify-content: space-between;
+
+    .price {
+      color: red;
+    }
+  }
+
+  .box-item {
+    background: white;
+    border: 1px solid;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .credit-card {
+      display: flex;
+      justify-content: flex-end;
+
+      .image-card {
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+
+  .align-text {
+    text-align: center;
+
+    .policy-and-term {
+      color: #2D8BFF;
+    }
+  }
+
+  .button-paid {
+    background: #1BA819;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+    height: 64px;
+    font-size: 16px;
+  }
+}
+.button-paid-mobile{
+  width: 100%;
+  height: 60px;
+  border-radius: 0px;
+  background: #1BA819;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 768px){
+.outline{
+  padding: 20px 30px;
+  .title{
+    margin-bottom: 20px;
+  }
+  .shadow-line-balance{
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+} 
+}

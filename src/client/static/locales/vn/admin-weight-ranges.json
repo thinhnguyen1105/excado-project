@@ -1,0 +1,12 @@
+{
+  "update-success": "Cập nhật thành công",
+  "create-success": "Tạo khoảng trọng lượng thành công",
+  "weight-range": "Khoảng trọng lượng",
+  "pleaseInputMinWeight": "Vui lòng điền khối lượng nhỏ nhất",
+  "min-min-weight": "Khối lượng nhỏ nhất",
+  "edit-weight-range": "Chỉnh sửa khoảng trọng lượng",
+  "create-weight-range": "Thêm khoảng trọng lượng",
+  "min-weight": "Khối lượng",
+  "max-weight": "Khối lượng",
+  "": ""
+}

@@ -1,0 +1,20 @@
+{
+  "day": "Ngày",
+  "totalNews": "Tổng số tin",
+  "monday": "Thứ 2",
+  "tuesday": "Thứ 3",
+  "wednesday": "Thứ 4",
+  "thursday": "Thứ 5",
+  "friday": "Thứ 6",
+  "saturday": "Thứ 7",
+  "sunday": "Chủ nhật",
+  "hour": "Giờ",
+  "brand": "Hãng",
+  "category": "Chủng loại",
+  "location": "Vị trí",
+  "startDate": "Ngày bắt đầu",
+  "endDate": "Ngày kết thúc",
+  "showAll": "Xem tất cả",
+  "exportToExcel": "Tải xuống file excel",
+  "": ""
+}

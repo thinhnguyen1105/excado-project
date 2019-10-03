@@ -1,0 +1,23 @@
+{
+  "resolve-report-success": "Handling successful!",
+  "skip": "Skip",
+  "delete": "Delete news",
+  "notify": "Notified",
+  "news-title": "Title",
+  "report-reasons": "Reasons",
+  "report-state": "State",
+  "pending-report": "Waiting for processing",
+  "resolved-report": "Processed",
+  "resolved-result": "Result",
+  "resolved-at": "Processing time",
+  "search-reports": "Find violation report",
+  "report-description": "Description",
+  "createdBy": "Created By",
+  "createdAt": "Created At",
+  "send-notification": "Send notification",
+  "send-noti": "Send",
+  "cancel": "Cancel",
+  "please-input-noti-content": "Input notification content",
+  "send-noti-success": "Send notification success",
+  "reports": "Report violations"
+}

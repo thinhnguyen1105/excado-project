@@ -1,0 +1,20 @@
+{
+  "day": "Day of Week",
+  "totalNews": "Total news",
+  "monday": "Monday",
+  "tuesday": "Tuesday",
+  "wednesday": "Wednesday",
+  "thursday": "Thursday",
+  "friday": "Friday",
+  "saturday": "Saturday",
+  "sunday": "Sunday",
+  "hour": "Hour of Day",
+  "brand": "Brand",
+  "category": "Category",
+  "location": "Location",
+  "startDate": "Start date",
+  "endDate": "End date",
+  "showAll": "Show all",
+  "exportToExcel": "Export to Excel",
+  "": ""
+}

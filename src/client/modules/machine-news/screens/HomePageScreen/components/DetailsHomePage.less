@@ -1,0 +1,54 @@
+.details-home-page {
+  .ant-tabs-nav-scroll {
+    background: #fff;
+    overflow-x: auto;
+  }
+  .ant-tabs-ink-bar {
+    z-index: 0;
+  }
+  .ant-tabs-tab-prev, .ant-tabs-tab-next {
+    z-index: 0;
+    display: none;
+  }
+  .ant-tabs-nav-container-scrolling {
+    padding: 0;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+}
+
+.machine-list {
+  margin-bottom: 20px;
+  background: white;
+
+  .title {
+    padding-left: 70px;
+    padding-top: 20px;
+  }
+}
+
+.box-nodata {
+  text-align: center;
+  width: 100%;
+  background: white;
+  padding: 30px;
+  height: 70px;
+  margin-bottom: 20px
+}
+
+@media only screen and (max-width: 768px) {
+  .machine-list{
+    .title{
+      padding-bottom: 20px;
+      background: whitesmoke;
+      padding-left: 30px !important;
+      padding-top: 20px !important;
+    }
+  }
+  .ant-tabs-bar {
+    margin: 0;
+  }
+}

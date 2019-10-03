@@ -1,0 +1,12 @@
+{
+  "update-success": "Update successful!",
+  "create-success": "Create successful",
+  "rental-period": "Rental period",
+  "pleaseInputMinRentalPeriod": "Please input minimum rental period",
+  "min-min-rental-period": "Minimum rental period",
+  "edit-rental-period": "Maximum rental period",
+  "create-rental-period": "Add rental period",
+  "min-rental-period": "Time",
+  "max-rental-period": "Time",
+  "": ""
+}

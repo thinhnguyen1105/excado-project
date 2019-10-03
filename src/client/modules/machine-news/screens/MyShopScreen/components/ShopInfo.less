@@ -1,0 +1,68 @@
+.shop-info {
+  .ant-card-cover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
+  .shop-logo {
+    margin: ~'calc((64px - 24px) / 2)' 0;
+    color: #1890ff;
+    background: rgba(255, 255, 255, 0.85);
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+
+    .shop-logo-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .expiry-info {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .ant-card-meta-title {
+    text-align: center;
+  }
+
+  .next-button {
+    width: 100%;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and(max-width: 768px){
+  .shop-info .ant-card-cover{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .shop-info .ant-card-bordered{
+    border: 0px;
+    margin-top: 20px !important;
+  }
+  .shop-info .shop-logo {
+    margin: ~'calc((64px - 24px) / 2)' 0;
+    color: #1890ff;
+    background: rgba(255, 255, 255, 0.85);
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+}

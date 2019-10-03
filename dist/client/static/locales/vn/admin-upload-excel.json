@@ -1,0 +1,9 @@
+{
+  "title": "Tiêu đề",
+  "news-type": "Loại tin",
+  "category": "Chủng loại máy",
+  "weight-range": "Khoảng trọng lượng",
+  "download-template": "Tải xuống file mẫu",
+  "instruction": "Click hoặc kéo thả file để upload",
+  "upload-success": "Upload file thành công"
+}

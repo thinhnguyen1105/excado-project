@@ -1,0 +1,20 @@
+{
+  "pleaseSelectBrand": "Please select brand",
+  "pleaseInputHyperlink": "Please input hyperlink",
+  "pleaseUploadBrandLogo": "Please upload brand logo",
+  "pleaseSelectOrder": "Please select order",
+  "edit-feature-brand": "Edit",
+  "select-brand": "Select brand",
+  "hyperlink": "Hyperlink",
+  "brand-logo": "Logo",
+  "upload-brand-logo": "Upload brand logo",
+  "create-feature-brand": "Add brand",
+
+  "brand-name": "Brand name",
+  "order": "Order",
+  "logo-image": "Logo",
+  "update-success": "Update success",
+  "create-success": "Create success",
+  "allow-image-type": "Only PNG, JPG, JPEG file are allowed",
+  "search-brands": "Search brands"
+}

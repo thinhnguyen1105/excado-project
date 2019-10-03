@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('/static/fonts/icomoon.ttf') format('truetype');
+  font-weight: bold;
+  font-style: bold;
+}
+
+.create-shop-screen {
+  .step-1 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    background: #fff;
+    padding: 24px;
+
+    .intro {
+      padding: 30px;
+      display: flex;
+      min-width: 300px;
+
+      .intro-item {
+        padding: 30px 30px 60px 30px;
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+
+        .icon-Youtube {
+          font-family: 'icomoon' !important;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+
+    .next-button {
+      width: 100%;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  }
+
+  .select-category {
+    .align-items {
+      display: flex;
+
+      .check-box {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.image-tag {
+  position: absolute;
+  width: 20%;
+  right: -5px;
+  top: -5px;
+}
+
+.model-row {
+  display: flex;
+  align-items: center;
+  margin: 0px 60px 20px 60px !important;
+  padding: 20px;
+  border: 1px solid;
+  height: 95px;
+}
+
+.modal-row-button-next {
+  margin: 0px 60px 20px 60px !important;
+
+  .modal-button-next {
+    width: 100%;
+    border-radius: 0px;
+    height: 61px;
+    font-size: 18px;
+  }
+}
+
+.select-category {
+  .ant-modal-title {
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.85);
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .create-shop-screen {
+    .step-1 {
+      padding: 0px;
+      .next-button{
+        position: fixed;
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        font-weight: bold;
+        border-radius: 0px;
+        z-index: 1;
+        left: 0px;
+        bottom: 0px;
+      }
+      .intro {
+        overflow-x: scroll;
+        .intro-item {
+          padding: 30px 100px;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  
+}

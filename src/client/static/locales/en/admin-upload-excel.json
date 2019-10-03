@@ -1,0 +1,15 @@
+{
+  "title": "Title",
+  "news-type": "News type",
+  "category": "Category",
+  "weight-range": "Weight range",
+  "download-template": "Download template file",
+  "instruction": "Click or drag file to upload",
+  "upload-success": "Upload file success",
+  "invalid-data": "Invalid data",
+  "error-message": "Error message",
+  "row": "Row",
+  "failed": "Failed",
+  "success": "Success",
+  "news": "News"
+}

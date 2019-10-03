@@ -1,0 +1,103 @@
+.outline{
+  padding: 20px;
+  box-shadow: 0 4px 0px 0 rgba(0, 0, 0, 0.0), 0 3px 24px 0 rgba(0, 0, 0, 0.1); 
+  background: white;
+  margin-bottom: 10px;
+  .link-to-user {
+    color: rgba(0, 0, 0, 0.65);
+  }
+  .icon-star{
+    margin-right: 5px;
+  }
+  .icon-message{
+    margin-right: 5px;
+  }
+  .info-user-right{
+   float: right;
+    .full-width{
+      width: 100%;
+    }
+  }
+  .avatar{
+    display: flex;
+    justify-content: center;
+  }
+  .text-end{
+    text-align: end;
+  }
+  .call-button{
+    text-align: end;
+    margin-top: 5px;
+    .user-shop {
+      display: flex;
+      flex-direction: column;
+    }
+    .button-call{
+      width: auto;
+      font-size: 16px;
+    height: 44px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 11px;
+    }
+  }
+  .line-shadow{
+    opacity: 0.3;
+    margin: 20px 0px;
+  }
+  .description{
+    padding: 0px 20px;
+    word-break: break-word;
+    white-space: pre-line;
+  }
+  .notification{
+    text-align: center;
+  }
+  .report-button{
+    display: flex;
+    justify-content: space-between;
+    .button-report{
+      width: 30%;
+    }
+  }
+  .user-info-text {
+    margin-bottom: 20px;
+  }
+  .shop-info-text {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .outline {
+    .avatar{
+      display: flex;
+      justify-content: flex-start;
+    }
+    .report-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      .button-report {
+        width: 90%;
+        margin-bottom: 10px;
+        border-radius: 0;
+      }
+    }
+    .shop-info {
+      margin-bottom: 30px;
+      .shop-info-text {
+        margin: 0;
+      }
+    }
+    .detail-user-info {
+      .user-info-text {
+        margin: 0;
+      }
+    }
+    .call-button {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "update-success": "Update successful!",
+  "create-success": "Create weight range successful!",
+  "weight-range": "Weight range",
+  "pleaseInputMinWeight": "Please input min weight",
+  "min-min-weight": "Min weight",
+  "edit-weight-range": "Edit weight range",
+  "create-weight-range": "Add weight range",
+  "min-weight": "Weight",
+  "max-weight": "Weight",
+  "": ""
+}

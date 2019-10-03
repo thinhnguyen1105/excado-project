@@ -1,0 +1,82 @@
+.shop-basic-info {
+  background: #fff;
+  padding: 30px 20px 20px 20px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  text-align: center;
+
+  .user-image {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0px auto;
+
+    .user-image-content {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .description {
+    display: block;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    margin-top: 16px;
+  }
+}
+.join-date{
+  text-align: center;
+}
+
+.shop-contact {
+  display: flex;
+  flex-direction: column;
+  .phone-call-button {
+    width: 100%;
+    border-radius: 0px;
+    background: #1ba819;
+    margin-top: 10px;
+    border: none;
+  }
+  .chat-button {
+    width: 100%;
+    border-radius: 0px;
+    background: #ff9900;
+    margin-top: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .star-button {
+    width: 100%;
+    border-radius: 0px;
+    background: #ffc500;
+    margin-top: 10px;
+    border: none;
+  }
+  .follower-count {
+    margin-top: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+.shop-contact {
+  .phone-call-button {
+    display: none;
+  }
+  .chat-button {
+    display: none;
+  }
+}
+
+.join-date{
+  text-align: center;
+}
+}

@@ -1,0 +1,12 @@
+{
+  "pleaseUploadImage": "Vui lòng upload ảnh quảng cáo",
+  "pleaseInputHyperlink": "Vui lòng nhập đường dẫn",
+  "adsense-info": "Thông tin quảng cáo",
+  "ads-image": "Ảnh quảng cáo",
+  "upload-ads-image": "Upload ảnh quảng cáo",
+  "ads-hyperlink": "Đường dẫn",
+  "adsense-position": "Vị trí quảng cáo",
+  "allow-image-type": "Ảnh chỉ nhận các định dạng PNG, JPG, JPEG",
+  "invalidURL": "Đường dẫn phải có dạng 'https://google.com'",
+  "update-success": "Cập nhật quảng cáo thành công"
+}

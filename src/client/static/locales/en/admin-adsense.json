@@ -1,0 +1,12 @@
+{
+  "pleaseUploadImage": "Please upload advertising photos",
+  "pleaseInputHyperlink": "Please input hyperlink",
+  "adsense-info": "Advertising information",
+  "ads-image": "Advertising photos",
+  "upload-ads-image": "Upload advertising photos",
+  "ads-hyperlink": "Hyperlink",
+  "adsense-position": "Advertising location",
+  "allow-image-type": "Only PNG, JPG, JPEG file are allowed",
+  "invalidURL": "Invalid URL. Ex: 'https://google.com'",
+  "update-success": "Update ads successful!"
+}

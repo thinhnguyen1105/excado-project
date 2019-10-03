@@ -1,0 +1,15 @@
+{
+  "address": "Address",
+  "phone": "Phone number",
+  "info": "Infomation",
+  "feature-images": "Featured images",
+  "public-news": "Public news",
+  "more": "More",
+  "most-viewed": "Most viewed",
+  "follow": "Follow shop",
+  "unfollow-shop": "Unfollow shop",
+  "mess": "Make private message",
+  "map": "Map",
+  "no-data": "No data",
+  "no-features-image": "Shop has no features image"
+}

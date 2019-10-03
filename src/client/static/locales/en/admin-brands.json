@@ -1,0 +1,23 @@
+{
+  "create-success": "Create brand successful!",
+  "edit": "Edit",
+  "brand-name": "Brand name",
+  "created-at": "Created at",
+  "logo-image": "Logo",
+  "update-success": "Update successful!",
+  "pleaseInputBrandName": "Please input brand name",
+  "pleaseUploadBrandLogo": "Please upload brand logo",
+  "edit-brand": "Edit brand infomation",
+  "create-brand": "Add new brand",
+  "brand-logo": "Logo",
+  "upload-brand-logo": "Upload brand logo",
+  "brand-already-exist": "Brand already exist",
+  "brandNameTooLong": "Brand name is too long",
+  "allow-image-type": "Only PNG, JPG, JPEG file are allowed",
+  "search-brands": "Search brands",
+  "areYouSureToDelete": "Are you sure delete this brand?",
+  "yes": "Yes",
+  "no": "No",
+  "brandHaveNews": "This brand is not deletable because there are news related to it",
+  "deleteBrandSuccess": "Delete brand success"
+}

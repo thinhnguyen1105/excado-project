@@ -1,0 +1,23 @@
+{
+  "resolve-report-success": "Xử lý thành công",
+  "skip": "Bỏ qua",
+  "delete": "Xóa bài đăng",
+  "notify": "Gửi thông báo",
+  "news-title": "Tiêu đề",
+  "report-reasons": "Lý do",
+  "report-state": "Trạng thái",
+  "pending-report": "Chờ xử lý",
+  "resolved-report": "Đã xử lý",
+  "resolved-result": "Kết quả xử lý",
+  "resolved-at": "Thời gian xử lý",
+  "search-reports": "Tìm kiếm báo cáo vi phạm",
+  "report-description": "Nội dung",
+  "createdBy": "Người báo cáo",
+  "createdAt": "Thời gian báo cáo",
+  "send-notification": "Gửi thông báo cho người dùng",
+  "send-noti": "Gửi",
+  "cancel": "Hủy",
+  "please-input-noti-content": "Nhập nội dung thông báo",
+  "send-noti-success": "Gửi thông báo thành công",
+  "reports": "Báo cáo vi phạm"
+}
