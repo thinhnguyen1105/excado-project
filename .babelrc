@@ -1,0 +1,36 @@
+{
+  "presets": [
+    "@babel/env",
+    "@babel/preset-typescript",
+    ["next/babel", {"transform-runtime": { "useESModules": false } }],
+    "@zeit/next-typescript/babel"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", {
+      "decoratorsBeforeExport": true
+    }],
+    ["import", {
+      "libraryName": "antd",
+      "style": true
+    }],
+    ["import", {
+      "libraryName": "ant-design-pro",
+      "libraryDirectory": "lib",
+      "style": true,
+      "camel2DashComponentName": false,
+    }, "antd-prod"],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    ["module-resolver", {
+      "alias": {
+        "@app/core": "./src/server/core",
+        "@app/auth": "./src/server/modules/auth",
+        "@app/machine-news": "./src/server/modules/machine-news",
+        "@app/config": "./src/server/config",
+        "@app/website": "./src/server/modules/website",
+        "@components/": "./src/client/components/",
+        "@client": "./src/client"
+      }
+    }]
+  ]
+}
