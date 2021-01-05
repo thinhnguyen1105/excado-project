@@ -17,7 +17,7 @@
     "add": "2.0.6",
     "ant-design-pro": "2.1.1",
     "antd": "^3.14.1",
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "body-parser": "1.18.3",
     "bunyan": "1.8.12",
     "compression": "1.7.3",
