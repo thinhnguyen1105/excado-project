@@ -71,7 +71,7 @@
     "react-share": "2.4.0",
     "react-slick": "^0.23.2",
     "recompose": "^0.30.0",
-    "sharp": "^0.21.3",
+    "sharp": "^0.30.5",
     "shx": "0.3.2",
     "slick-carousel": "^1.8.1",
     "slugify": "^1.3.4",
